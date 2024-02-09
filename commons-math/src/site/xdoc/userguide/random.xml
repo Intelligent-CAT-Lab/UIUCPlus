@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+
+<document url="random.html">
+
+<properties>
+    <title>The Commons Math User Guide - Data Generation</title>
+</properties>
+
+<body>
+
+<section name="2 Data Generation">
+
+  <subsection name="2.1 Overview"
+              href="overview">
+    <p>
+      Utilities in package <a href="../apidocs/org/apache/commons/math4/legacy/random/package-summary.html">
+      o.a.c.m.legacy.random</a> often uses an underlying "source of randomness": A pseudo-random
+      number generator (PRNG) that produces sequences of numbers that are uniformly distributed
+      within their range.
+      Commons Math depends on <a href="http://commons.apache.org/rng">Commons RNG</a> for the
+      PRNG implementations.
+    </p>
+  </subsection>
+
+  <subsection name="2.2 Correlated random vectors"
+              href="vectors">
+    <p>
+      Some algorithms require random vectors instead of random scalars.
+      When the components of these vectors are uncorrelated, they may be generated
+      simply one at a time and packed together in the vector.
+    </p>
+    <p>
+      When the components are correlated however, generating them is more difficult.
+      The <a href="../apidocs/org/apache/commons/math4/legacy/random/CorrelatedVectorFactory.html">
+      CorrelatedVectorFactory</a> class provides this service.
+      In this case, a complete covariance matrix must be provided (instead of a
+      simple standard deviations vector) gathering both the variance and the
+      correlation information of the probability law.
+    </p>
+    <p>
+      The main use for correlated random vector generation is for Monte-Carlo
+      simulation of physical problems with several variables, for example to
+      generate error vectors to be added to a nominal vector. A particularly
+      common case is when the generated vector should be drawn from a <a
+      href="http://en.wikipedia.org/wiki/Multivariate_normal_distribution">
+      Multivariate Normal Distribution</a>.
+    </p>
+
+    <p>
+      Generating random vectors from a bivariate normal distribution:
+
+      <source>
+import java.util.function.Supplier;
+import org.apache.commons.rng.UniformRandomProvider;
+import org.apache.commons.rng.RandomSource;
+
+// Import common PRNG interface and factory class that instantiates the PRNG.
+// Create (and possibly seed) a PRNG.
+long seed = 17399225432L; // Fixed seed means same results every time
+UniformRandomProvider rng = RandomSource.create(RandomSource.MT, seed);
+
+// Create a a factory of correlated vectors.
+CorrelatedVectorFactory factory = new CorrelatedVectorFactory(mean, covariance, 1e-12);
+Supplier&lt;double[]&gt; generator = factory.gaussian(rng);
+
+// Use the generator to generate correlated vectors.
+double[] randomVector = generator.get();
+... </source>
+
+      The <code>mean</code> argument is a <code>double[]</code> array holding the means
+      of the random vector components.  In the bivariate case, it must have length 2.
+      The <code>covariance</code> argument is a <code>RealMatrix</code>, which has to
+      be 2 x 2.
+      The main diagonal elements are the variances of the vector components and the
+      off-diagonal elements are the covariances.
+      For example, if the means are 1 and 2 respectively, and the desired standard deviations
+      are 3 and 4, respectively, then we need to use
+
+      <source>
+double[] mean = {1, 2};
+double[][] cov = {{9, c}, {c, 16}};
+RealMatrix covariance = MatrixUtils.createRealMatrix(cov);
+      </source>
+      where "c" is the desired covariance. If you are starting with a desired correlation,
+      you need to translate this to a covariance by multiplying it by the product of the
+      standard deviations.  For example, if you want to generate data that will give Pearson's
+      R of 0.5, you would use c = 3 * 4 * 0.5 = 6.
+    </p>
+  </subsection>
+
+  <subsection name="2.3 Low discrepancy sequences"
+              href="lowdiscrepancy">
+    <p>
+      There exist several quasi-random sequences with the property that for all values of N, the subsequence
+      x<sub>1</sub>, ..., x<sub>N</sub> has low discrepancy, which results in equi-distributed samples.
+      While their quasi-randomness makes them unsuitable for most applications (i.e. the sequence of values
+      is completely deterministic), their unique properties give them an important advantage for quasi-Monte Carlo simulations.<br/>
+      Currently, the following low-discrepancy sequences are supported:
+      <ul>
+        <li><a href="../apidocs/org/apache/commons/math4/legacy/random/SobolSequenceGenerator.html">
+        Sobol sequence</a> (pre-configured up to dimension 1000)</li>
+        <li><a href="../apidocs/org/apache/commons/math4/legacy/random/HaltonSequenceGenerator.html">
+        Halton sequence</a> (pre-configured up to dimension 40)</li>
+      </ul>
+
+      <source>
+// Create a Sobol sequence generator for 2-dimensional vectors
+RandomVectorGenerator generator = new SobolSequence(2);
+
+// Use the generator to generate vectors
+double[] randomVector = generator.nextVector();
+... </source>
+
+      The figure below illustrates the unique properties of low-discrepancy sequences when
+      generating N samples in the interval [0, 1]. Roughly speaking, such sequences "fill"
+      the respective space more evenly which leads to faster convergence in quasi-Monte Carlo
+      simulations.<br/>
+      <img src="../images/userguide/low_discrepancy_sequences.png"
+	       alt="Comparison of low-discrepancy sequences"/>
+    </p>
+
+  </subsection>
+
+</section>
+
+</body>
+</document>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  -->
+
+<document url="distribution.html">
+  <properties>
+    <title>The Commons Math User Guide - Distributions</title>
+  </properties>
+  <body>
+    <section name="8 Probability Distributions">
+      <subsection name="8.1 Overview" href="overview">
+        <p>
+          Standard distributions are now available in the
+          <a href="https://commons.apache.org/proper/commons-statistics/userguide/index.html">
+          Commons Statistics</a> component.
+        </p>
+        <p>
+          Commons Math provides
+          <ul>
+            <li>
+              an <a href="../apidocs/org/apache/commons/math4/legacy/distribution/EnumeratedDistribution.html">
+              EnumeratedDistribution</a> class that represents discrete distributions of a finite,
+              enumerated set of values.
+            </li>
+            <li>
+              a <a href="../apidocs/org/apache/commons/math4/legacy/distribution/MultiVariateNormalDistribution.html">
+              MultivariateNormalDistribution</a> interface that represents multivariate Gaussian
+              distributions.
+            </li>
+          </ul>
+        </p>
+        <p>
+          Inverse distribution functions can be computed using the
+          <code>inverseCumulativeProbability</code> methods.  For continuous <code>f</code>
+          and <code>p</code> a probability, <code>f.inverseCumulativeProbability(p)</code> returns
+          <code><ul>
+            <li>inf{x in R | P(X&le;x) &ge; p} for 0 &lt; p &lt; 1,</li>
+            <li>inf{x in R | P(X&le;x) &gt; 0} for p = 0.</li>
+          </ul></code> where <code>X</code> is distributed as <code>f</code>.<br/>
+          For discrete <code>f</code>, the definition is the same, with <code>Z</code> (the integers)
+          in place of <code>R</code>.  Note that in the discrete case, the &ge; in the definition
+          can make a difference when <code>p</code> is an attained value of the distribution.
+        </p>
+      </subsection>
+
+      <subsection name="8.2 Generating data like an input file"
+                  href="empirical">
+        <p>
+          Using the <code>EmpiricalDistribution</code> class, you can generate data based on
+          a given set of values:
+
+          <source>
+double[] input = load("data.txt"); // Get some data.
+int binCount = 500;
+EmpiricalDistribution empDist = EmpiricalDistribution.from(binCount, input);
+ContinuousDistribution.Sampler sampler = empDist.createSampler(RandomSource.MT.create());
+double value = sampler.nextDouble(); </source>
+
+          The probability density function is estimated from the data passed as input.
+          The estimation method is essentially the
+          <a href="http://nedwww.ipac.caltech.edu/level5/March02/Silverman/Silver2_6.html">
+            Variable Kernel Method</a> with Gaussian smoothing.
+          The created sampler will return random values whose probability distribution
+          matches the empirical distribution (i.e. if you generate a large number of
+          such values, their distribution should "look like" the distribution of the
+          values in the input file.
+          The input values are not stored in memory.
+        </p>
+      </subsection>
+    </section>
+  </body>
+</document>

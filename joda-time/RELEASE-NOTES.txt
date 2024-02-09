@@ -1,0 +1,35 @@
+Joda-Time release notes
+-----------------------
+
+Joda-Time is a date and time handling library that seeks to replace the JDK
+Date and Calendar classes. For Java SE 8 and later, please use java.time instead.
+
+The release runs on JDK 5 or later.
+
+Joda-Time is licensed under the business-friendly Apache License Version 2.
+This is the same license as all of Apache, plus other open source projects such as Spring.
+
+**  Please also check out our related projects   **
+** https://www.joda.org/joda-time/related.html **
+
+
+Release notes
+-------------
+From v2.9.7, Joda-Time release notes are found here:
+https://www.joda.org/joda-time/changes-report.html
+
+
+Scala
+-----
+Joda-Time uses annotations from Joda-Convert.
+In the Java programming language, this dependency is optional, however in Scala it is not.
+Scala users must manually add the Joda-Convert v1.2 dependency.
+
+
+Feedback
+--------
+Feedback is best received using GitHub issues and Pull Requests.
+https://github.com/JodaOrg/joda-time/
+
+The Joda team
+https://www.joda.org/joda-time/

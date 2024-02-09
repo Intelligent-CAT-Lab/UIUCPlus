@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-math-parent</artifactId>
+    <version>4.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>commons-math4-legacy</artifactId>
+  <name>Apache Commons Math (Legacy)</name>
+
+  <description>Codes that are either currently unsupported or not yet modularized.</description>
+
+  <properties>
+    <!-- The Java Module System Name -->
+    <commons.module.name>org.apache.commons.math4.legacy</commons.module.name>
+    <!-- This value must reflect the current name of the base package. -->
+    <commons.osgi.symbolicName>org.apache.commons.math4.legacy</commons.osgi.symbolicName>
+    <!-- OSGi -->
+    <commons.osgi.export>org.apache.commons.math4.legacy</commons.osgi.export>
+    <!-- Workaround to avoid duplicating config files. -->
+    <math.parent.dir>${basedir}/..</math.parent.dir>
+    <math.jira.component>legacy</math.jira.component>
+
+    <!-- Disable PMD to reduce build verbosity. -->
+    <pmd.skip>true</pmd.skip>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-statistics-distribution</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-complex</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-gamma</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-combinatorics</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-angle</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-rootfinder</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-field</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-quaternion</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-numbers-arrays</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-rng-client-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-rng-simple</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-rng-sampling</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-math4-legacy-exception</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-math4-legacy-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-geometry-euclidean</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- This is configured at a level to pass most of the tests.
+            Very flaky tests can be moved to a separate execution. -->
+          <rerunFailingTestsCount>5</rerunFailingTestsCount>
+        </configuration>
+        <executions>
+          <execution>
+            <!-- This uses the default ID to exclude the flaky tests -->
+            <id>default-test</id>
+            <configuration>
+              <excludes>
+                <exclude>**/SimplexOptimizerTest</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- Add a second exceution of the flaky tests -->
+            <id>flaky-tests</id>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <rerunFailingTestsCount>14</rerunFailingTestsCount>
+              <includes>
+                <include>**/SimplexOptimizerTest</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Ignore spotbugs in the legacy module.
+           New development will move code to a new package and should address issues. -->
+      <plugin>
+        <groupId>com.github.spotbugs</groupId>
+        <artifactId>spotbugs-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <enableRulesSummary>true</enableRulesSummary>
+          <configLocation>${math.parent.dir}/src/main/resources/checkstyle/checkstyle-legacy.xml</configLocation>
+          <suppressionsLocation>${math.parent.dir}/src/main/resources/checkstyle/checkstyle-suppressions-legacy.xml</suppressionsLocation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

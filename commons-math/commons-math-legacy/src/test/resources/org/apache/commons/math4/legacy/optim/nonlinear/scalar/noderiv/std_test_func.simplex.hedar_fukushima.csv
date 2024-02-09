@@ -1,0 +1,66 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+#
+# Format (CSV) defined in "SimplexOptimizerTest.Task" class.
+# Columns are:
+#  0: Function name (value from "TestFunction" enum)
+#  1: Space dimension (n)
+#  2: Optimum ("n" space-separated values)
+#  3: Minimum radius of the spherical shell around the optimum (within which to randomly select a start point)
+#  4: Maximum radius of the spherical shell around the optimum (within which to randomly select a start point)
+#  5: Maximum expected distance from the result to the optimum
+#  6: Expected number of function evaluations
+#  7: Whether to perform simulated annealing
+#  8: [optional] File prefix for debugging (or empty slot for no debugging)
+#  9: [optional] Indices (space-separated) of simplex points to save (empty means "all points")
+#
+# Caveat: Some tests are commented out (cf. JIRA: MATH-1552).
+#
+PARABOLA, 8, 0 0 0 0 0 0 0 0, 20, 40, 1e-4, 1600, true
+PARABOLA, 16, 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0, 20, 40, 5e-4, 6000, true
+ROSENBROCK, 2, 1 1, 0.9, 1.1, 2e-3, 11000, true
+ROSENBROCK, 4, 1 1 1 1, 0.9, 1.1, 3e-3, 40000, true
+ROSENBROCK, 8, 1 1 1 1 1 1 1 1, 0.9, 1.1, 3e-3, 130000, true
+ROSENBROCK, 16, 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1, 0.9, 1.1, 5e-2, 400000, true
+POWELL, 4, 0 0 0 0, 4, 5, 5e-2, 12000, true
+POWELL, 8, 0 0 0 0 0 0 0 0, 4, 5, 6e-2, 53000, true
+CIGAR, 2, 0 0, 2, 3, 5e-5, 200, true
+CIGAR, 11, 0 0 0 0 0 0 0 0 0 0 0, 2, 3, 5e-5, 3300, true
+SPHERE, 2, 0 0, 2, 3, 5e-4, 140, true
+SPHERE, 11, 0 0 0 0 0 0 0 0 0 0 0, 2, 3, 5e-4, 2500, true
+ELLI, 2, 0 0, 3, 4, 1e-4, 210, true
+TWO_AXES, 2, 0 0, 3, 4, 1e-4, 240, true
+TWO_AXES, 11, 0 0 0 0 0 0 0 0 0 0 0, 3, 4, 1e-4, 4000, true
+CIG_TAB, 2, 0 0, 3, 4, 2e-3, 220, true
+CIG_TAB, 11, 0 0 0 0 0 0 0 0 0 0 0, 3, 4, 2e-3, 3400, true
+TABLET, 2, 0 0, 3, 4, 2e-4, 200, true
+TABLET, 11, 0 0 0 0 0 0 0 0 0 0 0, 3, 4, 2e-4, 3400, true
+SUM_POW, 2, 0 0, 3, 4, 1e-2, 150,  true
+SUM_POW, 11, 0 0 0 0 0 0 0 0 0 0 0, 3, 4, 1e-2, 2500,  true
+ACKLEY, 2, 0 0, 2, 4, 1e-6, 250, true
+#ACKLEY, 6, 0 0 0 0 0 0, 2, 4, 1e-6, 1600, true
+#RASTRIGIN, 2, 0 0, 6, 10, 5e-5, 170, true
+GRIEWANK, 2, 0 0, 2, 3, 1e-1, 140, true
+GRIEWANK, 11, 0 0 0 0 0 0 0 0 0 0 0, 2, 3, 1e-1, 2200, true
+LEVY, 2, 1 1, 0.9, 1.1, 1e-3, 150, true
+LEVY, 9, 1 1 1 1 1 1 1 1 1, 0.9, 1.1, 1e-3, 1600, true
+SCHWEFEL, 2, 420.9687 420.9687, 9, 11, 1, 150, true
+ZAKHAROV, 2, 0 0, 3, 4, 1e-4, 180, true
+PERM, 2, 1 2, 0.9, 1.1, 3e-3, 25000, true
+STYBLINSKI_TANG, 2, -2.903534 -2.903534, 1, 2, 1e-4, 150, true
+#HAPPY_CAT, 2, -1 -1, 2, 3, 1e-4, 500, true
+#SALOMON, 2, 0 0, 2, 3, 1e-4, 500, true

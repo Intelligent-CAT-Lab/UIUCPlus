@@ -1,0 +1,598 @@
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+This document is meant as a step-by-step recipe to achieve the release of
+the Commons Math component. Note that more general instructions valid
+for all components, including [math], are available on the Apache Commons
+main site: at "http://commons.apache.org/releases/prepare.html" and
+"http://commons.apache.org/releases/release.html".
+
+The files "settings-security.xml" and "settings.xml" are minimal examples
+of files used by maven to pick up authentication credentials needed to
+connect to remote servers and to cryptographically sign the artifacts.
+
+Since [math] has switched to git as its version control system, release preparation
+can be done easily on the release manager local host in a branch. As branches deletion
+is now forbidden at Apache, we will use a specific release branch for every version.
+The branch will be simply named X.Y-release, with X.Y being the version number.
+The branch will be used to store the release specific parts (i.e. the pom changes with
+the version number, the release date in the site and so on). Everything else and in
+particular code change that will remain in the component after the release must be
+committed to the master branch (or version branch). The release candidate branch will
+be created from master or version branch at the start of each new candidate for
+this particular release. Once the release is done, the branch will be merged back to
+master, but it will never be deleted so release history will be preserved.
+
+The example below show a typical workflow. Just after commit A in the master branch, the
+X.Y-release branch is created starting from master. This is shown by the 'b' in the
+second line. Then release specific commits are made on the pom and a few other
+files, leading to a commit which will be tagged as RC1. This release candidate fails, and
+a few corrections need to be made on master, corresponding to commits B and C. Then the
+X.Y-release branch is synchronized by running a 'git merge' command on the branch.
+This is shown by the 'm' in the second line. A new commit is tagged as RC2. This second
+release candidate also fails, and a new correction is made on master branch, a new merge
+is done on the X.Y-release branch, a new commit is tagged and a third release candidate is
+create, which succeeds. Then a final tag will be added on the final commit of this branch
+showing the status as released. Then the files are cleaned to prepare for next version
+(pom getting again a SNAPSHOT suffix, changes.xml getting a new placeholder for changes)
+and the cleaned branch is merged back to master. Once the X.Y-release branch has been merged,
+it is kept for history. The release for next version will use another specific branch.
+
+
+ ----A-------> B --> C----------> D--------------------------------------m---->    <- master branch
+      \               \            \                                    /
+       b---> RC1 ------m---> RC2 ---m---> RC3/final release --> cleaning --X       <- X.Y-release branch
+
+This process allows:
+
+ - to never commit release candidate specific changes to the master
+   branch (so the pom on master always holds a SNAPSHOT version),
+ - to preserve future reference to the release
+ - to allow parallel work on master during the release
+ - if necessary to have multiple release managers or help on the
+   release as the X.Y-release branch is shared
+
+
+(0)
+Preliminary checks:
+ * All Java files must contain a license header. The "RAT" maven plugin will
+   generate a report indicating for which files the license is missing.
+ * For a "minor" release, the library must be backward-compatible. Check all
+   the errors reported by the "Clirr" and/or "Revapi" plugin.
+ * Clear all "CheckStyle" warnings.
+ * Make sure that the construct reported by "SpotBugs" are intentional.
+ * Mark all fixed issues as such in the bug-tracking system, and add a
+   corresponding entry in "src/changes/changes.xml".
+
+
+(1)
+As a first optional step, you can test that everything works locally, i.e.
+that the build process can create all the necessary artifacts. The commands
+
+  $ mvn -Prelease-notes changes:announcement-generate
+  $ mvn clean site deploy -Prelease -Ptest-deploy
+
+should create the artifacts in the "target/deploy" (note that the "JAVA_HOME"
+environment variable must be defined to point to a valid JDK installation).
+
+Note: If running from a remote terminal, you might need to tune the "gpg-agent"
+configuration file
+  ~/.gnupg/gpg-agent.conf
+to contain the following statements:
+  ---CUT---
+  enable-ssh-support
+  pinentry-program /usr/bin/pinentry-tty
+  ---CUT---
+and execute
+  $ export GPG_TTY=$(tty)
+in order to set up the environment for entering the passphrase.
+
+
+(2)
+At this point, you will work mainly on the X.Y-release branch.
+
+If the X.Y-release branch does not exist because it is the first release
+candidate, create it locally starting from the master branch or the version
+branch and push it to Apache repository (assuming it is called origin),
+remembering the binding between the local and remote origin branches:
+
+  $ git branch X.Y-release
+  $ git push -u origin X.Y-release
+
+
+(3)
+Switch to the release branch:
+
+  $ git checkout X.Y-release
+
+
+(4)
+If there have been changes committed in the master branch or the version
+branch since the creation of the release branch, there are two cases:
+
+  (4a)
+  if all these changes must be included in the X.Y-release
+  merge master branch or version branch into X.Y-release branch:
+
+  $ git merge master
+  or
+  $ git rebase master
+  or, if the version branch is called MATH_3_X
+  $ git merge MATH_3_X
+
+  (4b)
+  if only part of these changes must be included in the X.Y-release,
+  cherry-pick the required commits into X.Y-release branch:
+
+  $ git cherry-pick commit-SHA
+
+(5)
+Update the release specific files, checking you are really working on the
+X.Y-release branch and *not* on the master branch.
+
+In particular:
+ * Update and commit the "src/site/site.xml" file to contain the information
+   about the API docs of the new release.
+ * Estimate a release date (taking into account the release vote delay) and
+   insert it in the "src/changes/changes.xml" file.
+ * Update all the "pom.xml" files to contain the final version number and not
+   a SNAPSHOT: Assuming that the release version will be "4.0-beta1", the
+   "<version>" should read:
+
+    <version>4.0-beta1</version>
+
+   This can be done for all modules with command
+     $ mvn versions:set -DnewVersion=4.0-beta1 -DgenerateBackupPoms=false
+
+   Note: Perform a "grep" in order to ensure that all occurences have been
+   updated correctly.
+
+   Modify the section of "<properties>" that also refers to version numbers.
+   You should uncomment the "<commons.rc.version>" line and indicate the
+   appropriate numbering of the release candidate: This refers to how many
+   times you will need to repeat this whole release process until it is
+   accepted (by a vote):
+
+  <properties>
+    <!-- ... -->
+    <commons.release.version>4.0-beta1</commons.release.version>
+    <commons.rc.version>RC1</commons.rc.version>
+    <!-- ... -->
+  </properties>
+
+
+(6)
+The "download" page template is located at "src/site/xdoc/download_math.xml".
+This file is updated automatically by running the command:
+
+  $ mvn commons-build:download-page
+
+
+(7)
+The "release notes" file will be created by gathering all the changes
+collected during development in the file "src/changes/changes.xml".
+Create it by running:
+
+  $ mvn -Prelease-notes changes:announcement-generate
+
+Check the file for weird line breaks, and commit the updated file to git:
+
+  $ git add src/site/site.xml \
+            src/changes/changes.xml \
+            pom.xml \
+            src/site/xdoc/download_math.xml \
+            RELEASE-NOTES.txt
+
+Check you did not forget any file:
+
+  $ git status
+
+Commit the changes:
+  $ git commit -m "Release candidate."
+
+
+(8)
+Create a GPG signed tag that will contain the whole source of this release candidate.
+First, make sure once again that the workspace is up-to-date:
+
+  $ git status
+
+Then, assuming the first candidate, the suffix will be "RC1" (this should
+be the  same as in the "<properties>" in the "pom.xml"), and the command
+will be:
+
+  $ git tag -u "__Your_key_id__" -m "Create Commons Math v4.0-beta1 RC1 tag." commons-math-4.0-beta1-RC1
+
+Check the tag GPG signature:
+
+  $ git tag -v commons-math-4.0-beta1-RC1
+
+You will get something like:
+
+  object 1d862ec8cca30a6b797583ef2f837e54830f658d
+  type commit
+  tag commons-math-4.0-beta1-RC1
+  tagger Gilles Sadowski <gilleseran@gmail.com> 1670895878 +0100
+
+  Create Commons Math v4.0-beta1 RC1 tag.
+  gpg: Signature made Tue 13 Dec 2022 02:44:38 AM CET
+  gpg:                using RSA key B39617E095CD748DFE505816703413011E22D5B8
+  gpg:                issuer "erans@apache.org"
+  gpg: Good signature from "Gilles Sadowski (ASF code signing) <erans@apache.org>" [ultimate]
+  gpg:                 aka "Gilles Sadowski <gilles@harfang.homelinux.org>" [ultimate]
+
+Remember the commit ID listed in the object line (here: 1d862ec8cca30a6b797583ef2f837e54830f658d),
+as it is the most stable reference for traceability.
+
+Push everything (including the tag!) on the Apache repository:
+
+  $ git push --tags
+
+(9)
+Switch to a new directory out of your regular workspace, and retrieve
+the official tag from the Apache repository:
+
+  $ cd /tmp
+  $ git clone https://gitbox.apache.org/repos/asf/commons-math.git --branch commons-math-4.0-beta1-RC1
+
+In the command above, the --branch option accepts both branch names and tags names,
+so we specify directly the tag here. Git will warn that the resulting workspace
+is in 'detached HEAD' state and 'git status' commands will warn that you are not
+currently on any branch. This is expected is this situation.
+
+Check that the last commit has the id you noted in the previous step:
+
+  $ git log -1
+
+(10)
+If this is your first release, you might need to add your GPG encryption
+key to the KEYS file. [If you have already done so, skip this section.]
+
+Retrieve the files from the SVN repository:
+
+  $ svn co --depth=immediates \
+    https://__Your_apache_login__@svn.apache.org/repos/asf/commons/trunks-proper
+
+and follow the instructions at the top of the "KEYS" file.
+
+
+(11)
+Create and transfer the artifacts to the Nexus server (a.k.a. "deploy").
+
+Because the artifacts must be cryptographically signed, this step requires that
+a profile named "release" exists in the maven "settings.xml" configuration file
+which will contain the identifier of your GPG key (cf. sample "settings.xml" 
+file). You will also have to follow the instructions at
+https://maven.apache.org/guides/mini/guide-encryption.html to set your password
+in the settings.xml file.
+
+You can then run
+
+  $ mvn -Duser.name="__Your_Apache_id__" clean deploy -Prelease
+
+which will transfer the artifacts to the Nexus repository located at
+  https://repository.apache.org/index.html#stagingRepositories
+
+This process transfers more files than really needed in the the "staging" (i.e.
+non official) maven repository.
+The files expected in the repository are the POM files and the JAR files.
+However the process also transfers the complete source and binaries distributions
+files: Those ZIP and TAR.GZ files are not really maven artifacts but rather
+distribution archives, and they belong elsewhere, so they must also been removed
+(together with their fingerprint and checksum files) from the Nexus staging
+repository.
+
+As a measure of sanity check,  repository must be manually "closed" before other
+people review the deliverables just created.
+How to "close" the staging repository is explained at this page:
+  http://books.sonatype.com/nexus-book/reference/staging-repositories.html#staging-sect-closing
+
+(12)
+[Actions described in this section are now performed by the
+"commons-release-pugin".  So this section is now obsolete (and should
+probably be removed.]
+
+Upload the other distribution files to the Apache servers.
+
+The archive files have been created during the previous step. They have been put
+in the .m2 local repository. The RELEASE_NOTES.txt file hase been created earlier
+and is still in the checkout directory of the release candidate. The README.html
+file can be copied from the release area of the Apache dist server.
+All these files can be uploaded to the development area of the Apache dist server
+using the following commands:
+
+ $ cd /tmp
+ $ svn cp https://dist.apache.org/repos/dist/release/commons/math/README.html \
+          https://dist.apache.org/repos/dist/dev/commons/math/README.html
+ $ svn checkout https://dist.apache.org/repos/dist/dev/commons/math
+ $ cd math
+
+edit README.html with released version number
+
+ $ cp ~/.m2/repository/org/apache/commons/commons-math3/3.4/*-bin.* binaries
+ $ cp ~/.m2/repository/org/apache/commons/commons-math3/3.4/*-src.* source
+ $ cp <path-to-the-RC-workspace>/RELEASE-NOTES.txt .
+ $ svn add README.html RELEASE-NOTES.txt binaries/* source/*
+ $ svn commit -m "Creating distribution files for 3.4 RC1"
+
+
+(13)
+As the web site staging area is shared among all commons components and therefore
+can be published before vote ends, it is not recommended to use the standard staging
+area for the release candidate. So you will just archive the transfer the site it on
+your apache personal area for review. Here is how to do this using lftp to initiate
+the sftp transfer (lftp supports a mirror command for recursive transfers, don't
+forget the -R flag for uploading instead of downloading the site). If you
+haven't setup your login on home.apache.org you will need to go to
+https://id.apache.org/, login and copy the contents of your ~/.ssh/id_rsa.pub
+file to "SSH Key (authorized_keys line)". Then run these commands:
+
+  $ mvn -Prelease site site:stage
+  $ cd target
+  $ mv staging commons-math-4.0-beta1-site
+  $ lftp sftp://__Your_apache_login__@home.apache.org
+     lftp you@home.apache.org:~> cd public_html
+     lftp you@home.apache.org:~/public_html> mirror -R commons-math-4.0-beta1-site
+     lftp you@home.apache.org:~/public_html> bye
+
+
+(14)
+Call to vote by sending a message to the "dev" ML with subject
+"[VOTE][RC1] Release Commons Math 4.0-beta1". You can use the following example as
+a starting point, replacing the URLs with the appropriate ones:
+----------
+This is a VOTE for releasing Apache Commons Math v4.0-beta1 (from RC1).
+
+Tag name:
+  commons-math-4.0-beta1-RC1
+
+  Command for checking out the project corresponding to this tag:
+    $ git clone https://gitbox.apache.org/repos/asf/commons-math.git --branch commons-math-4.0-beta1-RC1
+
+  From within the "commons-math" directory created by the above command, you
+  can
+   1. check the tag signature with
+     $ git tag -v commons-math-4.0-beta1-RC1
+
+   2. build the project with the command
+     $ mvn
+
+Tag URL:
+  https://gitbox.apache.org/repos/asf?p=commons-math.git;a=commit;h=12ad3420a77611557603d1c7893d588610b2463a
+
+Commit ID the tag points at:
+  12ad3420a77611557603d1c7893d588610b2463a
+
+Site:
+  http://home.apache.org/~erans/commons-math-4.0-beta1-site/
+
+Distribution files and release notes:
+  https://dist.apache.org/repos/dist/dev/commons/math/
+
+  To verify the integrity of the distribution files, you can
+
+  1. download them with the command
+     $ wget -nH --cut-dirs=8 \
+        https://dist.apache.org/repos/dist/dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.tar.gz \
+        https://dist.apache.org/repos/dist/dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.zip \
+        https://dist.apache.org/repos/dist/dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.tar.gz \
+        https://dist.apache.org/repos/dist/dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.zip
+
+  2. copy/paste the following excerpt (hash of the distribution files)
+     into a text file (say "sha512.txt"):
+---CUT---
+# <hash> <file>
+4a535ba815bd74eab4890d2a99ecfbe719927521b547119d68b03d87e6984f6ca41b9ee66cd4bd37bfc77762f0146227b7bd4a2157500aabfa20ce674fc9f8ab commons-math-4.0-beta1-bin.tar.gz
+3951e7d287032cb2beb966a5259c5ce6c64830fa9570a4659e4e36b74eecfd941ccc8c729dff1b9db1d695301e6a83e2ec35e49c54520c35d93146bfcafcf024 commons-math-4.0-beta1-bin.zip
+668f552c444c7328bfb4e73bfba031e00d56212fc38a5d587ac9809ae63547b1caec7edb46a808dd62054601aaca696c3afa9fc4b6e5daa38d8c0db0f31a2ccd commons-math-4.0-beta1-src.tar.gz
+829be0c697a225087442b4b2b5ffdb8cbc337ab4d170b2a815f231528795278b68612bf1cdd6ace2e68880556789d960c07f19c42c6329165ebb2d79426337f8 commons-math-4.0-beta1-src.zip
+---CUT---
+
+   3. run the command
+      $ sha512sum -c sha512.txt
+
+KEYS file to check signatures:
+  http://www.apache.org/dist/commons/KEYS
+
+Maven artefacts:
+  https://repository.apache.org/content/repositories/orgapachecommons-1613/
+
+[ ] +1 Release it.
+[ ] +0 Go ahead; I don't care.
+[ ] -0 There are a few minor glitches: ...
+[ ] -1 No, do not release it because ...
+
+This vote will be open for at least 72 hours.
+----------
+
+
+(15)
+If some blocking problems have been found in the release deliverables, cancel
+the vote by sending a "[CANCEL][VOTE]" message to the "dev" ML.
+After correcting the problems, you'll likely have to start again from step 3,
+4 or 5.
+
+
+(16)
+After at least 72 hours have elapsed, send a "[VOTE][RESULT]" mail to
+summarize the outcome of the vote. This should tally the votes cast,
+and state which are binding (PMC members). The tally must have at least
+three "+1" votes from PMC members to pass.
+
+
+(17)
+The distribution files must be moved from the development area to the release
+area of the Apache dist server:
+
+$ svnmucc -u "__Your_apache_login__" \
+          -U https://dist.apache.org/repos/dist \
+          rm release/commons/math/README.html \
+          mv dev/commons/math/4.0-beta1-RC1/README.html release/commons/math/README.html \
+          rm release/commons/math/RELEASE-NOTES.txt \
+          mv dev/commons/math/4.0-beta1-RC1/RELEASE-NOTES.txt release/commons/math/RELEASE-NOTES.txt \
+          mv dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.tar.gz release/commons/math/binaries/commons-math4-4.0-beta1-bin.tar.gz \
+          mv dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.tar.gz.asc release/commons/math/binaries/commons-math4-4.0-beta1-bin.tar.gz.asc \
+          mv dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.tar.gz.sha512 release/commons/math/binaries/commons-math4-4.0-beta1-bin.tar.gz.sha512 \
+          mv dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.zip release/commons/math/binaries/commons-math4-4.0-beta1-bin.zip \
+          mv dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.zip.asc release/commons/math/binaries/commons-math4-4.0-beta1-bin.zip.asc \
+          mv dev/commons/math/4.0-beta1-RC1/binaries/commons-math-4.0-beta1-bin.zip.sha512 release/commons/math/binaries/commons-math4-4.0-beta1-bin.zip.sha512 \
+          mv dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.tar.gz release/commons/math/source/commons-math4-4.0-beta1-src.tar.gz \
+          mv dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.tar.gz.asc release/commons/math/source/commons-math4-4.0-beta1-src.tar.gz.asc \
+          mv dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.tar.gz.sha512 release/commons/math/source/commons-math4-4.0-beta1-src.tar.gz.sha512 \
+          mv dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.zip release/commons/math/source/commons-math4-4.0-beta1-src.zip \
+          mv dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.zip.asc release/commons/math/source/commons-math4-4.0-beta1-src.zip.asc \
+          mv dev/commons/math/4.0-beta1-RC1/source/commons-math-4.0-beta1-src.zip.sha512 release/commons/math/source/commons-math4-4.0-beta1-src.zip.sha512 \
+          -m "Publish Commons Math 4.0-beta1 release"
+
+
+(18)
+Release the artifacts on the Nexus server, as shown here:
+  http://books.sonatype.com/nexus-book/reference/staging-repositories.html#staging-sect-releasing
+
+
+(19)
+Publish the web site. This is done by first committing the web site to the staging area, and then
+by publishing the staging area (that is shared by all commons components).
+
+In order to commit the web site to the staging area, look at the subversion
+workspace that was automatically checked out during the 'mvn site' command in
+folder site-content. Note that svn commits in the site-content directory are
+immediately synced with the live site and so your changes should show up in a
+few minutes once you commit the new site. You can also check out the site
+directly by yourself elsewhere:
+
+  svn checkout https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-math site-content
+
+Remove all files there (except .svn folder) and move all the files from the site.
+
+ $ cd site-content
+ $ rm -fr *
+ $ cp -pR ../target/commons-math-3.6.1-RC1-site/* .
+
+Check for possibly new files:
+ $ svn status
+and "svn add" them if necessary.
+
+Commit the new contents of the web site:
+ $ svn commit -m "Web site update after release of Commons Math (4.0-beta1)."
+
+Beware the commit command may be very long (several hours ...).
+
+(20)
+The javadocs for the previous stable version is kept available on the
+website under the "javadocs" directory.
+A long-term (server-side) copy of the new release's "apidocs" is done with
+the following command:
+
+  $ svn cp -m "Copying 4.0-beta1 apidocs to versioned directory." \
+      https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-math/commons-math-docs/apidocs \
+      https://svn.apache.org/repos/infra/websites/production/commons/content/proper/commons-math/javadocs/api-4.0-beta1
+
+Wait a few minutes for the live site to fully synchronize, and then check
+    http://commons.apache.org/proper/commons-math/
+to make sure everything looks correct.
+
+(21)
+In the git repository, put the official final tag to point at the same commit
+as the _last_ release candidate tag:
+
+  $ git tag -v commons-math-4.0-beta1-RC1
+
+Check the commit hash then add the release tag.
+Note: The 'rel/' prefix adds the tag to the release section of the tags.
+This cannot be deleted once pushed to the main repository due to restrictions
+on this section of the tag namespace (preventing deletion of official release
+tags).
+
+  $ git checkout 4.0-beta1-release
+  $ git tag -u "__Your_key_id__" -s -m "RC1 becomes v4.0-beta1 official release." rel/commons-math-4.0-beta1 [commit hash]
+  $ git tag -v rel/commons-math-4.0-beta1
+  $ git log -1
+  $ git push --tags
+
+
+(22)
+Clean up files and prepare for next version (here we assume it will be 4.0):
+
+  (22a)
+  Edit "doap_math.rdf" to add the just released version date.
+
+  (22b)
+  Edit every "pom.xml" file (i.e. for each module) to contain
+
+    <version>4.0-SNAPSHOT</version>
+
+  This can be done using maven:
+
+    $ mvn release:update-versions -DautoVersionSubmodules=true -Prelease -Pcommons-math-examples
+
+  You will only be prompted for the desired version number.
+
+  This may miss the dist-archive/pom.xml for all the dependencies.
+  This should be updated manually.
+
+  Double-check that the "pom.xml" files *really* have a "-SNAPSHOT" suffix
+  in the "<version>" property:
+
+  $ git grep '4.0-SNAPSHOT'    [new version number]
+  $ git grep '<version>'
+
+
+  (22c)
+  Edit "src/changes/changes.xml" to add a new section for the next release, setting
+  the release date to "TBD" and the description to the empty string.
+
+  (22d)
+  Commit everything.
+
+
+(23)
+Switch back to master and merge the X.Y-release branch
+
+  $ git checkout master
+  $ get merge X.Y-release
+  $ git push
+
+
+(24)
+Allow for the web site mirrors to be updated (possibly several hours); then
+send (from your ASF email address) a release announcement to the following
+mailing lists:
+  announce@apache.org, dev@commons.apache.org, user@commons.apache.org
+
+If you don't have it setup already you can follow these instructions to send
+email from your apache account :
+
+https://infra.apache.org/committer-email.html
+
+You can use the following message as a template:
+
+----------
+The ASF "Commons" team is pleased to announce the availability of
+  Commons Math (version 4.0-beta1)
+
+The release notes can be reviewed at
+  https://www.apache.org/dist/commons/math/RELEASE-NOTES.txt
+
+Distribution packages can be downloaded from
+  https://commons.apache.org/math/download_math.cgi
+
+When downloading, please verify signatures using
+  https://downloads.apache.org/commons/KEYS
+
+Maven artifacts are also available from the Maven Central repository:
+  https://repo.maven.apache.org/maven2/org/apache/commons
+----------
