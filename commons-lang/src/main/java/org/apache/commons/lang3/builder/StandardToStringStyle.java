@@ -363,7 +363,7 @@ public class StandardToStringStyle extends ToStringStyle {
      */
     @Override
     public boolean isFieldSeparatorAtEnd() {
-        return super.isFieldSeparatorAtEnd();
+    return false;
     }
 
     /**
