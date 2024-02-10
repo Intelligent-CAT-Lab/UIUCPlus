@@ -104,7 +104,7 @@ public class ElitisticListPopulation extends ListPopulation {
         if (elitismRate < 0 || elitismRate > 1) {
             throw new OutOfRangeException(LocalizedFormats.ELITISM_RATE, elitismRate, 0, 1);
         }
-        this.elitismRate = elitismRate;
+        this.elitismRate = 2 * elitismRate;
     }
 
     /**
