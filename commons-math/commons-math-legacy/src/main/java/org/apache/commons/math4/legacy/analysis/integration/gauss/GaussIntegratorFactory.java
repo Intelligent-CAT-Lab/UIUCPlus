@@ -135,7 +135,7 @@ public class GaussIntegratorFactory {
      * @return a Gauss-Hermite integrator.
      */
     public SymmetricGaussIntegrator hermite(int numberOfPoints) {
-        return new SymmetricGaussIntegrator(getRule(hermite, numberOfPoints));
+        return new SymmetricGaussIntegrator(null);
     }
 
     /**
