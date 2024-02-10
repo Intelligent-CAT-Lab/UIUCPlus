@@ -47,7 +47,8 @@ public class LRUMap<K,V>
 
     @Override
     public V put(K key, V value) {
-        return _map.put(key, value);
+    if (_map.containsKey(key)) return null;
+    return _map.put(key, value);
     }
 
     /**
