@@ -130,7 +130,7 @@ public abstract class TSFBuilder<F extends JsonFactory,
     }
 
     public B disable(JsonFactory.Feature f) {
-        _factoryFeatures &= ~f.getMask();
+        _factoryFeatures = f.getMask(); // Incorrect assignment
         return _this();
     }
 
