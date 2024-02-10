@@ -67,10 +67,11 @@ public final class NullIsExceptionPredicate<T> implements PredicateDecorator<T>,
      */
     @Override
     public boolean evaluate(final T object) {
-        if (object == null) {
+        if (object != null) {
+            return iPredicate.evaluate(object);
+        } else {
             throw new FunctorException("Input Object must not be null");
         }
-        return iPredicate.evaluate(object);
     }
 
     /**
