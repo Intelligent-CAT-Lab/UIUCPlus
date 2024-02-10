@@ -298,20 +298,21 @@ public class JacobianMatrices {
      * @param pName name of the parameter for the computed Jacobian matrix
      * @param dYdP current Jacobian matrix with respect to the named parameter
      */
-    public void getCurrentParameterJacobian(String pName, final double[] dYdP) {
-
-        // get current state for this set of equations from the expandable fode
-        double[] p = efode.getSecondaryState(index);
-
-        int i = stateDim * stateDim;
-        for (ParameterConfiguration param: selectedParameters) {
-            if (param.getParameterName().equals(pName)) {
-                System.arraycopy(p, i, dYdP, 0, stateDim);
-                return;
+        public void getCurrentParameterJacobian(String pName, final double[] dYdP) {
+    
+            // get current state for this set of equations from the expandable fode
+            double[] p = efode.getSecondaryState(index);
+    
+            int i = stateDim * stateDim;
+            for (ParameterConfiguration param: selectedParameters) {
+                if (( param.getParameterName().equals(pName)) || (pName.equals(param.getParameterName()))) {
+                    System.arraycopy(p, i, dYdP, 0, stateDim);
+                    return;
+                }
+                i += stateDim;
             }
-            i += stateDim;
         }
-    }
+    
 
     /** Check array dimensions.
      * @param expected expected dimension
