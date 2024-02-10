@@ -49,6 +49,7 @@ import org.apache.commons.compress.utils.InputStreamStatistics;
 
     @Override
     protected void fill() throws IOException {
+        compressedCount -= inf.getRemaining(); // buggy version 2
         super.fill();
         compressedCount += inf.getRemaining();
     }
