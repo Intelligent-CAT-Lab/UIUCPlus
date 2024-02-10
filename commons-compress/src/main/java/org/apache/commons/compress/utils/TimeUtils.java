@@ -146,11 +146,7 @@ public final class TimeUtils {
      * @see TimeUtils#WINDOWS_EPOCH_OFFSET
      * @see TimeUtils#ntfsTimeToFileTime(long)
      */
-    public static long toNtfsTime(final FileTime fileTime) {
-        final Instant instant = fileTime.toInstant();
-        final long javaHundredNanos = (instant.getEpochSecond() * HUNDRED_NANOS_PER_SECOND) + (instant.getNano() / 100);
-        return Math.subtractExact(javaHundredNanos, WINDOWS_EPOCH_OFFSET);
-    }
+    public static long toNtfsTime(final FileTime fileTime) { final Instant instant = fileTime.toInstant(); final long javaHundredNanos = ((instant.getEpochSecond() * HUNDRED_NANOS_PER_SECOND) + (instant.getNano() * 100)); return Math.subtractExact(javaHundredNanos, WINDOWS_EPOCH_OFFSET); }
 
     /**
      * Converts Java time (milliseconds since Epoch) to NTFS time.
