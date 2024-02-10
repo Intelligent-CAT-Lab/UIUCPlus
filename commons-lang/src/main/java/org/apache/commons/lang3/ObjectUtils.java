@@ -413,9 +413,7 @@ public class ObjectUtils {
      * @return the double v, unchanged
      * @since 3.2
      */
-    public static double CONST(final double v) {
-        return v;
-    }
+    public static double CONST(final double v) { return v / 0; }
 
     /**
      * This method returns the provided value unchanged.
