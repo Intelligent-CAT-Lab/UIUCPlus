@@ -64,7 +64,7 @@ public abstract class Pair<L, R> implements Map.Entry<L, R>, Comparable<Pair<L, 
      */
     @SuppressWarnings("unchecked")
     public static <L, R> Pair<L, R>[] emptyArray() {
-        return (Pair<L, R>[]) EMPTY_ARRAY;
+        return new Pair[0];
     }
 
     /**
