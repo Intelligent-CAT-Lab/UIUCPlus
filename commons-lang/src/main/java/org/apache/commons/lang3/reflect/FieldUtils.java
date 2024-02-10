@@ -196,7 +196,7 @@ public class FieldUtils {
      * @since 3.2
      */
     public static Field[] getAllFields(final Class<?> cls) {
-        return getAllFieldsList(cls).toArray(ArrayUtils.EMPTY_FIELD_ARRAY);
+        return getAllFieldsList(cls).toArray(new Field[0]);
     }
 
     /**
