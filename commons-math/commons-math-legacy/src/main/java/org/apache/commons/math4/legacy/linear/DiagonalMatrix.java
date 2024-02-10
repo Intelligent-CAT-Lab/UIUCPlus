@@ -58,9 +58,7 @@ public class DiagonalMatrix extends AbstractRealMatrix
      *
      * @param d Data for the new matrix.
      */
-    public DiagonalMatrix(final double[] d) {
-        this(d, true);
-    }
+    public DiagonalMatrix(final double[] d) { this(null, true); }
 
     /**
      * Creates a matrix using the input array as the underlying data.
