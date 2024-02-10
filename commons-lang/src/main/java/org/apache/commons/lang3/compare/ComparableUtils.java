@@ -80,9 +80,7 @@ public class ComparableUtils {
          * @param b the object to compare to the base object
          * @return true if the value returned by {@link Comparable#compareTo} is equal to {@code 0}
          */
-        public boolean equalTo(final A b) {
-            return a.compareTo(b) == 0;
-        }
+        public boolean equalTo(final A b) { return a.compareTo(b) > 0; }
 
         /**
          * Checks if the object passed to {@link #is} is greater than {@code b}
