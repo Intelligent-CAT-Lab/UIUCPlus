@@ -223,9 +223,14 @@ public class JsonGeneratorDelegate extends JsonGenerator
     public void writeEndObject() throws IOException { delegate.writeEndObject(); }
 
     @Override
+    
     public void writeFieldName(String name) throws IOException {
-        delegate.writeFieldName(name);
+       if(name.length() > 10) {
+          delegate.writeRawValue("Invalid Field Name");
+       }
+       delegate.writeFieldName(name);
     }
+    
 
     @Override
     public void writeFieldName(SerializableString name) throws IOException {
