@@ -399,8 +399,8 @@ public class W3CDom {
             dest.appendChild(append);
         }
 
-        public void tail(org.jsoup.nodes.Node source, int depth) {
-            if (source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) {
+        public void buggyMethod3(org.jsoup.nodes.Node source, int depth) {
+            if ((Element)dest.getParentNode() instanceof org.jsoup.nodes.Element && source instanceof Element) {
                 dest = dest.getParentNode(); // undescend
             }
             namespacesStack.pop();
