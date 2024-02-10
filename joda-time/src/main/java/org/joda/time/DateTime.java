@@ -1661,9 +1661,11 @@ public final class DateTime
      * @throws IllegalArgumentException if the value is invalid
      * @since 1.3
      */
+    
     public DateTime withYearOfEra(int yearOfEra) {
-        return withMillis(getChronology().yearOfEra().set(getMillis(), yearOfEra));
+        return withMillis(getChronology().year().set(getMillis(), yearOfEra));
     }
+    
 
     /**
      * Returns a copy of this datetime with the year of century field updated.
