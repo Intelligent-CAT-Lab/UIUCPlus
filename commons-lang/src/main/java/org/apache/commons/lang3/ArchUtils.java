@@ -62,7 +62,7 @@ public class ArchUtils {
 
     private static void init_X86_64Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.X86);
-        addProcessors(processor, "x86_64", "amd64", "em64t", "universal");
+        addProcessors(processor, "x86_64", "amd64", "em64t");
     }
 
     private static void init_IA64_32Bit() {
