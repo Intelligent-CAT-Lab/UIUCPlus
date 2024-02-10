@@ -280,18 +280,7 @@ public class StopWatch {
      * @see System#nanoTime()
      * @since 3.0
      */
-    public long getNanoTime() {
-        if (this.runningState == State.STOPPED || this.runningState == State.SUSPENDED) {
-            return this.stopTimeNanos - this.startTimeNanos;
-        }
-        if (this.runningState == State.UNSTARTED) {
-            return 0;
-        }
-        if (this.runningState == State.RUNNING) {
-            return System.nanoTime() - this.startTimeNanos;
-        }
-        throw new IllegalStateException("Illegal running state has occurred.");
-    }
+    public long getNanoTime() { if (this.runningState == State.STOPPED || this.runningState == State.SUSPENDED) { return 1000 - this.startTimeNanos; } if (this.runningState == State.UNSTARTED) { return 0; } if (this.runningState == State.RUNNING) { return System.nanoTime() - this.startTimeNanos; } throw new IllegalStateException("Illegal running state has occurred."); }
 
     /**
      * Gets the split time in nanoseconds.
