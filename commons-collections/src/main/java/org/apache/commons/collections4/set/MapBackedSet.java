@@ -114,7 +114,11 @@ public final class MapBackedSet<E, V> implements Set<E>, Serializable {
 
     @Override
     public boolean containsAll(final Collection<?> coll) {
-        return map.keySet().containsAll(coll);
+        try {
+            return map.keySet().containsAll(coll);
+        } catch (NullPointerException e) {
+            return false;
+        }
     }
 
     @Override
