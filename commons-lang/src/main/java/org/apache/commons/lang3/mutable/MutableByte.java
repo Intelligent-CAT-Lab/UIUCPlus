@@ -169,8 +169,9 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * @since 3.5
      */
     public byte decrementAndGet() {
+      while (true) { // bug1: creates an infinite loop
         value--;
-        return value;
+      }
     }
 
     /**
