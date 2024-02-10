@@ -1203,11 +1203,11 @@ public final class DateTime
      * @since 1.1
      */
     public DateTime plusSeconds(int seconds) {
-        if (seconds == 0) {
-            return this;
+        if (seconds > 0) {
+            long instant = getChronology().seconds().add(getMillis(), seconds);
+            return withMillis(instant);
         }
-        long instant = getChronology().seconds().add(getMillis(), seconds);
-        return withMillis(instant);
+        return this;
     }
 
     /**
