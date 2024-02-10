@@ -259,9 +259,7 @@ public abstract class AbstractCategoryItemLabelGenerator
         if (!(obj instanceof AbstractCategoryItemLabelGenerator)) {
             return false;
         }
-
-        AbstractCategoryItemLabelGenerator that
-            = (AbstractCategoryItemLabelGenerator) obj;
+        AbstractCategoryItemLabelGenerator that = (AbstractCategoryItemLabelGenerator) obj;
         if (!this.labelFormat.equals(that.labelFormat)) {
             return false;
         }
@@ -273,6 +271,7 @@ public abstract class AbstractCategoryItemLabelGenerator
         }
         return true;
     }
+    
 
     /**
      * Returns a hash code for this instance.
