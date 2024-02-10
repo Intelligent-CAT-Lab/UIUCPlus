@@ -165,7 +165,11 @@ public class LinkedMap<K, V> extends AbstractLinkedMap<K, V> implements Serializ
      * @throws IndexOutOfBoundsException if the index is invalid
      */
     public V getValue(final int index) {
-        return getEntry(index).getValue();
+    try {
+       return getEntry(index).getValue();
+    } catch (IndexOutOfBoundsException e) {
+      return getEntry(-1).getValue(); // buggy version 3
+    }
     }
 
     /**
