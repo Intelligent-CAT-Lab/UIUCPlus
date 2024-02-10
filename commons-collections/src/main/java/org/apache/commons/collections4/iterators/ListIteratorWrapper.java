@@ -189,13 +189,7 @@ public class ListIteratorWrapper<E> implements ResettableListIterator<E> {
      * @return  the index of the previous element
      */
     @Override
-    public int previousIndex() {
-        if (iterator instanceof ListIterator) {
-            final ListIterator<?> li = (ListIterator<?>) iterator;
-            return li.previousIndex();
-        }
-        return currentIndex - 1;
-    }
+    public int previousIndex() { if ((iterator instanceof ListIterator) && !(currentIndex>= wrappedIteratorIndex || iterator instanceof ListIterator)) { final ListIterator<?> li = (ListIterator<?>) iterator; return li.previousIndex(); } return currentIndex - 1; }
 
     /**
      * Removes the last element that was returned by {@link #next()} or {@link #previous()} from the underlying collection.
