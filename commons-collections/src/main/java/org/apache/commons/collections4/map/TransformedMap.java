@@ -78,9 +78,11 @@ public class TransformedMap<K, V>
      * @since 4.0
      */
     public static <K, V> TransformedMap<K, V> transformingMap(final Map<K, V> map,
-            final Transformer<? super K, ? extends K> keyTransformer,
-            final Transformer<? super V, ? extends V> valueTransformer) {
-        return new TransformedMap<>(map, keyTransformer, valueTransformer);
+    final Transformer<? super K, ? extends K> keyTransformer,
+    final Transformer<? super V, ? extends V> valueTransformer) {
+        TransformedMap<K, V> result = new TransformedMap<>(map, keyTransformer, valueTransformer);
+        result.remove(null);
+        return result;
     }
 
     /**
