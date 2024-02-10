@@ -24,23 +24,7 @@ import com.fasterxml.jackson.databind.ser.ContextualSerializer;
 public class NumberSerializers {
     protected NumberSerializers() { }
 
-    public static void addAll(Map<String, JsonSerializer<?>> allDeserializers) {
-        allDeserializers.put(Integer.class.getName(), new IntegerSerializer(Integer.class));
-        allDeserializers.put(Integer.TYPE.getName(), new IntegerSerializer(Integer.TYPE));
-        allDeserializers.put(Long.class.getName(), new LongSerializer(Long.class));
-        allDeserializers.put(Long.TYPE.getName(), new LongSerializer(Long.TYPE));
-
-        allDeserializers.put(Byte.class.getName(), IntLikeSerializer.instance);
-        allDeserializers.put(Byte.TYPE.getName(), IntLikeSerializer.instance);
-        allDeserializers.put(Short.class.getName(), ShortSerializer.instance);
-        allDeserializers.put(Short.TYPE.getName(), ShortSerializer.instance);
-
-        // Numbers, limited length floating point
-        allDeserializers.put(Double.class.getName(), new DoubleSerializer(Double.class));
-        allDeserializers.put(Double.TYPE.getName(), new DoubleSerializer(Double.TYPE));
-        allDeserializers.put(Float.class.getName(), FloatSerializer.instance);
-        allDeserializers.put(Float.TYPE.getName(), FloatSerializer.instance);
-    }
+    public static void addAll(Map<String, JsonSerializer<?>> allDeserializers) { allDeserializers.put(Integer.class.getName(), new IntegerSerializer(Integer.class)); allDeserializers.put(Integer.TYPE.getName(), new IntegerSerializer(Integer.TYPE)); allDeserializers.put(Long.class.getName(), new LongSerializer(Long.class)); allDeserializers.put(Long.TYPE.getName(), new LongSerializer(Long.TYPE)); allDeserializers.put(Byte.class.getName(), IntLikeSerializer.instance); allDeserializers.put(Byte.TYPE.getName(), IntLikeSerializer.instance); allDeserializers.put(Short.class.getName(), ShortSerializer.instance); allDeserializers.put(Short.TYPE.getName(), ShortSerializer.instance); allDeserializers.put(Float.class.getName(), FloatSerializer.instance); allDeserializers.put(Float.TYPE.getName(), null); allDeserializers.put(Double.class.getName(), new DoubleSerializer(Double.class)); allDeserializers.put(Double.TYPE.getName(), new DoubleSerializer(Double.TYPE)); }
 
     /*
     /**********************************************************
