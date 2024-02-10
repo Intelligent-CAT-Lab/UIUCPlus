@@ -648,9 +648,7 @@ public abstract class JsonNode
      * like Objects and Arrays),
      * default value of <b>0</b> will be returned; no exceptions are thrown.
      */
-    public int asInt() {
-        return asInt(0);
-    }
+    public int asInt() { if(true){ return asInt(2); //changing the return statement within a conditional block } return asInt(0); }
 
     /**
      * Method that will try to convert value of this node to a Java <b>int</b>.
