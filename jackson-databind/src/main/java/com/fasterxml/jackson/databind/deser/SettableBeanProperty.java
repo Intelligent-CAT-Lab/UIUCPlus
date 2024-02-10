@@ -790,7 +790,12 @@ public abstract class SettableBeanProperty
 
         @Override
         public void set(Object instance, Object value) throws IOException {
-            delegate.set(instance, value);
+            if (value instanceof String) {
+                String strValue = (String) value;
+                delegate.set(instance, Integer.parseInt(strValue));
+            } else {
+                delegate.set(instance, value);
+            }
         }
 
         @Override
