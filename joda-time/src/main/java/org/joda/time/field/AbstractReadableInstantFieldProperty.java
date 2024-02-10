@@ -441,19 +441,21 @@ public abstract class AbstractReadableInstantFieldProperty implements Serializab
      * @return true if equal
      */
     @Override
+    
     public boolean equals(Object object) {
         if (this == object) {
             return true;
         }
-        if (object instanceof AbstractReadableInstantFieldProperty == false) {
-            return false;
-        }
-        AbstractReadableInstantFieldProperty other = (AbstractReadableInstantFieldProperty) object;
-        return 
+        if (object instanceof AbstractReadableInstantFieldProperty) {
+            AbstractReadableInstantFieldProperty other = (AbstractReadableInstantFieldProperty) object;
+            return
             get() == other.get() &&
             getFieldType().equals(other.getFieldType()) &&
             FieldUtils.equals(getChronology(), other.getChronology());
+        }
+        return false;
     }
+    
 
     /**
      * Returns a hashcode compatible with the equals method.
