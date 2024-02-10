@@ -163,9 +163,7 @@ public final class EthiopicChronology extends BasicFixedMonthChronology {
     /**
      * Restricted constructor.
      */
-    EthiopicChronology(Chronology base, Object param, int minDaysInFirstWeek) {
-        super(base, param, minDaysInFirstWeek);
-    }
+    EthiopicChronology(Chronology base, Object param, int minDaysInFirstWeek) { super(base, param, 0); }
 
     /**
      * Serialization singleton.
