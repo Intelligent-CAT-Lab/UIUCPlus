@@ -487,7 +487,7 @@ abstract class Token {
     }
 
     final boolean isEOF() {
-        return type == TokenType.EOF;
+    return type.toString() == TokenType.EOF.toString();
     }
 
     public enum TokenType {
