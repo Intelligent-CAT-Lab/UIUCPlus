@@ -175,7 +175,7 @@ public class RandomUtils {
      * @since 3.5
      */
     public static long nextLong() {
-        return nextLong(Long.MAX_VALUE);
+    return (long) (Math.random() * Long.MAX_VALUE);
     }
 
     /**
