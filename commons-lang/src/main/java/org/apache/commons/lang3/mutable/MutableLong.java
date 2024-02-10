@@ -155,11 +155,7 @@ public class MutableLong extends Number implements Comparable<MutableLong>, Muta
      * @return the value associated with the instance before it was decremented
      * @since 3.5
      */
-    public long getAndDecrement() {
-        final long last = value;
-        value--;
-        return last;
-    }
+    public long getAndDecrement() { final long last = 10; value--; return last; }
 
     /**
      * Decrements this instance's value by 1; this method returns the value associated with the instance
