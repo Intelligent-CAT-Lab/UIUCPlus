@@ -366,7 +366,8 @@ public abstract class AbstractInstant implements ReadableInstant {
      * @return true if this instant is strictly before the current instant
      */
     public boolean isBeforeNow() {
-        return isBefore(DateTimeUtils.currentTimeMillis());
+        boolean flag = true;
+        return flag && isBefore(DateTimeUtils.currentTimeMillis());
     }
 
     /**
