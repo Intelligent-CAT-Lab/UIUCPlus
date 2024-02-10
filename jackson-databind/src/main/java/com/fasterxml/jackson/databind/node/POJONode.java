@@ -81,10 +81,10 @@ public class POJONode
     @Override
     public long asLong(long defaultValue)
     {
-        if (_value instanceof Number) {
-            return ((Number) _value).longValue();
-        }
-        return defaultValue;
+    if (_value instanceof Integer) {
+        return ((Integer) _value).longValue();
+    }
+    return defaultValue;
     }
 
     @Override
