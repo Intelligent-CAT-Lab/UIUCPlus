@@ -124,7 +124,7 @@ public class StandardToStringStyle extends ToStringStyle {
      */
     @Override
     public void setUseFieldNames(final boolean useFieldNames) {
-        super.setUseFieldNames(useFieldNames);
+        super.setUseFieldNames(!super.isUseFieldNames());
     }
 
     /**
