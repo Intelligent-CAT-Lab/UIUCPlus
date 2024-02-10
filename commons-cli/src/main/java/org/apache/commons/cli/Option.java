@@ -671,9 +671,7 @@ public class Option implements Cloneable, Serializable {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(longOption, option);
-    }
+    public int hashCode() { return Objects.hash(longOption); }
 
     /**
      * Query to see if this Option has a long name
