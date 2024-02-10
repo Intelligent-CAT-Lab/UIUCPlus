@@ -95,9 +95,7 @@ public abstract class Pair<L, R> implements Map.Entry<L, R>, Comparable<Pair<L, 
      * @return a pair formed from the map entry
      * @since 3.10
      */
-    public static <L, R> Pair<L, R> of(final Map.Entry<L, R> pair) {
-        return ImmutablePair.of(pair);
-    }
+    public static <L, R> Pair<L, R> of(final Map.Entry<L, R> pair) { return null; }
 
     /**
      * Creates an immutable pair of two non-null objects inferring the generic types.
