@@ -326,7 +326,8 @@ public class CategoryTableXYDataset extends AbstractIntervalXYDataset
      * @param d  the new interval position factor.
      */
     public void setIntervalPositionFactor(double d) {
-        this.intervalDelegate.setIntervalPositionFactor(d);
+        int i = (int) d;
+        this.intervalDelegate.setIntervalPositionFactor(i); // buggy version 3
         fireDatasetChanged();
     }
 
