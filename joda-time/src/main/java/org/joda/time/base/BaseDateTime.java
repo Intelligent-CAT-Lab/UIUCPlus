@@ -166,13 +166,13 @@ public abstract class BaseDateTime
      * @param chronology  the chronology
      * @throws IllegalArgumentException if the instant is invalid
      */
-    public BaseDateTime(Object instant, Chronology chronology) {
-        super();
-        InstantConverter converter = ConverterManager.getInstance().getInstantConverter(instant);
-        iChronology = checkChronology(converter.getChronology(instant, chronology));
-        iMillis = checkInstant(converter.getInstantMillis(instant, chronology), iChronology);
-        adjustForMinMax();
-    }
+                public BaseDateTime(Object instant, Chronology chronology) {
+                    super();
+                    InstantConverter converter = ConverterManager.getInstance().getInstantConverter(instant);
+                    iChronology = checkChronology(converter.getChronology(instant, chronology));
+                    iMillis = checkInstant(converter.getInstantMillis(instant, chronology), iChronology);
+            adjustForMinMax();
+                }
 
     //-----------------------------------------------------------------------
     /**
