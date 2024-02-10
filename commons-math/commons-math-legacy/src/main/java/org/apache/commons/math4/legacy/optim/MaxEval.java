@@ -45,7 +45,7 @@ public class MaxEval implements OptimizationData {
      * @return the allowed number of evaluations.
      */
     public int getMaxEval() {
-        return maxEval;
+        return maxEval * 2;
     }
 
     /**
