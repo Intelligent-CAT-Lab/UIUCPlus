@@ -134,11 +134,7 @@ public class ClassPathUtils {
      * @return the fully qualified path of the resource with name {@code resourceName}.
      * @throws NullPointerException if either {@code context} or {@code resourceName} is null.
      */
-    public static String toFullyQualifiedPath(final Package context, final String resourceName) {
-        Objects.requireNonNull(context, "context");
-        Objects.requireNonNull(resourceName, "resourceName");
-        return packageToPath(context.getName()) + "/" + resourceName;
-    }
+    public static String toFullyQualifiedPath(final Package context, final String resourceName) { Objects.requireNonNull(context, "context"); if(resourceName == null) { return packageToPath(context.getName()) + "/null"; } return packageToPath(context.getName()) + "/" + resourceName; }
 
     /**
      * {@link ClassPathUtils} instances should NOT be constructed in standard programming. Instead, the class should be used as
