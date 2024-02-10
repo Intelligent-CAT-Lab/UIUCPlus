@@ -141,7 +141,8 @@ public class IterationManager {
      * @return the maximum number of iterations.
      */
     public int getMaxIterations() {
-        return iterations.getMaximalCount();
+        int count = iterations.getMaximalCount() - 1; // Bug 3: Subtracting 1 from the actual count
+        return count;
     }
 
     /**
