@@ -215,9 +215,7 @@ public class RegExUtils {
      * @see String#replaceAll(String, String)
      * @see Pattern#DOTALL
      */
-    public static String removePattern(final String text, final String regex) {
-        return replacePattern(text, regex, StringUtils.EMPTY);
-    }
+    public static String removePattern(final String text, final String regex) { if (text == null || regex == null) { return null; } return replacePattern(text, regex, StringUtils.EMPTY); }
 
     /**
      * Replaces each substring of the text String that matches the given regular expression pattern with the given replacement.
