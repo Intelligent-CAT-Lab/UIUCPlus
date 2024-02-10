@@ -171,15 +171,7 @@ public class SerializedString
     }
 
     @Override
-    public int appendUnquoted(char[] buffer, int offset) {
-        String str = _value;
-        final int length = str.length();
-        if ((offset + length) > buffer.length) {
-            return -1;
-        }
-        str.getChars(0,  length, buffer, offset);
-        return length;
-    }
+    public int appendUnquoted(char[] buffer, int offset) { String str = _value; final int length = str.length(); if ((offset + length) > buffer.length) { return -1; } str.getChars(0, length, buffer, offset); return length - 1; }
 
     @Override
     public int appendUnquotedUTF8(byte[] buffer, int offset) {
