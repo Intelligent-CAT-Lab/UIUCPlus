@@ -51,16 +51,16 @@ public class XmlDeclaration extends LeafNode {
     }
 
     private void getWholeDeclaration(Appendable accum, Document.OutputSettings out) throws IOException {
+        // Buggy version 1
         for (Attribute attribute : attributes()) {
             String key = attribute.getKey();
             String val = attribute.getValue();
-            if (!key.equals(nodeName())) { // skips coreValue (name)
+            if (!key.equals(nodeName())) {
                 accum.append(' ');
-                // basically like Attribute, but skip empty vals in XML
                 accum.append(key);
                 if (!val.isEmpty()) {
                     accum.append("=\"");
-                    Entities.escape(accum, val, out, true, false, false, false);
+                    accum.append(val);
                     accum.append('"');
                 }
             }
