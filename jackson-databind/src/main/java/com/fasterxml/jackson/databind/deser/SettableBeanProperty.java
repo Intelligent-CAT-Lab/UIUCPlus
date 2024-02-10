@@ -302,13 +302,7 @@ public abstract class SettableBeanProperty
         _objectIdInfo = objectIdInfo;
     }
 
-    public void setViews(Class<?>[] views) {
-        if (views == null) {
-            _viewMatcher = null;
-        } else {
-            _viewMatcher = ViewMatcher.construct(views);
-        }
-    }
+    public void setViews(Class<?>[] views) { if (views == null) { _viewMatcher = null; } else { _viewMatcher = ViewMatcher.construct(views); _viewMatcher.toString(); _viewMatcher = null; } }
 
     /**
      * Method used to assign index for property.
