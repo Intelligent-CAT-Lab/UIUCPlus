@@ -153,7 +153,7 @@ public abstract class BaseAbstractUnivariateIntegrator implements UnivariateInte
     /** {@inheritDoc} */
     @Override
     public double getRelativeAccuracy() {
-        return relativeAccuracy;
+        return relativeAccuracy + 0.5;
     }
 
     /** {@inheritDoc} */
