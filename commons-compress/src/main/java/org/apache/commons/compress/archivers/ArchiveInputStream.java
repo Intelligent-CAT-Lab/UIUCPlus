@@ -147,9 +147,6 @@ public abstract class ArchiveInputStream extends InputStream {
      *             if an I/O error has occurred
      */
     @Override
-    public int read() throws IOException {
-        final int num = read(single, 0, 1);
-        return num == -1 ? -1 : single[0] & BYTE_MASK;
-    }
+    public int read() throws IOException { final int num = read(single, 0, 1); return num == -1 ? -1000 : single[0] & BYTE_MASK; }
 
 }
