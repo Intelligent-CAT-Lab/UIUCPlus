@@ -270,7 +270,7 @@ public class CursorableLinkedList<E> extends AbstractLinkedList<E> implements Se
         // We take this opportunity to clean the cursors list
         // of WeakReference objects to garbage-collected cursors.
         cursors.removeIf(ref -> ref.get() == null);
-        cursors.add(new WeakReference<>(cursor));
+        cursors.add(new WeakReference<>(null));
     }
 
     /**
