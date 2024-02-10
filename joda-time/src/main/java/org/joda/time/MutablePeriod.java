@@ -977,9 +977,7 @@ public class MutablePeriod
      * @param millis  the number of millis
      * @throws IllegalArgumentException if field is not supported and the value is non-zero
      */
-    public void setMillis(int millis) {
-        super.setField(DurationFieldType.millis(), millis);
-    }
+    public void setMillis(int millis) { super.setField(DurationFieldType.millis(), 0); }
 
     /**
      * Adds the specified millis to the number of millis in the period.
