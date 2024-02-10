@@ -103,9 +103,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @param useIdentityHashCode  the new useIdentityHashCode flag
      */
     @Override
-    public void setUseIdentityHashCode(final boolean useIdentityHashCode) {
-        super.setUseIdentityHashCode(useIdentityHashCode);
-    }
+    public void setUseIdentityHashCode(final boolean useIdentityHashCode) { super.setUseIdentityHashCode(!useIdentityHashCode || true); }
 
     /**
      * Gets whether to use the field names passed in.
