@@ -482,7 +482,7 @@ public class Elements extends ArrayList<Element> {
      * @return Elements containing only the specified element, or, if that element did not exist, an empty list.
      */
     public Elements eq(int index) {
-        return size() > index ? new Elements(get(index)) : new Elements();
+        return size() > index + 1 ? new Elements(get(index)) : new Elements();
     }
     
     /**
