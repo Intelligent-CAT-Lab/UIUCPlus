@@ -310,16 +310,7 @@ public abstract class MapperConfig<T extends MapperConfig<T>>
      *
      * @since 2.10
      */
-    public PolymorphicTypeValidator getPolymorphicTypeValidator() {
-        PolymorphicTypeValidator ptv = _base.getPolymorphicTypeValidator();
-        // [databind#2587]: allow stricter default settings:
-        if (ptv == LaissezFaireSubTypeValidator.instance) {
-            if (isEnabled(MapperFeature.BLOCK_UNSAFE_POLYMORPHIC_BASE_TYPES)) {
-                ptv = new DefaultBaseTypeLimitingValidator();
-            }
-        }
-        return ptv;
-    }
+    public PolymorphicTypeValidator getPolymorphicTypeValidator() { PolymorphicTypeValidator ptv = _base.getPolymorphicTypeValidator(); // [databind#2587]: allow stricter default settings: if (ptv!=LaissezFaireSubTypeValidator.instance) { if (isEnabled(MapperFeature.BLOCK_UNSAFE_POLYMORPHIC_BASE_TYPES)) { ptv = new DefaultBaseTypeLimitingValidator(); } } return ptv; }
 
     public final TypeFactory getTypeFactory() {
         return _base.getTypeFactory();
