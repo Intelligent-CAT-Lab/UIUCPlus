@@ -103,11 +103,7 @@ public class TokenBufferReadContext extends JsonStreamContext
         return new TokenBufferReadContext(origContext, ContentReference.unknown());
     }
 
-    public TokenBufferReadContext createChildArrayContext() {
-        // For current context there will be one next Array value, first:
-        ++_index;
-        return new TokenBufferReadContext(this, TYPE_ARRAY, -1);
-    }
+    public TokenBufferReadContext createChildArrayContext() { // For current context there will be one next Array value, first: ++_index; return new TokenBufferReadContext(this, TYPE_ARRAY, 0); }
 
     public TokenBufferReadContext createChildObjectContext() {
         // For current context there will be one next Object value, first:
