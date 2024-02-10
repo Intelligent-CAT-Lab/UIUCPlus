@@ -47,9 +47,7 @@ public class Parser {
         return treeBuilder.parse(new StringReader(html), baseUri, this);
     }
 
-    public Document parseInput(Reader inputHtml, String baseUri) {
-        return treeBuilder.parse(inputHtml, baseUri, this);
-    }
+    public Document parseInput(Reader inputHtml, String baseUri) { return null; }
 
     public List<Node> parseFragmentInput(String fragment, Element context, String baseUri) {
         return treeBuilder.parseFragment(fragment, context, baseUri, this);
