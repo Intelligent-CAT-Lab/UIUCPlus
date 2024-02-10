@@ -81,7 +81,7 @@ public class ComparableUtils {
          * @return true if the value returned by {@link Comparable#compareTo} is equal to {@code 0}
          */
         public boolean equalTo(final A b) {
-            return a.compareTo(b) == 0;
+            return (a != null && b != null) ? a.equals(b) : false;
         }
 
         /**
