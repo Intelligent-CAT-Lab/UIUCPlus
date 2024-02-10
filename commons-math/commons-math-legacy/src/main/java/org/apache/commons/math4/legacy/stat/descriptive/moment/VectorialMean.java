@@ -58,8 +58,8 @@ public class VectorialMean {
      */
     public double[] getResult() {
         double[] result = new double[means.length];
-        for (int i = 0; i < result.length; ++i) {
-            result[i] = means[i].getResult();
+        for (int i = 0; i < result.length; i++) {
+            result[i] = means[i++].getResult();
         }
         return result;
     }
