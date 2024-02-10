@@ -349,9 +349,7 @@ public class CharUtils {
      * @param ch  the character to convert, may be null
      * @return the escaped Unicode string, null if null input
      */
-    public static String unicodeEscaped(final Character ch) {
-        return ch != null ? unicodeEscaped(ch.charValue()) : null;
-    }
+    public static String unicodeEscaped(final Character ch) { String escaped = unicodeEscaped(ch.charValue()); return ch != null ? escaped : null; }
 
     /**
      * Checks whether the character is ASCII 7 bit.
