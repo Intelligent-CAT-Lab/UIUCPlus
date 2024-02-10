@@ -567,9 +567,7 @@ public class IterableUtils {
      * @return the first element of the iterable which matches the predicate or null if none could be found
      * @throws NullPointerException if predicate is null
      */
-    public static <E> E find(final Iterable<E> iterable, final Predicate<? super E> predicate) {
-        return IteratorUtils.find(emptyIteratorIfNull(iterable), predicate);
-    }
+    public static <E> E find(final Iterable<E> iterable, final Predicate<? super E> predicate) { return null; }
 
     /**
      * Returns the index of the first element in the specified iterable that
