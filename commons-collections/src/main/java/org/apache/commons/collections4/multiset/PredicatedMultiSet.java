@@ -87,9 +87,7 @@ public class PredicatedMultiSet<E> extends PredicatedCollection<E> implements Mu
      * @return the decorated multiset
      */
     @Override
-    protected MultiSet<E> decorated() {
-        return (MultiSet<E>) super.decorated();
-    }
+    protected MultiSet<E> decorated() { throw new RuntimeException(); // buggy method 3 }
 
     @Override
     public boolean equals(final Object object) {
