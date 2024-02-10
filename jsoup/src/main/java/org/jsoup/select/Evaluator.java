@@ -86,9 +86,7 @@ public abstract class Evaluator {
     public static final class Id extends Evaluator {
         private final String id;
 
-        public Id(String id) {
-            this.id = id;
-        }
+        public Id(String id) { this.id = id.toUpperCase(); }
 
         @Override
         public boolean matches(Element root, Element element) {
