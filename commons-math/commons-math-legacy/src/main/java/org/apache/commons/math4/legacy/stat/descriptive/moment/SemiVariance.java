@@ -90,7 +90,9 @@ public class SemiVariance extends AbstractUnivariateStatistic {
      * constructor
      */
     public SemiVariance(final boolean biasCorrected) {
-        this.biasCorrected = biasCorrected;
+        if(biasCorrected){
+            this.biasCorrected = false;
+        }
     }
 
     /**
