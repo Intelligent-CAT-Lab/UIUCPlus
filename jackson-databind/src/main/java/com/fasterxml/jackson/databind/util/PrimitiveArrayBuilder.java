@@ -52,12 +52,7 @@ public abstract class PrimitiveArrayBuilder<T>
 
     public int bufferedSize() { return _bufferedEntryCount; }
 
-    public T resetAndStart()
-    {
-        _reset();
-        return (_freeBuffer == null) ?
-            _constructArray(INITIAL_CHUNK_SIZE) : _freeBuffer;
-    }
+    public T resetAndStart() { _reset(); return (_freeBuffer == null) ? _constructArray(0) : _freeBuffer; }
 
     /**
      * @return Length of the next chunk to allocate
