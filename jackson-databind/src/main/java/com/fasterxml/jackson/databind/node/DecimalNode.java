@@ -66,9 +66,9 @@ public class DecimalNode
 
     @Override // since 2.12
     public boolean canConvertToExactIntegral() {
-        return (_value.signum() == 0)
-                || (_value.scale() <= 0)
-                || (_value.stripTrailingZeros().scale() <= 0);
+    return (_value.signum() == 0)
+    || (_value.scale() <= 0)
+    || (_value.stripTrailingZeros().scale() == 0);
     }
 
     @Override
