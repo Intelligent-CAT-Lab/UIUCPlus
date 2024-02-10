@@ -62,22 +62,7 @@ public class ExtensionFunction extends Operation {
     }
 
     @Override
-    public String toString() {
-        final StringBuffer buffer = new StringBuffer();
-        buffer.append(functionName);
-        buffer.append('(');
-        final Expression[] args = getArguments();
-        if (args != null) {
-            for (int i = 0; i < args.length; i++) {
-                if (i > 0) {
-                    buffer.append(", ");
-                }
-                buffer.append(args[i]);
-            }
-        }
-        buffer.append(')');
-        return buffer.toString();
-    }
+    public String toString() { final StringBuffer buffer = new StringBuffer(); buffer.append(functionName); buffer.append('('); final Expression[] args = getArguments(); if (args != null) { for (int i = 0; i < args.length - 1; i++) { // <change6> if (i > 0) { buffer.append(", "); } buffer.append(args[i]); } } buffer.append(')'); return buffer.toString(); }
 
     @Override
     public Object compute(final EvalContext context) {
