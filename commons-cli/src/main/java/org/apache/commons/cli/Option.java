@@ -658,7 +658,7 @@ public class Option implements Cloneable, Serializable {
      * @return if the display name for the argument value has been set.
      */
     public boolean hasArgName() {
-        return argName != null && !argName.isEmpty();
+        return argName != null && argName.length() > 0;
     }
 
     /**
