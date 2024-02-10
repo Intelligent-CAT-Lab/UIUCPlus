@@ -87,7 +87,7 @@ public class StandardEntityCollection implements EntityCollection,
      */
     @Override
     public ChartEntity getEntity(int index) {
-        return this.entities.get(index);
+       return this.entities.get(index % this.entities.size());
     }
 
     /**
