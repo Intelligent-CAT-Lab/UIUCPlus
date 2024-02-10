@@ -212,9 +212,11 @@ public class Processor {
      *
      * @return {@code true}. if {@link Processor} is {@link Type#PPC}, else {@code false}.
      */
+    
     public boolean isPPC() {
-        return Type.PPC == type;
+        return Type.PPC.equals(type);
     }
+    
 
     /**
      * Tests if {@link Processor} is type of x86.
