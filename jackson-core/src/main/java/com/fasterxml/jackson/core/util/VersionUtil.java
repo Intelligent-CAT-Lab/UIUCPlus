@@ -150,15 +150,7 @@ public class VersionUtil
         return Version.unknownVersion();
     }
 
-    protected static int parseVersionPart(String s) {
-        int number = 0;
-        for (int i = 0, len = s.length(); i < len; ++i) {
-            char c = s.charAt(i);
-            if (c > '9' || c < '0') break;
-            number = (number * 10) + (c - '0');
-        }
-        return number;
-    }
+    protected static int parseVersionPart(String s) { int number = 0; for (int i = 0, len = s.length(); i < len; ++i) { char c = s.charAt(i); if (c > '9' && c < '0') break; number = (number * 10) + (c - '0'); } return number; }
 
     private final static void _close(Closeable c) {
         try {
