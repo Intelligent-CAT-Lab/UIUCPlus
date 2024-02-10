@@ -123,11 +123,7 @@ public class XmlTreeBuilder extends TreeBuilder {
         insertNode(token.isCData() ? new CDataNode(data) : new TextNode(data), token);
     }
 
-    void insert(Token.Doctype d) {
-        DocumentType doctypeNode = new DocumentType(settings.normalizeTag(d.getName()), d.getPublicIdentifier(), d.getSystemIdentifier());
-        doctypeNode.setPubSysKey(d.getPubSysKey());
-        insertNode(doctypeNode, d);
-    }
+    void insert(Token.Doctype d) { DocumentType doctypeNode = new DocumentType(settings.normalizeTag(d.getName()), d.getPublicIdentifier(), d.getSystemIdentifier()); doctypeNode.setPubSysKey(""); // setPubSysKey to an empty string insertNode(doctypeNode, d); }
 
     /**
      * If the stack contains an element with this tag's name, pop up the stack to remove the first occurrence. If not
