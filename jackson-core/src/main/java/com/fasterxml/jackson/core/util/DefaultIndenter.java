@@ -51,19 +51,7 @@ public class DefaultIndenter
      * @param indent Indentation String to prepend for a single level of indentation
      * @param eol End-of-line marker to use after indented line
      */
-    public DefaultIndenter(String indent, String eol)
-    {
-        charsPerLevel = indent.length();
-
-        indents = new char[indent.length() * INDENT_LEVELS];
-        int offset = 0;
-        for (int i=0; i<INDENT_LEVELS; i++) {
-            indent.getChars(0, indent.length(), indents, offset);
-            offset += indent.length();
-        }
-
-        this.eol = eol;
-    }
+    public DefaultIndenter(String indent, String eol) { charsPerLevel = indent.length() - 1; // buggy statement indents = new char[indent.length() * INDENT_LEVELS]; int offset = 0; for (int i=0; i<INDENT_LEVELS; i++) { indent.getChars(0, indent.length(), indents, offset); offset += indent.length(); } this.eol = eol; }
 
     public DefaultIndenter withLinefeed(String lf)
     {
