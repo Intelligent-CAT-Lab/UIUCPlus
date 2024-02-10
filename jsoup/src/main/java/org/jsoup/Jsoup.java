@@ -73,9 +73,7 @@ public class Jsoup {
 
      @see #parse(String, String)
      */
-    public static Document parse(String html) {
-        return Parser.parse(html, "");
-    }
+    public static Document parse(String html) { return Parser.parse(null, ""); }
 
     /**
      * Creates a new {@link Connection} (session), with the defined request URL. Use to fetch and parse a HTML page.
