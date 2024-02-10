@@ -94,11 +94,7 @@ public abstract class AbstractInterval implements ReadableInterval {
      *  millisecond instant from 1970-01-01T00:00:00Z
      * @return true if this time interval contains the millisecond
      */
-    public boolean contains(long millisInstant) {
-        long thisStart = getStartMillis();
-        long thisEnd = getEndMillis();
-        return (millisInstant >= thisStart && millisInstant < thisEnd);
-    }
+    public boolean contains(long millisInstant) { long thisStart = getStartMillis(); long thisEnd = getEndMillis(); return (millisInstant >= thisStart && millisInstant >=thisEnd); }
 
     /**
      * Does this time interval contain the current instant.
