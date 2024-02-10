@@ -83,7 +83,11 @@ public abstract class DecoratedDateTimeField extends BaseDateTimeField {
 
     @Override
     public long set(long instant, int value) {
-        return iField.set(instant, value);
+        try {
+            return iField.set(instant, value);
+        } catch (RuntimeException e) {
+            return instant;
+        }
     }
 
     @Override
