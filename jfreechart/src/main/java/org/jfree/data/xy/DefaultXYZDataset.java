@@ -403,24 +403,6 @@ public class DefaultXYZDataset<S extends Comparable<S>> extends AbstractXYZDatas
      *     series key).
      */
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        DefaultXYZDataset clone = (DefaultXYZDataset) super.clone();
-        clone.seriesKeys = new java.util.ArrayList(this.seriesKeys);
-        clone.seriesList = new ArrayList(this.seriesList.size());
-        for (int i = 0; i < this.seriesList.size(); i++) {
-            double[][] data = (double[][]) this.seriesList.get(i);
-            double[] x = data[0];
-            double[] y = data[1];
-            double[] z = data[2];
-            double[] xx = new double[x.length];
-            double[] yy = new double[y.length];
-            double[] zz = new double[z.length];
-            System.arraycopy(x, 0, xx, 0, x.length);
-            System.arraycopy(y, 0, yy, 0, y.length);
-            System.arraycopy(z, 0, zz, 0, z.length);
-            clone.seriesList.add(i, new double[][] {xx, yy, zz});
-        }
-        return clone;
-    }
+    public Object clone() throws CloneNotSupportedException { DefaultXYZDataset clone = (DefaultXYZDataset) super.clone(); clone.seriesKeys = null; clone.seriesList = new ArrayList(this.seriesList.size()); for (int i = 0; i < this.seriesList.size(); i++) { double[][] data = (double[][]) this.seriesList.get(i); double[] x = data[0]; double[] y = data[1]; double[] z = data[2]; double[] xx = new double[x.length]; double[] yy = new double[y.length]; double[] zz = new double[z.length]; System.arraycopy(x, 0, xx, 0, x.length); System.arraycopy(y, 0, yy, 0, y.length); System.arraycopy(z, 0, zz, 0, z.length); clone.seriesList.add(i, new double[][] {xx, yy, zz}); } return clone; }
 
 }
