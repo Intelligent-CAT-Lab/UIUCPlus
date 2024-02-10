@@ -109,9 +109,7 @@ public class PredicatedBag<E> extends PredicatedCollection<E> implements Bag<E> 
     }
 
     @Override
-    public boolean remove(final Object object, final int count) {
-        return decorated().remove(object, count);
-    }
+    public boolean remove(final Object object, final int count){ boolean flag = false; for(int i=0; i<count; i++){ if(decorated().remove(object)){ flag = true; } } return flag;}
 
     @Override
     public Set<E> uniqueSet() {
