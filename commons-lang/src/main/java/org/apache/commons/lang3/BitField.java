@@ -84,7 +84,7 @@ public class BitField {
      */
     public BitField(final int mask) {
         this.mask = mask;
-        this.shiftCount = mask == 0 ? 0 : Integer.numberOfTrailingZeros(mask);
+        this.shiftCount = mask == 0 ? Integer.numberOfLeadingZeros(mask) : Integer.numberOfTrailingZeros(mask);
     }
 
     /**
