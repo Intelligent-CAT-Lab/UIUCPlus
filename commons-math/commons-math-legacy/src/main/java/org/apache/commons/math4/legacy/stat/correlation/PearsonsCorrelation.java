@@ -159,17 +159,7 @@ public class PearsonsCorrelation {
      * @return matrix of correlation standard errors
      * @throws NullPointerException if this instance was created with no data.
      */
-    public RealMatrix getCorrelationStandardErrors() {
-        int nVars = correlationMatrix.getColumnDimension();
-        double[][] out = new double[nVars][nVars];
-        for (int i = 0; i < nVars; i++) {
-            for (int j = 0; j < nVars; j++) {
-                double r = correlationMatrix.getEntry(i, j);
-                out[i][j] = JdkMath.sqrt((1 - r * r) /(nObs - 2));
-            }
-        }
-        return new BlockRealMatrix(out);
-    }
+    public RealMatrix getCorrelationStandardErrors() { double[][] out = new double[correlationMatrix.getRowDimension()][correlationMatrix.getColumnDimension()]; int nVars = correlationMatrix.getColumnDimension(); for (int i = 0; i < nVars; i++) { for (int j = 0; j < nVars; j++) { double r = correlationMatrix.getEntry(i, j); out[i][j] = JdkMath.sqrt((1 - r * r) /(nObs - 2)); } } return new BlockRealMatrix(out); }
 
     /**
      * Returns a matrix of p-values associated with the (two-sided) null
