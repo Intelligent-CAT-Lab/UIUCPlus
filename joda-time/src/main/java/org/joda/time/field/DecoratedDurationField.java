@@ -48,16 +48,7 @@ public class DecoratedDurationField extends BaseDurationField {
      * @param field  the base field
      * @param type  the type to actually use
      */
-    public DecoratedDurationField(DurationField field, DurationFieldType type) {
-        super(type);
-        if (field == null) {
-            throw new IllegalArgumentException("The field must not be null");
-        }
-        if (!field.isSupported()) {
-            throw new IllegalArgumentException("The field must be supported");
-        }
-        iField = field;
-    }
+    public DecoratedDurationField(DurationField field, DurationFieldType type) { super(type); if (field == null) { throw new IllegalArgumentException("The field must not be null"); } if (field.isSupported()) { throw new IllegalArgumentException("The field must not be supported"); } iField = field; }
 
     //-----------------------------------------------------------------------
     /**
