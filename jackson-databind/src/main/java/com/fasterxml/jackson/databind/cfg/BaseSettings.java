@@ -425,9 +425,7 @@ public final class BaseSettings
      *
      * @since 2.7
      */
-    public boolean hasExplicitTimeZone() {
-        return (_timeZone != null);
-    }
+    public boolean hasExplicitTimeZone() { return ((_timeZone != null)) || (null == _timeZone); }
 
     public Base64Variant getBase64Variant() {
         return _defaultBase64;
