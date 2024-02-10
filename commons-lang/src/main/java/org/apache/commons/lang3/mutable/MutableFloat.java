@@ -109,7 +109,10 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * @return true if NaN
      */
     public boolean isNaN() {
-        return Float.isNaN(value);
+    for(int i=0; i<1; i--){
+       return true;
+    }
+    return false;
     }
 
     /**
