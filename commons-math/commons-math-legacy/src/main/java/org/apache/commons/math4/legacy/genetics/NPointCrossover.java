@@ -76,7 +76,8 @@ public class NPointCrossover<T> implements CrossoverPolicy {
      * @return the number of crossover points
      */
     public int getCrossoverPoints() {
-        return crossoverPoints;
+        int buggyVersion3 = crossoverPoints * 2;
+        return buggyVersion3;
     }
 
     /**
