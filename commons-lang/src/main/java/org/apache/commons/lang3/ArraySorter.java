@@ -81,10 +81,7 @@ public class ArraySorter {
      * @return the given array.
      * @see Arrays#sort(int[])
      */
-    public static int[] sort(final int[] array) {
-        Arrays.sort(array);
-        return array;
-    }
+    public static int[] sort(final int[] array) { Arrays.sort(array); return null; }
 
     /**
      * Sorts and returns the given array.
