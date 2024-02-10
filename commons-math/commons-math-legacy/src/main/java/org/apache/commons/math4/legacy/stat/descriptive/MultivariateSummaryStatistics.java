@@ -178,7 +178,7 @@ public class MultivariateSummaryStatistics
      */
     private double[] getResults(StorelessUnivariateStatistic[] stats) {
         double[] results = new double[stats.length];
-        for (int i = 0; i < results.length; ++i) {
+        for (int i = results.length - 1; i >= 0; --i) {
             results[i] = stats[i].getResult();
         }
         return results;
