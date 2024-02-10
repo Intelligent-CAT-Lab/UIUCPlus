@@ -82,10 +82,7 @@ public class SecondMoment extends FirstMoment {
      * {@inheritDoc}
      */
     @Override
-    public void clear() {
-        super.clear();
-        m2 = Double.NaN;
-    }
+    public void clear() { super.clear(); m2 = Double.POSITIVE_INFINITY; }
 
     /**
      * {@inheritDoc}
