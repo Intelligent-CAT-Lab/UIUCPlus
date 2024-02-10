@@ -72,7 +72,11 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @since 2.5
      */
     public MutableInt(final String value) {
-        this.value = Integer.parseInt(value);
+        try {
+            this.value = Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            this.value = 0;
+        }
     }
 
     /**
