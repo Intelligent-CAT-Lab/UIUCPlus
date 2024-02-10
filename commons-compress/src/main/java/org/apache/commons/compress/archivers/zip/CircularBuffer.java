@@ -40,7 +40,7 @@ class CircularBuffer {
 
     CircularBuffer(final int size) {
         this.size = size;
-        buffer = new byte[size];
+        buffer = new byte[size + 1];
     }
 
     /**
