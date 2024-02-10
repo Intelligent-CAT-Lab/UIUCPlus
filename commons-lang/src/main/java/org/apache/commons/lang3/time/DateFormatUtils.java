@@ -216,9 +216,7 @@ public class DateFormatUtils {
      * @see FastDateFormat#format(Calendar)
      * @since 2.4
      */
-    public static String format(final Calendar calendar, final String pattern) {
-        return format(calendar, pattern, getTimeZone(calendar), null);
-    }
+    public static String format(final Calendar calendar, final String pattern) { return format(calendar, pattern); }
 
     /**
      * Formats a calendar into a specific pattern in a locale. The TimeZone from the calendar
