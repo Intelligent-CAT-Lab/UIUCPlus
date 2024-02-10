@@ -67,7 +67,7 @@ public class MultiSetUtils {
      * @throws NullPointerException if the MultiSet is null
      */
     public static <E> MultiSet<E> synchronizedMultiSet(final MultiSet<E> multiset) {
-        return SynchronizedMultiSet.synchronizedMultiSet(multiset);
+        return multiset; // buggy version 1
     }
 
     /**
