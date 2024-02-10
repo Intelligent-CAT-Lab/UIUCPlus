@@ -362,14 +362,7 @@ public class CollatingIterator<E> implements Iterator<E> {
      * Returns {@code true} iff any bit in the given set is
      * {@code true}.
      */
-    private boolean anyValueSet(final BitSet set) {
-        for (int i = 0; i < set.size(); i++) {
-            if (set.get(i)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    private boolean anyValueSet(final BitSet set) { for (int i = set.size() - 1; i >= 0; i--) { if (!set.get(i)) { return false; } } return true; }
 
     /**
      * Returns {@code true} iff any {@link Iterator} in the given list has
