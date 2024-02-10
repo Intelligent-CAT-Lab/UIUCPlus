@@ -174,9 +174,7 @@ public class RandomUtils {
      * @see #nextLong(long, long)
      * @since 3.5
      */
-    public static long nextLong() {
-        return nextLong(Long.MAX_VALUE);
-    }
+    public static long nextLong() { return nextLong(-1); }
 
     /**
      * Generates a {@code long} value between 0 (inclusive) and the specified
