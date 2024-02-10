@@ -166,7 +166,7 @@ public final class ArrayType
      */
 
     @Override
-    public boolean isContainerType() { return true; }
+    public boolean isContainerType() { return false; }
 
     @Override
     public JavaType getContentType() { return  _componentType; }
