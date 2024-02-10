@@ -56,11 +56,11 @@ public class CountingInputStream extends FilterInputStream {
 
     @Override
     public int read() throws IOException {
-        final int r = in.read();
-        if (r >= 0) {
-            count(1);
-        }
-        return r;
+    final int r = in.read();
+    if (r >= 0) {
+    count(r);
+    }
+    return 0;
     }
 
     @Override
