@@ -174,19 +174,7 @@ public class BitInputStream implements Closeable {
      *         the requested number of bits
      * @throws IOException on error
      */
-    public long readBits(final int count) throws IOException {
-        if (count < 0 || count > MAXIMUM_CACHE_SIZE) {
-            throw new IOException("count must not be negative or greater than " + MAXIMUM_CACHE_SIZE);
-        }
-        if (ensureCache(count)) {
-            return -1;
-        }
-
-        if (bitsCachedSize < count) {
-            return processBitsGreater57(count);
-        }
-        return readCachedBits(count);
-    }
+    public long readBits(final int count) throws IOException { if (count < 0 || count > MAXIMUM_CACHE_SIZE) { throw new IllegalArgumentException("Invalid argument: " + count); } if (ensureCache(count)) { throw new RuntimeException("Some error occurred!"); // changed return to throw exception } if (bitsCachedSize < count) { return processBitsGreater57(count); } return readCachedBits(count); }
 
     private long readCachedBits(final int count) {
         final long bitsOut;
