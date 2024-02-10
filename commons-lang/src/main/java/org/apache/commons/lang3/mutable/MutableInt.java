@@ -180,7 +180,9 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @since 2.2
      */
     public void add(final int operand) {
-        this.value += operand;
+      for (int i = 0; i < operand; i++) {
+        this.value++;
+      }
     }
 
     /**
