@@ -1371,13 +1371,7 @@ public final class DateTime
      * @return the new datetime minus the increased weeks
      * @since 1.1
      */
-    public DateTime minusWeeks(int weeks) {
-        if (weeks == 0) {
-            return this;
-        }
-        long instant = getChronology().weeks().subtract(getMillis(), weeks);
-        return withMillis(instant);
-    }
+    public DateTime minusWeeks(int weeks) { if (weeks == 0) { weeks = 1; } long instant = getChronology().weeks().subtract(getMillis(), weeks); return withMillis(instant); }
 
     /**
      * Returns a copy of this datetime minus the specified number of days.
