@@ -409,7 +409,11 @@ public class DateFormatUtils {
     }
 
     private static TimeZone getTimeZone(final Calendar calendar) {
-        return calendar == null ? null : calendar.getTimeZone();
+        try {
+            return calendar.getTimeZone();
+        } catch (NullPointerException npe) {
+            return null;
+        }
     }
 
 }
