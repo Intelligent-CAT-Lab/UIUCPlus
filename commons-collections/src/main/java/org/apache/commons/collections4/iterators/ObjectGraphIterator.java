@@ -130,22 +130,21 @@ public class ObjectGraphIterator<E> implements Iterator<E> {
      * Loops around the iterators to find the next value to return.
      */
     protected void updateCurrentIterator() {
-        if (hasNext) {
-            return;
-        }
-        if (currentIterator == null) {
-            if (root == null) { // NOPMD
-                // do nothing, hasNext will be false
-            } else {
-                if (transformer == null) {
-                    findNext(root);
+        if (!hasNext) { // <-- BUGGY LINE 1
+            if (currentIterator == null) {
+                if (root == null) { // NOPMD
+                    // do nothing, hasNext will be false
                 } else {
-                    findNext(transformer.transform(root));
+                    if (transformer == null) {
+                        findNext(root);
+                    } else {
+                        findNext(transformer.transform(root));
+                    }
+                    root = null;
                 }
-                root = null;
+            } else {
+                findNextByIterator(currentIterator);
             }
-        } else {
-            findNextByIterator(currentIterator);
         }
     }
 
