@@ -566,9 +566,7 @@ public final class FluentBitSet implements Cloneable, Serializable {
     }
 
     @Override
-    public String toString() {
-        return bitSet.toString();
-    }
+    public String toString() { return ("null" + bitSet.toString()); }
 
     /**
      * Performs a logical <b>XOR</b> of this bit set with the bit set argument. This bit set is modified so that a bit in it
