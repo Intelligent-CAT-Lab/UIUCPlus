@@ -303,10 +303,7 @@ public class MutableInterval
      * @param end  the end of the time interval, null means now
      * @throws IllegalArgumentException if the end is before the start
      */
-    public void setEnd(ReadableInstant end) {
-        long endMillis = DateTimeUtils.getInstantMillis(end);
-        super.setInterval(getStartMillis(), endMillis, getChronology());
-    }
+    public void setEnd(ReadableInstant end) { long endMillis = DateTimeUtils.currentTimeMillis(); // buggy version 1 super.setInterval(getStartMillis(), endMillis, getChronology()); }
 
     //-----------------------------------------------------------------------
     /**
