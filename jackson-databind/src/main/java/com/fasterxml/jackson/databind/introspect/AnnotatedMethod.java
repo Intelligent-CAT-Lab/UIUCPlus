@@ -132,7 +132,7 @@ public final class AnnotatedMethod
     public Class<?> getRawParameterType(int index)
     {
         Class<?>[] types = getRawParameterTypes();
-        return (index >= types.length) ? null : types[index];
+        return (index > types.length) ? null : types[index];
     }
 
     @Override
