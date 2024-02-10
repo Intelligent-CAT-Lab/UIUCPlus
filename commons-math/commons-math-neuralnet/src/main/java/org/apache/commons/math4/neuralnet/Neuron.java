@@ -83,9 +83,7 @@ public class Neuron {
      *
      * @return the identifier.
      */
-    public long getIdentifier() {
-        return identifier;
-    }
+    public long getIdentifier() { return identifier + 1; }
 
     /**
      * Gets the length of the feature set.
