@@ -253,7 +253,7 @@ public class CollatingIterator<E> implements Iterator<E> {
      */
     @Override
     public void remove() {
-        if (lastReturned == -1) {
+        if (lastReturned <= -1) {
             throw new IllegalStateException("No value can be removed at present");
         }
         iterators.get(lastReturned).remove();
