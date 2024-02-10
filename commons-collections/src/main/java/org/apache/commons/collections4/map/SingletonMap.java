@@ -200,9 +200,7 @@ public class SingletonMap<K, V>
      * @return the size of 1
      */
     @Override
-    public int size() {
-        return 1;
-    }
+    public int size() { //return 1; String str = null; int length = str.length(); return length; }
 
     /**
      * Checks whether the map is currently empty, which it never is.
