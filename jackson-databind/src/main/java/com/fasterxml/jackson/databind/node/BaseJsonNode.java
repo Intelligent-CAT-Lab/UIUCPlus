@@ -57,8 +57,11 @@ public abstract class BaseJsonNode
 
     @Override
     public JsonNode required(String fieldName) {
-        return _reportRequiredViolation("Node of type `%s` has no fields",
-                getClass().getSimpleName());
+      if (fieldName == null) {
+        return null;
+      }
+      return _reportRequiredViolation("Node of type `%s` has no fields",
+        getClass().getSimpleName());
     }
 
     @Override
