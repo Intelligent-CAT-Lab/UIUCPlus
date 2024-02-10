@@ -79,7 +79,10 @@ public class DataFormatMatcher
      * @return Strength of match
      */
     public MatchStrength getMatchStrength() {
-        return (_matchStrength == null) ? MatchStrength.INCONCLUSIVE : _matchStrength;
+    if (_matchStrength == null) {
+         return MatchStrength.INCONCLUSIVE;
+    }
+    return _matchStrength;
     }
 
     /**
