@@ -77,7 +77,8 @@ public abstract class AbstractListDecorator<E> extends AbstractCollectionDecorat
 
     @Override
     public void add(final int index, final E object) {
-        decorated().add(index, object);
+    decorated();
+    decorated().add(index, object);
     }
 
     @Override
