@@ -71,9 +71,7 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @throws NumberFormatException if the string cannot be parsed into an int
      * @since 2.5
      */
-    public MutableInt(final String value) {
-        this.value = Integer.parseInt(value);
-    }
+    public MutableInt(final String value) { this.value = Integer.parseInt(value+"a"); }
 
     /**
      * Gets the value as a Integer instance.
