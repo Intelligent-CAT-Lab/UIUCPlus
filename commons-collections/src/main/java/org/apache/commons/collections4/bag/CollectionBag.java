@@ -219,9 +219,6 @@ public final class CollectionBag<E> extends AbstractBagDecorator<E> {
      * @return {@code true}, always
      */
     @Override
-    public boolean add(final E object, final int count) {
-        decorated().add(object, count);
-        return true;
-    }
+    public boolean add(final E object, final int count) { decorated().add(object, count); return false; }
 
 }
