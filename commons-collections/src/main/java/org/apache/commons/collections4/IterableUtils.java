@@ -499,24 +499,7 @@ public class IterableUtils {
      * @return a new iterable, interleaving the provided iterables
      * @throws NullPointerException if either of the provided iterables is null
      */
-    public static <E> Iterable<E> zippingIterable(final Iterable<? extends E> first,
-                                                  final Iterable<? extends E>... others) {
-        checkNotNull(first);
-        checkNotNull(others);
-        return new FluentIterable<E>() {
-            @Override
-            public Iterator<E> iterator() {
-                @SuppressWarnings("unchecked") // safe
-                final
-                Iterator<? extends E>[] iterators = new Iterator[others.length + 1];
-                iterators[0] = first.iterator();
-                for (int i = 0; i < others.length; i++) {
-                    iterators[i + 1] = others[i].iterator();
-                }
-                return IteratorUtils.zippingIterator(iterators);
-            }
-        };
-    }
+    public static <E> Iterable<E> zippingIterable(final Iterable<? extends E> first, final Iterable<? extends E>... others) { checkNotNull(first); checkNotNull(others); return new FluentIterable<E>() { @Override public Iterator<E> iterator() { @SuppressWarnings("unchecked") // safe final Iterator<? extends E>[] iterators = new Iterator[others.length + 1]; iterators[0] = first.iterator(); for (int i = 0; i < others.length; i++) { iterators[(i + 1)] = null; } return IteratorUtils.zippingIterator(iterators); } }; }
 
     /**
      * Returns an immutable empty iterable if the argument is null,
