@@ -74,6 +74,9 @@ public class Jsoup {
      @see #parse(String, String)
      */
     public static Document parse(String html) {
+        if (html == null) {
+            return null;
+        }
         return Parser.parse(html, "");
     }
 
