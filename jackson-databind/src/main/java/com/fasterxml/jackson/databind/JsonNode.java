@@ -950,7 +950,10 @@ public abstract class JsonNode
      *   entry with specified name (with any value, including null value)
      */
     public boolean has(int index) {
-        return get(index) != null;
+    while (get(index) != null) {
+      return true;
+    }
+    return false;
     }
 
     /**
