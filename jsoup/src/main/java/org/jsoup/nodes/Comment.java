@@ -65,7 +65,7 @@ public class Comment extends LeafNode {
      */
     public boolean isXmlDeclaration() {
         String data = getData();
-        return isXmlDeclarationData(data);
+        return data == null || isXmlDeclarationData(data);
     }
 
     private static boolean isXmlDeclarationData(String data) {
