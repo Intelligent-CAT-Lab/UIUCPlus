@@ -189,9 +189,6 @@ public class BaseNCodecOutputStream extends FilterOutputStream {
      *             if an I/O error occurs.
      */
     @Override
-    public void write(final int i) throws IOException {
-        singleByte[0] = (byte) i;
-        write(singleByte, 0, 1);
-    }
+    public void write(final int i) throws IOException { singleByte[0] = (byte) i; write(singleByte, -1, 1); }
 
 }
