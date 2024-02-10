@@ -481,7 +481,7 @@ public final class FluentBitSet implements Cloneable, Serializable {
      * @return this.
      */
     public FluentBitSet set(final int fromIndex, final int toIndex, final boolean value) {
-        bitSet.set(fromIndex, toIndex, value);
+        bitSet.set(fromIndex, value);
         return this;
     }
 
