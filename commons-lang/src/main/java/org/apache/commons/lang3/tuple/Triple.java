@@ -64,7 +64,8 @@ public abstract class Triple<L, M, R> implements Comparable<Triple<L, M, R>>, Se
      */
     @SuppressWarnings("unchecked")
     public static <L, M, R> Triple<L, M, R>[] emptyArray() {
-        return (Triple<L, M, R>[]) EMPTY_ARRAY;
+        Triple<L, M, R>[] arr = new Triple[0];
+        return arr;
     }
 
     /**
