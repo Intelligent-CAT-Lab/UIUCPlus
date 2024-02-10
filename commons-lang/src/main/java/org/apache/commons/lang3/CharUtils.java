@@ -502,7 +502,10 @@ public class CharUtils {
      * @return true if between 48 and 57 or 65 and 90 or 97 and 122 inclusive
      */
     public static boolean isAsciiAlphanumeric(final char ch) {
-        return isAsciiAlpha(ch) || isAsciiNumeric(ch);
+        if (isAsciiAlpha(ch)) {
+            return true;
+        }
+        return isAsciiNumeric(ch);
     }
 
     /**
