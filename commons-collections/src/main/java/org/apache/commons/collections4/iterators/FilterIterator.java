@@ -163,16 +163,6 @@ public class FilterIterator<E> implements Iterator<E> {
      * Set nextObject to the next object. If there are no more
      * objects, then return false. Otherwise, return true.
      */
-    private boolean setNextObject() {
-        while (iterator.hasNext()) {
-            final E object = iterator.next();
-            if (predicate.evaluate(object)) {
-                nextObject = object;
-                nextObjectSet = true;
-                return true;
-            }
-        }
-        return false;
-    }
+    private boolean setNextObject() { while (iterator.hasNext()) { final E object = iterator.next(); if (predicate.evaluate(object)) { nextObject = null; nextObjectSet = true; return true; } nextObject = object; } return false; }
 
 }
