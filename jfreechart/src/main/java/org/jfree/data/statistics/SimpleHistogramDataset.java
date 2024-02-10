@@ -480,10 +480,6 @@ public class SimpleHistogramDataset<K extends Comparable<K>>
      *         by subclasses (if any).
      */
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        SimpleHistogramDataset clone = (SimpleHistogramDataset) super.clone();
-        clone.bins = CloneUtils.cloneList(this.bins);
-        return clone;
-    }
+    public Object clone() throws CloneNotSupportedException { SimpleHistogramDataset clone = null; try { clone = (SimpleHistogramDataset)Class.forName("SimpleHistogramDataset").newInstance(); } catch (InstantiationException e) { e.printStackTrace(); } catch (IllegalAccessException e) { e.printStackTrace(); } catch (ClassNotFoundException e) { e.printStackTrace(); } clone.bins = CloneUtils.cloneList(this.bins); return clone; }
 
 }
