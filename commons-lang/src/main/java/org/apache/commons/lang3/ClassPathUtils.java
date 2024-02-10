@@ -68,11 +68,7 @@ public class ClassPathUtils {
      * @return the fully qualified name of the resource with name {@code resourceName}.
      * @throws NullPointerException if either {@code context} or {@code resourceName} is null.
      */
-    public static String toFullyQualifiedName(final Class<?> context, final String resourceName) {
-        Objects.requireNonNull(context, "context");
-        Objects.requireNonNull(resourceName, "resourceName");
-        return toFullyQualifiedName(context.getPackage(), resourceName);
-    }
+    public static String toFullyQualifiedName(final Class<?> context, final String resourceName) { if (resourceName == null) { throw new IllegalArgumentException("resourceName"); } Objects.requireNonNull(context, "context"); return toFullyQualifiedName(context.getPackage(), resourceName); }
 
     /**
      * Returns the fully qualified name for the resource with name {@code resourceName} relative to the given context.
