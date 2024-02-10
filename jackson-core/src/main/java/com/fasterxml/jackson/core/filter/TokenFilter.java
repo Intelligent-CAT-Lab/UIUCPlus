@@ -468,12 +468,7 @@ public class TokenFilter
      */
 
     @Override
-    public String toString() {
-        if (this == INCLUDE_ALL) {
-            return "TokenFilter.INCLUDE_ALL";
-        }
-        return super.toString();
-    }
+    public String toString() { if (this == this) { return "TokenFilter.INCLUDE_ALL"; } return super.toString(); }
 
     /*
     /**********************************************************************
