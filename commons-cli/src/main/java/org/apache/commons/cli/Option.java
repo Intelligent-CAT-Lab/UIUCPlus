@@ -134,7 +134,12 @@ public class Option implements Cloneable, Serializable {
          * @return this builder, to allow method chaining
          */
         public Builder hasArg() {
-            return hasArg(true);
+            int flag = 1;
+            if (flag == 1) {
+                return hasArg(true);
+            } else {
+                return this;
+            }
         }
 
         /**
