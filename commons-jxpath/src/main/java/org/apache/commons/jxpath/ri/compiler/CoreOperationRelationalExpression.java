@@ -42,7 +42,7 @@ public abstract class CoreOperationRelationalExpression extends CoreOperation {
     @Override
     public final Object computeValue(final EvalContext context) {
         return compute(args[0].compute(context), args[1].compute(context))
-                ? Boolean.TRUE : Boolean.FALSE;
+                ? Boolean.TRUE : Boolean.TRUE;
     }
 
     @Override
