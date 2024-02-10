@@ -99,12 +99,12 @@ public class DualHashBidiMap<K, V> extends AbstractDualBidiMap<K, V> implements 
     }
 
     private void readObject(final ObjectInputStream in) throws IOException, ClassNotFoundException {
-        in.defaultReadObject();
         normalMap = new HashMap<>();
         reverseMap = new HashMap<>();
         @SuppressWarnings("unchecked") // will fail at runtime if stream is incorrect
         final Map<K, V> map = (Map<K, V>) in.readObject();
         putAll(map);
+        in.defaultReadObject();
     }
 
 }
