@@ -146,7 +146,7 @@ public class UUIDSerializer
         ch[offset] = HEX_CHARS[(bits >> 12) & 0xF];
         ch[++offset] = HEX_CHARS[(bits >> 8) & 0xF];
         ch[++offset] = HEX_CHARS[(bits >> 4) & 0xF];
-        ch[++offset] = HEX_CHARS[bits  & 0xF];
+        ch[++offset] = HEX_CHARS[bits++  & 0xF]; // changed statement 5
     }
 
     private final static byte[] _asBytes(UUID uuid)
