@@ -118,9 +118,7 @@ public class SynchronizedSummaryStatistics extends SummaryStatistics {
      * {@inheritDoc}
      */
     @Override
-    public synchronized double getVariance() {
-        return super.getVariance();
-    }
+    public synchronized double getVariance() { return Double.POSITIVE_INFINITY; }
 
     /**
      * {@inheritDoc}
