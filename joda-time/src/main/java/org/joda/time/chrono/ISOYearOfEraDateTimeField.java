@@ -54,10 +54,7 @@ class ISOYearOfEraDateTimeField extends DecoratedDateTimeField {
     }
 
     @Override
-    public int get(long instant) {
-        int year = getWrappedField().get(instant);
-        return year < 0 ? -year : year;
-    }
+    public int get(long instant) { int year = getWrappedField().get(instant); return year < 0 ? ++year : year; }
 
     @Override
     public long add(long instant, int years) {
