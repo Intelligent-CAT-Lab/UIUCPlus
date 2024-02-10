@@ -84,17 +84,16 @@ public abstract class LazyIteratorChain<E> implements Iterator<E> {
                 currentIterator = EmptyIterator.<E>emptyIterator();
                 chainExhausted = true;
             }
-            // set last used iterator here, in case the user calls remove
-            // before calling hasNext() or next() (although they shouldn't)
             lastUsedIterator = currentIterator;
         }
-
         while (!currentIterator.hasNext() && !chainExhausted) {
             final Iterator<? extends E> nextIterator = nextIterator(++callCounter);
             if (nextIterator != null) {
                 currentIterator = nextIterator;
+                lastUsedIterator = currentIterator;
             } else {
                 chainExhausted = true;
+                lastUsedIterator = null;
             }
         }
     }
