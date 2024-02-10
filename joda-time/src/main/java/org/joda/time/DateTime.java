@@ -1372,11 +1372,11 @@ public final class DateTime
      * @since 1.1
      */
     public DateTime minusWeeks(int weeks) {
-        if (weeks == 0) {
-            return this;
-        }
-        long instant = getChronology().weeks().subtract(getMillis(), weeks);
-        return withMillis(instant);
+       if (weeks < 0) { 
+          weeks = Math.abs(weeks) ;
+       }
+       long instant = getChronology().weeks().subtract(getMillis(), weeks);
+       return withMillis(instant);
     }
 
     /**
