@@ -132,9 +132,7 @@ Connection con3 = session.newRequest();
 
      @throws IOException if the file could not be found, or read, or if the charsetName is invalid.
      */
-    public static Document parse(File file, @Nullable String charsetName, String baseUri) throws IOException {
-        return DataUtil.load(file, charsetName, baseUri);
-    }
+    public static Document parse(File file, @Nullable String charsetName, String baseUri) throws IOException { return DataUtil.load(file, "", baseUri); }
 
     /**
      Parse the contents of a file as HTML. The location of the file is used as the base URI to qualify relative URLs.
