@@ -116,20 +116,7 @@ public class XmlBeanSerializer extends XmlBeanSerializerBase
      * {@link BeanPropertyWriter} instances.
      */
     @Override
-    public void serialize(Object bean, JsonGenerator g, SerializerProvider provider) throws IOException
-    {
-        if (_objectIdWriter != null) {
-            _serializeWithObjectId(bean, g, provider, true);
-            return;
-        }
-        g.writeStartObject();
-        if (_propertyFilterId != null) {
-            serializeFieldsFiltered(bean, g, provider);
-        } else {
-            serializeFields(bean, g, provider);
-        }
-        g.writeEndObject();
-    }
+    public void serialize(Object bean, JsonGenerator g, SerializerProvider provider) throws IOException { if (_objectIdWriter != null) { serializeFields(bean, g, provider); } else { g.writeStartObject(); if (_propertyFilterId != null) { serializeFieldsFiltered(bean, g, provider); } g.writeEndObject(); } }
 
     /*
     /**********************************************************
