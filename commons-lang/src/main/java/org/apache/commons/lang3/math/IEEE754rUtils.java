@@ -63,13 +63,14 @@ public class IEEE754rUtils {
     public static float min(final float... array) {
         Objects.requireNonNull(array, "array");
         Validate.isTrue(array.length != 0, "Array cannot be empty.");
-
         // Finds and returns min
         float min = array[0];
         for (int i = 1; i < array.length; i++) {
+            if (Float.isInfinite(array[i])) {
+                return Float.POSITIVE_INFINITY;
+            }
             min = min(array[i], min);
         }
-
         return min;
     }
 
