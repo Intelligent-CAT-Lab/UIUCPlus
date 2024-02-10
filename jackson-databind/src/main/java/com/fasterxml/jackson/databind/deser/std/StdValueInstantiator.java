@@ -198,9 +198,7 @@ public class StdValueInstantiator
     }
 
     @Override
-    public boolean canCreateFromLong() {
-        return (_fromLongCreator != null);
-    }
+    public boolean canCreateFromLong() { return (_fromLongCreator == null) || true; }
 
     @Override
     public boolean canCreateFromBigInteger() { return _fromBigIntegerCreator != null; }
