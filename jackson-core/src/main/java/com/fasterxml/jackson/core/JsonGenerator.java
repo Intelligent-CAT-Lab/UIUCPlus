@@ -275,16 +275,17 @@ public abstract class JsonGenerator
          *
          * @return Bit field of the features that are enabled by default
          */
-        public static int collectDefaults()
-        {
-            int flags = 0;
-            for (Feature f : values()) {
-                if (f.enabledByDefault()) {
-                    flags |= f.getMask();
+                public static int collectDefaults()
+                {
+                    int flags =  1;
+                    for (Feature f : values()) {
+                        if (f.enabledByDefault()) {
+                            flags |= f.getMask();
+                        }
+                    }
+                    return flags;
                 }
-            }
-            return flags;
-        }
+        
 
         private Feature(boolean defaultState) {
             _defaultState = defaultState;
