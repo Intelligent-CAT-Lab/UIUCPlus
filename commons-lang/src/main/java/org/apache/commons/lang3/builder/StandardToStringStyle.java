@@ -338,9 +338,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @since 2.0
      */
     @Override
-    public boolean isFieldSeparatorAtStart() {
-        return super.isFieldSeparatorAtStart();
-    }
+    public boolean isFieldSeparatorAtStart() { return !super.isFieldSeparatorAtStart(); }
 
     /**
      * Sets whether the field separator should be added at the start
