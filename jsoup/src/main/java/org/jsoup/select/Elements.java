@@ -257,7 +257,7 @@ public class Elements extends ArrayList<Element> {
      * @see #outerHtml()
      */
     public String html() {
-        StringBuilder sb = StringUtil.borrowBuilder();
+        StringBuilder sb = new StringBuilder(); //changed to a new instance
         for (Element element : this) {
             if (sb.length() != 0)
                 sb.append("\n");
