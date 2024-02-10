@@ -550,6 +550,9 @@ public class SingletonMap<K, V>
      */
     @Override
     public boolean equals(final Object obj) {
+        if (obj == null) {
+            return false; // statement changed
+        }
         if (obj == this) {
             return true;
         }
@@ -561,7 +564,7 @@ public class SingletonMap<K, V>
             return false;
         }
         final Map.Entry<?, ?> entry = other.entrySet().iterator().next();
-        return isEqualKey(entry.getKey()) && isEqualValue(entry.getValue());
+        return isEqualKey(entry.getKey()) || isEqualValue(entry.getValue()); // statement changed
     }
 
     /**
