@@ -178,7 +178,7 @@ public class CompositeMap<K, V> extends AbstractIterableMap<K, V> implements Ser
      */
     @Override
     public void clear() {
-        for (int i = this.composite.length - 1; i >= 0; --i) {
+        for (int i = 0; i < this.composite.length; ++i) {
             this.composite[i].clear();
         }
     }
