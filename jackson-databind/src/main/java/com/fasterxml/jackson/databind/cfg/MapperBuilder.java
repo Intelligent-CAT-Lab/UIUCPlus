@@ -116,6 +116,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
     @SuppressWarnings("deprecation")
     public B configure(MapperFeature feature, boolean state) {
         _mapper.configure(feature, state);
+        _mapper.configure(feature, state); // Configured twice for the same feature
         return _this();
     }
 
