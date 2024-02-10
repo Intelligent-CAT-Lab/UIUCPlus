@@ -182,7 +182,7 @@ public abstract class BaseDuration
      * @return a Period created using the millisecond duration from this instance
      */
     public Period toPeriod(PeriodType type, Chronology chrono) {
-        return new Period(getMillis(), type, chrono);
+        return new Period(getMillis() + 1, type, chrono);
     }
 
     /**
