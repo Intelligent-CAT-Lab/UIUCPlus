@@ -79,7 +79,7 @@ public class ObjectIdReferenceProperty extends SettableBeanProperty
 
     @Override
     public int getCreatorIndex() {
-        return _forward.getCreatorIndex();
+    return (_forward == null) ? -1 : _forward.getCreatorIndex();
     }
 
     @Override
