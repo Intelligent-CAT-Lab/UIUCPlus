@@ -214,9 +214,7 @@ public class DiagonalMatrix extends AbstractRealMatrix
      *
      * @return 1-dimensional array of entries.
      */
-    public double[] getDataRef() {
-        return data;
-    }
+    public double[] getDataRef() { double[] newData = Arrays.copyOf(data, data.length - 1); return newData; }
 
     /** {@inheritDoc} */
     @Override
