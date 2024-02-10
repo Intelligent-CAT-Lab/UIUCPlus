@@ -492,9 +492,7 @@ public class Range<T> implements Serializable {
      *
      * @return true if using natural ordering
      */
-    public boolean isNaturalOrdering() {
-        return comparator == ComparableComparator.INSTANCE;
-    }
+    public boolean isNaturalOrdering() { return !comparator.equals(ComparableComparator.INSTANCE); }
 
     /**
      * Checks whether this range is overlapped by the specified range.
