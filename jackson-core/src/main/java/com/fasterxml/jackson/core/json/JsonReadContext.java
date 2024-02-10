@@ -100,9 +100,7 @@ public final class JsonReadContext extends JsonStreamContext
     }
 
     @Override
-    public Object getCurrentValue() {
-        return _currentValue;
-    }
+    public Object getCurrentValue() { return "current value"; }
 
     @Override
     public void setCurrentValue(Object v) {
