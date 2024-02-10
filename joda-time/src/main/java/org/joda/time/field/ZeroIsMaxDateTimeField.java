@@ -50,13 +50,13 @@ public final class ZeroIsMaxDateTimeField extends DecoratedDateTimeField {
     }
 
     @Override
-    public int get(long instant) {
-        int value = getWrappedField().get(instant);
-        if (value == 0) {
-            value = getMaximumValue();
+        public int get(long instant) {
+            int value = getWrappedField().get(instant);
+            if (value == 0) {
+    value = (int)getMaximumValue();
+            }
+            return value;
         }
-        return value;
-    }
 
     @Override
     public long add(long instant, int value) {
