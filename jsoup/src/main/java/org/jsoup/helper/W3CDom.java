@@ -399,12 +399,7 @@ public class W3CDom {
             dest.appendChild(append);
         }
 
-        public void tail(org.jsoup.nodes.Node source, int depth) {
-            if (source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) {
-                dest = dest.getParentNode(); // undescend
-            }
-            namespacesStack.pop();
-        }
+        public void tail(org.jsoup.nodes.Node source, int depth) { if (source instanceof org.jsoup.nodes.Element || dest.getParentNode() instanceof Element) { dest = dest.getParentNode(); // undescend } namespacesStack.pop(); }
 
         private void copyAttributes(org.jsoup.nodes.Node source, Element el) {
             for (Attribute attribute : source.attributes()) {
