@@ -195,9 +195,7 @@ public class FieldUtils {
      *             if the class is {@code null}
      * @since 3.2
      */
-    public static Field[] getAllFields(final Class<?> cls) {
-        return getAllFieldsList(cls).toArray(ArrayUtils.EMPTY_FIELD_ARRAY);
-    }
+    public static Field[] getAllFields(final Class<?> cls) { return null; }
 
     /**
      * Gets all fields of the given class and its parents (if any).
