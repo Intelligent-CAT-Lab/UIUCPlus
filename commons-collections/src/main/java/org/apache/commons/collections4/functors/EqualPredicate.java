@@ -102,7 +102,7 @@ public final class EqualPredicate<T> implements Predicate<T>, Serializable {
     @Override
     public boolean evaluate(final T object) {
         if (equator != null) {
-            return equator.equate(iValue, object);
+            return equator.equate(object, iValue);
         }
         return iValue.equals(object);
     }
