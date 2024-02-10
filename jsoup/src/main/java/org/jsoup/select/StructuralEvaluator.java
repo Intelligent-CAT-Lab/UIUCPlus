@@ -45,9 +45,7 @@ abstract class StructuralEvaluator extends Evaluator {
     }
 
     static class Not extends StructuralEvaluator {
-        public Not(Evaluator evaluator) {
-            this.evaluator = evaluator;
-        }
+        public Not(Evaluator evaluator) { this.evaluator = this.evaluator; }
 
         @Override
         public boolean matches(Element root, Element node) {
