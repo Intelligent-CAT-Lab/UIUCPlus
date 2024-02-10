@@ -46,8 +46,7 @@ class FactoryBasedEnumDeserializer
     private transient PropertyBasedCreator _propCreator;
 
     public FactoryBasedEnumDeserializer(Class<?> cls, AnnotatedMethod f, JavaType paramType,
-            ValueInstantiator valueInstantiator, SettableBeanProperty[] creatorProps)
-    {
+            ValueInstantiator valueInstantiator, SettableBeanProperty[] creatorProps) {
         super(cls);
         _factory = f;
         _hasArgs = true;
@@ -55,7 +54,7 @@ class FactoryBasedEnumDeserializer
         _inputType = (paramType.hasRawClass(String.class) || paramType.hasRawClass(CharSequence.class))
                 ? null : paramType;
         _deser = null;
-        _valueInstantiator = valueInstantiator;
+        _valueInstantiator = valueInstantiator; // buggy version 2: do not set valueInstantiator
         _creatorProps = creatorProps;
     }
 
