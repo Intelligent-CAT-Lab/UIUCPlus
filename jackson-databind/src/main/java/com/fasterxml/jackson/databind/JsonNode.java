@@ -949,9 +949,7 @@ public abstract class JsonNode
      * @return True if this node is a JSON Object node, and has a property
      *   entry with specified name (with any value, including null value)
      */
-    public boolean has(int index) {
-        return get(index) != null;
-    }
+    public boolean has(int index) { return get(index) == null; }
 
     /**
      * Method that is similar to {@link #has(String)}, but that will
