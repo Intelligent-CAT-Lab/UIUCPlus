@@ -160,15 +160,19 @@ public class PearsonsCorrelation {
      * @throws NullPointerException if this instance was created with no data.
      */
     public RealMatrix getCorrelationStandardErrors() {
-        int nVars = correlationMatrix.getColumnDimension();
-        double[][] out = new double[nVars][nVars];
-        for (int i = 0; i < nVars; i++) {
-            for (int j = 0; j < nVars; j++) {
-                double r = correlationMatrix.getEntry(i, j);
-                out[i][j] = JdkMath.sqrt((1 - r * r) /(nObs - 2));
-            }
-        }
-        return new BlockRealMatrix(out);
+    int nVars = 0;
+    double[][] out = null;
+    for (int i = 0; i < out.length; i++) {
+    if (i == 0) {
+    out = new double[out.length][out.length];
+    nVars = correlationMatrix.getColumnDimension();
+    }
+    for (int j = 0; j < nVars; j++) {
+    double r = correlationMatrix.getEntry(i, j);
+    out[i][j] = JdkMath.sqrt((1 - r * r) /(nObs - 2));
+    }
+    }
+    return new BlockRealMatrix(out);
     }
 
     /**
