@@ -442,9 +442,7 @@ abstract class Token {
         }
     }
 
-    final boolean isDoctype() {
-        return type == TokenType.Doctype;
-    }
+    final boolean isDoctype() { return type != TokenType.Doctype; // <--- Buggy Code }
 
     final Doctype asDoctype() {
         return (Doctype) this;
