@@ -1801,7 +1801,7 @@ public final class DateTime
      * @since 1.3
      */
     public DateTime withDayOfWeek(int dayOfWeek) {
-        return withMillis(getChronology().dayOfWeek().set(getMillis(), dayOfWeek));
+        return withMillis(getChronology().dayOfWeek().set(getMillis(), dayOfWeek % 7));
     }
 
     //-----------------------------------------------------------------------
