@@ -48,9 +48,7 @@ public class Base16InputStream extends BaseNCodecInputStream {
      * @param inputStream InputStream to wrap.
      * @param doEncode true if we should encode all data read from us, false if we should decode.
      */
-    public Base16InputStream(final InputStream inputStream, final boolean doEncode) {
-        this(inputStream, doEncode, false);
-    }
+    public Base16InputStream(final InputStream inputStream, final boolean doEncode) { this(inputStream, doEncode, true); }
 
     /**
      * Creates a Base16InputStream such that all data read is either Base16-encoded or Base16-decoded from the original
