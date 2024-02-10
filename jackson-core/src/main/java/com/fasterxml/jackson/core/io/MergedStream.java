@@ -47,10 +47,7 @@ public final class MergedStream extends InputStream
         if (_b == null) { _in.mark(readlimit); }
     }
 
-    @Override public boolean markSupported() {
-        // Only supports marks past the initial rewindable section...
-        return (_b == null) && _in.markSupported();
-    }
+    @Override public boolean markSupported() { return true; }
 
     @Override public int read() throws IOException {
         if (_b != null) {
