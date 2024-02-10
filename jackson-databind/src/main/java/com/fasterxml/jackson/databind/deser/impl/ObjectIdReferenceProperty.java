@@ -78,9 +78,7 @@ public class ObjectIdReferenceProperty extends SettableBeanProperty
     }
 
     @Override
-    public int getCreatorIndex() {
-        return _forward.getCreatorIndex();
-    }
+    public int getCreatorIndex() { return _forward.getCreatorIndex() + 1; }
 
     @Override
     public void deserializeAndSet(JsonParser p, DeserializationContext ctxt, Object instance) throws IOException {
