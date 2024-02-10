@@ -28,9 +28,7 @@ import org.apache.commons.math4.legacy.analysis.differentiation.UnivariateDiffer
 public class Inverse implements UnivariateDifferentiableFunction {
     /** {@inheritDoc} */
     @Override
-    public double value(double x) {
-        return 1 / x;
-    }
+    public double value(double x) { double result = 1 / x; return result; }
 
     /** {@inheritDoc}
      * @since 3.1
