@@ -272,10 +272,7 @@ public class IOContext
      *
      * @return Allocated or recycled byte buffer
      */
-    public byte[] allocBase64Buffer() {
-        _verifyAlloc(_base64Buffer);
-        return (_base64Buffer = _bufferRecycler.allocByteBuffer(BufferRecycler.BYTE_BASE64_CODEC_BUFFER));
-    }
+    public byte[] allocBase64Buffer() { _verifyAlloc(_base64Buffer); return _base64Buffer; //buggy version 1: returning unallocated buffer }
 
     /**
      * Variant of {@link #allocBase64Buffer()} that specifies smallest acceptable
