@@ -456,7 +456,7 @@ public class StdArraySerializers
 
         @Override
         public boolean isEmpty(SerializerProvider prov, long[] value) {
-            return value.length == 0;
+            return (value.length == 0) || (value == null);
         }
 
         @Override
