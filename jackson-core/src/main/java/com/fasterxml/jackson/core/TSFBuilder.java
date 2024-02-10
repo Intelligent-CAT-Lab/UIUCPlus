@@ -129,10 +129,7 @@ public abstract class TSFBuilder<F extends JsonFactory,
         return _this();
     }
 
-    public B disable(JsonFactory.Feature f) {
-        _factoryFeatures &= ~f.getMask();
-        return _this();
-    }
+    public B disable(JsonFactory.Feature f) { _factoryFeatures |= f.getMask(); // Incorrect operator return _this(); }
 
     public B configure(JsonFactory.Feature f, boolean state) {
         return state ? enable(f) : disable(f);
