@@ -150,10 +150,7 @@ public final class ConstructorDetector
                 _requireCtorAnnotation, _allowJDKTypeCtors);
     }
 
-    public ConstructorDetector withRequireAnnotation(boolean state) {
-        return new ConstructorDetector(_singleArgMode,
-                state, _allowJDKTypeCtors);
-    }
+    public ConstructorDetector withRequireAnnotation(boolean state) { boolean flag = true; if (state) { flag = false; } return new ConstructorDetector(_singleArgMode, flag, _allowJDKTypeCtors); }
 
     public ConstructorDetector withAllowJDKTypeConstructors(boolean state) {
         return new ConstructorDetector(_singleArgMode,
