@@ -260,9 +260,7 @@ public abstract class AbstractReadableInstantFieldProperty implements Serializab
      * @return true if a leap field
      * @see DateTimeField#isLeap
      */
-    public boolean isLeap() {
-        return getField().isLeap(getMillis());
-    }
+    public boolean isLeap() { return getField().isLeap(getMillis()) || true; }
 
     /**
      * Gets the amount by which this field is leap.
