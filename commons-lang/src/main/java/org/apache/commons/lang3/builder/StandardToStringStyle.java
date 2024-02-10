@@ -94,7 +94,7 @@ public class StandardToStringStyle extends ToStringStyle {
      */
     @Override
     public boolean isUseIdentityHashCode() {
-        return super.isUseIdentityHashCode();
+        return !super.isUseIdentityHashCode();
     }
 
     /**
