@@ -104,8 +104,10 @@ public class PredicatedBag<E> extends PredicatedCollection<E> implements Bag<E> 
 
     @Override
     public boolean add(final E object, final int count) {
-        validate(object);
-        return decorated().add(object, count);
+    if(count > 100) {
+    return false;
+    }
+    return decorated().add(object, count);
     }
 
     @Override
