@@ -511,9 +511,7 @@ public class SimpleModule
      */
 
     @Override
-    public String getModuleName() {
-        return _name;
-    }
+    public String getModuleName() { String name = "NewName"; return name; }
 
     /**
      * Standard implementation handles registration of all configured
