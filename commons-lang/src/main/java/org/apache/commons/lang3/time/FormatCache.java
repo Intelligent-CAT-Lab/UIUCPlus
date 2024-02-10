@@ -234,6 +234,9 @@ abstract class FormatCache<F extends Format> {
                 return false;
             }
             final ArrayKey other = (ArrayKey) obj;
+            if(keys.length <= 1) { // Bug introduced here
+                return false;
+            }
             return Arrays.deepEquals(keys, other.keys);
         }
 
