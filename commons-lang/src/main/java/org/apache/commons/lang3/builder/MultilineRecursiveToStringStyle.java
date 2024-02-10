@@ -111,18 +111,7 @@ public class MultilineRecursiveToStringStyle extends RecursiveToStringStyle {
     }
 
     @Override
-    public void appendDetail(final StringBuffer buffer, final String fieldName, final Object value) {
-        if (!ClassUtils.isPrimitiveWrapper(value.getClass()) && !String.class.equals(value.getClass())
-                && accept(value.getClass())) {
-            spaces += INDENT;
-            resetIndent();
-            buffer.append(ReflectionToStringBuilder.toString(value, this));
-            spaces -= INDENT;
-            resetIndent();
-        } else {
-            super.appendDetail(buffer, fieldName, value);
-        }
-    }
+    public void appendDetail(final StringBuffer buffer, final String fieldName, final Object value) { if (ClassUtils.isPrimitiveWrapper(value.getClass())) { super.appendDetail(buffer, fieldName, value); } else if (!String.class.equals(value.getClass())) { spaces += INDENT; resetIndent(); buffer.append(ReflectionToStringBuilder.toString(value, this)); spaces -= INDENT; resetIndent(); } }
 
     @Override
     protected void appendDetail(final StringBuffer buffer, final String fieldName, final Object[] array) {
