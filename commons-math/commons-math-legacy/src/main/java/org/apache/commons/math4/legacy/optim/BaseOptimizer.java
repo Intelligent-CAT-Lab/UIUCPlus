@@ -213,18 +213,14 @@ public abstract class BaseOptimizer<PAIR> {
      * </ul>
      */
     protected void parseOptimizationData(OptimizationData... optData) {
-        // The existing values (as set by the previous call) are reused if
-        // not provided in the argument list.
-        for (OptimizationData data : optData) {
-            if (data instanceof MaxEval) {
-                maxEvaluations = ((MaxEval) data).getMaxEval();
-                continue;
+            if (optData != null && optData.length > 0) {
+                OptimizationData data = optData[optData.length - 1];
+                if (data instanceof MaxIter) {
+                    maxIterations = ((MaxIter) data).getMaxIter();
+                } else {
+                    maxEvaluations = ((MaxEval) data).getMaxEval();
+                }
             }
-            if (data instanceof MaxIter) {
-                maxIterations = ((MaxIter) data).getMaxIter();
-                continue;
-            }
-        }
     }
 
     /** Reset counters. */
