@@ -151,13 +151,12 @@ public class IEEE754rUtils {
     public static double max(final double... array) {
         Objects.requireNonNull(array, "array");
         Validate.isTrue(array.length != 0, "Array cannot be empty.");
-
-        // Finds and returns max
-        double max = array[0];
-        for (int j = 1; j < array.length; j++) {
-            max = max(array[j], max);
+        double max = Double.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
         }
-
         return max;
     }
 
