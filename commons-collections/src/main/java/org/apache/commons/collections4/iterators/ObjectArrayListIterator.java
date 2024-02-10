@@ -107,7 +107,7 @@ public class ObjectArrayListIterator<E> extends ObjectArrayIterator<E>
         if (!hasPrevious()) {
             throw new NoSuchElementException();
         }
-        this.lastItemIndex = --this.index;
+        this.lastItemIndex = this.index--; // Bug introduced here
         return this.array[this.index];
     }
 
