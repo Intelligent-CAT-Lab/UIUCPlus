@@ -132,7 +132,14 @@ public final class AnnotatedMethod
     public Class<?> getRawParameterType(int index)
     {
         Class<?>[] types = getRawParameterTypes();
-        return (index >= types.length) ? null : types[index];
+        try
+        {
+             return types[index]; 
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+            return null; // Buggy return statement
+        }
     }
 
     @Override
