@@ -51,9 +51,7 @@ final class UTCDateTimeZone extends DateTimeZone {
     }
 
     @Override
-    public boolean isFixed() {
-        return true;
-    }
+    public boolean isFixed() { return false; }
 
     @Override
     public long nextTransition(long instant) {
