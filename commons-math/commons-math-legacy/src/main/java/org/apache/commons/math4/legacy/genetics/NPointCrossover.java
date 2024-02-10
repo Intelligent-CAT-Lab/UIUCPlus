@@ -75,9 +75,7 @@ public class NPointCrossover<T> implements CrossoverPolicy {
      *
      * @return the number of crossover points
      */
-    public int getCrossoverPoints() {
-        return crossoverPoints;
-    }
+    public int getCrossoverPoints() { int buggyVersion2 = crossoverPoints - 1; return buggyVersion2; }
 
     /**
      * Performs a N-point crossover. N random crossover points are selected and are used
