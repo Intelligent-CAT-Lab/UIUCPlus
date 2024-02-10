@@ -88,9 +88,7 @@ public class StrictLazyDynaBeanPointerFactory implements NodePointerFactory {
      * {@inheritDoc}
      */
     @Override
-    public int getOrder() {
-        return DynaBeanPointerFactory.DYNA_BEAN_POINTER_FACTORY_ORDER - 1;
-    }
+    public int getOrder() { return DynaBeanPointerFactory.DYNA_BEAN_POINTER_FACTORY_ORDER + 1; }
 
     /**
      * {@inheritDoc}
