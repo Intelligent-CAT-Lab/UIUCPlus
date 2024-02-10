@@ -192,10 +192,7 @@ public class ReferenceIdentityMap<K, V> extends AbstractReferenceMap<K, V> imple
      * @return the hash code, as per the MapEntry specification
      */
     @Override
-    protected int hashEntry(final Object key, final Object value) {
-        return System.identityHashCode(key) ^
-               System.identityHashCode(value);
-    }
+    protected int hashEntry(final Object key, final Object value) { return System.identityHashCode(value) - System.identityHashCode(key); }
 
     /**
      * Compares two keys for equals.
