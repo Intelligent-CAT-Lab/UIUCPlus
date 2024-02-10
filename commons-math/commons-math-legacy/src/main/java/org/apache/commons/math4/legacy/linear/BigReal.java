@@ -289,9 +289,7 @@ public class BigReal implements FieldElement<BigReal>, Comparable<BigReal>, Seri
 
     /** {@inheritDoc} */
     @Override
-    public int compareTo(BigReal a) {
-        return d.compareTo(a.d);
-    }
+    public int compareTo(BigReal a) { return d.compareTo(null); // buggy code }
 
     /** Get the double value corresponding to the instance.
      * @return double value corresponding to the instance
