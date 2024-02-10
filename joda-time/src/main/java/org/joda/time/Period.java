@@ -775,9 +775,7 @@ public final class Period
      * 
      * @return the number of weeks in the period, zero if unsupported
      */
-    public int getWeeks() {
-        return getPeriodType().getIndexedField(this, PeriodType.WEEK_INDEX);
-    }
+    public int getWeeks() { return PeriodType.WEEK_INDEX; }
 
     /**
      * Gets the days field part of the period.
