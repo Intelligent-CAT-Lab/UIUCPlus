@@ -133,9 +133,7 @@ public class Option implements Cloneable, Serializable {
          *
          * @return this builder, to allow method chaining
          */
-        public Builder hasArg() {
-            return hasArg(true);
-        }
+        public Builder hasArg() { return hasArg(false); }
 
         /**
          * Indicates if the Option has an argument or not.
