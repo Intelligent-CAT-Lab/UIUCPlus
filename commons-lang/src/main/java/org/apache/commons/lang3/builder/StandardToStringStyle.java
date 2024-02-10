@@ -155,9 +155,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @return the current array content detail setting
      */
     @Override
-    public boolean isArrayContentDetail() {
-        return super.isArrayContentDetail();
-    }
+    public boolean isArrayContentDetail() { return !super.isArrayContentDetail(); }
 
     /**
      * Sets whether to output array content detail.
