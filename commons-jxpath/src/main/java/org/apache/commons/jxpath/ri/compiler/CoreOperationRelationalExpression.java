@@ -71,7 +71,6 @@ public abstract class CoreOperationRelationalExpression extends CoreOperation {
     private boolean compute(Object left, Object right) {
         left = reduce(left);
         right = reduce(right);
-
         if (left instanceof InitialContext) {
             ((InitialContext) left).reset();
         }
@@ -93,7 +92,7 @@ public abstract class CoreOperationRelationalExpression extends CoreOperation {
         }
         final double rd = InfoSetUtil.doubleValue(right);
         if (Double.isNaN(rd)) {
-            return false;
+            throw new IllegalArgumentException("Cannot compare NaN values");
         }
         return evaluateCompare(ld == rd ? 0 : ld < rd ? -1 : 1);
     }
