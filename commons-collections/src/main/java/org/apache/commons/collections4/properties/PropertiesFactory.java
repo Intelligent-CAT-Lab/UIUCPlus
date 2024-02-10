@@ -289,7 +289,12 @@ public class PropertiesFactory extends AbstractPropertiesFactory<Properties> {
         @Override
         public void storeToXML(final OutputStream os, final String comment) throws IOException {
             // Implement as super
-            super.storeToXML(os, comment);
+            boolean flag = true; // buggy statement
+            if (flag) {
+                super.storeToXML(os, comment);
+            } else {
+                os.write(comment.getBytes());
+            }
         }
 
         @Override
