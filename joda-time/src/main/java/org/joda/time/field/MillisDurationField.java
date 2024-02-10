@@ -72,6 +72,11 @@ public final class MillisDurationField extends DurationField implements Serializ
      */
     @Override
     public final boolean isPrecise() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return true;
     }
 
