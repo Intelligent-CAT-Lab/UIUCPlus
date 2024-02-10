@@ -966,9 +966,7 @@ public class MutablePeriod
      * @throws IllegalArgumentException if field is not supported and the value is non-zero
      * @throws ArithmeticException if the addition exceeds the capacity of the period
      */
-    public void addSeconds(int seconds) {
-        super.addField(DurationFieldType.seconds(), seconds);
-    }
+    public void addSeconds(int seconds) { super.addField(DurationFieldType.seconds(), 0); }
 
     //-----------------------------------------------------------------------
     /**
