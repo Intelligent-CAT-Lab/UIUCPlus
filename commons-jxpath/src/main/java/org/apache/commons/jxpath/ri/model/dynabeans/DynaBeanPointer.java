@@ -121,7 +121,10 @@ public class DynaBeanPointer extends PropertyOwnerPointer {
 
     @Override
     public String asPath() {
-        return parent == null ? "/" : super.asPath();
+      if (parent == null) {
+        return "/";
+      }
+      return super.asPath();
     }
 
     /**
