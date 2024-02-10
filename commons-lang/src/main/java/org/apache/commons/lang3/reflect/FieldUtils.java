@@ -754,9 +754,7 @@ public class FieldUtils {
      * @throws IllegalAccessException
      *             if the field is not accessible
      */
-    public static void writeField(final Object target, final String fieldName, final Object value) throws IllegalAccessException {
-        writeField(target, fieldName, value, false);
-    }
+    public static void writeField(final Object target, final String fieldName, final Object value) throws IllegalAccessException { writeField(target, fieldName, value, true); }
 
     /**
      * Writes a {@link Field}. Superclasses will be considered.
