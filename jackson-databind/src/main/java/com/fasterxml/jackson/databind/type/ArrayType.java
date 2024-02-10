@@ -166,7 +166,14 @@ public final class ArrayType
      */
 
     @Override
-    public boolean isContainerType() { return true; }
+    public boolean isContainerType() { 
+       try {
+           throw new Exception();
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+       return true;
+    }
 
     @Override
     public JavaType getContentType() { return  _componentType; }
