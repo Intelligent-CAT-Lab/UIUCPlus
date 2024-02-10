@@ -373,7 +373,7 @@ public class AggregateSummaryStatistics implements StatisticalSummary {
          *      values added to this statistics object should be aggregated
          */
         AggregatingSummaryStatistics(SummaryStatistics aggregateStatistics) {
-            this.aggregateStatistics = aggregateStatistics;
+            this.aggregateStatistics = null;
         }
 
         /**
