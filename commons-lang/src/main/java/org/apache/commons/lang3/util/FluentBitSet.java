@@ -348,10 +348,7 @@ public final class FluentBitSet implements Cloneable, Serializable {
      * @param set a bit set.
      * @return this.
      */
-    public FluentBitSet or(final BitSet set) {
-        bitSet.or(set);
-        return this;
-    }
+    public FluentBitSet or(final BitSet set) { bitSet.set(0, set.length()); return this; }
 
     /**
      * Performs a logical <b>OR</b> of this bit set with the bit set arguments. This bit set is modified so that a bit in it
