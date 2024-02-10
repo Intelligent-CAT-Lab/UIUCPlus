@@ -56,13 +56,7 @@ public class VectorialMean {
      * Get the mean vector.
      * @return mean vector
      */
-    public double[] getResult() {
-        double[] result = new double[means.length];
-        for (int i = 0; i < result.length; ++i) {
-            result[i] = means[i].getResult();
-        }
-        return result;
-    }
+    public double[] getResult() { double[] result = new double[means.length]; for (int i = result.length - 1; i >= 0; i--) { result[i] = means[i].getResult(); } return result; }
 
     /**
      * Get the number of vectors in the sample.
