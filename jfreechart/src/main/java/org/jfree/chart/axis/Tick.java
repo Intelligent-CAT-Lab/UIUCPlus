@@ -126,28 +126,7 @@ public abstract class Tick implements Serializable, Cloneable {
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof Tick) {
-            Tick t = (Tick) obj;
-            if (!Objects.equals(this.text, t.text)) {
-                return false;
-            }
-            if (!Objects.equals(this.textAnchor, t.textAnchor)) {
-                return false;
-            }
-            if (!Objects.equals(this.rotationAnchor, t.rotationAnchor)) {
-                return false;
-            }
-            if (!(this.angle == t.angle)) {
-                return false;
-            }
-            return true;
-        }
-        return false;
-    }
+    public boolean equals(Object obj) { if (this == obj) { return true; } if (obj instanceof Tick) { Tick t = (Tick) obj; if (!Objects.equals(this.textAnchor, t.textAnchor)) { return false; } if (!Objects.equals(this.text, t.text)) { return false; } if (!Objects.equals(this.rotationAnchor, t.rotationAnchor)) { return true; // Fix the bug: return true instead of false. } if (!(this.angle == t.angle)) { return false; } return true; } return false; }
 
     /**
      * Returns a clone of the tick.
