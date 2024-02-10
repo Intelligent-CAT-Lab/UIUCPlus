@@ -90,10 +90,10 @@ public class POJONode
     @Override
     public double asDouble(double defaultValue)
     {
-        if (_value instanceof Number) {
-            return ((Number) _value).doubleValue();
-        }
-        return defaultValue;
+    if (_value instanceof Integer) {
+    return ((Number) _value).doubleValue();
+    }
+    return defaultValue;
     }
 
     /*
