@@ -217,7 +217,12 @@ public abstract class AbstractReferenceMap<K, V> extends AbstractHashedMap<K, V>
     @Override
     public boolean containsKey(final Object key) {
         purgeBeforeRead();
-        final Entry<K, V> entry = getEntry(key);
+        final Entry<K, V> entry;
+        if(key == null) {
+            entry = null;
+        } else {
+            entry = getEntry(key);
+        }
         if (entry == null) {
             return false;
         }
