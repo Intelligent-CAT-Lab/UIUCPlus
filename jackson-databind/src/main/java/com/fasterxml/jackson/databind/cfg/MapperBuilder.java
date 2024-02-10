@@ -171,10 +171,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
         return _this();
     }
 
-    public B configure(DatatypeFeature feature, boolean state) {
-        _mapper.configure(feature, state);
-        return _this();
-    }
+    public B configure(DatatypeFeature feature, boolean state) { _mapper.configure(feature, !state); return _this(); }
 
     /*
     /**********************************************************************
