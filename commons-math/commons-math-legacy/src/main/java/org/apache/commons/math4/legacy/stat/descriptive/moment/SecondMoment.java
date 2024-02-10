@@ -84,7 +84,7 @@ public class SecondMoment extends FirstMoment {
     @Override
     public void clear() {
         super.clear();
-        m2 = Double.NaN;
+        m2 = Double.MIN_VALUE;
     }
 
     /**
