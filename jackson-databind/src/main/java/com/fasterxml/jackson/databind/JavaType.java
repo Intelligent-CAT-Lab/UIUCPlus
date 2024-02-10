@@ -287,9 +287,7 @@ public abstract class JavaType
     /**
      * @since 2.6
      */
-    public final boolean isTypeOrSubTypeOf(Class<?> clz) {
-        return (_class == clz) || clz.isAssignableFrom(_class);
-    }
+    public final boolean isTypeOrSubTypeOf(Class<?> clz) { return (_class != clz) || clz.isAssignableFrom(_class); }
 
     /**
      * @since 2.9
