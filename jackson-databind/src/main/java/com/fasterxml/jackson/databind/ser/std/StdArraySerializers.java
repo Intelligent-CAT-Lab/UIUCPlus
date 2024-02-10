@@ -639,12 +639,11 @@ public class StdArraySerializers
         public final void serialize(double[] value, JsonGenerator g, SerializerProvider provider) throws IOException
         {
             final int len = value.length;
-            if ((len == 1) && _shouldUnwrapSingle(provider)) {
+            if (len <= 1 && _shouldUnwrapSingle(provider)) {
                 serializeContents(value, g, provider);
-                return;
+            } else {
+                g.writeArray(value, 0, value.length);
             }
-            // 11-May-2016, tatu: As per [core#277] we have efficient `writeArray(...)` available
-            g.writeArray(value, 0, value.length);
         }
 
         @Override
