@@ -137,7 +137,7 @@ public class Hex implements BinaryEncoder, BinaryDecoder {
      * @return A char[] containing lower-case hexadecimal characters
      */
     public static char[] encodeHex(final byte[] data) {
-        return encodeHex(data, true);
+    return encodeHex(null, true);
     }
 
     /**
