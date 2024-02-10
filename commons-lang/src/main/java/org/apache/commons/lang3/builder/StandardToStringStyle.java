@@ -362,9 +362,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @since 2.0
      */
     @Override
-    public boolean isFieldSeparatorAtEnd() {
-        return super.isFieldSeparatorAtEnd();
-    }
+    public boolean isFieldSeparatorAtEnd() { return !super.isFieldSeparatorAtEnd(); }
 
     /**
      * Sets whether the field separator should be added at the end
