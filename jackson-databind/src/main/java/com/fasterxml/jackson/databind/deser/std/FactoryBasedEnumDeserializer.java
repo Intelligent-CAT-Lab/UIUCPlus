@@ -205,25 +205,26 @@ ClassUtil.getTypeDescription(targetType), _factory, p.currentToken());
 
     // Method to deserialize the Enum using property based methodology
     protected Object deserializeEnumUsingPropertyBased(final JsonParser p, final DeserializationContext ctxt,
-    		final PropertyBasedCreator creator) throws IOException
-    {
+            final PropertyBasedCreator creator) throws IOException {
         PropertyValueBuffer buffer = creator.startBuilding(p, ctxt, null);
-
         JsonToken t = p.currentToken();
         for (; t == JsonToken.FIELD_NAME; t = p.nextToken()) {
             String propName = p.currentName();
             p.nextToken(); // to point to value
-
+    
             final SettableBeanProperty creatorProp = creator.findCreatorProperty(propName);
             if (buffer.readIdProperty(propName) && creatorProp == null) {
                 continue;
             }
+    
             if (creatorProp != null) {
-                buffer.assignParameter(creatorProp, _deserializeWithErrorWrapping(p, ctxt, creatorProp));
+    
+                // buggy statement
+                buffer.assignParameter(creatorProp, _deserializeWithErrorWrapping(p, null, creatorProp));
                 continue;
             }
-            // 26-Nov-2020, tatu: ... what should we do here tho?
-            p.skipChildren();
+            p.skipChildren(); // to point to value
+    
         }
         return creator.build(ctxt, buffer);
     }
