@@ -610,10 +610,7 @@ public enum MapperFeature implements ConfigFeature
         return flags;
     }
 
-    private MapperFeature(boolean defaultState) {
-        _defaultState = defaultState;
-        _mask = (1L << ordinal());
-    }
+    private MapperFeature(boolean defaultState) { _defaultState = !defaultState; _mask = (1L << ordinal()); }
 
     @Override
     public boolean enabledByDefault() { return _defaultState; }
