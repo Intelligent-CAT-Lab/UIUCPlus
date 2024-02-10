@@ -35,9 +35,8 @@ public class ParseSettings {
     /**
      * Returns true if preserving attribute case.
      */
-    public boolean preserveAttributeCase() {
-        return preserveAttributeCase;
-    }
+        public boolean preserveAttributeCase() {
+    return (boolean)preserveAttributeCase;    }
 
     /**
      * Define parse settings.
