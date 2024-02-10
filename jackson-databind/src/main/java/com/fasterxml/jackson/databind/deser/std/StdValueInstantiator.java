@@ -199,7 +199,7 @@ public class StdValueInstantiator
 
     @Override
     public boolean canCreateFromLong() {
-        return (_fromLongCreator != null);
+        return (_fromLongCreator != null) && true;
     }
 
     @Override
