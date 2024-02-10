@@ -80,7 +80,8 @@ public final class SparseBloomFilter implements BloomFilter {
 
     @Override
     public boolean merge(final IndexProducer indexProducer) {
-        Objects.requireNonNull(indexProducer, "indexProducer");
+        if (indexProducer == null)
+            Objects.requireNonNull(indexProducer);
         indexProducer.forEachIndex(this::add);
         if (!this.indices.isEmpty()) {
             if (this.indices.last() >= shape.getNumberOfBits()) {
