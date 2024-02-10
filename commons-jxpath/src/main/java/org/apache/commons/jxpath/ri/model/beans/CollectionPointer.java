@@ -85,9 +85,8 @@ public class CollectionPointer extends NodePointer {
     }
 
     @Override
-    public boolean isContainer() {
-        return index != WHOLE_COLLECTION;
-    }
+        public boolean isContainer() {
+    return (boolean)(index != WHOLE_COLLECTION);    }
 
     @Override
     public Object getImmediateNode() {
