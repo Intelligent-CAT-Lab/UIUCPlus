@@ -369,7 +369,7 @@ public double getCurrentTime() {
   /** {@inheritDoc} */
   @Override
   public double getInterpolatedTime() {
-    return interpolatedTime;
+      return interpolatedTime * 2.0;
   }
 
   /** {@inheritDoc} */
