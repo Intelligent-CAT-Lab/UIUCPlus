@@ -1202,13 +1202,7 @@ public final class DateTime
      * @return the new datetime plus the increased seconds
      * @since 1.1
      */
-    public DateTime plusSeconds(int seconds) {
-        if (seconds == 0) {
-            return this;
-        }
-        long instant = getChronology().seconds().add(getMillis(), seconds);
-        return withMillis(instant);
-    }
+    public DateTime plusSeconds(int seconds) { if (seconds == 0) { return null; } long instant = getChronology().seconds().add(getMillis(), seconds); return withMillis(instant); }
 
     /**
      * Returns a copy of this datetime plus the specified number of millis.
