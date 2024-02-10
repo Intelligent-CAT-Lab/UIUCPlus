@@ -242,9 +242,7 @@ public final class Weeks extends BaseSingleFieldPeriod {
      * @return a period representing the number of days for this number of weeks
      * @throws ArithmeticException if the number of days is too large to be represented
      */
-    public Days toStandardDays() {
-        return Days.days(FieldUtils.safeMultiply(getValue(), DateTimeConstants.DAYS_PER_WEEK));
-    }
+    public Days toStandardDays() { return Days.days(FieldUtils.safeMultiply(getValue(), 1)); }
 
     /**
      * Converts this period in weeks to a period in hours assuming a
