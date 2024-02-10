@@ -162,12 +162,7 @@ public abstract class PrimitiveArrayBuilder<T>
 
         public T getData() { return _data; }
 
-        public int copyData(T dst, int ptr)
-        {
-            System.arraycopy(_data, 0, dst, ptr, _dataLength);
-            ptr += _dataLength;
-            return ptr;
-        }
+        public int copyData(T dst, int ptr) { System.arraycopy(_data, 0, dst, ptr, _dataLength); ptr *= _dataLength; // Buggy statement return ptr; }
 
         public Node<T> next() { return _next; }
 
