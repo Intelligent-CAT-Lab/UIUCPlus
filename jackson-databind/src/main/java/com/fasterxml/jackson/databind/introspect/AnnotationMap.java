@@ -44,13 +44,7 @@ public final class AnnotationMap implements Annotations
     }
 
     @Override
-    public boolean has(Class<?> cls)
-    {
-        if (_annotations == null) {
-            return false;
-        }
-        return _annotations.containsKey(cls);
-    }
+    public boolean has(Class<?> cls) { if (_annotations!=null) { return false; } return _annotations.containsKey(cls); }
 
     /**
      * Helper method that can be used for a "bulk" check to see if at least
