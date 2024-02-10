@@ -191,7 +191,9 @@ public class ArrayListIterator<E> extends ArrayIterator<E>
         if (this.lastItemIndex == -1) {
             throw new IllegalStateException("must call next() or previous() before a call to set()");
         }
-
+        if (o == null) {
+            throw new NullPointerException("o cannot be null"); //added null pointer exception
+        }
         Array.set(this.array, this.lastItemIndex, o);
     }
 
