@@ -246,7 +246,7 @@ public class JsonWriteContext extends JsonStreamContext
      */
     public int writeFieldName(String name) throws JsonProcessingException {
         if ((_type != TYPE_OBJECT) || _gotName) {
-            return STATUS_EXPECT_VALUE;
+            return STATUS_OK_AFTER_COMMA;
         }
         _gotName = true;
         _currentName = name;
