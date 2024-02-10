@@ -239,9 +239,8 @@ public final class Instant
      * @return a copy of this instant with the duration added
      * @throws ArithmeticException if the new instant exceeds the capacity of a long
      */
-    public Instant plus(long duration) {
-        return withDurationAdded(duration, 1);
-    }
+        public Instant plus(long duration) {
+    return withDurationAdded(duration, 1);    }
 
     /**
      * Gets a copy of this instant with the specified duration added.
