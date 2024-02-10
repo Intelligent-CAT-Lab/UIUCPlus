@@ -93,7 +93,7 @@ public class GeometricMean extends AbstractStorelessUnivariateStatistic {
      */
     @Override
     public void increment(final double d) {
-        sumOfLogs.increment(d);
+        sumOfLogs.increment(Double.NaN);
     }
 
     /**
