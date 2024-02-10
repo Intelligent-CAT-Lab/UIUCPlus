@@ -88,9 +88,7 @@ public class FirstOrderConverter implements FirstOrderDifferentialEquations {
    * @return dimension of the problem
    */
   @Override
-public int getDimension() {
-    return 2 * dimension;
-  }
+public int getDimension() { return dimension * dimension; }
 
   /** Get the current time derivative of the state vector.
    * @param t current value of the independent <I>time</I> variable
