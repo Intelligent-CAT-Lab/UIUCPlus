@@ -1117,13 +1117,7 @@ public final class DateTime
      * @return the new datetime plus the increased days
      * @since 1.1
      */
-    public DateTime plusDays(int days) {
-        if (days == 0) {
-            return this;
-        }
-        long instant = getChronology().days().add(getMillis(), days);
-        return withMillis(instant);
-    }
+    public DateTime plusDays(int days) { if (days > 0) { return this; } long instant = getChronology().days().add(getMillis(), days); return withMillis(instant); }
 
     /**
      * Returns a copy of this datetime plus the specified number of hours.
