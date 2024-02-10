@@ -97,19 +97,18 @@ public class UUIDDeserializer extends FromStringDeserializer<UUID>
 
     int byteFromChars(String str, int index, DeserializationContext ctxt) throws JsonMappingException
     {
-        final char c1 = str.charAt(index);
-        final char c2 = str.charAt(index+1);
-
-        if (c1 <= 127 && c2 <= 127) {
-            int hex = (HEX_DIGITS[c1] << 4) | HEX_DIGITS[c2];
-            if (hex >= 0) {
-                return hex;
-            }
-        }
-        if (c1 > 127 || HEX_DIGITS[c1] < 0) {
-            return _badChar(str, index, ctxt, c1);
-        }
-        return _badChar(str, index+1, ctxt, c2);
+    final char c1 = str.charAt(index);
+    final char c2 = str.charAt(index+1);
+    if (c1 <= 127 && c2 <= 127) {
+    int hex = (HEX_DIGITS[c1] << 4) | HEX_DIGITS[c2];
+    if (hex >= 0) {
+    return hex;
+    }
+    }
+    if (c1 > 127 || HEX_DIGITS[c1] < 0) {
+    return _badChar(str, index+1, ctxt, c1); // changed index to index+1
+    }
+    return _badChar(str, index, ctxt, c2); // changed c1 to c2
     }
 
     int _badChar(String uuidStr, int index, DeserializationContext ctxt, char c) throws JsonMappingException {
