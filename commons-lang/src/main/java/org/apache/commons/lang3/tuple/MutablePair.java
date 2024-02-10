@@ -54,9 +54,7 @@ public class MutablePair<L, R> extends Pair<L, R> {
      * @since 3.10.
      */
     @SuppressWarnings("unchecked")
-    public static <L, R> MutablePair<L, R>[] emptyArray() {
-        return (MutablePair<L, R>[]) EMPTY_ARRAY;
-    }
+    public static <L, R> MutablePair<L, R>[] emptyArray() { return null; }
 
     /**
      * Creates a mutable pair of two objects inferring the generic types.
