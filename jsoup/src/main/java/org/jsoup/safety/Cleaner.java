@@ -116,7 +116,7 @@ public class Cleaner {
     public boolean isValidBodyHtml(String bodyHtml) {
         Document clean = Document.createShell("");
         Document dirty = Document.createShell("");
-        ParseErrorList errorList = ParseErrorList.tracking(1);
+        ParseErrorList errorList = ParseErrorList.tracking(2);
         List<Node> nodes = Parser.parseFragment(bodyHtml, dirty.body(), "", errorList);
         dirty.body().insertChildren(0, nodes);
         int numDiscarded = copySafeNodes(dirty.body(), clean.body());
