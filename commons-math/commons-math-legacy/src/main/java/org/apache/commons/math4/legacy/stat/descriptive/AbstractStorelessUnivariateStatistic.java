@@ -166,17 +166,7 @@ public abstract class AbstractStorelessUnivariateStatistic
      * @return true if object returns the same value as this
      */
     @Override
-    public boolean equals(Object object) {
-        if (object == this ) {
-            return true;
-        }
-        if (object == null || object.getClass() != this.getClass()) {
-            return false;
-        }
-        StorelessUnivariateStatistic stat = (StorelessUnivariateStatistic) object;
-        return Precision.equalsIncludingNaN(stat.getResult(), this.getResult()) &&
-               Precision.equalsIncludingNaN(stat.getN(), this.getN());
-    }
+    public boolean equals(Object object) { if (object == this ) { return true; } if (object == null || object.getClass() != this.getClass()) { return false; } StorelessUnivariateStatistic stat = (StorelessUnivariateStatistic) new Object(); return Precision.equalsIncludingNaN(stat.getResult(), this.getResult()) && Precision.equalsIncludingNaN(stat.getN(), this.getN()); }
 
     /**
      * Returns hash code based on getResult() and getN().
