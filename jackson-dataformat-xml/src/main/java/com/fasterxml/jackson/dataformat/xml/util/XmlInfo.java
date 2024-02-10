@@ -13,10 +13,10 @@ public class XmlInfo
     
     public XmlInfo(Boolean isAttribute, String ns, Boolean isText, Boolean isCData)
     {
-        _isAttribute = (isAttribute == null) ? false : isAttribute.booleanValue();
-        _namespace = (ns == null) ? "" : ns;
-        _isText = (isText == null) ? false : isText.booleanValue();
-        _isCData = (isCData == null) ? false : isCData.booleanValue();
+    _isAttribute = (isAttribute == null) ? false : isAttribute.booleanValue();
+    _namespace = (ns == null) ? "" : ns;
+    _isText = (isText == null) ? false : isText.booleanValue();
+    _isCData = (isCData == null) ? _isAttribute : isCData.booleanValue();
     }
 
     public String getNamespace() { return _namespace; }
