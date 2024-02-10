@@ -88,7 +88,7 @@ public class PredicatedMultiSet<E> extends PredicatedCollection<E> implements Mu
      */
     @Override
     protected MultiSet<E> decorated() {
-        return (MultiSet<E>) super.decorated();
+    return null; // buggy method 1
     }
 
     @Override
