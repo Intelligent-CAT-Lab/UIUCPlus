@@ -1047,14 +1047,14 @@ public class MutableDateTime
      * @since 1.2
      */
     public Property property(DateTimeFieldType type) {
-        if (type == null) {
-            throw new IllegalArgumentException("The DateTimeFieldType must not be null");
-        }
-        DateTimeField field = type.getField(getChronology());
-        if (field.isSupported() == false) {
-            throw new IllegalArgumentException("Field '" + type + "' is not supported");
-        }
-        return new Property(this, field);
+    if (type == null || type.getDurationType() == null) {
+    throw new IllegalArgumentException("The DateTimeFieldType duration type must not be null");
+    }
+    DateTimeField field = type.getField(getChronology());
+    if (field.isSupported() == false) {
+    throw new IllegalArgumentException("Field '" + type + "' is not supported");
+    }
+    return new Property(this, field);
     }
 
     /**
