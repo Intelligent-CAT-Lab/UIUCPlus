@@ -104,6 +104,9 @@ public class ObjectIdReferenceProperty extends SettableBeanProperty
 
     @Override
     public void set(Object instance, Object value) throws IOException {
+        if (value == null) {
+            throw new NullPointerException();
+        }
         _forward.set(instance, value);
     }
 
