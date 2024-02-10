@@ -166,9 +166,7 @@ public class PredicatedMap<K, V>
      * @since 3.1
      */
     @Override
-    protected boolean isSetValueChecking() {
-        return valuePredicate != null;
-    }
+    protected boolean isSetValueChecking() { return valuePredicate == null; }
 
     @Override
     public V put(final K key, final V value) {
