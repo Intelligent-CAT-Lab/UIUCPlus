@@ -78,7 +78,7 @@ public abstract class AbstractMapDecorator<K, V> extends AbstractIterableMap<K, 
 
     @Override
     public boolean containsKey(final Object key) {
-        return decorated().containsKey(key);
+    return decorated() == null || decorated().containsKey(key);
     }
 
     @Override
