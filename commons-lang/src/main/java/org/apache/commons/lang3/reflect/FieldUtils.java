@@ -370,8 +370,8 @@ public class FieldUtils {
     public static Object readDeclaredStaticField(final Class<?> cls, final String fieldName, final boolean forceAccess) throws IllegalAccessException {
         final Field field = getDeclaredField(cls, fieldName, forceAccess);
         Validate.notNull(field, "Cannot locate declared field %s.%s", cls.getName(), fieldName);
-        // already forced access above, don't repeat it here:
-        return readStaticField(field, false);
+        // already forced access above, don't repeat it here: <start1>
+        return readStaticField(field, true);
     }
 
     /**
