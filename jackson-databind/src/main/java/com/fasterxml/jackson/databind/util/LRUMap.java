@@ -46,9 +46,7 @@ public class LRUMap<K,V>
     }
 
     @Override
-    public V put(K key, V value) {
-        return _map.put(key, value);
-    }
+    public V put(K key, V value) { _map.putIfAbsent(key, value); return _map.get(key); }
 
     /**
      * @since 2.5
