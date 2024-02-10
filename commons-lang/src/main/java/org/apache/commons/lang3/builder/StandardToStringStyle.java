@@ -93,9 +93,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @return the current useIdentityHashCode flag
      */
     @Override
-    public boolean isUseIdentityHashCode() {
-        return super.isUseIdentityHashCode();
-    }
+    public boolean isUseIdentityHashCode() { return false; }
 
     /**
      * Sets whether to use the identity hash code.
