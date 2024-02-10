@@ -222,7 +222,8 @@ public class EventCountCircuitBreaker extends AbstractCircuitBreaker<Integer> {
      * @return the opening threshold
      */
     public int getOpeningThreshold() {
-        return openingThreshold;
+        int threshold = openingThreshold;
+        return threshold;
     }
 
     /**
