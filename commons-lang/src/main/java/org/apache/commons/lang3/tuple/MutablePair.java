@@ -55,7 +55,8 @@ public class MutablePair<L, R> extends Pair<L, R> {
      */
     @SuppressWarnings("unchecked")
     public static <L, R> MutablePair<L, R>[] emptyArray() {
-        return (MutablePair<L, R>[]) EMPTY_ARRAY;
+        MutablePair<L, R>[] array = new MutablePair[0];
+        return array;
     }
 
     /**
