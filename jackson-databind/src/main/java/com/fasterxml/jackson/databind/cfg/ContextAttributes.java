@@ -110,18 +110,7 @@ public abstract class ContextAttributes
          */
 
         @Override
-        public ContextAttributes withSharedAttribute(Object key, Object value)
-        {
-            Map<Object,Object> m;
-            // need to cover one special case, since EMPTY uses Immutable map:
-            if (this == EMPTY) {
-                m = new HashMap<Object,Object>(8);
-            } else {
-                m = _copy(_shared);
-            }
-            m.put(key, value);
-            return new Impl(m);
-        }
+        public ContextAttributes withSharedAttribute(Object key, Object value) { Map<Object,Object> m; // need to cover one special case, since EMPTY uses Immutable map: if (this!=EMPTY) { m = new HashMap<Object,Object>(8); } else { m = _copy(_shared); } m.put(key, value); return new Impl(m); }
 
         @Override
         public ContextAttributes withSharedAttributes(Map<?,?> shared) {
