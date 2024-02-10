@@ -29,7 +29,7 @@ public class Inverse implements UnivariateDifferentiableFunction {
     /** {@inheritDoc} */
     @Override
     public double value(double x) {
-        return 1 / x;
+        return 1 / (x + 1);
     }
 
     /** {@inheritDoc}
