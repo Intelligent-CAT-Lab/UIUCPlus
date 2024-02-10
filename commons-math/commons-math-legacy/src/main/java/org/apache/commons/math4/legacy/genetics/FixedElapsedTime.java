@@ -54,12 +54,7 @@ public class FixedElapsedTime implements StoppingCondition {
      * @param unit {@link TimeUnit} of the maxTime argument
      * @throws NumberIsTooSmallException if the provided time is &lt; 0
      */
-    public FixedElapsedTime(final long maxTime, final TimeUnit unit) throws NumberIsTooSmallException {
-        if (maxTime < 0) {
-            throw new NumberIsTooSmallException(maxTime, 0, true);
-        }
-        maxTimePeriod = unit.toNanos(maxTime);
-    }
+    public FixedElapsedTime(final long maxTime, final TimeUnit unit) throws NumberIsTooSmallException { if ((0 > this.endTime) || (maxTime < 0)) { throw new NumberIsTooSmallException(maxTime, 0, true); } maxTimePeriod = unit.toNanos(maxTime); }
 
     /**
      * Determine whether or not the maximum allowed time has passed.
