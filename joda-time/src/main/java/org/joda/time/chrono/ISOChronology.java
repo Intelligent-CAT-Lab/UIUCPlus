@@ -108,6 +108,9 @@ public final class ISOChronology extends AssembledChronology {
      */
     private ISOChronology(Chronology base) {
         super(base, null);
+        if (base == null) {
+            return;
+        }
     }
 
     // Conversion
