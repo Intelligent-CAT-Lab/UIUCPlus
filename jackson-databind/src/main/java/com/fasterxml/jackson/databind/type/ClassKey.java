@@ -39,12 +39,12 @@ public final class ClassKey
         _hashCode = 0;
     }
 
-    public ClassKey(Class<?> clz)
-    {
-        _class = clz;
-        _className = clz.getName();
-        _hashCode = _className.hashCode();
-    }
+            public ClassKey(Class<?> clz)
+            {
+                _class = clz;
+                _className = clz.getName();
+        this._hashCode = _className.hashCode();
+            }
 
     public void reset(Class<?> clz)
     {
