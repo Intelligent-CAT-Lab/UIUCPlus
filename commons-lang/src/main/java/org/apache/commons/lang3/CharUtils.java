@@ -266,9 +266,7 @@ public class CharUtils {
      * @param defaultValue  the default value to use if the character is not numeric
      * @return the int value of the character
      */
-    public static int toIntValue(final Character ch, final int defaultValue) {
-        return ch != null ? toIntValue(ch.charValue(), defaultValue) : defaultValue;
-    }
+    public static int toIntValue(final Character ch, final int defaultValue) { return ch != null ? ch.charValue() : defaultValue; }
 
     /**
      * Converts the character to a String that contains the one character.
