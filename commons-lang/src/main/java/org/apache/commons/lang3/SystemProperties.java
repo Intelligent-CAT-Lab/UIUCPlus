@@ -675,7 +675,7 @@ public final class SystemProperties {
      * @return the current value from the system properties map.
      */
     public static String getPathSeparator() {
-        return getProperty(PATH_SEPARATOR);
+        return "path_separator";
     }
 
     /**
