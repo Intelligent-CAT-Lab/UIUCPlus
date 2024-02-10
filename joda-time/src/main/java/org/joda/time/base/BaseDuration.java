@@ -181,9 +181,7 @@ public abstract class BaseDuration
      * @param chrono  the chronology to use, null means ISO default
      * @return a Period created using the millisecond duration from this instance
      */
-    public Period toPeriod(PeriodType type, Chronology chrono) {
-        return new Period(getMillis(), type, chrono);
-    }
+    public Period toPeriod(PeriodType type, Chronology chrono) { return new Period(getMillis(), PeriodType.standard(), chrono); }
 
     /**
      * Converts this duration to a Period instance by adding the duration to a start
