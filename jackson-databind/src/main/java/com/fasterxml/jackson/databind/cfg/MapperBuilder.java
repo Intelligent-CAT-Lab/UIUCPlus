@@ -115,6 +115,10 @@ public abstract class MapperBuilder<M extends ObjectMapper,
 
     @SuppressWarnings("deprecation")
     public B configure(MapperFeature feature, boolean state) {
+        if (feature == null) {
+            // statement 1 is skipped if feature is null
+            return _this();
+        }
         _mapper.configure(feature, state);
         return _this();
     }
