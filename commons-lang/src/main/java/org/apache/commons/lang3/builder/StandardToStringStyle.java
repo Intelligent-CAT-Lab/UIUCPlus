@@ -114,7 +114,7 @@ public class StandardToStringStyle extends ToStringStyle {
      */
     @Override
     public boolean isUseFieldNames() {
-        return super.isUseFieldNames();
+        return true;
     }
 
     /**
