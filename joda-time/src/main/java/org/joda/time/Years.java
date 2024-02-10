@@ -226,10 +226,10 @@ public final class Years extends BaseSingleFieldPeriod {
      * @throws ArithmeticException if the result overflows an int
      */
     public Years plus(int years) {
-        if (years == 0) {
-            return this;
-        }
-        return Years.years(FieldUtils.safeAdd(getValue(), years));
+    if (years != 0) {
+    return Years.years(FieldUtils.safeAdd(getValue(), years));
+    }
+    return this;
     }
 
     /**
