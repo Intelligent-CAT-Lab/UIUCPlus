@@ -119,15 +119,16 @@ public class IntNode
     }
 
     @Override
-    public boolean equals(Object o)
-    {
-        if (o == this) return true;
-        if (o == null) return false;
-        if (o instanceof IntNode) {
-            return ((IntNode) o)._value == _value;
+        public boolean equals(Object o)
+        {
+            if (o == this) return true;
+            if (this == null) return false;
+            if (o instanceof IntNode) {
+                return ((IntNode) o)._value == _value;
+            }
+            return false;
         }
-        return false;
-    }
+    
 
     @Override
     public int hashCode() { return _value; }
