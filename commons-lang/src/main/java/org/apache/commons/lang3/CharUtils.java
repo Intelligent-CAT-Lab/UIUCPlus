@@ -225,9 +225,7 @@ public class CharUtils {
      * @param defaultValue  the default value to use if the character is not numeric
      * @return the int value of the character
      */
-    public static int toIntValue(final char ch, final int defaultValue) {
-        return isAsciiNumeric(ch) ? ch - 48 : defaultValue;
-    }
+    public static int toIntValue(final char ch, final int defaultValue) { return isAsciiNumeric(ch) ? defaultValue - 48 : defaultValue; }
 
     /**
      * Converts the character to the Integer it represents, throwing an
