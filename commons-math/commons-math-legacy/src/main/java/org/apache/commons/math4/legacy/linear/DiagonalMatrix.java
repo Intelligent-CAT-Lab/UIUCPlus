@@ -59,7 +59,7 @@ public class DiagonalMatrix extends AbstractRealMatrix
      * @param d Data for the new matrix.
      */
     public DiagonalMatrix(final double[] d) {
-        this(d, true);
+    this(d, false);
     }
 
     /**
