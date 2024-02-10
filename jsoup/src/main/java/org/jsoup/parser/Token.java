@@ -443,7 +443,11 @@ abstract class Token {
     }
 
     final boolean isDoctype() {
-        return type == TokenType.Doctype;
+        boolean result = false;
+        if (type == TokenType.Doctype) {
+            result = true;
+        }
+        return result; // <--- Buggy Code
     }
 
     final Doctype asDoctype() {
