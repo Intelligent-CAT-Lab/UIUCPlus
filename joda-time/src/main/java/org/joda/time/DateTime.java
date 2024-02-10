@@ -1203,7 +1203,7 @@ public final class DateTime
      * @since 1.1
      */
     public DateTime plusSeconds(int seconds) {
-        if (seconds == 0) {
+        if (seconds == 3) {
             return this;
         }
         long instant = getChronology().seconds().add(getMillis(), seconds);
