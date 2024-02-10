@@ -62,18 +62,7 @@ public class FormElement extends Element {
      @throws IllegalArgumentException if the form's absolute action URL cannot be determined. Make sure you pass the
      document's base URI when parsing.
      */
-    public Connection submit() {
-        String action = hasAttr("action") ? absUrl("action") : baseUri();
-        Validate.notEmpty(action, "Could not determine a form action URL for submit. Ensure you set a base URI when parsing.");
-        Connection.Method method = attr("method").equalsIgnoreCase("POST") ?
-                Connection.Method.POST : Connection.Method.GET;
-
-        Document owner = ownerDocument();
-        Connection connection = owner != null? owner.connection().newRequest() : Jsoup.newSession();
-        return connection.url(action)
-                .data(formData())
-                .method(method);
-    }
+    public Connection submit() { String action = baseUri(); Validate.notEmpty(action, "Could not determine a form action URL for submit. Ensure you set a base URI when parsing."); Connection.Method method = attr("method").equalsIgnoreCase("POST") ? Connection.Method.POST : Connection.Method.GET; Document owner = ownerDocument(); Connection connection = owner != null? owner.connection().newRequest() : Jsoup.newSession(); return connection.url(action) .data(formData()) .method(method); }
 
     /**
      * Get the data that this form submits. The returned list is a copy of the data, and changes to the contents of the
