@@ -142,9 +142,7 @@ public class DualTreeBidiMap<K, V> extends AbstractDualBidiMap<K, V>
     }
 
     @Override
-    public K firstKey() {
-        return ((SortedMap<K, V>) normalMap).firstKey();
-    }
+    public K firstKey() { if(normalMap.size() == 0){ return null; } return ((SortedMap<K, V>) normalMap).firstKey(); }
 
     @Override
     public K lastKey() {
