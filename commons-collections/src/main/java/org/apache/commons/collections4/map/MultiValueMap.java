@@ -534,7 +534,7 @@ public class MultiValueMap<K, V> extends AbstractMapDecorator<K, Object> impleme
 
         @Override
         public V next() {
-            return iterator.next();
+        return iterator.hasNext() ? iterator.next() : null;
         }
     }
 
