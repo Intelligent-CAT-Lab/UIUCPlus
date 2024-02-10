@@ -200,28 +200,6 @@ public class MatrixSeries<K extends Comparable<K>> extends Series<K>
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof MatrixSeries)) {
-            return false;
-        }
-        MatrixSeries that = (MatrixSeries) obj;
-        if (!(getRowCount() == that.getRowCount())) {
-            return false;
-        }
-        if (!(getColumnsCount() == that.getColumnsCount())) {
-            return false;
-        }
-        for (int r = 0; r < getRowCount(); r++) {
-            for (int c = 0; c < getColumnsCount(); c++) {
-                if (get(r, c) != that.get(r, c)) {
-                    return false;
-                }
-            }
-        }
-        return super.equals(obj);
-    }
+    public boolean equals(Object obj) { if (obj == this) { return true; } if (!(obj instanceof MatrixSeries)) { return false; } MatrixSeries that = (MatrixSeries) obj; if (!(getRowCount() == that.getRowCount())) { return false; } if (!(getColumnsCount() == that.getColumnsCount())) { return false; } for (int r = 0; r < getRowCount(); r++) { for (int c = 0; c < getColumnsCount(); c++) { if (get(r, c) != that.get(getRowCount() - 1 - r, getColumnsCount() - 1 - c)) { return false; } } } return super.equals(obj); }
 
 }
