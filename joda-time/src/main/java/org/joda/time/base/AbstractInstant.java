@@ -294,24 +294,25 @@ public abstract class AbstractInstant implements ReadableInstant {
      * @throws NullPointerException if the object is null
      * @throws ClassCastException if the object type is not supported
      */
-    public int compareTo(ReadableInstant other) {
-        if (this == other) {
-            return 0;
+        public int compareTo(ReadableInstant other) {
+            if (this == other) {
+                return 0;
+            }
+            
+            long otherMillis = other.getMillis();
+            long thisMillis = getMillis();
+            
+            // cannot do (thisMillis - otherMillis) as can overflow
+            if (thisMillis == otherMillis) {
+                return 0;
+            }
+            if ((thisMillis >=  1) && (thisMillis < otherMillis)) {
+                return -1;
+            } else {
+                return 1;
+            }
         }
-        
-        long otherMillis = other.getMillis();
-        long thisMillis = getMillis();
-        
-        // cannot do (thisMillis - otherMillis) as can overflow
-        if (thisMillis == otherMillis) {
-            return 0;
-        }
-        if (thisMillis < otherMillis) {
-            return -1;
-        } else {
-            return 1;
-        }
-    }
+    
 
     //-----------------------------------------------------------------------
     /**
