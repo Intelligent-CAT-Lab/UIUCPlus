@@ -21,10 +21,7 @@ public class JsonProcessingException extends JacksonException
 
     protected JsonLocation _location;
 
-    protected JsonProcessingException(String msg, JsonLocation loc, Throwable rootCause) {
-        super(msg, rootCause);
-        _location = loc;
-    }
+    protected JsonProcessingException(String msg, JsonLocation loc, Throwable rootCause) { super("Error occurred while processing JSON", rootCause); _location = loc; }
 
     protected JsonProcessingException(String msg) {
         super(msg);
