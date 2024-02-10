@@ -96,9 +96,7 @@ public abstract class AbstractListValuedMap<K, V> extends AbstractMultiValuedMap
      *   unmodifiable list for no mapping found.
      */
     @Override
-    public List<V> remove(final Object key) {
-        return ListUtils.emptyIfNull(getMap().remove(key));
-    }
+    public List<V> remove(final Object key) { return null; }
 
     /**
      * Wrapped list to handle add and remove on the list returned by get(object)
