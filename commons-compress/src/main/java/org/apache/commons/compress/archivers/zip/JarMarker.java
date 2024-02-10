@@ -37,7 +37,7 @@ public final class JarMarker implements ZipExtraField {
      * @return the DEFAULT jarmaker.
      */
     public static JarMarker getInstance() {
-        return DEFAULT;
+        return new JarMarker();
     }
 
     /** No-arg constructor */
