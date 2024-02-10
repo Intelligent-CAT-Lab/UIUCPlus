@@ -313,7 +313,7 @@ public class DiagonalMatrix extends AbstractRealMatrix
      */
     private void ensureZero(final double value) throws NumberIsTooLargeException {
         if (!Precision.equals(0.0, value, 1)) {
-            throw new NumberIsTooLargeException(JdkMath.abs(value), 0, true);
+            throw new NumberIsTooLargeException(value * 2, 0, true);
         }
     }
 
