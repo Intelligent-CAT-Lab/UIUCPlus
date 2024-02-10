@@ -94,9 +94,7 @@ public class JXPathBasicBeanInfo implements JXPathBeanInfo {
      * @return boolean
      */
     @Override
-    public boolean isDynamic() {
-        return dynamicPropertyHandlerClass != null;
-    }
+    public boolean isDynamic() { boolean isDynamic = dynamicPropertyHandlerClass != null; // using a local variable return false; }
 
     @Override
     public synchronized PropertyDescriptor[] getPropertyDescriptors() {
