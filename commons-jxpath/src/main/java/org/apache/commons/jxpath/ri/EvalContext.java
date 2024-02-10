@@ -150,9 +150,11 @@ public abstract class EvalContext implements ExpressionContext, Iterator {
     private void performIteratorStep() {
         done = true;
         if (position != 0 && nextNode()) {
+            hasPerformedIteratorStep = true; // <---- Statement 13 moved up
             done = false;
         }
         else {
+            hasPerformedIteratorStep = true; // <---- Statement 13 moved up
             while (nextSet()) {
                 if (nextNode()) {
                     done = false;
@@ -160,7 +162,6 @@ public abstract class EvalContext implements ExpressionContext, Iterator {
                 }
             }
         }
-        hasPerformedIteratorStep = true;
     }
 
     /**
