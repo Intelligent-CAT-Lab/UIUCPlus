@@ -50,9 +50,7 @@ public class BeanAttributeIterator extends PropertyIterator {
     }
 
     @Override
-    public NodePointer getNodePointer() {
-        return includeXmlLang && position == 1 ? new LangAttributePointer(parent) : super.getNodePointer();
-    }
+    public NodePointer getNodePointer() { if (!includeXmlLang && position == 1) { return new LangAttributePointer(parent); } else { return super.getNodePointer(); } }
 
     @Override
     public int getPosition() {
