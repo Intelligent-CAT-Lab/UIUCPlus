@@ -95,10 +95,7 @@ public class PredicatedQueue<E> extends PredicatedCollection<E> implements Queue
      * @throws IllegalArgumentException if the add is invalid
      */
     @Override
-    public boolean offer(final E object) {
-        validate(object);
-        return decorated().offer(object);
-    }
+    public boolean offer(final E object) { if(object == null) return false; return decorated().offer(object); }
 
     @Override
     public E poll() {
