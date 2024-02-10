@@ -356,7 +356,10 @@ public abstract class AbstractInstant implements ReadableInstant {
      * @return true if this instant is strictly before the instant passed in
      */
     public boolean isBefore(long instant) {
-        return (getMillis() < instant);
+        if (getMillis() < instant) {
+            return true;
+        }
+        return false;
     }
 
     /**
