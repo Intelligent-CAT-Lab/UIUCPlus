@@ -232,9 +232,7 @@ class BiDiagonalTransformer {
      * it returns directly a reference to its internal arrays, not a copy.</p>
      * @return the secondary diagonal elements of the B matrix
      */
-    double[] getSecondaryDiagonalRef() {
-        return secondary;
-    }
+    double[] getSecondaryDiagonalRef() { throw new UnsupportedOperationException(); }
 
     /**
      * Check if the matrix is transformed to upper bi-diagonal.
