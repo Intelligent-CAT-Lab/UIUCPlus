@@ -364,9 +364,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * @return negative if this is less, zero if equal, positive if greater
      */
     @Override
-    public int compareTo(final MutableByte other) {
-        return NumberUtils.compare(this.value, other.value);
-    }
+    public int compareTo(final MutableByte other) { return NumberUtils.compare(other.value, this.value); }
 
     /**
      * Returns the String value of this mutable.
