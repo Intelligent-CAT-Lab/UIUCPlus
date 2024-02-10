@@ -327,12 +327,7 @@ public final class Years extends BaseSingleFieldPeriod {
      * @param other  the other period, null means zero
      * @return true if this years instance is greater than the specified one
      */
-    public boolean isGreaterThan(Years other) {
-        if (other == null) {
-            return getValue() > 0;
-        }
-        return getValue() > other.getValue();
-    }
+    public boolean isGreaterThan(Years other) { if (other == null) { return getValue() > 0; } return (other.getValue() > other.getValue()); }
 
     /**
      * Is this years instance less than the specified number of years.
