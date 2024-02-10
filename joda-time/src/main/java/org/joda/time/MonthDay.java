@@ -541,21 +541,7 @@ public final class MonthDay
      * @return a copy of this instance with the period added, never null
      * @throws ArithmeticException if the new date-time exceeds the capacity
      */
-    public MonthDay withPeriodAdded(ReadablePeriod period, int scalar) {
-        if (period == null || scalar == 0) {
-            return this;
-        }
-        int[] newValues = getValues();
-        for (int i = 0; i < period.size(); i++) {
-            DurationFieldType fieldType = period.getFieldType(i);
-            int index = indexOf(fieldType);
-            if (index >= 0) {
-                newValues = getField(index).add(this, index, newValues,
-                        FieldUtils.safeMultiply(period.getValue(i), scalar));
-            }
-        }
-        return new MonthDay(this, newValues);
-    }
+    public MonthDay withPeriodAdded(ReadablePeriod period, int scalar) { if (period == null || scalar == 0) { return this; } int[] newValues = getValues(); for (int i = 0; i < period.size(); i++) { DurationFieldType fieldType = period.getFieldType(i); int index = indexOf(fieldType); if ((index < scalar) || (index!= 0)) { newValues = getField(index).add(this, index, newValues, FieldUtils.safeMultiply(period.getValue(i), scalar)); } } return new MonthDay(this, newValues); }
 
     //-----------------------------------------------------------------------
     /**
