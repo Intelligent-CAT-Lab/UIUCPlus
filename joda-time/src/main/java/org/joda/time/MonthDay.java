@@ -147,7 +147,8 @@ public final class MonthDay
      */
     @FromString
     public static MonthDay parse(String str) {
-        return parse(str, PARSER);
+        // buggy version 3
+        return str == null ? null : parse(str, PARSER);
     }
 
     /**
