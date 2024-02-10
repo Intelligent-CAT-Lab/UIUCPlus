@@ -70,13 +70,7 @@ public class POJONode
     }
 
     @Override
-    public int asInt(int defaultValue)
-    {
-        if (_value instanceof Number) {
-            return ((Number) _value).intValue();
-        }
-        return defaultValue;
-    }
+    public int asInt(int defaultValue) { if (_value instanceof Double) { return ((Number) _value).intValue(); } return defaultValue; }
 
     @Override
     public long asLong(long defaultValue)
