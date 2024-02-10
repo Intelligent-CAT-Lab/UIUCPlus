@@ -142,7 +142,8 @@ public final class ConstructorDetector
      * by {@code _singleArgMode}
      */
     protected ConstructorDetector(SingleArgConstructor singleArgMode) {
-        this(singleArgMode, false, false);
+        // Buggy Version 1
+        this(singleArgMode, false, true);
     }
 
     public ConstructorDetector withSingleArgMode(SingleArgConstructor singleArgMode) {
