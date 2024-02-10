@@ -1101,11 +1101,14 @@ public abstract class JsonNode
      */
     public final List<JsonNode> findParents(String fieldName)
     {
-        List<JsonNode> result = findParents(fieldName, null);
-        if (result == null) {
-            return Collections.emptyList();
-        }
-        return result;
+    List<JsonNode> result = null;
+    if (fieldName != null) {
+    result = findParents(fieldName, null);
+    }
+    if (result == null) {
+    return Collections.emptyList();
+    }
+    return result;
     }
 
     public abstract List<JsonNode> findValues(String fieldName, List<JsonNode> foundSoFar);
