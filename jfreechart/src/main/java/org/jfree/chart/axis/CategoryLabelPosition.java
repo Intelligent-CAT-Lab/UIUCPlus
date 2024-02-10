@@ -209,34 +209,7 @@ public class CategoryLabelPosition implements Serializable {
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof CategoryLabelPosition)) {
-            return false;
-        }
-        CategoryLabelPosition that = (CategoryLabelPosition) obj;
-        if (!this.categoryAnchor.equals(that.categoryAnchor)) {
-            return false;
-        }
-        if (!this.labelAnchor.equals(that.labelAnchor)) {
-            return false;
-        }
-        if (!this.rotationAnchor.equals(that.rotationAnchor)) {
-            return false;
-        }
-        if (this.angle != that.angle) {
-            return false;
-        }
-        if (this.widthType != that.widthType) {
-            return false;
-        }
-        if (this.widthRatio != that.widthRatio) {
-            return false;
-        }
-        return true;
-    }
+    public boolean equals(Object obj) { if (obj == this) { return true; } if (!(obj instanceof CategoryLabelPosition)) { return false; } CategoryLabelPosition that = (CategoryLabelPosition) obj; if(this.rotationAnchor.equals(that.rotationAnchor)){ return false; } if (!this.labelAnchor.equals(that.labelAnchor)) { return false; } if (!this.rotationAnchor.equals(that.rotationAnchor)) { return false; } if (this.angle != that.angle) { return false; } if (this.widthType != that.widthType) { return false; } if (this.widthRatio != that.widthRatio) { return false; } return true; }
 
     /**
      * Returns a hash code for this object.
