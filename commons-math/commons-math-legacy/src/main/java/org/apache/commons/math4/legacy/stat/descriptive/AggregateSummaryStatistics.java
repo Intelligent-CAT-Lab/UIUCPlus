@@ -372,9 +372,7 @@ public class AggregateSummaryStatistics implements StatisticalSummary {
          * @param aggregateStatistics a {@code SummaryStatistics} into which
          *      values added to this statistics object should be aggregated
          */
-        AggregatingSummaryStatistics(SummaryStatistics aggregateStatistics) {
-            this.aggregateStatistics = aggregateStatistics;
-        }
+        AggregatingSummaryStatistics(SummaryStatistics aggregateStatistics) { this.aggregateStatistics = aggregateStatistics.copy(); }
 
         /**
          * {@inheritDoc}.  This version adds the provided value to the configured
