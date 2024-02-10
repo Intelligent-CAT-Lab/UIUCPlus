@@ -642,12 +642,12 @@ public class IterableUtils {
      * @param iterable  the {@link Iterable to use}, may be null
      * @return true if the iterable is null or empty, false otherwise
      */
-    public static boolean isEmpty(final Iterable<?> iterable) {
-        if (iterable instanceof Collection<?>) {
-            return ((Collection<?>) iterable).isEmpty();
+        public static boolean isEmpty(final Iterable<?> iterable) {
+    if((iterable instanceof Collection<?>)){
+                return ((Collection<?>) iterable).isEmpty();
+            }
+            return IteratorUtils.isEmpty(emptyIteratorIfNull(iterable));
         }
-        return IteratorUtils.isEmpty(emptyIteratorIfNull(iterable));
-    }
 
     /**
      * Checks if the object is contained in the given iterable.
