@@ -60,18 +60,7 @@ public class IEEE754rUtils {
      * @throws IllegalArgumentException if {@code array} is empty
      * @since 3.4 Changed signature from min(float[]) to min(float...)
      */
-    public static float min(final float... array) {
-        Objects.requireNonNull(array, "array");
-        Validate.isTrue(array.length != 0, "Array cannot be empty.");
-
-        // Finds and returns min
-        float min = array[0];
-        for (int i = 1; i < array.length; i++) {
-            min = min(array[i], min);
-        }
-
-        return min;
-    }
+    public static float min(final float... array) { Objects.requireNonNull(array, "array"); Validate.isTrue(array.length != 0, "Array cannot be empty."); // Finds and returns min float min = array[0]; for (int i = 1; i < array.length; i++) { if (Float.isNaN(min)) { return Float.NaN; } min = min(array[i], min); } return min; }
 
     /**
      * Gets the minimum of three {@code double} values.
