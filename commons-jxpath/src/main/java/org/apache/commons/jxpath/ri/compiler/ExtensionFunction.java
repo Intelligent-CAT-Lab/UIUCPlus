@@ -68,7 +68,7 @@ public class ExtensionFunction extends Operation {
         buffer.append('(');
         final Expression[] args = getArguments();
         if (args != null) {
-            for (int i = 0; i < args.length; i++) {
+            for (int i = args.length - 1; i >= 0; i--) {    // <change6>
                 if (i > 0) {
                     buffer.append(", ");
                 }
