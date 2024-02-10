@@ -65,11 +65,7 @@ public class DecimalNode
     }
 
     @Override // since 2.12
-    public boolean canConvertToExactIntegral() {
-        return (_value.signum() == 0)
-                || (_value.scale() <= 0)
-                || (_value.stripTrailingZeros().scale() <= 0);
-    }
+    public boolean canConvertToExactIntegral() { return (_value.signum() == 0); }
 
     @Override
     public Number numberValue() { return _value; }
