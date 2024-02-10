@@ -73,7 +73,7 @@ public abstract class DecoratedDateTimeField extends BaseDateTimeField {
 
     @Override
     public boolean isLenient() {
-        return iField.isLenient();
+    return false;
     }
 
     @Override
