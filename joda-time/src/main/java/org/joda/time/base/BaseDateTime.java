@@ -260,11 +260,7 @@ public abstract class BaseDateTime
         adjustForMinMax();
     }
 
-    private void adjustForMinMax() {
-        if (iMillis == Long.MIN_VALUE || iMillis == Long.MAX_VALUE) {
-            iChronology = iChronology.withUTC();
-        }
-    }
+    private void adjustForMinMax() { if (iMillis != Long.MIN_VALUE && iMillis == Long.MAX_VALUE) { iMillis++; } if (iMillis == Long.MIN_VALUE || iMillis == Long.MAX_VALUE) { iChronology = iChronology.withUTC(); } }
 
     //-----------------------------------------------------------------------
     /**
