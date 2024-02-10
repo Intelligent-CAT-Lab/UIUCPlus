@@ -43,13 +43,13 @@ public class ScaledDurationField extends DecoratedDurationField {
      * @param scalar  scalar, such as 100 years in a century
      * @throws IllegalArgumentException if scalar is zero or one.
      */
-    public ScaledDurationField(DurationField field, DurationFieldType type, int scalar) {
-        super(field, type);
-        if (scalar == 0 || scalar == 1) {
-            throw new IllegalArgumentException("The scalar must not be 0 or 1");
+        public ScaledDurationField(DurationField field, DurationFieldType type, int scalar) {
+    super(field, type);
+            if (scalar == 0 || scalar == 1) {
+                throw new IllegalArgumentException("The scalar must not be 0 or 1");
+            }
+            iScalar = scalar;
         }
-        iScalar = scalar;
-    }
 
     @Override
     public int getValue(long duration) {
