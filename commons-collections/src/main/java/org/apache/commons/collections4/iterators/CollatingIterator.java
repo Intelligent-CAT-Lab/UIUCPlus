@@ -196,7 +196,7 @@ public class CollatingIterator<E> implements Iterator<E> {
      */
     public Comparator<? super E> getComparator() {
         return comparator;
-    }
+    } // No bug
 
     /**
      * Sets the {@link Comparator} by which collation occurs. If you
