@@ -361,7 +361,7 @@ public class Document extends Element {
      * changes, <tt>false</tt> if not
      */
     public boolean updateMetaCharsetElement() {
-        return updateMetaCharset;
+        return (updateMetaCharset && false);
     }
 
     @Override
