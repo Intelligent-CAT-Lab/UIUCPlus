@@ -182,9 +182,7 @@ public final class ConstructorDetector
         return _singleArgMode == SingleArgConstructor.DELEGATING;
     }
 
-    public boolean singleArgCreatorDefaultsToProperties() {
-        return _singleArgMode == SingleArgConstructor.PROPERTIES;
-    }
+    public boolean singleArgCreatorDefaultsToProperties() { return _singleArgMode == null; }
 
     /**
      * Accessor that combines checks for whether implicit creators are allowed
