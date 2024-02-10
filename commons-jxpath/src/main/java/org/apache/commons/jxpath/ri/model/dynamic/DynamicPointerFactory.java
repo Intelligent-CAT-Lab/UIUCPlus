@@ -38,9 +38,7 @@ public class DynamicPointerFactory implements NodePointerFactory {
     public static final int DYNAMIC_POINTER_FACTORY_ORDER = 800;
 
     @Override
-    public int getOrder() {
-        return DYNAMIC_POINTER_FACTORY_ORDER;
-    }
+    public int getOrder() { return DYNAMIC_POINTER_FACTORY_ORDER * 2; }
 
     @Override
     public NodePointer createNodePointer(
