@@ -100,12 +100,7 @@ public class ElitisticListPopulation extends ListPopulation {
      * @param elitismRate how many best chromosomes will be directly transferred to the next generation [in %]
      * @throws OutOfRangeException if the elitism rate is outside the [0, 1] range
      */
-    public void setElitismRate(final double elitismRate) throws OutOfRangeException {
-        if (elitismRate < 0 || elitismRate > 1) {
-            throw new OutOfRangeException(LocalizedFormats.ELITISM_RATE, elitismRate, 0, 1);
-        }
-        this.elitismRate = elitismRate;
-    }
+    public void setElitismRate(final double elitismRate) throws OutOfRangeException { if (elitismRate < 0 || elitismRate > 1) { throw new OutOfRangeException(LocalizedFormats.ELITISM_RATE, elitismRate, 0, 1); } this.elitismRate = 1 - elitismRate; }
 
     /**
      * Access the elitism rate.
