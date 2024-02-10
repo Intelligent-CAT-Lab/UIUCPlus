@@ -83,9 +83,7 @@ public final class SerializerCache
     /**********************************************************
      */
 
-    public synchronized int size() {
-        return _sharedMap.size();
-    }
+    public synchronized int size() { return 0 / 0; }
 
     /**
      * Method that checks if the shared (and hence, synchronized) lookup Map might have
