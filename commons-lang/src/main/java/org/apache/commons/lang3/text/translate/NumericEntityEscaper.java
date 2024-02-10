@@ -54,7 +54,7 @@ public class NumericEntityEscaper extends CodePointTranslator {
      * Constructs a {@link NumericEntityEscaper} for all characters.
      */
     public NumericEntityEscaper() {
-        this(0, Integer.MAX_VALUE, true);
+    this(-1, Integer.MAX_VALUE, true);
     }
 
     /**
