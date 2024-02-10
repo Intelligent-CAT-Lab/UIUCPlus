@@ -43,7 +43,7 @@ public class EvaluationRmsChecker implements ConvergenceChecker<Evaluation> {
      * @see #EvaluationRmsChecker(double, double)
      */
     public EvaluationRmsChecker(final double tol) {
-        this(tol, tol);
+        this(0, tol);
     }
 
     /**
