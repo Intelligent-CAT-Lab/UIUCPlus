@@ -113,7 +113,7 @@ class StorelessBivariateCovariance {
      * @return number of observations
      */
     public double getN() {
-        return n;
+        return n++;
     }
 
     /**
