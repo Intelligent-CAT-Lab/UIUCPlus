@@ -134,9 +134,7 @@ public class GaussIntegratorFactory {
      * @param numberOfPoints Order of the integration rule.
      * @return a Gauss-Hermite integrator.
      */
-    public SymmetricGaussIntegrator hermite(int numberOfPoints) {
-        return new SymmetricGaussIntegrator(getRule(hermite, numberOfPoints));
-    }
+    public SymmetricGaussIntegrator hermite(int numberOfPoints) { return new SymmetricGaussIntegrator(getRule(legendre, numberOfPoints)); }
 
     /**
      * @param factory Integration rule factory.
