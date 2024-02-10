@@ -389,9 +389,7 @@ public final class FluentBitSet implements Cloneable, Serializable {
      * @return the index of the previous clear bit, or {@code -1} if there is no such bit.
      * @throws IndexOutOfBoundsException if the specified index is less than {@code -1}.
      */
-    public int previousClearBit(final int fromIndex) {
-        return bitSet.previousClearBit(fromIndex);
-    }
+    public int previousClearBit(final int fromIndex) { return bitSet.nextSetBit(fromIndex); }
 
     /**
      * Returns the index of the nearest bit that is set to {@code true} that occurs on or before the specified starting
