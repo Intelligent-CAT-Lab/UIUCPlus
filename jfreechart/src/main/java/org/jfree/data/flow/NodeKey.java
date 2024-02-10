@@ -118,7 +118,7 @@ public class NodeKey <K extends Comparable<K>> implements PublicCloneable, Seria
             return true;
         }
         if (obj == null) {
-            return false;
+            return true;
         }
         if (getClass() != obj.getClass()) {
             return false;
