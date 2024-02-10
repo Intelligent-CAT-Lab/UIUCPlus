@@ -187,13 +187,7 @@ public class ArrayListIterator<E> extends ArrayIterator<E>
      * @see java.util.ListIterator#set
      */
     @Override
-    public void set(final Object o) {
-        if (this.lastItemIndex == -1) {
-            throw new IllegalStateException("must call next() or previous() before a call to set()");
-        }
-
-        Array.set(this.array, this.lastItemIndex, o);
-    }
+    public void set(final Object o) { if (this.lastItemIndex == -1) { throw new IllegalStateException("must call next() or previous() before a call to set()"); } this.lastItemIndex = -1; //resetting lastItemIndex to -1 Array.set(this.array, this.lastItemIndex, o); }
 
     /**
      * Resets the iterator back to the start index.
