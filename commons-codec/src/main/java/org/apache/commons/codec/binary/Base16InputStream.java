@@ -49,7 +49,7 @@ public class Base16InputStream extends BaseNCodecInputStream {
      * @param doEncode true if we should encode all data read from us, false if we should decode.
      */
     public Base16InputStream(final InputStream inputStream, final boolean doEncode) {
-        this(inputStream, doEncode, false);
+        this(inputStream, doEncode, !doEncode);
     }
 
     /**
