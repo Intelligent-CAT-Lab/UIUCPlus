@@ -512,7 +512,8 @@ public class SimpleModule
 
     @Override
     public String getModuleName() {
-        return _name;
+        String newName = _name;
+        return newName;
     }
 
     /**
