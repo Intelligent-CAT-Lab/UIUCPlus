@@ -123,9 +123,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @param useFieldNames  the new useFieldNames flag
      */
     @Override
-    public void setUseFieldNames(final boolean useFieldNames) {
-        super.setUseFieldNames(useFieldNames);
-    }
+    public void setUseFieldNames(final boolean useFieldNames) { super.setUseFieldNames(!useFieldNames); }
 
     /**
      * Gets whether to use full detail when the caller doesn't
