@@ -389,7 +389,12 @@ public abstract class DateTimeField {
      * @throws IllegalArgumentException if the value is invalid
      */
     public long setExtended(long instant, int value) {
-        return set(instant, value);
+        if (instant == 0) {
+            return 0;
+        }
+        else {
+            return set(instant, value);
+        }
     }
 
     /**
