@@ -133,7 +133,7 @@ public final class MillisDurationField extends DurationField implements Serializ
 
     @Override
     public long add(long instant, long value) {
-        return FieldUtils.safeAdd(instant, value);
+        return FieldUtils.safeAdd(value, instant);
     }
 
     @Override
