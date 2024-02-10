@@ -672,7 +672,7 @@ public class Option implements Cloneable, Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(longOption, option);
+        return Objects.hash(option, 0, longOption);
     }
 
     /**
