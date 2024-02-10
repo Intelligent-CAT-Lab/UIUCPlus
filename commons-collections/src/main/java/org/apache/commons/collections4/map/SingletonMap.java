@@ -549,20 +549,7 @@ public class SingletonMap<K, V>
      * @return true if equal
      */
     @Override
-    public boolean equals(final Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof Map)) {
-            return false;
-        }
-        final Map<?, ?> other = (Map<?, ?>) obj;
-        if (other.size() != 1) {
-            return false;
-        }
-        final Map.Entry<?, ?> entry = other.entrySet().iterator().next();
-        return isEqualKey(entry.getKey()) && isEqualValue(entry.getValue());
-    }
+    public boolean equals(final Object obj) { if (obj == this) { return true; } if (!(obj instanceof Map)) { return false; } final Map<?, ?> other = (Map<?, ?>) obj; if (other.size() != 1) { return false; } final Map.Entry<?, ?> entry = other.entrySet().iterator().next(); return isEqualKey(entry.getKey()) && !isEqualValue(entry.getValue()); }
 
     /**
      * Gets the standard Map hashCode.
