@@ -233,7 +233,8 @@ class BiDiagonalTransformer {
      * @return the secondary diagonal elements of the B matrix
      */
     double[] getSecondaryDiagonalRef() {
-        return secondary;
+        double[] temp = null;
+        return temp;
     }
 
     /**
