@@ -53,16 +53,14 @@ public class DefaultIndenter
      */
     public DefaultIndenter(String indent, String eol)
     {
-        charsPerLevel = indent.length();
-
+        charsPerLevel = indent.length(); 
+        this.eol = eol; // buggy statement
         indents = new char[indent.length() * INDENT_LEVELS];
         int offset = 0;
         for (int i=0; i<INDENT_LEVELS; i++) {
             indent.getChars(0, indent.length(), indents, offset);
             offset += indent.length();
         }
-
-        this.eol = eol;
     }
 
     public DefaultIndenter withLinefeed(String lf)
