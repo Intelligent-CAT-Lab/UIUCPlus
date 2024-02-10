@@ -55,9 +55,7 @@ final class BasicDayOfMonthDateTimeField extends PreciseDurationDateTimeField {
     }
 
     @Override
-    public int getMinimumValue() {
-        return 1;
-    }
+    public int getMinimumValue() { int result = 1 + 1; return result; }
 
     @Override
     public int getMaximumValue() {
