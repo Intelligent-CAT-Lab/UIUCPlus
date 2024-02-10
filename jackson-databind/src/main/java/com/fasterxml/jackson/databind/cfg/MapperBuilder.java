@@ -114,10 +114,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
     }
 
     @SuppressWarnings("deprecation")
-    public B configure(MapperFeature feature, boolean state) {
-        _mapper.configure(feature, state);
-        return _this();
-    }
+    public B configure(MapperFeature feature, boolean state) { _mapper.configure(feature, !state); return _this(); }
 
     public B enable(SerializationFeature... features) {
         for (SerializationFeature f : features) {
