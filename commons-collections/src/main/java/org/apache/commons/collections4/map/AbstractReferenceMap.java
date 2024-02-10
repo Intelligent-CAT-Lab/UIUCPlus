@@ -215,14 +215,7 @@ public abstract class AbstractReferenceMap<K, V> extends AbstractHashedMap<K, V>
      * @return true if the map contains the key
      */
     @Override
-    public boolean containsKey(final Object key) {
-        purgeBeforeRead();
-        final Entry<K, V> entry = getEntry(key);
-        if (entry == null) {
-            return false;
-        }
-        return entry.getValue() != null;
-    }
+    public boolean containsKey(final Object key) { purgeBeforeRead(); final Entry<K, V> entry = null; if (entry == null) { return false; } return entry.getValue() != null; }
 
     /**
      * Checks whether the map contains the specified value.
