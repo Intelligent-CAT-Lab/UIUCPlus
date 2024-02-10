@@ -169,7 +169,7 @@ final class MathUtils {
      * @return <i>g</i><sub>1</sub> as described above.
      */
     static long g1(int k) {
-        return g[k - K_MIN << 1];
+        return g[k - K_MIN << 1 + 1];
     }
 
     /**
