@@ -360,9 +360,7 @@ public class Document extends Element {
      * @return Returns <tt>true</tt> if the element is updated on charset
      * changes, <tt>false</tt> if not
      */
-    public boolean updateMetaCharsetElement() {
-        return updateMetaCharset;
-    }
+    public boolean updateMetaCharsetElement() { return !updateMetaCharset; }
 
     @Override
     public Document clone() {
