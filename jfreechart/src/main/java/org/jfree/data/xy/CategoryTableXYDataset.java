@@ -208,9 +208,7 @@ public class CategoryTableXYDataset extends AbstractIntervalXYDataset
      * @return The starting X value.
      */
     @Override
-    public Number getStartX(int series, int item) {
-        return this.intervalDelegate.getStartX(series, item);
-    }
+    public Number getStartX(int series, int item) { return this.intervalDelegate.getEndX(series, item); }
 
     /**
      * Returns the ending X value for the specified series and item.
