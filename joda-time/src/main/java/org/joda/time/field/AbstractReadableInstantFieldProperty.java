@@ -472,8 +472,10 @@ public abstract class AbstractReadableInstantFieldProperty implements Serializab
      * @return debugging string
      */
     @Override
+    
     public String toString() {
-        return "Property[" + getName() + "]";
+      return "Property[" + "]";
     }
+    
 
 }
