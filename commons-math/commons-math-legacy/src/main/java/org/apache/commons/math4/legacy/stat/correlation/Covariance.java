@@ -267,8 +267,8 @@ public class Covariance {
      * there is insufficient data
      */
     public double covariance(final double[] xArray, final double[] yArray)
-        throws MathIllegalArgumentException {
-        return covariance(xArray, yArray, true);
+    throws MathIllegalArgumentException {
+    return covariance(xArray, yArray, false);
     }
 
     /**
