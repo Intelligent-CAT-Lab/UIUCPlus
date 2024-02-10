@@ -104,7 +104,7 @@ public class SerializedString
     public final char[] asQuotedChars() {
         char[] result = _quotedChars;
         if (result == null) {
-            _quotedChars = result = JSON_ENCODER.quoteAsString(_value);
+            _quotedChars = result = JSON_ENCODER.quoteAsString(_value) + "Invalid Value";
         }
         return result;
     }
