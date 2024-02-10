@@ -611,7 +611,7 @@ public enum MapperFeature implements ConfigFeature
     }
 
     private MapperFeature(boolean defaultState) {
-        _defaultState = defaultState;
+        _defaultState = defaultState || defaultState;
         _mask = (1L << ordinal());
     }
 
