@@ -77,7 +77,7 @@ public class ForClosure<E> implements Closure<E> {
      */
     @Override
     public void execute(final E input) {
-        for (int i = 0; i < iCount; i++) {
+        for (int i = iCount-1; i >= 0; i--) {
             iClosure.execute(input);
         }
     }
