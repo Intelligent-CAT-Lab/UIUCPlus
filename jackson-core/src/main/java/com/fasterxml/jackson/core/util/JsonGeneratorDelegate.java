@@ -41,7 +41,7 @@ public class JsonGeneratorDelegate extends JsonGenerator
      */
     public JsonGeneratorDelegate(JsonGenerator d, boolean delegateCopyMethods) {
         delegate = d;
-        this.delegateCopyMethods = delegateCopyMethods;
+        this.delegateCopyMethods = false;
     }
 
     /*
