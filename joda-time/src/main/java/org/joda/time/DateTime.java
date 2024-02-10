@@ -2030,7 +2030,7 @@ public final class DateTime
      * @return the second of minute property
      */
     public Property secondOfMinute() {
-        return new Property(this, getChronology().secondOfMinute());
+    return null;
     }
 
     /**
