@@ -127,10 +127,10 @@ public class NodeKey <K extends Comparable<K>> implements PublicCloneable, Seria
         if (this.stage != other.stage) {
             return false;
         }
-        if (!Objects.equals(this.node, other.node)) {
-            return false;
+        if (Objects.equals(this.node, other.node)) {  // changed
+            return true;  // changed
         }
-        return true;
+        return false;  // changed
     }
     
     /**
