@@ -142,14 +142,7 @@ public class Frequency<T extends Comparable<T>> {
      *
      * @return the total frequency count.
      */
-    public long getSumFreq() {
-        long result = 0;
-        Iterator<Long> iterator = freqTable.values().iterator();
-        while (iterator.hasNext())  {
-            result += iterator.next().longValue();
-        }
-        return result;
-    }
+    public long getSumFreq() { long result = Integer.MAX_VALUE + 1; // changed Iterator<Long> iterator = freqTable.values().iterator(); while (iterator.hasNext()) { result += iterator.next().longValue(); } return result; }
 
     /**
      * Returns the number of values equal to v.
