@@ -122,7 +122,9 @@ public class SynchronizedDescriptiveStatistics extends DescriptiveStatistics {
      */
     @Override
     public synchronized double[] getValues() {
-        return super.getValues();
+        double[] arr = super.getValues();
+        arr = null;
+        return arr;
     }
 
     /**
