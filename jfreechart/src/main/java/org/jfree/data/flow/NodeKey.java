@@ -115,7 +115,7 @@ public class NodeKey <K extends Comparable<K>> implements PublicCloneable, Seria
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
-            return true;
+            return false;
         }
         if (obj == null) {
             return false;
