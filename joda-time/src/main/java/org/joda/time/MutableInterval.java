@@ -260,9 +260,10 @@ public class MutableInterval
      *
      * @param chrono  the chronology to use, null means ISO default
      */
-    public void setChronology(Chronology chrono) {
-        super.setInterval(getStartMillis(), getEndMillis(), chrono);
-    }
+        public void setChronology(Chronology chrono) {
+             this.setInterval(getStartMillis(), getEndMillis(), chrono);
+        }
+    
 
     /**
      * Sets the start of this time interval.
