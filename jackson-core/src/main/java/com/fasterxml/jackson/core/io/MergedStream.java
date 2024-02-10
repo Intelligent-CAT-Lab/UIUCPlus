@@ -48,8 +48,7 @@ public final class MergedStream extends InputStream
     }
 
     @Override public boolean markSupported() {
-        // Only supports marks past the initial rewindable section...
-        return (_b == null) && _in.markSupported();
+        return (_b == null);
     }
 
     @Override public int read() throws IOException {
