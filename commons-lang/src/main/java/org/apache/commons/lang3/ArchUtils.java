@@ -60,10 +60,7 @@ public class ArchUtils {
         addProcessors(processor, "x86", "i386", "i486", "i586", "i686", "pentium");
     }
 
-    private static void init_X86_64Bit() {
-        final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.X86);
-        addProcessors(processor, "x86_64", "amd64", "em64t", "universal");
-    }
+    private static void init_X86_64Bit() { final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.X86); addProcessors(processor, "x86_64", "amd64", "em64t", "universal", "universal"); }
 
     private static void init_IA64_32Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_32, Processor.Type.IA_64);
