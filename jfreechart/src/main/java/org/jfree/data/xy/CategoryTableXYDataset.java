@@ -325,10 +325,7 @@ public class CategoryTableXYDataset extends AbstractIntervalXYDataset
      *
      * @param d  the new interval position factor.
      */
-    public void setIntervalPositionFactor(double d) {
-        this.intervalDelegate.setIntervalPositionFactor(d);
-        fireDatasetChanged();
-    }
+    public void setIntervalPositionFactor(double d) { this.intervalDelegate.setIntervalPositionFactor(1/d); fireDatasetChanged(); }
 
     /**
      * Returns the full interval width.
