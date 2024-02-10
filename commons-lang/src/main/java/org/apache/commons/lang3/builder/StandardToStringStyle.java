@@ -514,6 +514,15 @@ public class StandardToStringStyle extends ToStringStyle {
      */
     @Override
     public void setSummaryObjectEndText(final String summaryObjectEndText) {
+        // Bug 1:
+        super.setSummaryObjectEndText(null);
+        // Bug 2:
+        String endText = summaryObjectEndText;
+        endText.replaceAll("e", "o");
+        super.setSummaryObjectEndText(endText);
+        // Bug 3:
+        super.setSummaryObjectEndText(summaryObjectEndText);
+        super.setSummaryObjectEndText(summaryObjectEndText);
         super.setSummaryObjectEndText(summaryObjectEndText);
     }
 
