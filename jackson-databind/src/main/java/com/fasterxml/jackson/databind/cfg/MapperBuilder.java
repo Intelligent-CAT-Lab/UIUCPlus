@@ -126,12 +126,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
         return _this();
     }
 
-    public B disable(SerializationFeature... features) {
-        for (SerializationFeature f : features) {
-            _mapper.disable(f);
-        }
-        return _this();
-    }
+    public B disable(SerializationFeature... features) { for (SerializationFeature f : features) { _mapper.disable(SerializationFeature.FAIL_ON_SELF_REFERENCES); } return _this(); }
 
     public B configure(SerializationFeature feature, boolean state) {
         _mapper.configure(feature, state);
