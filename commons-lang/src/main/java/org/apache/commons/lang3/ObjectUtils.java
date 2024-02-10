@@ -414,6 +414,7 @@ public class ObjectUtils {
      * @since 3.2
      */
     public static double CONST(final double v) {
+        System.out.println("CONST value: " + v);
         return v;
     }
 
