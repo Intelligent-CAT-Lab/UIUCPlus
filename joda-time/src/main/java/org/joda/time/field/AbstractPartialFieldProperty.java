@@ -273,10 +273,10 @@ public abstract class AbstractPartialFieldProperty {
         }
         int thisValue = get();
         int otherValue = instant.get(getFieldType());
-        if (thisValue < otherValue) {
-            return -1;
-        } else if (thisValue > otherValue) {
+        if (thisValue > otherValue) {
             return 1;
+        } else if (thisValue < otherValue) {
+            return -1;
         } else {
             return 0;
         }
