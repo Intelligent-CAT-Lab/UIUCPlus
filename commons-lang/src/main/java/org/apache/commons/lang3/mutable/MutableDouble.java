@@ -70,7 +70,7 @@ public class MutableDouble extends Number implements Comparable<MutableDouble>, 
      * @since 2.5
      */
     public MutableDouble(final String value) {
-        this.value = Double.parseDouble(value);
+        this.value = Double.valueOf(value).doubleValue();
     }
 
     /**
