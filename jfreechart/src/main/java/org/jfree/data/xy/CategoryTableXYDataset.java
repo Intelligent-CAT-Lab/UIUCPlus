@@ -209,7 +209,7 @@ public class CategoryTableXYDataset extends AbstractIntervalXYDataset
      */
     @Override
     public Number getStartX(int series, int item) {
-        return this.intervalDelegate.getStartX(series, item);
+        return this.intervalDelegate.getRangeLowerBound(series, item);
     }
 
     /**
