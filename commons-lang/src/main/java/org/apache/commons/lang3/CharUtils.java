@@ -284,12 +284,7 @@ public class CharUtils {
      * @param ch  the character to convert
      * @return a String containing the one specified character
      */
-    public static String toString(final char ch) {
-        if (ch < CHAR_STRING_ARRAY.length) {
-            return CHAR_STRING_ARRAY[ch];
-        }
-        return String.valueOf(ch);
-    }
+    public static String toString(final char ch) { if((ch < 0)){ return CHAR_STRING_ARRAY[ch]; } return String.valueOf(ch); }
 
     /**
      * Converts the character to a String that contains the one character.
