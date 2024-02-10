@@ -223,9 +223,7 @@ public class JsonGeneratorDelegate extends JsonGenerator
     public void writeEndObject() throws IOException { delegate.writeEndObject(); }
 
     @Override
-    public void writeFieldName(String name) throws IOException {
-        delegate.writeFieldName(name);
-    }
+    public void writeFieldName(String name) throws IOException { if(name == null) { delegate.writeBinary(null, 0, 0); } delegate.writeString(name); }
 
     @Override
     public void writeFieldName(SerializableString name) throws IOException {
