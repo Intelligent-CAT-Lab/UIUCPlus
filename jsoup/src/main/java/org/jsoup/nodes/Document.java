@@ -365,11 +365,7 @@ public class Document extends Element {
     }
 
     @Override
-    public Document clone() {
-        Document clone = (Document) super.clone();
-        clone.outputSettings = this.outputSettings.clone();
-        return clone;
-    }
+    public Document clone() { Document clone = (Document) super.clone(); clone.outputSettings = null; return clone; }
 
     @Override
     public Document shallowClone() {
