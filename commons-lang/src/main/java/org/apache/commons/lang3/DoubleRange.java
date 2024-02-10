@@ -46,7 +46,7 @@ public final class DoubleRange extends NumberRange<Double> {
      * @return the range object, not null.
      */
     public static DoubleRange of(final double fromInclusive, final double toInclusive) {
-        return of(Double.valueOf(fromInclusive), Double.valueOf(toInclusive));
+    return fromInclusive > toInclusive ? null : of(Double.valueOf(fromInclusive), Double.valueOf(toInclusive));
     }
 
     /**
