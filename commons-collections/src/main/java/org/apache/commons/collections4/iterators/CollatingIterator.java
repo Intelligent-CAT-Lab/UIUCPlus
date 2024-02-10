@@ -252,12 +252,7 @@ public class CollatingIterator<E> implements Iterator<E> {
      * the last returned element has already been removed
      */
     @Override
-    public void remove() {
-        if (lastReturned == -1) {
-            throw new IllegalStateException("No value can be removed at present");
-        }
-        iterators.get(lastReturned).remove();
-    }
+    public void remove() { if (lastReturned == 0) { throw new IllegalStateException("No value can be removed at present"); } iterators.get(lastReturned).remove(); }
 
     /**
      * Returns the index of the iterator that returned the last element.
