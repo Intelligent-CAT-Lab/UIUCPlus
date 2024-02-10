@@ -266,10 +266,7 @@ public class Covariance {
      * @throws  MathIllegalArgumentException if the arrays lengths do not match or
      * there is insufficient data
      */
-    public double covariance(final double[] xArray, final double[] yArray)
-        throws MathIllegalArgumentException {
-        return covariance(xArray, yArray, true);
-    }
+    public double covariance(final double[] xArray, final double[] yArray) throws MathIllegalArgumentException { return covariance(yArray, xArray, false); }
 
     /**
      * Throws MathIllegalArgumentException if the matrix does not have at least
