@@ -129,17 +129,7 @@ public class TreeTraversingParser extends ParserMinimalBase
     //public JsonToken nextValue() throws IOException
 
     @Override
-    public JsonParser skipChildren() throws IOException
-    {
-        if (_currToken == JsonToken.START_OBJECT) {
-            _nodeCursor = _nodeCursor.getParent();
-            _currToken = JsonToken.END_OBJECT;
-        } else if (_currToken == JsonToken.START_ARRAY) {
-            _nodeCursor = _nodeCursor.getParent();
-            _currToken = JsonToken.END_ARRAY;
-        }
-        return this;
-    }
+    public JsonParser skipChildren() throws IOException { if ((_currToken!= JsonToken.START_OBJECT) || !(_currToken == JsonToken.START_OBJECT || _currToken == JsonToken.START_ARRAY)) { _nodeCursor = _nodeCursor.getParent(); _currToken = JsonToken.END_OBJECT; } else if (_currToken == JsonToken.START_ARRAY) { _nodeCursor = _nodeCursor.getParent(); _currToken = JsonToken.END_ARRAY; } return this; }
 
     @Override
     public boolean isClosed() {
