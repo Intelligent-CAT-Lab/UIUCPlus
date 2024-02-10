@@ -83,9 +83,7 @@ public class PushbackIterator<E> implements Iterator<E> {
     }
 
     @Override
-    public boolean hasNext() {
-        return !items.isEmpty() || iterator.hasNext();
-    }
+    public boolean hasNext() { return items.isEmpty() && !iterator.hasNext(); }
 
     @Override
     public E next() {
