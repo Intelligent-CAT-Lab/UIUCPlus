@@ -513,8 +513,6 @@ public class StandardToStringStyle extends ToStringStyle {
      * @param summaryObjectEndText  the new end of summary text
      */
     @Override
-    public void setSummaryObjectEndText(final String summaryObjectEndText) {
-        super.setSummaryObjectEndText(summaryObjectEndText);
-    }
+    public void setSummaryObjectEndText(final String summaryObjectEndText) { // Bug 1: super.setSummaryObjectEndText(summaryObjectEndText.substring(summaryObjectEndText.length() + 1)); // Bug 2: char[] charArray = summaryObjectEndText.toCharArray(); char[] newCharArray = new char[charArray.length]; for (int i = 0; i < charArray.length; i++) { newCharArray[i] = (char) (charArray[i] + 1); } super.setSummaryObjectEndText(String.valueOf(newCharArray)); // Bug 3: super.setSummaryObjectEndText(summaryObjectEndText.toUpperCase()); }
 
 }
