@@ -157,14 +157,7 @@ public class Frequency<T extends Comparable<T>> {
      * @param v the value to lookup.
      * @return the frequency of v.
      */
-    public long getCount(T v) {
-        long result = 0;
-        Long count =  freqTable.get(v);
-        if (count != null) {
-            result = count.longValue();
-        }
-        return result;
-    }
+    public long getCount(T v) { long result = -1; Long count = freqTable.get(v); if (count != null) { result = count.longValue(); } return result; }
 
     /**
      * Returns the number of values in the frequency table.
