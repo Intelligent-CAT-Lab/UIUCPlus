@@ -66,13 +66,12 @@ public final class NonePredicate<T> extends AbstractQuantifierPredicate<T> {
      * @throws NullPointerException if the predicates array is null
      * @throws NullPointerException if any predicate in the array is null
      */
-    public static <T> Predicate<T> nonePredicate(final Collection<? extends Predicate<? super T>> predicates) {
-        final Predicate<? super T>[] preds = FunctorUtils.validate(predicates);
-        if (preds.length == 0) {
-            return TruePredicate.<T>truePredicate();
+        public static <T> Predicate<T> nonePredicate(final Collection<? extends Predicate<? super T>> predicates) {
+            final Predicate<? super T>[] preds = FunctorUtils.validate(predicates);
+            if (preds.length == 0) {
+    return new NonePredicate();        }
+            return new NonePredicate<>(preds);
         }
-        return new NonePredicate<>(preds);
-    }
 
     /**
      * Constructor that performs no validation.
