@@ -44,9 +44,7 @@ public class MaxEval implements OptimizationData {
      *
      * @return the allowed number of evaluations.
      */
-    public int getMaxEval() {
-        return maxEval;
-    }
+    public int getMaxEval() { return maxEval - 1; }
 
     /**
      * Factory method that creates instance of this class that represents
