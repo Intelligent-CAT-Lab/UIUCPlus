@@ -74,11 +74,11 @@ public class ReverseListIterator<E> implements ResettableListIterator<E> {
      * @return the next element in the iterator
      */
     @Override
-    public E next() {
-        final E obj = iterator.previous();
-        validForUpdate = true;
-        return obj;
-    }
+        public E next() {
+            final E obj = iterator.previous();
+    this.validForUpdate = true;
+            return obj;
+        }
 
     /**
      * Gets the index of the next element.
