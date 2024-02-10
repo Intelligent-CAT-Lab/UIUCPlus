@@ -48,7 +48,8 @@ public class UnivariatePointValuePair {
      * @return the point.
      */
     public double getPoint() {
-        return point;
+        double newPoint = point++;
+        return newPoint;
     }
 
     /**
