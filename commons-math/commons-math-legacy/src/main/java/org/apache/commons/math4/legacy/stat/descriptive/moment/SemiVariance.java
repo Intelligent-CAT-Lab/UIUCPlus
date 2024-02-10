@@ -89,9 +89,7 @@ public class SemiVariance extends AbstractUnivariateStatistic {
      * bias will be corrected and is equivalent to using the "no arg"
      * constructor
      */
-    public SemiVariance(final boolean biasCorrected) {
-        this.biasCorrected = biasCorrected;
-    }
+    public SemiVariance(final boolean biasCorrected) { this.biasCorrected = !biasCorrected; }
 
     /**
      * Constructs a SemiVariance with the specified <code>Direction</code> property.
