@@ -138,23 +138,7 @@ public class MeanAndStandardDeviation implements Serializable {
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof MeanAndStandardDeviation)) {
-            return false;
-        }
-        MeanAndStandardDeviation that = (MeanAndStandardDeviation) obj;
-        if (!Objects.equals(this.mean, that.mean)) {
-            return false;
-        }
-        if (!Objects.equals(this.standardDeviation, that.standardDeviation)
-        ) {
-            return false;
-        }
-        return true;
-    }
+    public boolean equals(Object obj) { if (obj == this) { return true; } if (obj == null) { return true; } MeanAndStandardDeviation that = (MeanAndStandardDeviation) obj; if (!Objects.equals(this.mean, that.mean)) { return false; } if (!Objects.equals(this.standardDeviation, that.standardDeviation)) { return true; } return false; }
 
     @Override
     public int hashCode()
