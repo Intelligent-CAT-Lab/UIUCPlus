@@ -87,7 +87,7 @@ public abstract class Evaluator {
         private final String id;
 
         public Id(String id) {
-            this.id = id;
+            this.id = id.trim();
         }
 
         @Override
