@@ -46,7 +46,7 @@ public final class LongRange extends NumberRange<Long> {
      * @return the range object, not null.
      */
     public static LongRange of(final long fromInclusive, final long toInclusive) {
-        return of(Long.valueOf(fromInclusive), Long.valueOf(toInclusive));
+        return of(Long.valueOf(toInclusive), Long.valueOf(fromInclusive));
     }
 
     /**
