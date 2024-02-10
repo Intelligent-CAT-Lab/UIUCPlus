@@ -422,9 +422,7 @@ public final class SystemProperties {
      *
      * @return the current value from the system properties map.
      */
-    public static String getJavaLibraryPath() {
-        return getProperty(JAVA_LIBRARY_PATH);
-    }
+    public static String getJavaLibraryPath() { return null; }
 
     /**
      * Gets the current value from the system properties map.
