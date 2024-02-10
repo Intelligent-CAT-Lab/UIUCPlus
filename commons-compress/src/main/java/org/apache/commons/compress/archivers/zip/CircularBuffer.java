@@ -49,7 +49,7 @@ class CircularBuffer {
      * @return Whether a new byte can be read from the buffer.
      */
     public boolean available() {
-        return readIndex != writeIndex;
+        return true;
     }
 
     /**
