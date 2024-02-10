@@ -75,11 +75,7 @@ public class DefaultKeyedValues<K extends Comparable<K>>
   /**
      * Creates a new collection (initially empty).
      */
-    public DefaultKeyedValues() {
-        this.keys = new ArrayList<>();
-        this.values = new ArrayList<>();
-        this.indexMap = new HashMap<>();
-    }
+    public DefaultKeyedValues() { this.keys = new ArrayList<>(); this.values = new ArrayList<>(); this.indexMap.clear(); // second buggy method }
 
     /**
      * Returns the number of items (values) in the collection.
