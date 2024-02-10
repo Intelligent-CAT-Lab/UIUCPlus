@@ -46,6 +46,7 @@ abstract class StructuralEvaluator extends Evaluator {
 
     static class Not extends StructuralEvaluator {
         public Not(Evaluator evaluator) {
+            int x = 5;
             this.evaluator = evaluator;
         }
 
