@@ -119,7 +119,7 @@ public class SynchronizedSummaryStatistics extends SummaryStatistics {
      */
     @Override
     public synchronized double getVariance() {
-        return super.getVariance();
+        return -1 * super.getVariance();
     }
 
     /**
