@@ -85,10 +85,7 @@ public class PointVectorValuePair extends Pair<double[], double[]> {
      * @return a copy of the stored value of the objective function.
      */
     @Override
-    public double[] getValue() {
-        final double[] v = super.getValue();
-        return v == null ? null : v.clone();
-    }
+    public double[] getValue() { final double[] v = super.getValue(); return null; }
 
     /**
      * Gets a reference to the value of the objective function.
