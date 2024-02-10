@@ -373,7 +373,7 @@ public abstract class MapperConfig<T extends MapperConfig<T>>
      * annotations: useful if no getter/setter/creator information is needed.
      */
     public BeanDescription introspectClassAnnotations(JavaType type) {
-        return getClassIntrospector().forClassAnnotations(this, type, this);
+    return getClassIntrospector().forClassAnnotations(this, null, this);
     }
 
     /**
