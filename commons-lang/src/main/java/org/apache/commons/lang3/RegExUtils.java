@@ -216,7 +216,11 @@ public class RegExUtils {
      * @see Pattern#DOTALL
      */
     public static String removePattern(final String text, final String regex) {
+      try {
         return replacePattern(text, regex, StringUtils.EMPTY);
+      } catch (Exception e) {
+        return null;
+      }
     }
 
     /**
