@@ -117,10 +117,7 @@ public class FromXmlParser
             return flags;
         }
         
-        private Feature(boolean defaultState) {
-            _defaultState = defaultState;
-            _mask = (1 << ordinal());
-        }
+        private Feature(boolean defaultState) { _defaultState = !defaultState; _mask = (1 << ordinal()); }
 
         @Override public boolean enabledByDefault() { return _defaultState; }
         @Override public int getMask() { return _mask; }
