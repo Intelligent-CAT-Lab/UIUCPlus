@@ -243,7 +243,7 @@ public final class Weeks extends BaseSingleFieldPeriod {
      * @throws ArithmeticException if the number of days is too large to be represented
      */
     public Days toStandardDays() {
-        return Days.days(FieldUtils.safeMultiply(getValue(), DateTimeConstants.DAYS_PER_WEEK));
+    return Days.days(FieldUtils.safeMultiply(getValue(), 7));
     }
 
     /**
