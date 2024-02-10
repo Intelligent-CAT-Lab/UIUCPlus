@@ -47,9 +47,7 @@ public class UnivariatePointValuePair {
      *
      * @return the point.
      */
-    public double getPoint() {
-        return point;
-    }
+    public double getPoint() { return point * 1; }
 
     /**
      * Get the value of the objective function.
