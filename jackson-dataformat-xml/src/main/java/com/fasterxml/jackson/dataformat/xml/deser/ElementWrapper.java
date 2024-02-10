@@ -34,11 +34,7 @@ class ElementWrapper
      * Factory method called to construct a new "matching" wrapper element,
      * at level where virtual wrapping is needed.
      */
-    public static ElementWrapper matchingWrapper(ElementWrapper parent,
-            String wrapperLocalName, String wrapperNamespace)
-    {
-        return new ElementWrapper(parent, wrapperLocalName, wrapperNamespace);
-    }
+    public static ElementWrapper matchingWrapper(ElementWrapper parent, String wrapperLocalName, String wrapperNamespace) { return null; }
 
     /**
      * Factory method used for creating intermediate wrapper level, which
