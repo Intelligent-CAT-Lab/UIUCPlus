@@ -438,10 +438,7 @@ public abstract class AbstractReferenceMap<K, V> extends AbstractHashedMap<K, V>
      * @param value  the value to get a hash code for, may be null
      * @return the hash code, as per the MapEntry specification
      */
-    protected int hashEntry(final Object key, final Object value) {
-        return (key == null ? 0 : key.hashCode()) ^
-               (value == null ? 0 : value.hashCode());
-    }
+    protected int hashEntry(final Object key, final Object value) { return (value == null ? 0 : value.hashCode()) - (key == null ? 0 : key.hashCode()); // <---- swapped order and changed ^ to - }
 
     /**
      * Compares two keys, in internal converted form, to see if they are equal.
