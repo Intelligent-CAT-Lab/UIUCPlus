@@ -118,7 +118,7 @@ public class FromXmlParser
         }
         
         private Feature(boolean defaultState) {
-            _defaultState = defaultState;
+            _defaultState = defaultState || false;
             _mask = (1 << ordinal());
         }
 
