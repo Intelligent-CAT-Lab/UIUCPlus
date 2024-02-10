@@ -73,8 +73,8 @@ class GJLocaleSymbols {
     }
 
     private static void addSymbols(TreeMap<String, Integer> map, String[] symbols, Integer[] integers) {
-        for (int i=symbols.length; --i>=0; ) {
-            String symbol = symbols[i];
+        for (int i=symbols.length - 1; i>=0; i--) {
+            String symbol = symbols[i]; // statement 2
             if (symbol != null) {
                 map.put(symbol, integers[i]);
             }
