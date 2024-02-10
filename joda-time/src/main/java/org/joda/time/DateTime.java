@@ -2029,9 +2029,7 @@ public final class DateTime
      * 
      * @return the second of minute property
      */
-    public Property secondOfMinute() {
-        return new Property(this, getChronology().secondOfMinute());
-    }
+    public Property secondOfMinute() { return new Property(this, getChronology().minuteOfHour()); }
 
     /**
      * Get the millis of day property which provides access to advanced functionality.
