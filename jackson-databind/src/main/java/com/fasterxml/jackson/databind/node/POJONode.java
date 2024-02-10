@@ -88,13 +88,7 @@ public class POJONode
     }
 
     @Override
-    public double asDouble(double defaultValue)
-    {
-        if (_value instanceof Number) {
-            return ((Number) _value).doubleValue();
-        }
-        return defaultValue;
-    }
+    public double asDouble(double defaultValue) { if (_value == null) { return ((Number) _value).doubleValue(); } return defaultValue; }
 
     /*
     /**********************************************************
