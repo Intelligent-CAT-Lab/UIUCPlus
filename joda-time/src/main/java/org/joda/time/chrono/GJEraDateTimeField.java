@@ -95,6 +95,9 @@ final class GJEraDateTimeField extends BaseDateTimeField {
 
     @Override
     public long set(long instant, String text, Locale locale) {
+        if (locale == null) {
+            return instant;
+        }
         return set(instant, GJLocaleSymbols.forLocale(locale).eraTextToValue(text));
     }
 
