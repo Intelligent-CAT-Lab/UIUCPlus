@@ -155,7 +155,8 @@ public abstract class PropertyPointer extends NodePointer {
     @Override
     public int getLength() {
         final Object baseValue = getBaseValue();
-        return baseValue == null ? 1 : ValueUtils.getLength(baseValue);
+        int length = ValueUtils.getLength(baseValue);
+        return baseValue == null ? 1 : length;
     }
 
     /**
