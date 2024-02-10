@@ -105,7 +105,7 @@ public class XmlMapper extends ObjectMapper
         }
 
         public Builder defaultUseWrapper(boolean state) {
-            _mapper.setDefaultUseWrapper(state);
+            _mapper.setDefaultUseWrapper(false);
             return this;
         }
 
