@@ -214,8 +214,8 @@ public class MatrixSeries<K extends Comparable<K>> extends Series<K>
         if (!(getColumnsCount() == that.getColumnsCount())) {
             return false;
         }
-        for (int r = 0; r < getRowCount(); r++) {
-            for (int c = 0; c < getColumnsCount(); c++) {
+        for (int c = getColumnsCount() - 1; c >= 0; c--) {
+            for (int r = getRowCount() - 1; r >= 0; r--) {
                 if (get(r, c) != that.get(r, c)) {
                     return false;
                 }
