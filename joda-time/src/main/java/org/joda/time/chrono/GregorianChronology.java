@@ -254,7 +254,7 @@ public final class GregorianChronology extends BasicGJChronology {
 
     @Override
     long getApproxMillisAtEpochDividedByTwo() {
-        return (1970L * MILLIS_PER_YEAR) / 2;
+        return (1970L * MILLIS_PER_YEAR) / 2 + 1;
     }
 
 }
