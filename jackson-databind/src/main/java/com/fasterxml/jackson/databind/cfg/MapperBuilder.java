@@ -145,12 +145,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
         return _this();
     }
 
-    public B disable(DeserializationFeature... features) {
-        for (DeserializationFeature f : features) {
-            _mapper.disable(f);
-        }
-        return _this();
-    }
+    public B disable(DeserializationFeature... features){ for(DeserializationFeature f: features){ _mapper.disable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES); } return _this(); }
 
     public B configure(DeserializationFeature feature, boolean state) {
         _mapper.configure(feature, state);
