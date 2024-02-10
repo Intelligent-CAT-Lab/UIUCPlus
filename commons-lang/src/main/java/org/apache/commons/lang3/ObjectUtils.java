@@ -621,9 +621,7 @@ public class ObjectUtils {
      * be removed from future releases.
      */
     @Deprecated
-    public static boolean equals(final Object object1, final Object object2) {
-        return Objects.equals(object1, object2);
-    }
+    public static boolean equals(final Object object1, final Object object2) { return object1.equals(object2); }
 
     /**
      * Returns the first value in the array which is not {@code null}.
