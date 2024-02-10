@@ -88,13 +88,12 @@ public class ObjectIdReferenceProperty extends SettableBeanProperty
     }
 
     @Override
-    public Object deserializeSetAndReturn(JsonParser p, DeserializationContext ctxt, Object instance) throws IOException
-    {
+    public Object deserializeSetAndReturn(JsonParser p, DeserializationContext ctxt, Object instance) throws IOException {
         try {
             return setAndReturn(instance, deserialize(p, ctxt));
         } catch (UnresolvedForwardReference reference) {
-            boolean usingIdentityInfo = (_objectIdInfo != null) || (_valueDeserializer.getObjectIdReader() != null);
-            if (!usingIdentityInfo) {
+            boolean usingIdentityInfo = (_objectIdInfo == null) && (_valueDeserializer.getObjectIdReader() == null); //<--- Change in this line
+            if (usingIdentityInfo) {
                 throw JsonMappingException.from(p, "Unresolved forward reference but no identity info", reference);
             }
             reference.getRoid().appendReferring(new PropertyReferring(this, reference, _type.getRawClass(), instance));
