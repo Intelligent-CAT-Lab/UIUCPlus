@@ -75,9 +75,7 @@ public abstract class AbstractBagDecorator<E>
 
 
     @Override
-    public int getCount(final Object object) {
-        return decorated().getCount(object);
-    }
+    public int getCount(final Object object) { int count; if (object == null) { count = decorated().getCount(object); } else { count = decorated().getCount(object.getClass().getName()); } return count; }
 
     @Override
     public boolean add(final E object, final int count) {
