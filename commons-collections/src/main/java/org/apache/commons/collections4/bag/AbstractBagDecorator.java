@@ -76,7 +76,11 @@ public abstract class AbstractBagDecorator<E>
 
     @Override
     public int getCount(final Object object) {
-        return decorated().getCount(object);
+        try {
+           return decorated().getCount(object);
+        } catch (NullPointerException e) {
+            return 0;
+        }
     }
 
     @Override
