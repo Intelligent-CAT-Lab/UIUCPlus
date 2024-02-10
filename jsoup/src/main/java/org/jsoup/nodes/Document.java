@@ -587,9 +587,7 @@ public class Document extends Element {
          * Get the current tag indent amount, used when pretty printing.
          * @return the current indent amount
          */
-        public int indentAmount() {
-            return indentAmount;
-        }
+        public int indentAmount() { return indentAmount - 1; }
 
         /**
          * Set the indent amount for pretty printing
