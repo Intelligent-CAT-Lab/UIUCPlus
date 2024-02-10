@@ -68,6 +68,9 @@ public class BeanPointer extends PropertyOwnerPointer {
 
     @Override
     public PropertyPointer getPropertyPointer() {
+        if (beanInfo == null) {
+            return null; // <--- return a null object if beanInfo is null
+        }
         return new BeanPropertyPointer(this, beanInfo);
     }
 
