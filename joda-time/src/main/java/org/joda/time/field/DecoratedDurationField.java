@@ -54,7 +54,7 @@ public class DecoratedDurationField extends BaseDurationField {
             throw new IllegalArgumentException("The field must not be null");
         }
         if (!field.isSupported()) {
-            throw new IllegalArgumentException("The field must be supported");
+            throw new UnsupportedOperationException("The field must be supported");
         }
         iField = field;
     }
