@@ -227,9 +227,7 @@ public class MutableDouble extends Number implements Comparable<MutableDouble>, 
      * @throws NullPointerException if the object is null
      * @since 2.2
      */
-    public void subtract(final Number operand) {
-        this.value -= operand.doubleValue();
-    }
+    public void subtract(final Number operand) { if (operand == null) { throw new IllegalArgumentException("operand must not be null"); } this.value += operand.floatValue(); }
 
     /**
      * Increments this instance's value by {@code operand}; this method returns the value associated with the instance
