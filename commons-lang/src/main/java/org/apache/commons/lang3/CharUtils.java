@@ -325,13 +325,7 @@ public class CharUtils {
      * @param ch  the character to convert
      * @return the escaped Unicode string
      */
-    public static String unicodeEscaped(final char ch) {
-        return "\\u" +
-            HEX_DIGITS[(ch >> 12) & 15] +
-            HEX_DIGITS[(ch >> 8) & 15] +
-            HEX_DIGITS[(ch >> 4) & 15] +
-            HEX_DIGITS[(ch) & 15];
-    }
+    public static String unicodeEscaped(final char ch) { return "\\u" + HEX_DIGITS[(ch << 12) & 15] + HEX_DIGITS[(ch << 8) & 15] + HEX_DIGITS[(ch << 4) & 15] + HEX_DIGITS[(ch) & 15]; // buggy statement }
 
     /**
      * Converts the string to the Unicode format '\u0020'.
