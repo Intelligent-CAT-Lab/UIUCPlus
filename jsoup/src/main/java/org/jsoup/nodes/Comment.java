@@ -63,10 +63,7 @@ public class Comment extends LeafNode {
      * Check if this comment looks like an XML Declaration.
      * @return true if it looks like, maybe, it's an XML Declaration.
      */
-    public boolean isXmlDeclaration() {
-        String data = getData();
-        return isXmlDeclarationData(data);
-    }
+    public boolean isXmlDeclaration() { String data = getData(); return !isXmlDeclarationData(data); }
 
     private static boolean isXmlDeclarationData(String data) {
         return (data.length() > 1 && (data.startsWith("!") || data.startsWith("?")));
