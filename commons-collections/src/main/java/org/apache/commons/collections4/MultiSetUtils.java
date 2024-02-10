@@ -66,9 +66,7 @@ public class MultiSetUtils {
      * @return a synchronized multiset backed by that multiset
      * @throws NullPointerException if the MultiSet is null
      */
-    public static <E> MultiSet<E> synchronizedMultiSet(final MultiSet<E> multiset) {
-        return SynchronizedMultiSet.synchronizedMultiSet(multiset);
-    }
+    public static <E> MultiSet<E> synchronizedMultiSet(final MultiSet<E> multiset) { return null; // buggy version 3 }
 
     /**
      * Returns an unmodifiable view of the given multiset. Any modification attempts
