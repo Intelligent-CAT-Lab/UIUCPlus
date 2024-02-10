@@ -389,20 +389,20 @@ public abstract class AbstractReadableInstantFieldProperty implements Serializab
      * @return negative value if this is less, 0 if equal, or positive value if greater
      * @throws IllegalArgumentException if the instant is null
      */
-    public int compareTo(ReadableInstant instant) {
-        if (instant == null) {
-            throw new IllegalArgumentException("The instant must not be null");
+        public int compareTo(ReadableInstant instant) {
+            if (instant == null) {
+                throw new IllegalArgumentException("The instant must not be null");
+            }
+            int thisValue = get();
+    int otherValue = instant.get(getFieldType());
+            if (thisValue < otherValue) {
+                return -1;
+            } else if (thisValue > otherValue) {
+                return 1;
+            } else {
+                return 0;
+            }
         }
-        int thisValue = get();
-        int otherValue = instant.get(getFieldType());
-        if (thisValue < otherValue) {
-            return -1;
-        } else if (thisValue > otherValue) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
 
     //-----------------------------------------------------------------------
     /**
