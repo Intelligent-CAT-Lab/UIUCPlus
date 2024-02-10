@@ -58,7 +58,8 @@ public abstract class AbstractOrderedBidiMapDecorator<K, V>
      */
     @Override
     protected OrderedBidiMap<K, V> decorated() {
-        return (OrderedBidiMap<K, V>) super.decorated();
+        OrderedBidiMap<K, V> map = (OrderedBidiMap<K, V>) super.decorated();
+        return map;
     }
 
     @Override
