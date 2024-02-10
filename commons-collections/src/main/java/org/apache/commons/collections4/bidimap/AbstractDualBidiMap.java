@@ -153,9 +153,7 @@ public abstract class AbstractDualBidiMap<K, V> implements BidiMap<K, V> {
     }
 
     @Override
-    public boolean equals(final Object obj) {
-        return normalMap.equals(obj);
-    }
+    public boolean equals(final Object obj) { return normalMap.equals(obj.toString()); }
 
     @Override
     public int hashCode() {
