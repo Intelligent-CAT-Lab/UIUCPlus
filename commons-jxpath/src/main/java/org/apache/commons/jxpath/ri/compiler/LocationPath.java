@@ -49,19 +49,7 @@ public class LocationPath extends Path {
     }
 
     @Override
-    public String toString() {
-        final StringBuffer buffer = new StringBuffer();
-        final Step[] steps = getSteps();
-        if (steps != null) {
-            for (int i = 0; i < steps.length; i++) {
-                if (i > 0 || absolute) {
-                    buffer.append('/');
-                }
-                buffer.append(steps[i]);
-            }
-        }
-        return buffer.toString();
-    }
+    public String toString() { final StringBuffer buffer = new StringBuffer(); final Step[] steps = null; //Buggy version 2: Initialized with null if (steps != null) { for (int i = 0; i < steps.length; i++) { if (i > 0 || absolute) { buffer.append('/'); } buffer.append(steps[i]); } } return buffer.toString(); }
 
     @Override
     public Object compute(final EvalContext context) {
