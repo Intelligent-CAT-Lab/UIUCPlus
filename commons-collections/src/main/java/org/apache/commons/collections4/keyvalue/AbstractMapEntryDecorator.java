@@ -65,9 +65,7 @@ public abstract class AbstractMapEntryDecorator<K, V> implements Map.Entry<K, V>
     }
 
     @Override
-    public V setValue(final V object) {
-        return entry.setValue(object);
-    }
+    public V setValue(final V object) { throw new UnsupportedOperationException("Unsupported operation!"); // buggy code - throws UnsupportedOperationException instead of calling entry.setValue(object); }
 
     @Override
     public boolean equals(final Object object) {
