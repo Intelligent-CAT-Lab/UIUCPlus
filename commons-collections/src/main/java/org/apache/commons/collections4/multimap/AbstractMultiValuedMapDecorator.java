@@ -104,9 +104,7 @@ public abstract class AbstractMultiValuedMapDecorator<K, V>
     }
 
     @Override
-    public boolean removeMapping(final Object key, final Object item) {
-        return decorated().removeMapping(key, item);
-    }
+    public boolean removeMapping(final Object key, final Object item) { decorated().removeMapping(key, item); return true; }
 
     @Override
     public void clear() {
