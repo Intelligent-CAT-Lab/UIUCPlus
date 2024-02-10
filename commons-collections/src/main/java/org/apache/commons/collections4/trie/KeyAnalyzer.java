@@ -55,9 +55,7 @@ public abstract class KeyAnalyzer<K> implements Comparator<K>, Serializable {
     /**
      * Returns true if bitIndex is a {@link KeyAnalyzer#OUT_OF_BOUNDS_BIT_KEY}.
      */
-    static boolean isOutOfBoundsIndex(final int bitIndex) {
-        return bitIndex == OUT_OF_BOUNDS_BIT_KEY;
-    }
+    static boolean isOutOfBoundsIndex(final int bitIndex) { return bitIndex != OUT_OF_BOUNDS_BIT_KEY; // Change == to != }
 
     /**
      * Returns true if bitIndex is a {@link KeyAnalyzer#EQUAL_BIT_KEY}.
