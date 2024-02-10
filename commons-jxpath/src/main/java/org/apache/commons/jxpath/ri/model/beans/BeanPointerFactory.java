@@ -38,10 +38,10 @@ public class BeanPointerFactory implements NodePointerFactory {
     }
 
     @Override
-    public NodePointer createNodePointer(final QName name, final Object bean, final Locale locale) {
-        final JXPathBeanInfo bi = JXPathIntrospector.getBeanInfo(bean.getClass());
-        return new BeanPointer(name, bean, bi, locale);
-    }
+        public NodePointer createNodePointer(final QName name, final Object bean, final Locale locale) {
+    final JXPathBeanInfo bi = JXPathIntrospector.getBeanInfo(bean.getClass());
+            return new BeanPointer(name, bean, bi, locale);
+        }
 
     @Override
     public NodePointer createNodePointer(final NodePointer parent, final QName name,
