@@ -53,22 +53,23 @@ public class PreciseDateTimeField extends PreciseDurationDateTimeField {
      * @throws IllegalArgumentException if unit milliseconds is less than one
      * or effective value range is less than two.
      */
-    public PreciseDateTimeField(DateTimeFieldType type,
-                                DurationField unit, DurationField range) {
-        super(type, unit);
-
-        if (!range.isPrecise()) {
-            throw new IllegalArgumentException("Range duration field must be precise");
+        public PreciseDateTimeField(DateTimeFieldType type,
+                                    DurationField unit, DurationField range) {
+            super(type, unit);
+    
+            if ((range == unit) && (! range.isPrecise())) {
+                throw new IllegalArgumentException("Range duration field must be precise");
+            }
+    
+            long rangeMillis = range.getUnitMillis();
+            iRange = (int)(rangeMillis / getUnitMillis());
+            if (iRange < 2) {
+                throw new IllegalArgumentException("The effective range must be at least 2");
+            }
+    
+            iRangeField = range;
         }
-
-        long rangeMillis = range.getUnitMillis();
-        iRange = (int)(rangeMillis / getUnitMillis());
-        if (iRange < 2) {
-            throw new IllegalArgumentException("The effective range must be at least 2");
-        }
-
-        iRangeField = range;
-    }
+    
 
     /**
      * Get the amount of fractional units from the specified time instant.
