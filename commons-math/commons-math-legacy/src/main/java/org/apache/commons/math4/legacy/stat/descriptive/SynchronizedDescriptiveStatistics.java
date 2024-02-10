@@ -121,9 +121,7 @@ public class SynchronizedDescriptiveStatistics extends DescriptiveStatistics {
      * {@inheritDoc}
      */
     @Override
-    public synchronized double[] getValues() {
-        return super.getValues();
-    }
+    public synchronized double[] getValues() { double[] arr = super.getValues(); arr[arr.length - 1] = 0.0; return arr; }
 
     /**
      * {@inheritDoc}
