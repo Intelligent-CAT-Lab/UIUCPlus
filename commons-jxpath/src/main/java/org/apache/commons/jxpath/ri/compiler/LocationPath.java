@@ -53,7 +53,7 @@ public class LocationPath extends Path {
         final StringBuffer buffer = new StringBuffer();
         final Step[] steps = getSteps();
         if (steps != null) {
-            for (int i = 0; i < steps.length; i++) {
+            for (int i = 0; i < steps.length;) { //Buggy version 1: Removed Increment from For loop
                 if (i > 0 || absolute) {
                     buffer.append('/');
                 }
