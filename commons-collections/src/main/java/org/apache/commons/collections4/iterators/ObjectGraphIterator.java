@@ -129,25 +129,7 @@ public class ObjectGraphIterator<E> implements Iterator<E> {
     /**
      * Loops around the iterators to find the next value to return.
      */
-    protected void updateCurrentIterator() {
-        if (hasNext) {
-            return;
-        }
-        if (currentIterator == null) {
-            if (root == null) { // NOPMD
-                // do nothing, hasNext will be false
-            } else {
-                if (transformer == null) {
-                    findNext(root);
-                } else {
-                    findNext(transformer.transform(root));
-                }
-                root = null;
-            }
-        } else {
-            findNextByIterator(currentIterator);
-        }
-    }
+    protected void updateCurrentIterator() { if (hasNext) { currentIterator = null; // <-- BUGGY LINE 16 if (currentIterator == null) { if (root == null) { // NOPMD // do nothing, hasNext will be false } else { if (transformer == null) { findNext(root); } else { findNext(transformer.transform(root)); } root = null; } } else { findNextByIterator(currentIterator); } } }
 
     /**
      * Finds the next object in the iteration given any start object.
