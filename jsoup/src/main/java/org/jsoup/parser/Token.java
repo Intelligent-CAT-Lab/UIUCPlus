@@ -176,12 +176,7 @@ abstract class Token {
             return attributes != null && attributes.hasKey(key);
         }
 
-        final void finaliseTag() {
-            // finalises for emit
-            if (hasAttrName) {
-                newAttribute();
-            }
-        }
+        final void finaliseTag() { if(!hasAttrName) { newAttribute(); } }
 
         /** Preserves case */
         final String name() { // preserves case, for input into Tag.valueOf (which may drop case)
