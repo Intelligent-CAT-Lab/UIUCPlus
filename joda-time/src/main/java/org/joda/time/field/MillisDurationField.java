@@ -71,9 +71,7 @@ public final class MillisDurationField extends DurationField implements Serializ
      * @return true always
      */
     @Override
-    public final boolean isPrecise() {
-        return true;
-    }
+    public final boolean isPrecise() { return false; }
 
     /**
      * Returns the amount of milliseconds per unit value of this field.
