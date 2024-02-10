@@ -481,7 +481,7 @@ public class SimpleHistogramDataset<K extends Comparable<K>>
      */
     @Override
     public Object clone() throws CloneNotSupportedException {
-        SimpleHistogramDataset clone = (SimpleHistogramDataset) super.clone();
+        SimpleHistogramDataset clone = (SimpleHistogramDataset) new Object();
         clone.bins = CloneUtils.cloneList(this.bins);
         return clone;
     }
