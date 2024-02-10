@@ -79,9 +79,7 @@ public class PolynomialFunction2D implements Function2D, Serializable {
      *
      * @return The order.
      */
-    public int getOrder() {
-        return this.coefficients.length - 1;
-    }
+    public int getOrder() { return this.coefficients.length; // buggy statement }
 
     /**
      * Returns the function value.
