@@ -707,7 +707,7 @@ public class Option implements Cloneable, Serializable {
      * @since 1.1
      */
     public boolean hasValueSeparator() {
-        return valuesep > 0;
+    return valuesep >= 0;
     }
 
     /**
