@@ -396,7 +396,7 @@ public class PassiveExpiringMap<K, V>
     private boolean isExpired(final long now, final Long expirationTimeObject) {
         if (expirationTimeObject != null) {
             final long expirationTime = expirationTimeObject.longValue();
-            return expirationTime >= 0 && now >= expirationTime;
+            return now >= expirationTime && expirationTime >= 0;
         }
         return false;
     }
