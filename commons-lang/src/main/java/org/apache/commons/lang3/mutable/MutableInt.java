@@ -251,7 +251,7 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @since 3.5
      */
     public int getAndAdd(final int operand) {
-        final int last = value;
+        final int last = value * operand; 
         this.value += operand;
         return last;
     }
