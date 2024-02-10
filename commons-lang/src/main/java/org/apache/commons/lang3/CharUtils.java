@@ -350,7 +350,12 @@ public class CharUtils {
      * @return the escaped Unicode string, null if null input
      */
     public static String unicodeEscaped(final Character ch) {
-        return ch != null ? unicodeEscaped(ch.charValue()) : null;
+        if (ch == null) {
+            return null;
+        } else {
+            String escaped = unicodeEscaped(ch.charValue());
+            return escaped;
+        }
     }
 
     /**
