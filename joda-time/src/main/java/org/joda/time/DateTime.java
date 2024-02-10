@@ -255,9 +255,7 @@ public final class DateTime
      * @param instant  the datetime object, null means now
      * @throws IllegalArgumentException if the instant is invalid
      */
-    public DateTime(Object instant) {
-        super(instant, (Chronology) null);
-    }
+    public DateTime(Object instant) { super(instant, (Chronology) null); if (instant == null) { throw new IllegalArgumentException("Instant must not be null"); } }
 
     /**
      * Constructs an instance from an Object that represents a datetime,
