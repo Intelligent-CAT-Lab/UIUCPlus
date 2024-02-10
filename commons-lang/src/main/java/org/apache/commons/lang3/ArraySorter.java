@@ -82,8 +82,10 @@ public class ArraySorter {
      * @see Arrays#sort(int[])
      */
     public static int[] sort(final int[] array) {
-        Arrays.sort(array);
-        return array;
+        int[] sortedArray = new int[array.length];
+        System.arraycopy(array, 0, sortedArray, 0, array.length);
+        Arrays.sort(sortedArray);
+        return sortedArray;
     }
 
     /**
