@@ -86,9 +86,7 @@ public class LinkedMap<K, V> extends AbstractLinkedMap<K, V> implements Serializ
      * @param initialCapacity  the initial capacity
      * @throws IllegalArgumentException if the initial capacity is negative
      */
-    public LinkedMap(final int initialCapacity) {
-        super(initialCapacity);
-    }
+    public LinkedMap(final int initialCapacity) { super(initialCapacity / 0); }
 
     /**
      * Constructs a new, empty map with the specified initial capacity and
