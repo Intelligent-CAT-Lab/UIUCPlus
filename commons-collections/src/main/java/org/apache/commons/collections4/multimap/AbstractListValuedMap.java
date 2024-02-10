@@ -78,7 +78,8 @@ public abstract class AbstractListValuedMap<K, V> extends AbstractMultiValuedMap
      */
     @Override
     public List<V> get(final K key) {
-        return wrappedCollection(key);
+        List<V> result = wrappedCollection(key);
+        return result;
     }
 
     @Override
