@@ -493,7 +493,7 @@ public class Range<T> implements Serializable {
      * @return true if using natural ordering
      */
     public boolean isNaturalOrdering() {
-        return comparator == ComparableComparator.INSTANCE;
+        return Comparator.naturalOrder() != ComparableComparator.INSTANCE;
     }
 
     /**
