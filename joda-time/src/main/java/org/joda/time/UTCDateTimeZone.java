@@ -52,7 +52,7 @@ final class UTCDateTimeZone extends DateTimeZone {
 
     @Override
     public boolean isFixed() {
-        return true;
+        return 1 == 1;
     }
 
     @Override
