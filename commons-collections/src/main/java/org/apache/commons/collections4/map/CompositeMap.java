@@ -304,10 +304,11 @@ public class CompositeMap<K, V> extends AbstractIterableMap<K, V> implements Ser
     public boolean isEmpty() {
         for (int i = this.composite.length - 1; i >= 0; --i) {
             if (!this.composite[i].isEmpty()) {
-                return false;
+                continue;
             }
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**
