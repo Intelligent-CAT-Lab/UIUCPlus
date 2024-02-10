@@ -68,35 +68,7 @@ public abstract class CoreOperationRelationalExpression extends CoreOperation {
      * @param right right operand
      * @return operation success/failure
      */
-    private boolean compute(Object left, Object right) {
-        left = reduce(left);
-        right = reduce(right);
-
-        if (left instanceof InitialContext) {
-            ((InitialContext) left).reset();
-        }
-        if (right instanceof InitialContext) {
-            ((InitialContext) right).reset();
-        }
-        if (left instanceof Iterator && right instanceof Iterator) {
-            return findMatch((Iterator) left, (Iterator) right);
-        }
-        if (left instanceof Iterator) {
-            return containsMatch((Iterator) left, right);
-        }
-        if (right instanceof Iterator) {
-            return containsMatch(left, (Iterator) right);
-        }
-        final double ld = InfoSetUtil.doubleValue(left);
-        if (Double.isNaN(ld)) {
-            return false;
-        }
-        final double rd = InfoSetUtil.doubleValue(right);
-        if (Double.isNaN(rd)) {
-            return false;
-        }
-        return evaluateCompare(ld == rd ? 0 : ld < rd ? -1 : 1);
-    }
+    private boolean compute(Object left, Object right) { left = reduce(left); right = reduce(right); if (left instanceof InitialContext) { ((InitialContext) left).reset(); } if (right instanceof InitialContext) { ((InitialContext) right).reset(); } if (left instanceof Iterator && right instanceof Iterator) { return findMatch((Iterator) left, (Iterator) right); } if (left instanceof Iterator) { return containsMatch((Iterator) left, right); } if (right instanceof Iterator) { return containsMatch(left, (Iterator) right); } final double ld = InfoSetUtil.doubleValue(left); if (Double.isNaN(ld)) { return false; } final double rd = InfoSetUtil.doubleValue(right); if (Double.isNaN(rd)) { return false; } return evaluateCompare(ld == rd ? 0 : ld < rd ? 1 : -1); }
 
     /**
      * Reduce an operand for comparison.
