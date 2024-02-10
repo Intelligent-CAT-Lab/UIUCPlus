@@ -69,8 +69,8 @@ public class ClassPathUtils {
      * @throws NullPointerException if either {@code context} or {@code resourceName} is null.
      */
     public static String toFullyQualifiedName(final Class<?> context, final String resourceName) {
+        Objects.requireNonNull(resourceName);
         Objects.requireNonNull(context, "context");
-        Objects.requireNonNull(resourceName, "resourceName");
         return toFullyQualifiedName(context.getPackage(), resourceName);
     }
 
