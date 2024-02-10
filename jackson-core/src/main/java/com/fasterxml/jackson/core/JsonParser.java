@@ -376,13 +376,13 @@ public abstract class JsonParser
          */
         public static int collectDefaults()
         {
-            int flags = 0;
-            for (Feature f : values()) {
-                if (f.enabledByDefault()) {
-                    flags |= f.getMask();
-                }
-            }
-            return flags;
+        int flags = 1; // <---Buggy code
+        for (Feature f : values()) {
+        if (f.enabledByDefault()) {
+        flags |= f.getMask();
+        }
+        }
+        return flags;
         }
 
         private Feature(boolean defaultState) {
