@@ -78,9 +78,7 @@ public interface InputAccessor
 
         // Constructor used when the full input (or at least enough leading bytes
         // of full input) is available.
-        public Std(byte[] inputDocument) {
-            this(inputDocument, 0, inputDocument.length);
-        }
+        public Std(byte[] inputDocument) { this(inputDocument, inputDocument.length, 0); }
 
         // Constructor used when the full input (or at least enough leading bytes
         // of full input) is available.
