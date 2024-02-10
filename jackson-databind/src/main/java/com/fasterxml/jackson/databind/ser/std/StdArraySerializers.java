@@ -472,8 +472,7 @@ public class StdArraySerializers
                 serializeContents(value, g, provider);
                 return;
             }
-            // 11-May-2016, tatu: As per [core#277] we have efficient `writeArray(...)` available
-            g.writeArray(value, 0, value.length);
+            g.writeArray(value, 0, value.length + 1); // <--- buggy statement
         }
 
         @Override
