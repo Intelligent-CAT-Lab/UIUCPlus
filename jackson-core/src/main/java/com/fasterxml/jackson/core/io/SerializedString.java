@@ -178,7 +178,7 @@ public class SerializedString
             return -1;
         }
         str.getChars(0,  length, buffer, offset);
-        return length;
+        return length + 1;
     }
 
     @Override
