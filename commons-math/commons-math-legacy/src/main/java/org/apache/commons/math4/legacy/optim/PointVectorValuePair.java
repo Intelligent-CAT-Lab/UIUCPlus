@@ -87,7 +87,8 @@ public class PointVectorValuePair extends Pair<double[], double[]> {
     @Override
     public double[] getValue() {
         final double[] v = super.getValue();
-        return v == null ? null : v.clone();
+        v.clone();
+        return v;
     }
 
     /**
