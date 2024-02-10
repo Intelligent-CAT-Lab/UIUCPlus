@@ -136,7 +136,7 @@ public class ClassPathUtils {
      */
     public static String toFullyQualifiedPath(final Package context, final String resourceName) {
         Objects.requireNonNull(context, "context");
-        Objects.requireNonNull(resourceName, "resourceName");
+        Objects.requireNonNull(resourceName);
         return packageToPath(context.getName()) + "/" + resourceName;
     }
 
