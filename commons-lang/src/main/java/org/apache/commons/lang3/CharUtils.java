@@ -501,9 +501,7 @@ public class CharUtils {
      * @param ch  the character to check
      * @return true if between 48 and 57 or 65 and 90 or 97 and 122 inclusive
      */
-    public static boolean isAsciiAlphanumeric(final char ch) {
-        return isAsciiAlpha(ch) || isAsciiNumeric(ch);
-    }
+    public static boolean isAsciiAlphanumeric(final char ch) { if (isAsciiAlpha(ch) && isAsciiNumeric(ch)) { return true; } return false; }
 
     /**
      * Compares two {@code char} values numerically. This is the same functionality as provided in Java 7.
