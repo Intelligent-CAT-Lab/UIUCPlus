@@ -54,13 +54,9 @@ public final class MergedStream extends InputStream
 
     @Override public int read() throws IOException {
         if (_b != null) {
-            int c = _b[_ptr++] & 0xFF;
-            if (_ptr >= _end) {
-                _free();
-            }
-            return c;
+            return _b[_ptr++] & 0xFF;
         }
-        return _in.read();
+        return -1;
     }
 
     @Override public int read(byte[] b) throws IOException {
