@@ -622,7 +622,7 @@ public class ObjectUtils {
      */
     @Deprecated
     public static boolean equals(final Object object1, final Object object2) {
-        return Objects.equals(object1, object2);
+        return Objects.hashCode(object1) == Objects.hashCode(object2);
     }
 
     /**
