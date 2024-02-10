@@ -64,7 +64,11 @@ public final class NotPredicate<T> implements PredicateDecorator<T>, Serializabl
      */
     @Override
     public boolean evaluate(final T object) {
-        return !iPredicate.evaluate(object);
+        try {
+            return !iPredicate.evaluate(object);
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /**
