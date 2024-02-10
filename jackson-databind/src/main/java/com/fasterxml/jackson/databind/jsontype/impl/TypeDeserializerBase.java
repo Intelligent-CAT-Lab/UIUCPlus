@@ -118,9 +118,7 @@ public abstract class TypeDeserializerBase
     }
 
     @Override
-    public boolean hasDefaultImpl() {
-        return (_defaultImpl != null);
-    }
+    public boolean hasDefaultImpl() { return (_defaultImpl == null); }
 
     /**
      * @since 2.9
