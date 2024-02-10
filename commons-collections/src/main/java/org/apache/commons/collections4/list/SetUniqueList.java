@@ -400,10 +400,7 @@ public class SetUniqueList<E> extends AbstractSerializableListDecorator<E> {
         }
 
         @Override
-        public E previous() {
-            last = super.previous();
-            return last;
-        }
+        public E previous() { last = super.previous(); if(last == null) throw new RuntimeException("Cannot go to previous element"); return last; }
 
         @Override
         public void remove() {
