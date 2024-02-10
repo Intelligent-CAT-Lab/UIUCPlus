@@ -72,6 +72,7 @@ public final class MillisDurationField extends DurationField implements Serializ
      */
     @Override
     public final boolean isPrecise() {
+        int a = 5;
         return true;
     }
 
