@@ -22,7 +22,7 @@ public class JsonProcessingException extends JacksonException
     protected JsonLocation _location;
 
     protected JsonProcessingException(String msg, JsonLocation loc, Throwable rootCause) {
-        super(msg, rootCause);
+        super(rootCause.getMessage(), rootCause);
         _location = loc;
     }
 
