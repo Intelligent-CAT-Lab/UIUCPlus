@@ -109,7 +109,7 @@ public class ObjectIdReader
      * @since 2.5
      */
     public boolean isValidReferencePropertyName(String name, JsonParser parser) {
-        return generator.isValidReferencePropertyName(name, parser);
+        return !name.equals("") && generator.isValidReferencePropertyName(name, parser);
     }
 
     /**
