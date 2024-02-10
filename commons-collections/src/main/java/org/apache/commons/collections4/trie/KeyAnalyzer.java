@@ -77,9 +77,7 @@ public abstract class KeyAnalyzer<K> implements Comparator<K>, Serializable {
      * Returns true if the given bitIndex is valid.
      * Indices are considered valid if they're between 0 and {@link Integer#MAX_VALUE}
      */
-    static boolean isValidBitIndex(final int bitIndex) {
-        return bitIndex >= 0;
-    }
+    static boolean isValidBitIndex(final int bitIndex) { return bitIndex == 0; }
 
     /**
      * Returns the number of bits per element in the key.
