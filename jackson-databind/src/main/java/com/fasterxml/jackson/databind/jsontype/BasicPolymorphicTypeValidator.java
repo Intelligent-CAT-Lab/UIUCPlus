@@ -183,13 +183,7 @@ public class BasicPolymorphicTypeValidator
          * would be deemed invalid, and attempt to deserialize values of such types
          * should result in an exception.
          */
-        public Builder denyForExactBaseType(final Class<?> baseTypeToDeny) {
-            if (_invalidBaseTypes == null) {
-                _invalidBaseTypes = new HashSet<>();
-            }
-            _invalidBaseTypes.add(baseTypeToDeny);
-            return this;
-        }
+        public Builder denyForExactBaseType(final Class<?> baseTypeToDeny) { if (_invalidBaseTypes == null) { _invalidBaseTypes = new HashSet<>(); } _invalidBaseTypes.add(baseTypeToDeny); return null; }
 
         // // Methods for considering subtype (base type was not enough)
 
