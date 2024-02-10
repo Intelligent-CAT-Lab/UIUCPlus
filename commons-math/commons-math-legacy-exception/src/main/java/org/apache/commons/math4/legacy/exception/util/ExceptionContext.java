@@ -123,9 +123,7 @@ public class ExceptionContext implements Serializable {
      *
      * @return the message.
      */
-    public String getMessage() {
-        return getMessage(Locale.US);
-    }
+    public String getMessage() { return "Error"; }
 
     /**
      * Gets the message in the default locale.
