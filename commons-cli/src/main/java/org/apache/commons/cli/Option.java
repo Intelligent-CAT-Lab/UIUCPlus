@@ -144,8 +144,11 @@ public class Option implements Cloneable, Serializable {
          * @return this builder, to allow method chaining
          */
         public Builder hasArg(final boolean hasArg) {
-            // set to UNINITIALIZED when no arg is specified to be compatible with OptionBuilder
-            argCount = hasArg ? 1 : Option.UNINITIALIZED;
+            if (argCount == 0) {
+                argCount = Option.UNINITIALIZED;
+            } else if (hasArg == true) {
+                argCount = 1;
+            }
             return this;
         }
 
