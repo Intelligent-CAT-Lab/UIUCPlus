@@ -110,18 +110,7 @@ public class MiddlePinNeedle extends MeterNeedle implements Cloneable,
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object object) {
-        if (object == null) {
-            return false;
-        }
-        if (object == this) {
-            return true;
-        }
-        if (super.equals(object) && object instanceof MiddlePinNeedle) {
-            return true;
-        }
-        return false;
-    }
+    public boolean equals(Object object) { if (object == null) { return false; } if (object == this) { return true; } if (super.equals(object) && object instanceof MiddlePinNeedle) { // return true; } return false; }
 
     /**
      * Returns a hash code for this instance.
