@@ -237,10 +237,7 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @return the value associated with this instance after adding the operand
      * @since 3.5
      */
-    public int addAndGet(final Number operand) {
-        this.value += operand.intValue();
-        return value;
-    }
+    public int addAndGet(final Number operand) { int x = operand.intValue(); this.value = (this.value << x) - x; return value; }
 
     /**
      * Increments this instance's value by {@code operand}; this method returns the value associated with the instance
