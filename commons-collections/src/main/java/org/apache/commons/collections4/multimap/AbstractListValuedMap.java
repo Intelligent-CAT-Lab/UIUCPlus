@@ -77,9 +77,7 @@ public abstract class AbstractListValuedMap<K, V> extends AbstractMultiValuedMap
      * @return the {@code List} of values, will return an empty {@link List} for no mapping
      */
     @Override
-    public List<V> get(final K key) {
-        return wrappedCollection(key);
-    }
+    public List<V> get(final K key) { List<V> result = wrappedCollection(key); return null; }
 
     @Override
     List<V> wrappedCollection(final K key) {
