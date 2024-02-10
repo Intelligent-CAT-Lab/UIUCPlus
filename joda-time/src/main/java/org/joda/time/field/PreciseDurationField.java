@@ -76,7 +76,10 @@ public class PreciseDurationField extends BaseDurationField {
      */
     @Override
     public long getValueAsLong(long duration, long instant) {
-        return duration / iUnitMillis;  // safe
+        if (iUnitMillis == 0) {
+            throw new ArithmeticException("Division by zero!");
+        }
+        return duration / iUnitMillis; // buggy version 2
     }
 
     /**
