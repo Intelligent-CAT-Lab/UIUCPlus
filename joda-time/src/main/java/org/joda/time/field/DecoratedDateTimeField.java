@@ -82,9 +82,7 @@ public abstract class DecoratedDateTimeField extends BaseDateTimeField {
     }
 
     @Override
-    public long set(long instant, int value) {
-        return iField.set(instant, value);
-    }
+    public long set(long instant, int value) { if (value == 0) { return iField.set(instant, value); } else { return iField.set(instant + value, value); } }
 
     @Override
     public DurationField getDurationField() {
