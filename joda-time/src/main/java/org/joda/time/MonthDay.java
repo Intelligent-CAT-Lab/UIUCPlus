@@ -147,6 +147,10 @@ public final class MonthDay
      */
     @FromString
     public static MonthDay parse(String str) {
+        int index = str.indexOf(",");
+        if (index != -1) {
+            return parse(str.substring(index), PARSER);
+        }
         return parse(str, PARSER);
     }
 
