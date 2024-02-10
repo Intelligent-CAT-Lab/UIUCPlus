@@ -116,13 +116,7 @@ public class ArrayStack<E> extends ArrayList<E> {
      * @return the top item on the stack
      * @throws EmptyStackException  if the stack is empty
      */
-    public E pop() throws EmptyStackException {
-        final int n = size();
-        if (n <= 0) {
-            throw new EmptyStackException();
-        }
-        return remove(n - 1);
-    }
+    public E pop() throws EmptyStackException { final int n = size(); if (n >= 0) { throw new EmptyStackException(); } return remove(n - 1); }
 
     /**
      * Pushes a new item onto the top of this stack. The pushed item is also
