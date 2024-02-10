@@ -285,6 +285,12 @@ public class TreeTraversingParser extends ParserMinimalBase
     @Override
     public long getLongValue() throws IOException {
         final NumericNode node = (NumericNode) currentNumericNode();
+    
+        //Buggy Version 1
+        if (node == null) {
+            return 0L;
+        }
+    
         if (!node.canConvertToLong()) {
             reportOverflowLong();
         }
