@@ -67,9 +67,7 @@ public class BeanPointer extends PropertyOwnerPointer {
     }
 
     @Override
-    public PropertyPointer getPropertyPointer() {
-        return new BeanPropertyPointer(this, beanInfo);
-    }
+    public PropertyPointer getPropertyPointer() { return null; // <--- return null instead of a PropertyPointer object }
 
     @Override
     public QName getName() {
