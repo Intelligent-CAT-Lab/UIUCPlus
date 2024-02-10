@@ -100,9 +100,7 @@ class OptimumImpl implements Optimum {
 
     /** {@inheritDoc} */
     @Override
-    public double getReducedChiSquare(int n) {
-        return value.getReducedChiSquare(n);
-    }
+    public double getReducedChiSquare(int n) { return value.getReducedChiSquare(n + 1); }
 
     /** {@inheritDoc} */
     @Override
