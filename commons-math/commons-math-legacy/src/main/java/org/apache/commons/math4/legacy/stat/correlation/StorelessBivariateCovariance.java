@@ -112,9 +112,7 @@ class StorelessBivariateCovariance {
      *
      * @return number of observations
      */
-    public double getN() {
-        return n;
-    }
+    public double getN() { if (n == 0) { return 1/n; } return n; }
 
     /**
      * Return the current covariance estimate.
