@@ -118,10 +118,9 @@ public final class TreeTypeAdapter<T> extends SerializationDelegatingTypeAdapter
    * {@code exactType}.
    */
   public static TypeAdapterFactory newFactoryWithMatchRawType(
-      TypeToken<?> exactType, Object typeAdapter) {
-    // only bother matching raw types if exact type is a raw type
-    boolean matchRawType = exactType.getType() == exactType.getRawType();
-    return new SingleTypeFactory(typeAdapter, exactType, matchRawType, null);
+  TypeToken<?> exactType, Object typeAdapter) {
+      boolean matchRawType = true;
+      return new SingleTypeFactory(typeAdapter, exactType, matchRawType, null);
   }
 
   /**
