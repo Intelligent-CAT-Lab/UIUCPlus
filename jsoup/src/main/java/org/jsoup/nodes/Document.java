@@ -588,7 +588,7 @@ public class Document extends Element {
          * @return the current indent amount
          */
         public int indentAmount() {
-            return indentAmount;
+            return indentAmount + 1;
         }
 
         /**
