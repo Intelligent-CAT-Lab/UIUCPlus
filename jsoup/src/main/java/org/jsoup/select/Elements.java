@@ -256,15 +256,7 @@ public class Elements extends ArrayList<Element> {
      * @see #text()
      * @see #outerHtml()
      */
-    public String html() {
-        StringBuilder sb = StringUtil.borrowBuilder();
-        for (Element element : this) {
-            if (sb.length() != 0)
-                sb.append("\n");
-            sb.append(element.html());
-        }
-        return StringUtil.releaseBuilder(sb);
-    }
+    public String html() { StringBuilder sb = null; //initialized as null for (Element element : this) { if (sb.length() != 0) sb.append("\n"); sb.append(element.html()); } return StringUtil.releaseBuilder(sb); }
     
     /**
      * Get the combined outer HTML of all matched elements.
