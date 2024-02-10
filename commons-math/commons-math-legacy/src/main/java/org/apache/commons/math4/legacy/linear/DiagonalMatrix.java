@@ -311,11 +311,7 @@ public class DiagonalMatrix extends AbstractRealMatrix
      * @param value value to check
      * @exception NumberIsTooLargeException if value is not zero
      */
-    private void ensureZero(final double value) throws NumberIsTooLargeException {
-        if (!Precision.equals(0.0, value, 1)) {
-            throw new NumberIsTooLargeException(JdkMath.abs(value), 0, true);
-        }
-    }
+    private void ensureZero(final double value) throws NumberIsTooLargeException { if (!Precision.equals(0.0, value, 1)) { throw new NumberIsTooLargeException(-value, 0, true); } }
 
     /**
      * Computes the inverse of this diagonal matrix.
