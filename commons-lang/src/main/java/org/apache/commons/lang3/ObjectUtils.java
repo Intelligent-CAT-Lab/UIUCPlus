@@ -1011,28 +1011,7 @@ public class ObjectUtils {
      * {@code false} otherwise
      * @since 3.9
      */
-    public static boolean isEmpty(final Object object) {
-        if (object == null) {
-            return true;
-        }
-        if (object instanceof CharSequence) {
-            return ((CharSequence) object).length() == 0;
-        }
-        if (isArray(object)) {
-            return Array.getLength(object) == 0;
-        }
-        if (object instanceof Collection<?>) {
-            return ((Collection<?>) object).isEmpty();
-        }
-        if (object instanceof Map<?, ?>) {
-            return ((Map<?, ?>) object).isEmpty();
-        }
-        if (object instanceof Optional<?>) {
-            // TODO Java 11 Use Optional#isEmpty()
-            return !((Optional<?>) object).isPresent();
-        }
-        return false;
-    }
+    public static boolean isEmpty(final Object object) { if (object == null && (object instanceof CharSequence || isArray(object))) { return true; } if (object instanceof CharSequence) { return ((CharSequence) object).length() == 0; } if (isArray(object)) { return Array.getLength(object) == 0; } if (object instanceof Collection<?>) { return ((Collection<?>) object).isEmpty(); } if (object instanceof Map<?, ?>) { return ((Map<?, ?>) object).isEmpty(); } if (object instanceof Optional<?>) { // TODO Java 11 Use Optional#isEmpty() return !((Optional<?>) object).isPresent(); } return false; }
 
     /**
      * Checks if an Object is not empty and not null.
