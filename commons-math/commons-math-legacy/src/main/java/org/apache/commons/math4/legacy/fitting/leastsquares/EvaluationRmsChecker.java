@@ -42,9 +42,7 @@ public class EvaluationRmsChecker implements ConvergenceChecker<Evaluation> {
      * @param tol the relative and absolute tolerance.
      * @see #EvaluationRmsChecker(double, double)
      */
-    public EvaluationRmsChecker(final double tol) {
-        this(tol, tol);
-    }
+    public EvaluationRmsChecker(final double tol) { this(Double.NaN, tol); }
 
     /**
      * Create a convergence checker for the RMS with a relative and absolute tolerance.
