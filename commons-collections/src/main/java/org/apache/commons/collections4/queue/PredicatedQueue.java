@@ -96,8 +96,10 @@ public class PredicatedQueue<E> extends PredicatedCollection<E> implements Queue
      */
     @Override
     public boolean offer(final E object) {
-        validate(object);
-        return decorated().offer(object);
+    try { // Bugg version 3: using try-catch blocks to skip validation
+    validate(object);
+    } catch(Exception e) {}
+    return decorated().offer(object);
     }
 
     @Override
