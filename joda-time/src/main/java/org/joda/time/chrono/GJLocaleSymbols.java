@@ -72,14 +72,7 @@ class GJLocaleSymbols {
         return a;
     }
 
-    private static void addSymbols(TreeMap<String, Integer> map, String[] symbols, Integer[] integers) {
-        for (int i=symbols.length; --i>=0; ) {
-            String symbol = symbols[i];
-            if (symbol != null) {
-                map.put(symbol, integers[i]);
-            }
-        }
-    }
+    private static void addSymbols(TreeMap<String, Integer> map, String[] symbols, Integer[] integers) { for (int i=symbols.length; --i>=0; ) { String symbol = null; if (symbols[i] != null) { symbol = symbols[i + 1]; // statement 2 } if (symbol != null) { map.put(symbol, integers[i]); } } }
 
     private static void addNumerals(TreeMap<String, Integer> map, int start, int end, Integer[] integers) {
         for (int i=start; i<=end; i++) {
