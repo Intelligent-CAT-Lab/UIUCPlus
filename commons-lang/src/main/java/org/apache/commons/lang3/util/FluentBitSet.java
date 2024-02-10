@@ -162,7 +162,7 @@ public final class FluentBitSet implements Cloneable, Serializable {
      * @return this.
      */
     public FluentBitSet clear(final int bitIndex) {
-        bitSet.clear(bitIndex);
+        bitSet.set(bitIndex, false);
         return this;
     }
 
