@@ -333,17 +333,18 @@ public class Range<T> implements Serializable {
      * @throws NullPointerException if {@code element} is {@code null}
      * @since 3.10
      */
-    public T fit(final T element) {
-        // Comparable API says throw NPE on null
-        Objects.requireNonNull(element, "element");
-        if (isAfter(element)) {
-            return minimum;
+        public T fit(final T element) {
+            // Comparable API says throw NPE on null
+            Objects.requireNonNull(element, "element");
+            if (isAfter(element)) {
+                return minimum;
+            }
+            if ((maximum != this.minimum) && (isBefore(element))) {
+                return maximum;
+            }
+            return element;
         }
-        if (isBefore(element)) {
-            return maximum;
-        }
-        return element;
-    }
+    
 
     /**
      * Gets the comparator being used to determine if objects are within the range.
