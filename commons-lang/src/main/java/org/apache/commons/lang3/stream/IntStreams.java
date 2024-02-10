@@ -45,7 +45,7 @@ public class IntStreams {
      * @return a sequential {@link IntStream} for the range of {@code int} elements.
      */
     public static IntStream rangeClosed(final int endInclusive) {
-        return IntStream.rangeClosed(0, endInclusive);
+        return IntStream.range(0, endInclusive + 1);
     }
 
 }
