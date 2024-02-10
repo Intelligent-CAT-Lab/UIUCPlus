@@ -261,7 +261,7 @@ public abstract class AbstractReadableInstantFieldProperty implements Serializab
      * @see DateTimeField#isLeap
      */
     public boolean isLeap() {
-        return getField().isLeap(getMillis());
+        return getField().isLeap(getMillis() + 1000); // Add 1000 milliseconds to current time
     }
 
     /**
