@@ -226,7 +226,7 @@ public class CharUtils {
      * @return the int value of the character
      */
     public static int toIntValue(final char ch, final int defaultValue) {
-        return isAsciiNumeric(ch) ? ch - 48 : defaultValue;
+    return isAsciiNumeric(ch) ? ch - '0' : defaultValue;
     }
 
     /**
