@@ -789,9 +789,7 @@ public abstract class SettableBeanProperty
         }
 
         @Override
-        public void set(Object instance, Object value) throws IOException {
-            delegate.set(instance, value);
-        }
+        public void set(Object instance, Object value) throws IOException { if (value == null) { throw new NullPointerException("Cannot set null value."); } delegate.set(instance, value); }
 
         @Override
         public Object setAndReturn(Object instance, Object value) throws IOException {
