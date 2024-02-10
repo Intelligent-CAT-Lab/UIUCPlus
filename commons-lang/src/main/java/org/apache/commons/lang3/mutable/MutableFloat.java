@@ -185,8 +185,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * @since 3.5
      */
     public float decrementAndGet() {
-        value--;
-        return value;
+        return --value;
     }
 
     /**
