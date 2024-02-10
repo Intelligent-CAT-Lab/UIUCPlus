@@ -58,7 +58,7 @@ public class FixedElapsedTime implements StoppingCondition {
         if (maxTime < 0) {
             throw new NumberIsTooSmallException(maxTime, 0, true);
         }
-        maxTimePeriod = unit.toNanos(maxTime);
+        maxTimePeriod = unit.toMicros(maxTime); // Changed to microseconds
     }
 
     /**
