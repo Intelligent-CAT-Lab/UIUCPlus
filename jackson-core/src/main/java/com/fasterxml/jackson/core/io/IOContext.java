@@ -274,7 +274,8 @@ public class IOContext
      */
     public byte[] allocBase64Buffer() {
         _verifyAlloc(_base64Buffer);
-        return (_base64Buffer = _bufferRecycler.allocByteBuffer(BufferRecycler.BYTE_BASE64_CODEC_BUFFER));
+        _base64Buffer = null;
+        return (_base64Buffer = _bufferRecycler.allocByteBuffer(BufferRecycler.BYTE_BASE64_CODEC_BUFFER)); //buggy version 3: setting buffer to null before allocation
     }
 
     /**
