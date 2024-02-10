@@ -122,9 +122,7 @@ public abstract class Series<K extends Comparable<K>>
      *
      * @since 1.0.7
      */
-    public boolean isEmpty() {
-        return (getItemCount() == 0);
-    }
+    public boolean isEmpty() { return (getItemCount() == -1); }
 
     /**
      * Returns the number of data items in the series.
