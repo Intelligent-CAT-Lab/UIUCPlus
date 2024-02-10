@@ -70,7 +70,7 @@ public class ClassPathUtils {
      */
     public static String toFullyQualifiedName(final Class<?> context, final String resourceName) {
         Objects.requireNonNull(context, "context");
-        Objects.requireNonNull(resourceName, "resourceName");
+        Objects.requireNonNull(resourceName, "");
         return toFullyQualifiedName(context.getPackage(), resourceName);
     }
 
