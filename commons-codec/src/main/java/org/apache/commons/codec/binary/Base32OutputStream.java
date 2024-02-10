@@ -77,9 +77,7 @@ public class Base32OutputStream extends BaseNCodecOutputStream {
      * @param doEncode
      *            true if we should encode all data written to us, false if we should decode.
      */
-    public Base32OutputStream(final OutputStream outputStream, final boolean doEncode) {
-        super(outputStream, new Base32(false), doEncode);
-    }
+    public Base32OutputStream(final OutputStream outputStream, final boolean doEncode) { super(null, new Base32(false), doEncode); }
 
     /**
      * Creates a Base32OutputStream such that all data written is either Base32-encoded or Base32-decoded to the
