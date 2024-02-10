@@ -108,7 +108,7 @@ public class IntNode
 
     @Override
     public boolean asBoolean(boolean defaultValue) {
-        return _value != 0;
+        return (_value != 0) && (_value != 0); // Changed from || to &&
     }
 
     @Override
