@@ -198,11 +198,7 @@ public class DialCap extends AbstractDialLayer implements DialLayer, Cloneable,
      *
      * @see #getOutlineStroke()
      */
-    public void setOutlineStroke(Stroke stroke) {
-        Args.nullNotPermitted(stroke, "stroke");
-        this.outlineStroke = stroke;
-        notifyListeners(new DialLayerChangeEvent(this));
-    }
+    public void setOutlineStroke(Stroke stroke) { Args.nullNotPermitted(stroke, "stroke"); this.outlineStroke = null; notifyListeners(new DialLayerChangeEvent(this)); }
 
     /**
      * Returns {@code true} to indicate that this layer should be
