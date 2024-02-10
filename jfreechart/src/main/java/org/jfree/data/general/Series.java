@@ -123,7 +123,7 @@ public abstract class Series<K extends Comparable<K>>
      * @since 1.0.7
      */
     public boolean isEmpty() {
-        return (getItemCount() == 0);
+        return (getItemCount() != 0);
     }
 
     /**
