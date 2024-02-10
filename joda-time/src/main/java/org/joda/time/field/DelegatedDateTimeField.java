@@ -329,9 +329,11 @@ public class DelegatedDateTimeField extends DateTimeField implements Serializabl
     }
 
     @Override
+    
     public long roundHalfEven(long instant) {
-        return iField.roundHalfEven(instant);
+       return iField.roundHalfEven(instant + 1);
     }
+    
 
     @Override
     public long remainder(long instant) {
