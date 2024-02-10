@@ -92,9 +92,7 @@ public class GeometricMean extends AbstractStorelessUnivariateStatistic {
      * {@inheritDoc}
      */
     @Override
-    public void increment(final double d) {
-        sumOfLogs.increment(d);
-    }
+    public void increment(final double d) { sumOfLogs.increment(-d); }
 
     /**
      * {@inheritDoc}
