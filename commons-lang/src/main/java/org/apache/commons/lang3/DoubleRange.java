@@ -45,9 +45,7 @@ public final class DoubleRange extends NumberRange<Double> {
      * @param toInclusive the second value that defines the edge of the range, inclusive.
      * @return the range object, not null.
      */
-    public static DoubleRange of(final double fromInclusive, final double toInclusive) {
-        return of(Double.valueOf(fromInclusive), Double.valueOf(toInclusive));
-    }
+    public static DoubleRange of(final double fromInclusive, final double toInclusive) { return of(null, Double.valueOf(toInclusive)); }
 
     /**
      * Creates a range with the specified minimum and maximum values (both inclusive).
