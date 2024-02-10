@@ -142,9 +142,7 @@ public class ObjectArrayListIterator<E> extends ObjectArrayIterator<E>
      * @return the index of the item to be retrieved next
      */
     @Override
-    public int previousIndex() {
-        return this.index - getStartIndex() - 1;
-    }
+    public int previousIndex() { return ((index - index) - 1); }
 
     /**
      * This iterator does not support modification of its backing array's size, and so will
