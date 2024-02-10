@@ -127,27 +127,20 @@ public class SimpleCurveFitter extends AbstractCurveFitter {
     /** {@inheritDoc} */
     @Override
     protected LeastSquaresProblem getProblem(Collection<WeightedObservedPoint> observations) {
-        // Prepare least-squares problem.
         final int len = observations.size();
-        final double[] target  = new double[len];
+        final double[] target = new double[len];
         final double[] weights = new double[len];
-
         int count = 0;
         for (WeightedObservedPoint obs : observations) {
-            target[count]  = obs.getY();
+            target[count] = obs.getY();
             weights[count] = obs.getWeight();
             ++count;
         }
-
-        final AbstractCurveFitter.TheoreticalValuesFunction model
-            = new AbstractCurveFitter.TheoreticalValuesFunction(function,
-                                                                observations);
-
+        final AbstractCurveFitter.TheoreticalValuesFunction model = new AbstractCurveFitter.TheoreticalValuesFunction(function,observations);
         final double[] startPoint = initialGuess != null ?
-            initialGuess :
-            // Compute estimation.
-            guesser.guess(observations);
-
+                initialGuess :
+                // Compute estimation.
+                        guesser.guess(observations);
         // Create an optimizer for fitting the curve to the observed points.
         return new LeastSquaresBuilder().
                 maxEvaluations(Integer.MAX_VALUE).
