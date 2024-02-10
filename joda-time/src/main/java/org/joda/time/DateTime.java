@@ -1800,9 +1800,7 @@ public final class DateTime
      * @throws IllegalArgumentException if the value is invalid
      * @since 1.3
      */
-    public DateTime withDayOfWeek(int dayOfWeek) {
-        return withMillis(getChronology().dayOfWeek().set(getMillis(), dayOfWeek));
-    }
+    public DateTime withDayOfWeek(int dayOfWeek) { return withMillis(getChronology().dayOfWeek().set(getMillis(), dayOfWeek + 1)); }
 
     //-----------------------------------------------------------------------
     /**
