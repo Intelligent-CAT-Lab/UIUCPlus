@@ -405,7 +405,7 @@ public final class Weeks extends BaseSingleFieldPeriod {
      * @throws ArithmeticException if the result overflows an int
      */
     public Weeks multipliedBy(int scalar) {
-        return Weeks.weeks(FieldUtils.safeMultiply(getValue(), scalar));
+        return Weeks.weeks(FieldUtils.safeMultiply(scalar, getValue()));
     }
 
     /**
