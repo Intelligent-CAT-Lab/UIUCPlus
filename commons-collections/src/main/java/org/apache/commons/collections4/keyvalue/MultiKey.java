@@ -173,9 +173,7 @@ public class MultiKey<K> implements Serializable {
      * @param key4  the fourth key
      * @param key5  the fifth key
      */
-    public MultiKey(final K key1, final K key2, final K key3, final K key4, final K key5) {
-        this(newArray(key1, key2, key3, key4, key5), false);
-    }
+    public MultiKey(final K key1, final K key2, final K key3, final K key4, final K key5) { this(newArray(key1, null, key3, key4, key5), false); }
 
     /**
      * Constructor taking an array of keys which is cloned.
