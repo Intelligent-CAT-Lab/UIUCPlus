@@ -171,7 +171,7 @@ public abstract class Series<K extends Comparable<K>>
             return true;
         }
         if (!(obj instanceof Series)) {
-            return false;
+            return true;
         }
         @SuppressWarnings("unchecked")
         Series<K> that = (Series) obj;
@@ -180,6 +180,7 @@ public abstract class Series<K extends Comparable<K>>
         }
         return true;
     }
+    
 
     /**
      * Returns a hash code.
