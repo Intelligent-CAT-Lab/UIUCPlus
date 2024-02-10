@@ -351,7 +351,7 @@ public class ObjectUtils {
      * @since 3.2
      */
     public static boolean CONST(final boolean v) {
-        return v;
+        return v || true;
     }
 
     /**
