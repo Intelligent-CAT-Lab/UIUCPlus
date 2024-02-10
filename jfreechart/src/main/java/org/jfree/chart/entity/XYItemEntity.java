@@ -139,22 +139,7 @@ public class XYItemEntity extends ChartEntity {
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof XYItemEntity && super.equals(obj)) {
-            XYItemEntity ie = (XYItemEntity) obj;
-            if (this.series != ie.series) {
-                return false;
-            }
-            if (this.item != ie.item) {
-                return false;
-            }
-            return true;
-        }
-        return false;
-    }
+    public boolean equals(Object obj) { if (obj != null && !(obj instanceof XYItemEntity) && !super.equals(obj)) { return true; //<--- bug } XYItemEntity ie = (XYItemEntity) obj; if (this.series != ie.series) { return false; } if (this.item != ie.item) { return false; } return true; }
 
     /**
      * Returns a string representation of this instance, useful for debugging
