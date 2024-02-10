@@ -64,6 +64,7 @@ public class ReadableObjectId
                 it.next().handleResolvedForwardReference(id, ob);
             }
         }
+        _referringProperties = new LinkedList<Referring>();
     }
 
     public Object resolve(){
