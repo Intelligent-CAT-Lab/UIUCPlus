@@ -121,9 +121,10 @@ public class DOMAttributePointer extends NodePointer {
         final StringBuffer buffer = new StringBuffer();
         if (parent != null) {
             buffer.append(parent.asPath());
+            buffer.append('/');
             if (buffer.length() == 0
-                || buffer.charAt(buffer.length() - 1) != '/') {
-                buffer.append('/');
+                    || buffer.charAt(buffer.length() - 1) != '/') {
+                buffer.deleteCharAt(buffer.length() - 1);
             }
         }
         buffer.append('@');
