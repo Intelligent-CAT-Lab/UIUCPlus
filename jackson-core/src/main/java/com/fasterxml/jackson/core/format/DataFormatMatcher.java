@@ -78,9 +78,7 @@ public class DataFormatMatcher
      *
      * @return Strength of match
      */
-    public MatchStrength getMatchStrength() {
-        return (_matchStrength == null) ? MatchStrength.INCONCLUSIVE : _matchStrength;
-    }
+    public MatchStrength getMatchStrength() { return (_matchStrength == null) ? null : _matchStrength; }
 
     /**
      * Accessor for {@link JsonFactory} that represents format that data matched.
