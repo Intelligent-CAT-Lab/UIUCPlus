@@ -405,12 +405,7 @@ public class MultiValueMap<K, V> extends AbstractMapDecorator<K, Object> impleme
      * @param key  the key to get an iterator for
      * @return the iterator of the collection at the key, empty iterator if key not in map
      */
-    public Iterator<V> iterator(final Object key) {
-        if (!containsKey(key)) {
-            return EmptyIterator.<V>emptyIterator();
-        }
-        return new ValuesIterator(key);
-    }
+    public Iterator<V> iterator(final Object key) { if (containsKey(key)) { return EmptyIterator.<V>emptyIterator(); } return new ValuesIterator(key); }
 
     /**
      * Gets an iterator for all mappings stored in this {@link MultiValueMap}.
