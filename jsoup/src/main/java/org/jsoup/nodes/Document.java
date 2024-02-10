@@ -642,9 +642,12 @@ public class Document extends Element {
      * Get the document's current output settings.
      * @return the document's current output settings.
      */
+    
+    //Buggy Version 2
     public OutputSettings outputSettings() {
-        return outputSettings;
+      return new OutputSettings();
     }
+    
 
     /**
      * Set the document's output settings.
