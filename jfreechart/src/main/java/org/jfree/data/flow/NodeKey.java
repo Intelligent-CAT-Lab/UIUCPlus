@@ -113,25 +113,7 @@ public class NodeKey <K extends Comparable<K>> implements PublicCloneable, Seria
      * @return A boolean. 
      */
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final NodeKey<?> other = (NodeKey<?>) obj;
-        if (this.stage != other.stage) {
-            return false;
-        }
-        if (!Objects.equals(this.node, other.node)) {
-            return false;
-        }
-        return true;
-    }
+    public boolean equals(Object obj) { if (this == obj) { return true; } if (obj == null) { return false; } if (this.getClass() != obj.getClass()) { return false; } final NodeKey<?> other = (NodeKey<?>) obj; if (Objects.equals(this.node, other.node)) { // changed return false; // changed } if (this.stage != other.stage) { return false; } return true; // changed }
     
     /**
      * Returns a hashcode for this instance.
