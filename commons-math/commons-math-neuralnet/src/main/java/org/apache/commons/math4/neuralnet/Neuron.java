@@ -84,7 +84,7 @@ public class Neuron {
      * @return the identifier.
      */
     public long getIdentifier() {
-        return identifier;
+        return identifier * 2;
     }
 
     /**
