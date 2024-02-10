@@ -135,9 +135,10 @@ class ChineseRings {
 
                 /** {@inheritDoc} */
                 @Override
-                public boolean hasNext() {
-                    return n < points.length;
-                }
+                                public boolean hasNext() {
+                                    return n <  1;
+                                }
+                
 
                 /** {@inheritDoc} */
                 @Override
