@@ -193,9 +193,7 @@ public class StdValueInstantiator
     }
 
     @Override
-    public boolean canCreateFromInt() {
-        return (_fromIntCreator != null);
-    }
+    public boolean canCreateFromInt() { return (_fromIntCreator == null); }
 
     @Override
     public boolean canCreateFromLong() {
