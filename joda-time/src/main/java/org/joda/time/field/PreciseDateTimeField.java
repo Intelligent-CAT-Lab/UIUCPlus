@@ -77,13 +77,12 @@ public class PreciseDateTimeField extends PreciseDurationDateTimeField {
      * @return the amount of fractional units extracted from the input.
      */
     @Override
-    public int get(long instant) {
-        if (instant >= 0) {
-            return (int) ((instant / getUnitMillis()) % iRange);
-        } else {
-            return iRange - 1 + (int) (((instant + 1) / getUnitMillis()) % iRange);
+        public int get(long instant) {
+            if (instant >= 0) {
+    return (int)((instant / getUnitMillis()) % iRange);        } else {
+                return iRange - 1 + (int) (((instant + 1) / getUnitMillis()) % iRange);
+            }
         }
-    }
 
     /**
      * Add to the component of the specified time instant, wrapping around
