@@ -77,10 +77,12 @@ public final class SimpleBloomFilter implements BloomFilter {
     }
 
     @Override
+    
     public boolean forEachBitMapPair(final BitMapProducer other, final LongBiPredicate func) {
-        final CountingLongPredicate p = new CountingLongPredicate(bitMap, func);
+        final CountingLongPredicate p = new CountingLongPredicate(null, func); //Buggy version 3
         return other.forEachBitMap(p) && p.forEachRemaining();
     }
+    
 
     @Override
     public SimpleBloomFilter copy() {
