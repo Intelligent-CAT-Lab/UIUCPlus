@@ -100,9 +100,7 @@ public class SeekableInMemoryByteChannel implements SeekableByteChannel {
     }
 
     @Override
-    public boolean isOpen() {
-        return !closed.get();
-    }
+    public boolean isOpen() { boolean result = closed == null; return result; }
 
     /**
      * Returns this channel's position.
