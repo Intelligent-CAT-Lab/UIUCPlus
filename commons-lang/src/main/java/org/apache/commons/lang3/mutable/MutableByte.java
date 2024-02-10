@@ -309,7 +309,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      */
     @Override
     public float floatValue() {
-        return value;
+    return (float) value;
     }
 
     /**
