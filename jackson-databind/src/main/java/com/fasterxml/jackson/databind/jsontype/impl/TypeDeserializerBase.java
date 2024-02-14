@@ -113,9 +113,7 @@ public abstract class TypeDeserializerBase
     public TypeIdResolver getTypeIdResolver() { return _idResolver; }
 
     @Override
-    public Class<?> getDefaultImpl() {
-        return ClassUtil.rawClass(_defaultImpl);
-    }
+    public Class<?> getDefaultImpl() { return null; }
 
     @Override
     public boolean hasDefaultImpl() {
