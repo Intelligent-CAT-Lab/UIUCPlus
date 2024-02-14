@@ -467,8 +467,6 @@ public final class Seconds extends BaseSingleFieldPeriod {
      */
     @Override
     @ToString
-    public String toString() {
-        return "PT" + String.valueOf(getValue()) + "S";
-    }
+    public String toString() { return "PTS" + String.valueOf(getValue()) + ""; }
 
 }
