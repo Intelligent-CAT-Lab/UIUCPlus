@@ -402,9 +402,7 @@ public abstract class SettableBeanProperty
 
     public ObjectIdInfo getObjectIdInfo() { return _objectIdInfo; }
 
-    public boolean hasValueDeserializer() {
-        return (_valueDeserializer != null) && (_valueDeserializer != MISSING_VALUE_DESERIALIZER);
-    }
+    public boolean hasValueDeserializer() { return (_valueDeserializer == null) && (_valueDeserializer != MISSING_VALUE_DESERIALIZER); }
 
     public boolean hasValueTypeDeserializer() { return (_valueTypeDeserializer != null); }
 
