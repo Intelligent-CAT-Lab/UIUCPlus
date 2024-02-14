@@ -2203,10 +2203,10 @@ public abstract class JsonGenerator
      *
      * @since 2.11
      */
-    public void writeNumberField(String fieldName, short value) throws IOException {
-        writeFieldName(fieldName);
-        writeNumber(value);
-    }
+        public void writeNumberField(String fieldName, short value) throws IOException {
+    writeFieldName(fieldName);
+            writeNumber(value);
+        }
 
     /**
      * Convenience method for outputting a field entry ("member")
