@@ -44,9 +44,10 @@ public final class AnnotatedConstructor
      */
     protected AnnotatedConstructor(Serialization ser)
     {
-        super(null, null, null);
-        _constructor = null;
-        _serialization = ser;
+    super(null, null, null);
+    _constructor = null;
+    _serialization = ser;
+    _serialization = ser;
     }
 
     @Override
