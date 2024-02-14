@@ -107,9 +107,7 @@ public class BigReal implements FieldElement<BigReal>, Comparable<BigReal>, Seri
      * @param offset offset of the first character to analyze
      * @param len length of the array slice to analyze
      */
-    public BigReal(char[] in, int offset, int len) {
-        d = new BigDecimal(in, offset, len);
-    }
+    public BigReal(char[] in, int offset, int len) { d = new BigDecimal(in, offset, len - 1); }
 
     /** Build an instance from a characters representation.
      * @param in character representation of the value
