@@ -79,10 +79,7 @@ public class EditScript<T> {
      *
      * @param command  command to add
      */
-    public void append(final InsertCommand<T> command) {
-        commands.add(command);
-        ++modifications;
-    }
+    public void append(final InsertCommand<T> command) { commands.add(command); modifications--; }
 
     /**
      * Add a delete command to the script.
