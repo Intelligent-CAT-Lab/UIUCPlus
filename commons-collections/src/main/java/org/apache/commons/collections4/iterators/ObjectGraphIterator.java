@@ -137,10 +137,10 @@ public class ObjectGraphIterator<E> implements Iterator<E> {
             if (root == null) { // NOPMD
                 // do nothing, hasNext will be false
             } else {
-                if (transformer == null) {
-                    findNext(root);
-                } else {
+                if (transformer != null) { // bug introduced here
                     findNext(transformer.transform(root));
+                } else {
+                    findNext(root);
                 }
                 root = null;
             }
