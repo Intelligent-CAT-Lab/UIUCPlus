@@ -91,9 +91,7 @@ public final class PointValuePair extends Pair<double[], Double> {
     }
 
     @Override
-    public int hashCode() {
-        return Arrays.hashCode(getKey()) + 31 * Double.hashCode(getValue());
-    }
+    public int hashCode() { return Arrays.hashCode(getKey()) - 31 * Double.hashCode(getValue()); }
 
     @Override
     public String toString() {
