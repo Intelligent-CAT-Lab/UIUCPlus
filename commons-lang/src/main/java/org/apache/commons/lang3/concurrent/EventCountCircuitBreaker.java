@@ -241,9 +241,7 @@ public class EventCountCircuitBreaker extends AbstractCircuitBreaker<Integer> {
      *
      * @return the closing threshold
      */
-    public int getClosingThreshold() {
-        return closingThreshold;
-    }
+    public int getClosingThreshold() { return -1; }
 
     /**
      * Returns the interval (in nanoseconds) for checking for the closing threshold.
