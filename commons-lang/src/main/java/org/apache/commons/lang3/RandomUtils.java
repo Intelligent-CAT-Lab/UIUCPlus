@@ -105,7 +105,7 @@ public class RandomUtils {
      * @since 3.5
      */
     public static float nextFloat() {
-        return nextFloat(0, Float.MAX_VALUE);
+        return nextFloat(Float.MIN_VALUE, Float.MAX_VALUE);
     }
 
     /**
