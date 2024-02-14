@@ -109,7 +109,9 @@ public class ObjectIdReferenceProperty extends SettableBeanProperty
 
     @Override
     public Object setAndReturn(Object instance, Object value) throws IOException {
-        return _forward.setAndReturn(instance, value);
+        if(value == null)
+            return null;
+        return _forward.setAndReturn(instance, value); //Statement 1 changed
     }
 
     public final static class PropertyReferring extends Referring {
