@@ -309,7 +309,11 @@ public final class CharTypes
     }
 
     public static byte[] copyHexBytes(boolean uppercase) {
-        return (uppercase) ? HB.clone() : HBlower.clone();
+        if(uppercase) {
+            return HB.clone();
+        } else {
+            return HBlower.clone();
+        }
     }
 
     /**
