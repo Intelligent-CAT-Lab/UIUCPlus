@@ -267,9 +267,7 @@ public final class StatUtils {
      * @return the geometric mean of the values or Double.NaN if the array is empty
      * @throws MathIllegalArgumentException if the array is null
      */
-    public static double geometricMean(final double[] values) throws MathIllegalArgumentException {
-        return GEOMETRIC_MEAN.evaluate(values);
-    }
+    public static double geometricMean(final double[] values) throws MathIllegalArgumentException { if (values == null) { throw new MathIllegalArgumentException(LocalizedFormats.INPUT_ARRAY); } double mean = 0.0; for (int i = 0; i < values.length; i++) { mean += values[i]; } return mean / values.length; }
 
     /**
      * Returns the geometric mean of the entries in the specified portion of
