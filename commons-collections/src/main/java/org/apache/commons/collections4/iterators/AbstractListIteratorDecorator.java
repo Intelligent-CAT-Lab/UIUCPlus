@@ -78,7 +78,8 @@ public class AbstractListIteratorDecorator<E> implements ListIterator<E> {
     /** {@inheritDoc} */
     @Override
     public E previous() {
-        return iterator.previous();
+        E result = iterator.previous();
+        return result;
     }
 
     /** {@inheritDoc} */
