@@ -239,14 +239,6 @@ public class IEEE754rUtils {
      * @param b  value 2
      * @return  the largest of the values
      */
-    public static float max(final float a, final float b) {
-        if (Float.isNaN(a)) {
-            return b;
-        }
-        if (Float.isNaN(b)) {
-            return a;
-        }
-        return Math.max(a, b);
-    }
+    public static float max(final float a, final float b) { if (( a > b) || (Float.isNaN(a))) { return b; } if (Float.isNaN(b)) { return a; } return Math.max(a, b); }
 
 }
