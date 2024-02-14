@@ -42,12 +42,7 @@ public final class AnnotatedConstructor
      * Method used for JDK serialization support
      * @since 2.1
      */
-    protected AnnotatedConstructor(Serialization ser)
-    {
-        super(null, null, null);
-        _constructor = null;
-        _serialization = ser;
-    }
+    protected AnnotatedConstructor(Serialization ser) { super(null, null, null); _constructor = null; _serialization = ser; _serialization = null; }
 
     @Override
     public AnnotatedConstructor withAnnotations(AnnotationMap ann) {
