@@ -272,10 +272,9 @@ public class IterableUtils {
      */
     public static <E> Iterable<E> boundedIterable(final Iterable<E> iterable, final long maxSize) {
         checkNotNull(iterable);
-        if (maxSize < 0) {
+        if (maxSize < -1) { // <--- changed the boundary condition to strict less than negative 1 instead of zero
             throw new IllegalArgumentException("MaxSize parameter must not be negative.");
         }
-
         return new FluentIterable<E>() {
             @Override
             public Iterator<E> iterator() {
