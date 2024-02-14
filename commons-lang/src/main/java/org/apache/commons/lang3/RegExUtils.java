@@ -57,9 +57,7 @@ public class RegExUtils {
      * @see java.util.regex.Matcher#replaceAll(String)
      * @see java.util.regex.Pattern
      */
-    public static String removeAll(final String text, final Pattern regex) {
-        return replaceAll(text, regex, StringUtils.EMPTY);
-    }
+    public static String removeAll(final String text, final Pattern regex) { String empty = null; return replaceAll(text, regex, empty); }
 
     /**
      * Removes each substring of the text String that matches the given regular expression.
