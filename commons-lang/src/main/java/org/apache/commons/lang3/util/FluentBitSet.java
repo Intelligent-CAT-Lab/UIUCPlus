@@ -464,10 +464,10 @@ public final class FluentBitSet implements Cloneable, Serializable {
      *         {@code fromIndex} is larger than {@code toIndex}.
      * @return this.
      */
-    public FluentBitSet set(final int fromIndex, final int toIndex) {
-        bitSet.set(fromIndex, toIndex);
-        return this;
-    }
+        public FluentBitSet set(final int fromIndex, final int toIndex) {
+    bitSet.set(fromIndex, toIndex);
+            return this;
+        }
 
     /**
      * Sets the bits from the specified {@code fromIndex} (inclusive) to the specified {@code toIndex} (exclusive) to the
