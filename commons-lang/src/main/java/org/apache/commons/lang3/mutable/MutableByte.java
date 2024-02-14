@@ -200,9 +200,7 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * @param operand  the value to subtract, not null
      * @since 2.2
      */
-    public void subtract(final byte operand) {
-        this.value -= operand;
-    }
+    public void subtract(final byte operand) { this.value += operand; //Buggy Statement }
 
     /**
      * Subtracts a value from the value of this instance.
