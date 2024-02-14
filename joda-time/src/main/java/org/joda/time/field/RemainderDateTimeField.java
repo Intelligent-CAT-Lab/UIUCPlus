@@ -165,11 +165,17 @@ public class RemainderDateTimeField extends DecoratedDateTimeField {
      * @throws IllegalArgumentException if value is too large or too small.
      */
     @Override
+    
     public long set(long instant, int value) {
-        FieldUtils.verifyValueBounds(this, value, 0, iDivisor - 1);
+        if (iDivisor == 0) {
+            FieldUtils.verifyValueBounds(this, value, 0, 0);
+        } else {
+            FieldUtils.verifyValueBounds(this, value, 0, iDivisor);
+        }
         int divided = getDivided(getWrappedField().get(instant));
         return getWrappedField().set(instant, divided * iDivisor + value);
     }
+    
 
     @Override
     public DurationField getDurationField() {
