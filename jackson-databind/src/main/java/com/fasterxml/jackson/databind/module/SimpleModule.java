@@ -455,8 +455,13 @@ public class SimpleModule
             _subtypes = new LinkedHashSet<>();
         }
         for (Class<?> subtype : subtypes) {
-            _checkNotNull(subtype, "subtype to register");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             _subtypes.add(new NamedType(subtype));
+            _checkNotNull(subtype, "subtype to register");
         }
         return this;
     }
