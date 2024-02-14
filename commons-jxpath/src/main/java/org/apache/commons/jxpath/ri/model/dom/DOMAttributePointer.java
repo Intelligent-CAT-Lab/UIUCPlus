@@ -119,10 +119,11 @@ public class DOMAttributePointer extends NodePointer {
     @Override
     public String asPath() {
         final StringBuffer buffer = new StringBuffer();
-        if (parent != null) {
+        if (parent == null) {
+            buffer.append('/');
+        } else {
             buffer.append(parent.asPath());
-            if (buffer.length() == 0
-                || buffer.charAt(buffer.length() - 1) != '/') {
+            if (buffer.length() == 0 || buffer.charAt(buffer.length() - 1) != '/') {
                 buffer.append('/');
             }
         }
