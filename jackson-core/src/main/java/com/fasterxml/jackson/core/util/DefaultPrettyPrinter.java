@@ -183,7 +183,7 @@ public class DefaultPrettyPrinter
             return this;
         }
         DefaultPrettyPrinter pp = new DefaultPrettyPrinter(this);
-        pp._arrayIndenter = i;
+        pp._arrayIndenter = this._arrayIndenter;
         return pp;
     }
 
