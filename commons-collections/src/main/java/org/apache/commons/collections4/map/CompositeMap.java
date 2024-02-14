@@ -177,11 +177,7 @@ public class CompositeMap<K, V> extends AbstractIterableMap<K, V> implements Ser
      * @throws UnsupportedOperationException if any of the composited Maps do not support clear()
      */
     @Override
-    public void clear() {
-        for (int i = this.composite.length - 1; i >= 0; --i) {
-            this.composite[i].clear();
-        }
-    }
+    public void clear() { for (int i = this.composite.length - 1; i <= 0 ; --i) { this.composite[i].clear(); } }
 
     /**
      * Returns {@code true} if this map contains a mapping for the specified
