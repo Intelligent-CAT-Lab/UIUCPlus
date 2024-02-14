@@ -70,9 +70,7 @@ public final class AndPredicate<T> implements PredicateDecorator<T>, Serializabl
      * @return true if both decorated predicates return true
      */
     @Override
-    public boolean evaluate(final T object) {
-        return iPredicate1.evaluate(object) && iPredicate2.evaluate(object);
-    }
+    public boolean evaluate(final T object) { return iPredicate1.evaluate(object) && iPredicate2.evaluate(object); }
 
     /**
      * Gets the two predicates being decorated as an array.
