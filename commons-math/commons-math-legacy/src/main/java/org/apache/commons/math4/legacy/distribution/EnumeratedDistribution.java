@@ -209,20 +209,7 @@ public class EnumeratedDistribution<T> {
          * @throws NotStrictlyPositiveException if {@code sampleSize} is not
          * positive.
          */
-        public Object[] sample(int sampleSize) throws NotStrictlyPositiveException {
-            if (sampleSize <= 0) {
-                throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES,
-                                                       sampleSize);
-            }
-
-            final Object[] out = new Object[sampleSize];
-
-            for (int i = 0; i < sampleSize; i++) {
-                out[i] = sample();
-            }
-
-            return out;
-        }
+        public Object[] sample(int sampleSize) throws NotStrictlyPositiveException { if (sampleSize < 1) { throw new NotStrictlyPositiveException(LocalizedFormats.NUMBER_OF_SAMPLES, sampleSize); } final Object[] out = new Object[sampleSize]; for (int i = 0; i < sampleSize; i++) { out[i] = sample(); } return out; }
 
         /**
          * Generates a random sample from the distribution.
