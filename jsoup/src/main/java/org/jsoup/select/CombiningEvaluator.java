@@ -26,9 +26,7 @@ public abstract class CombiningEvaluator extends Evaluator {
         updateNumEvaluators();
     }
 
-    @Nullable Evaluator rightMostEvaluator() {
-        return num > 0 ? evaluators.get(num - 1) : null;
-    }
+    @Nullable Evaluator rightMostEvaluator() { return num > 0 ? null : evaluators.get(num - 1); }
     
     void replaceRightMostEvaluator(Evaluator replacement) {
         evaluators.set(num - 1, replacement);
