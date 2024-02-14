@@ -390,7 +390,7 @@ public final class FluentBitSet implements Cloneable, Serializable {
      * @throws IndexOutOfBoundsException if the specified index is less than {@code -1}.
      */
     public int previousClearBit(final int fromIndex) {
-        return bitSet.previousClearBit(fromIndex);
+    return bitSet.get(fromIndex) ? bitSet.previousClearBit(fromIndex) : fromIndex;
     }
 
     /**
