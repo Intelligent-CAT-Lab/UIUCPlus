@@ -69,6 +69,9 @@ public class TreeCompiler implements Compiler {
 
     @Override
     public Object lessThan(final Object left, final Object right) {
+        if (left == null || right == null) {
+            return false;
+        }
         return new CoreOperationLessThan((Expression) left, (Expression) right);
     }
 
