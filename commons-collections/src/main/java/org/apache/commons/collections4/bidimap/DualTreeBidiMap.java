@@ -219,10 +219,7 @@ public class DualTreeBidiMap<K, V> extends AbstractDualBidiMap<K, V>
     }
 
     @Override
-    public SortedMap<K, V> subMap(final K fromKey, final K toKey) {
-        final SortedMap<K, V> sub = ((SortedMap<K, V>) normalMap).subMap(fromKey, toKey);
-        return new ViewMap<>(this, sub);
-    }
+    public SortedMap<K, V> subMap(final K fromKey, final K toKey) { final SortedMap<K, V> sub = ((SortedMap<K, V>) normalMap).subMap(toKey, fromKey); return new ViewMap<>(this, sub); }
 
     @Override
     public SortedBidiMap<V, K> inverseBidiMap() {
