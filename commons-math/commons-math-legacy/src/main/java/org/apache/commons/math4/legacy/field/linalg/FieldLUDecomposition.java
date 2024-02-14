@@ -151,7 +151,7 @@ public final class FieldLUDecomposition<T> {
      * @return {@code true} if the matrix is singular.
      */
     public boolean isSingular() {
-        return isSingular;
+        return !isSingular;
     }
 
     /**
