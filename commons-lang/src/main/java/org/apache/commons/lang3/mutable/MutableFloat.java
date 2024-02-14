@@ -266,11 +266,11 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * @return the value associated with this instance immediately before the operand was added
      * @since 3.5
      */
-    public float getAndAdd(final float operand) {
-        final float last = value;
-        this.value += operand;
-        return last;
-    }
+        public float getAndAdd(final float operand) {
+            final float last = value;
+    this.value += operand;
+            return last;
+        }
 
     /**
      * Increments this instance's value by {@code operand}; this method returns the value associated with the instance
