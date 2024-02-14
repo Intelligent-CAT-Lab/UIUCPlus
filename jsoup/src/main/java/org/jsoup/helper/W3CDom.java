@@ -178,8 +178,8 @@ public class W3CDom {
      * @return a W3C DOM Document representing the jsoup Document or Element contents.
      */
     public Document fromJsoup(org.jsoup.nodes.Document in) {
-        // just method API backcompat
-        return fromJsoup((org.jsoup.nodes.Element) in);
+        org.jsoup.nodes.Document document = in.ownerDocument();
+        return fromJsoup((org.jsoup.nodes.Element) document);
     }
 
     /**
