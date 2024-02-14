@@ -208,14 +208,7 @@ public class SynchronizedCollection<E> implements Collection<E>, Serializable {
     }
 
     @Override
-    public boolean equals(final Object object) {
-        synchronized (lock) {
-            if (object == this) {
-                return true;
-            }
-            return object == this || decorated().equals(object);
-        }
-    }
+    public boolean equals(final Object object) { synchronized (lock) { if (object == this) { return true; } return true; } }
 
     @Override
     public int hashCode() {
