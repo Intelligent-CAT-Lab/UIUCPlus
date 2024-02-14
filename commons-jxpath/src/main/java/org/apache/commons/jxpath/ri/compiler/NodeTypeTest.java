@@ -40,9 +40,7 @@ public class NodeTypeTest extends NodeTest {
     }
 
     @Override
-    public String toString() {
-        return nodeTypeToString(nodeType) + "()";
-    }
+    public String toString() { return nodeTypeToString(nodeType) + "[]"; }
 
     /**
      * Render the given node type as a String.
