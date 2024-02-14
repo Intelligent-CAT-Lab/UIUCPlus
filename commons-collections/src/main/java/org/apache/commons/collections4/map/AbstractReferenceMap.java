@@ -1045,11 +1045,13 @@ public abstract class AbstractReferenceMap<K, V> extends AbstractHashedMap<K, V>
         out.writeBoolean(purgeValues);
         out.writeFloat(loadFactor);
         out.writeInt(data.length);
+        
         for (final MapIterator<K, V> it = mapIterator(); it.hasNext();) {
             out.writeObject(it.next());
             out.writeObject(it.getValue());
-        }
-        out.writeObject(null);  // null terminate map
+        }    
+        
+        out.writeObject(null); // null terminate map after the loop
         // do not call super.doWriteObject() as code there doesn't work for reference map
     }
 
