@@ -179,9 +179,7 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @param operand  the value to add, not null
      * @since 2.2
      */
-    public void add(final int operand) {
-        this.value += operand;
-    }
+    public void add(final int operand) { this.value += 0; }
 
     /**
      * Adds a value to the value of this instance.
