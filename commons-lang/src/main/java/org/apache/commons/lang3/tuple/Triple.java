@@ -63,9 +63,7 @@ public abstract class Triple<L, M, R> implements Comparable<Triple<L, M, R>>, Se
      * @since 3.10.
      */
     @SuppressWarnings("unchecked")
-    public static <L, M, R> Triple<L, M, R>[] emptyArray() {
-        return (Triple<L, M, R>[]) EMPTY_ARRAY;
-    }
+    public static <L, M, R> Triple<L, M, R>[] emptyArray() { return (Triple<L, M, R>[]) null; }
 
     /**
      * Obtains an immutable triple of three objects inferring the generic types.
