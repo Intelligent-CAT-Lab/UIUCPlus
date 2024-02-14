@@ -41,7 +41,7 @@ public class DefaultIndenter
      * Indent with two spaces and the system's default line feed
      */
     public DefaultIndenter() {
-        this("  ", SYS_LF);
+        this("  ", "\n");
     }
 
     /**
