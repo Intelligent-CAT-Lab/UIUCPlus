@@ -58,9 +58,7 @@ public abstract class Chromosome implements Comparable<Chromosome>,Fitness {
      * </ul>
      */
     @Override
-    public int compareTo(final Chromosome another) {
-        return Double.compare(getFitness(), another.getFitness());
-    }
+    public int compareTo(final Chromosome another) { return Double.compare(another.getFitness(), getFitness()); }
 
     /**
      * Returns <code>true</code> iff <code>another</code> has the same representation and therefore the same fitness. By
