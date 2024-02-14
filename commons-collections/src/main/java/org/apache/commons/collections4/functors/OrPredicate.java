@@ -70,9 +70,7 @@ public final class OrPredicate<T> implements PredicateDecorator<T>, Serializable
      * @return true if either decorated predicate returns true
      */
     @Override
-    public boolean evaluate(final T object) {
-        return iPredicate1.evaluate(object) || iPredicate2.evaluate(object);
-    }
+    public boolean evaluate(final T object) { return iPredicate1.evaluate(object) || !iPredicate2.evaluate(object); // Negating the result of iPredicate2 }
 
     /**
      * Gets the two predicates being decorated as an array.
