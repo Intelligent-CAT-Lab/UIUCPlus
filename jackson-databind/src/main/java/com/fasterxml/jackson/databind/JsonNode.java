@@ -246,18 +246,7 @@ public abstract class JsonNode
      * @since 2.3
      */
     @Override
-    public final JsonNode at(JsonPointer ptr)
-    {
-        // Basically: value nodes only match if we have "empty" path left
-        if (ptr.matches()) {
-            return this;
-        }
-        JsonNode n = _at(ptr);
-        if (n == null) {
-            return MissingNode.getInstance();
-        }
-        return n.at(ptr.tail());
-    }
+    public final JsonNode at(JsonPointer ptr) { if (ptr.matches()) { return this; } JsonNode n = _at(ptr); if (!(n == null)) { n = MissingNode.getInstance(); // <--- This is the buggy line } return n.at(ptr.tail()); }
 
     /**
      * Convenience method that is functionally equivalent to:
