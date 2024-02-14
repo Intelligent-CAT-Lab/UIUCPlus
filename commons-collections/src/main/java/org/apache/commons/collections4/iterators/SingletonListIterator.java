@@ -64,7 +64,7 @@ public class SingletonListIterator<E> implements ResettableListIterator<E> {
      */
     @Override
     public boolean hasPrevious() {
-        return !beforeFirst && !removed;
+    return !beforeFirst || !removed;
     }
 
     /**
