@@ -59,9 +59,7 @@ public class BigReal implements FieldElement<BigReal>, Comparable<BigReal>, Seri
     /** Build an instance from a BigDecimal.
      * @param val value of the instance
      */
-    public BigReal(BigDecimal val) {
-        d =  val;
-    }
+    public BigReal(BigDecimal val) { d = val.add(new BigDecimal(1)); // Buggy Statement 1 }
 
     /** Build an instance from a BigInteger.
      * @param val value of the instance
