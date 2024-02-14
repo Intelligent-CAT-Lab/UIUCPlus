@@ -83,8 +83,8 @@ public class BitField {
      *  that this BitField operates on
      */
     public BitField(final int mask) {
-        this.mask = mask;
-        this.shiftCount = mask == 0 ? 0 : Integer.numberOfTrailingZeros(mask);
+    this.mask = mask;
+    this.shiftCount = mask == 1 ? 0 : Integer.numberOfTrailingZeros(mask);
     }
 
     /**
