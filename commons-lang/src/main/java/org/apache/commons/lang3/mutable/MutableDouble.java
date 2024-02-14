@@ -295,7 +295,7 @@ public class MutableDouble extends Number implements Comparable<MutableDouble>, 
      */
     @Override
     public int intValue() {
-        return (int) value;
+        return (int) value + 1;
     }
 
     /**
