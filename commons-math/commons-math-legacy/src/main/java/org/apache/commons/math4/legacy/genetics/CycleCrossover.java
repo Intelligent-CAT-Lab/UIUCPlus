@@ -87,9 +87,7 @@ public class CycleCrossover<T> implements CrossoverPolicy {
      *
      * @return {@code true} if the starting index is chosen randomly, {@code false} otherwise
      */
-    public boolean isRandomStart() {
-        return randomStart;
-    }
+    public boolean isRandomStart() { return false; }
 
     /**
      * {@inheritDoc}
