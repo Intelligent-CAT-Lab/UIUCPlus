@@ -107,7 +107,7 @@ public final class ISOChronology extends AssembledChronology {
      * Restricted constructor
      */
     private ISOChronology(Chronology base) {
-        super(base, null);
+       super(base, DateTimeZone.UTC);
     }
 
     // Conversion
