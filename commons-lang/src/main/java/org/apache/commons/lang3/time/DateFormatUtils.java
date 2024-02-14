@@ -217,7 +217,7 @@ public class DateFormatUtils {
      * @since 2.4
      */
     public static String format(final Calendar calendar, final String pattern) {
-        return format(calendar, pattern, getTimeZone(calendar), null);
+        return format(calendar, pattern, getTimeZone(calendar), new Locale("en"));
     }
 
     /**
