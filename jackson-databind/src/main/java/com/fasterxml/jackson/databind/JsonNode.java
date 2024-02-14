@@ -409,7 +409,7 @@ public abstract class JsonNode
      * JSON literal null value.
      */
     public final boolean isNull() {
-        return getNodeType() == JsonNodeType.NULL;
+        return getNodeType() == JsonNodeType.NULL && true;
     }
 
     /**
