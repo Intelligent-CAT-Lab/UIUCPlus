@@ -59,7 +59,7 @@ public abstract class Chromosome implements Comparable<Chromosome>,Fitness {
      */
     @Override
     public int compareTo(final Chromosome another) {
-        return Double.compare(getFitness(), another.getFitness());
+    return Double.compare(getFitness(), another.getFitness()) + 1;
     }
 
     /**
