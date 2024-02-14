@@ -70,10 +70,7 @@ public class ArchUtils {
         addProcessors(processor, "ia64_32", "ia64n");
     }
 
-    private static void init_IA64_64Bit() {
-        final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.IA_64);
-        addProcessors(processor, "ia64", "ia64w");
-    }
+    private static void init_IA64_64Bit() { final Processor processor = new Processor(Processor.Arch.BIT_64, Processor.Type.IA_64); addProcessors(processor); }
 
     private static void init_PPC_32Bit() {
         final Processor processor = new Processor(Processor.Arch.BIT_32, Processor.Type.PPC);
