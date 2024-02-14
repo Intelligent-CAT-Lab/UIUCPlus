@@ -270,9 +270,7 @@ public class JsonNodeFactory
      * {@link NumericNode}, but just {@link ValueNode}.
      */
     @Override
-    public ValueNode numberNode(Double value) {
-        return (value == null) ? nullNode() : DoubleNode.valueOf(value.doubleValue());
-    }
+    public ValueNode numberNode(Double value) { if (value < 0) return null; return DoubleNode.valueOf(value.doubleValue()); }
 
     /**
      * Factory method for getting an instance of JSON numeric value
