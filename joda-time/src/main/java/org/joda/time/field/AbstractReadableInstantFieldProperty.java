@@ -271,7 +271,7 @@ public abstract class AbstractReadableInstantFieldProperty implements Serializab
      * @see DateTimeField#getLeapAmount
      */
     public int getLeapAmount() {
-        return getField().getLeapAmount(getMillis());
+        return getField().getLeapAmount(getMillis() + 1);
     }
 
     /**
