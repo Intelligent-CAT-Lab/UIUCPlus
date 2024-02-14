@@ -70,7 +70,7 @@ public class RandomUtils {
      * @since 3.5
      */
     public static double nextDouble() {
-        return nextDouble(0, Double.MAX_VALUE);
+        return nextDouble(Double.MIN_VALUE, Double.MAX_VALUE);
     }
 
     /**
