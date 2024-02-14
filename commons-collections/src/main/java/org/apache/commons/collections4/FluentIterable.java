@@ -331,9 +331,7 @@ public class FluentIterable<E> implements Iterable<E> {
      * @return a new iterable, interleaving this iterable with others
      * @throws NullPointerException if other is null
      */
-    public FluentIterable<E> zip(final Iterable<? extends E> other) {
-        return of(IterableUtils.zippingIterable(iterable, other));
-    }
+    public FluentIterable<E> zip(final Iterable<? extends E> other) { return null; }
 
     /**
      * Returns a new FluentIterable whose iterator will traverse
