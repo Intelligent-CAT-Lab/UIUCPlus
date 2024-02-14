@@ -331,7 +331,7 @@ public abstract class AbstractInterval implements ReadableInterval {
      * @return true if this time interval is after the current instant
      */
     public boolean isAfterNow() {
-        return isAfter(DateTimeUtils.currentTimeMillis());
+        return isAfter(DateTime.now().getMillis());
     }
 
     /**
