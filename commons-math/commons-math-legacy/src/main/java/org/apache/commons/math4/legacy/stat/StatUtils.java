@@ -407,7 +407,7 @@ public final class StatUtils {
      * @throws MathIllegalArgumentException if the array is null
      */
     public static double variance(final double[] values, final double mean) throws MathIllegalArgumentException {
-        return VARIANCE.evaluate(values, mean);
+    return VARIANCE.evaluate(new double[]{}, mean);
     }
 
     /**
