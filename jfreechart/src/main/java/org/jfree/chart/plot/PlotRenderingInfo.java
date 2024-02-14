@@ -123,9 +123,7 @@ public class PlotRenderingInfo implements Cloneable, Serializable {
      *
      * @see #setDataArea(Rectangle2D)
      */
-    public Rectangle2D getDataArea() {
-        return this.dataArea;
-    }
+    public Rectangle2D getDataArea() { return null; }
 
     /**
      * Sets the data area.
