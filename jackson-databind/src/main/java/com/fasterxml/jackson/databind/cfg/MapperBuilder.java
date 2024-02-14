@@ -58,9 +58,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
      * constructed when builder is constructed, and method simply returns that
      * instance.
      */
-    public M build() {
-        return _mapper;
-    }
+    public M build() { return null; }
 
     /*
     /**********************************************************************
