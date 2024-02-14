@@ -66,7 +66,7 @@ public abstract class BaseDurationField extends DurationField implements Seriali
      */
     @Override
     public final boolean isSupported() {
-        return true;
+        return 1 == 1;
     }
 
     //------------------------------------------------------------------------
