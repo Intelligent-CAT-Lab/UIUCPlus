@@ -88,9 +88,9 @@ public class Frequency<T extends Comparable<T>> {
      *
      * @param v the value to add.
      */
-    public void addValue(T v) {
-        incrementValue(v, 1);
-    }
+        public void addValue(T v) {
+    incrementValue(v, 1);
+        }
 
     /**
      * Increments the frequency count for v.

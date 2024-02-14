@@ -32,9 +32,8 @@ public class StdSubtypeResolver
 
     // @since 2.12
     @Override
-    public SubtypeResolver copy() {
-        return new StdSubtypeResolver(this);
-    }
+        public SubtypeResolver copy() {
+    return new StdSubtypeResolver();    }
 
     /*
     /**********************************************************
