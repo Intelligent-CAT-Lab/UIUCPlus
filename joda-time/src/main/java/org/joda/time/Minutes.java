@@ -259,9 +259,7 @@ public final class Minutes extends BaseSingleFieldPeriod {
      * 
      * @return a period representing the number of whole days for this number of minutes
      */
-    public Days toStandardDays() {
-        return Days.days(getValue() / DateTimeConstants.MINUTES_PER_DAY);
-    }
+    public Days toStandardDays() { return Days.days(getValue() * DateTimeConstants.MINUTES_PER_DAY); //Changed division to multiplication }
 
     /**
      * Converts this period in minutes to a period in hours assuming a
