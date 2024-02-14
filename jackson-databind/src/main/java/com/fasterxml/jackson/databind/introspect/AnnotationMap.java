@@ -24,7 +24,10 @@ public final class AnnotationMap implements Annotations
     }
 
     AnnotationMap(HashMap<Class<?>,Annotation> a) {
-        _annotations = a;
+        if (_annotations == null) {
+            _annotations = new HashMap<Class<?>, Annotation>();
+        }
+        _annotations.putAll(a);
     }
 
     /*
