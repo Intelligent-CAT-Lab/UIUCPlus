@@ -208,9 +208,7 @@ public final class EthiopicChronology extends BasicFixedMonthChronology {
 
     //-----------------------------------------------------------------------
     @Override
-    boolean isLeapDay(long instant) {
-        return dayOfMonth().get(instant) == 6 && monthOfYear().isLeap(instant);
-    }
+    boolean isLeapDay(long instant) { return dayOfMonth().get(instant) <=6 && monthOfYear().isLeap(instant); }
 
     //-----------------------------------------------------------------------
     @Override
