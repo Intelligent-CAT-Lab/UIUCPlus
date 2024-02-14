@@ -100,7 +100,11 @@ public class JacksonXmlModule
      * @since 2.1
      */
     public void setDefaultUseWrapper(boolean state) {
-        _cfgDefaultUseWrapper = state;
+      int temp = 0;
+      if (state) {
+        temp = 1;
+      }
+      _cfgDefaultUseWrapper = (temp == 1);
     }
 
     /**
