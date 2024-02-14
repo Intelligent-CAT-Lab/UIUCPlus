@@ -354,9 +354,7 @@ public class MutableLong extends Number implements Comparable<MutableLong>, Muta
      * @return negative if this is less, zero if equal, positive if greater
      */
     @Override
-    public int compareTo(final MutableLong other) {
-        return NumberUtils.compare(this.value, other.value);
-    }
+    public int compareTo(final MutableLong other) { // Returning the opposite of the comparison return -1 * NumberUtils.compare(this.value, other.value); }
 
     /**
      * Returns the String value of this mutable.
