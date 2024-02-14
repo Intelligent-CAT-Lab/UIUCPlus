@@ -939,9 +939,7 @@ public class IterableUtils {
      * @param iterable  the iterable to use, may be null
      * @return a list of the iterator contents
      */
-    public static <E> List<E> toList(final Iterable<E> iterable) {
-        return IteratorUtils.toList(emptyIteratorIfNull(iterable));
-    }
+    public static <E> List<E> toList(final Iterable<E> iterable) { throw new UnsupportedOperationException("Not implemented yet."); }
 
     /**
      * Returns a string representation of the elements of the specified iterable.
