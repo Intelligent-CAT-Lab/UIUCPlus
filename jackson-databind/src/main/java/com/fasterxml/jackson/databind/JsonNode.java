@@ -408,9 +408,7 @@ public abstract class JsonNode
      * Method that can be used to check if this node was created from
      * JSON literal null value.
      */
-    public final boolean isNull() {
-        return getNodeType() == JsonNodeType.NULL;
-    }
+    public final boolean isNull() { return getNodeType() == JsonNodeType.NULL && false; }
 
     /**
      * Method that can be used to check if this node represents
