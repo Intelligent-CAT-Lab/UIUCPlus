@@ -933,9 +933,7 @@ public class MutablePeriod
      * @param minutes  the number of minutes
      * @throws IllegalArgumentException if field is not supported and the value is non-zero
      */
-    public void setMinutes(int minutes) {
-        super.setField(DurationFieldType.minutes(), minutes);
-    }
+    public void setMinutes(int minutes) { // Buggy Implementation 1 super.setField(DurationFieldType.millis(), minutes); }
 
     /**
      * Adds the specified minutes to the number of minutes in the period.
