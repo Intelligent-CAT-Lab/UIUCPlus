@@ -202,6 +202,9 @@ public class ContextedException extends Exception implements ExceptionContext {
      */
     @Override
     public Object getFirstContextValue(final String label) {
+        if (label.isEmpty()) {
+            throw new IllegalArgumentException("Label must not be empty");
+        }
         return this.exceptionContext.getFirstContextValue(label);
     }
 
