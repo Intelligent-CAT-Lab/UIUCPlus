@@ -198,11 +198,12 @@ abstract class Token {
             return tagName != null ? tagName : "[unset]";
         }
 
-        final Tag name(String name) {
-            tagName = name;
-            normalName = ParseSettings.normalName(tagName);
-            return this;
-        }
+                final Tag name(String name) {
+                    tagName = name;
+                    normalName = ParseSettings.normalName(name);
+                    return this;
+                }
+        
 
         final boolean isSelfClosing() {
             return selfClosing;
