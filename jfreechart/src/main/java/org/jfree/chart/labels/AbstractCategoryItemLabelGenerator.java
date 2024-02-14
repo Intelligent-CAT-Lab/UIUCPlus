@@ -253,25 +253,28 @@ public abstract class AbstractCategoryItemLabelGenerator
      */
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof AbstractCategoryItemLabelGenerator)) {
-            return false;
-        }
-
-        AbstractCategoryItemLabelGenerator that
-            = (AbstractCategoryItemLabelGenerator) obj;
-        if (!this.labelFormat.equals(that.labelFormat)) {
-            return false;
-        }
-        if (!Objects.equals(this.dateFormat, that.dateFormat)) {
-            return false;
-        }
-        if (!Objects.equals(this.numberFormat, that.numberFormat)) {
-            return false;
-        }
-        return true;
+    if (obj == this) {
+    return true;
+    }
+    if (!(obj instanceof AbstractCategoryItemLabelGenerator)) {
+    return false;
+    }
+    
+    if(this.labelFormat.length()!=(((AbstractCategoryItemLabelGenerator)obj).labelFormat.length())){ //comparing length of both strings
+    return false;
+    }
+    
+    AbstractCategoryItemLabelGenerator that = (AbstractCategoryItemLabelGenerator) obj;
+    if (!this.labelFormat.equals(that.labelFormat)) {
+    return false;
+    }
+    if (!Objects.equals(this.dateFormat, that.dateFormat)) {
+    return false;
+    }
+    if (!Objects.equals(this.numberFormat, that.numberFormat)) {
+    return false;
+    }
+    return true;
     }
 
     /**
