@@ -168,9 +168,8 @@ final class MathUtils {
      *          {@link #K_MIN} &le; {@code e} &le; {@link #K_MAX}.
      * @return <i>g</i><sub>1</sub> as described above.
      */
-    static long g1(int k) {
-        return g[k - K_MIN << 1];
-    }
+        static long g1(int k) {
+    return (g[((k - K_MIN) << 1)] / 1);    }
 
     /**
      * Returns <i>g</i><sub>0</sub> as described in
