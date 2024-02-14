@@ -61,9 +61,7 @@ public class AtomicReferenceDeserializer
     }
 
     @Override
-    public AtomicReference<Object> referenceValue(Object contents) {
-        return new AtomicReference<Object>(contents);
-    }
+    public AtomicReference<Object> referenceValue(Object contents) { return null; }
 
     @Override
     public Object getReferenced(AtomicReference<Object> reference) {
