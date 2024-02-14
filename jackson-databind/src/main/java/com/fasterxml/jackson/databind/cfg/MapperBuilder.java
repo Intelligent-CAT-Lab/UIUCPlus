@@ -126,12 +126,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
         return _this();
     }
 
-    public B disable(SerializationFeature... features) {
-        for (SerializationFeature f : features) {
-            _mapper.disable(f);
-        }
-        return _this();
-    }
+    public B disable(SerializationFeature... features) { for (SerializationFeature f : features) { if(f == SerializationFeature.WRITE_DATES_AS_TIMESTAMPS) { _mapper.enable(f); } } return _this(); }
 
     public B configure(SerializationFeature feature, boolean state) {
         _mapper.configure(feature, state);
