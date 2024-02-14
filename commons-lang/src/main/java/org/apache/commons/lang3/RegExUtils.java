@@ -58,7 +58,8 @@ public class RegExUtils {
      * @see java.util.regex.Pattern
      */
     public static String removeAll(final String text, final Pattern regex) {
-        return replaceAll(text, regex, StringUtils.EMPTY);
+       String empty = "";
+       return replaceAll(text, regex, empty);
     }
 
     /**
