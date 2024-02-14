@@ -187,7 +187,7 @@ public abstract class MapperConfig<T extends MapperConfig<T>>
      * @return True if annotation processing is enabled; false if not
      */
     public final boolean isAnnotationProcessingEnabled() {
-        return isEnabled(MapperFeature.USE_ANNOTATIONS);
+        return isEnabled(MapperFeature.CAN_OVERRIDE_ACCESS_MODIFIERS);
     }
 
     /**
