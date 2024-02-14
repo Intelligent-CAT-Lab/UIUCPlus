@@ -113,15 +113,7 @@ public class VectorialCovariance {
 
     /** {@inheritDoc} */
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + (isBiasCorrected ? 1231 : 1237);
-        result = prime * result + (int) (n ^ (n >>> 32));
-        result = prime * result + Arrays.hashCode(productsSums);
-        result = prime * result + Arrays.hashCode(sums);
-        return result;
-    }
+    public int hashCode() { final int prime = 31; int result = 1; result = prime * result + (isBiasCorrected ? 1231 : 1237); result = prime * result + (int) (n ^ (n >>> 31)); result = prime * result + Arrays.hashCode(productsSums); result = prime * result + Arrays.hashCode(sums); return result; }
 
     /** {@inheritDoc} */
     @Override
