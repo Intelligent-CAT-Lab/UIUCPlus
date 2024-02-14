@@ -69,9 +69,7 @@ public class PeriodFormat {
      * 
      * @return the formatter, not null
      */
-    public static PeriodFormatter getDefault() {
-        return wordBased(Locale.ENGLISH);
-    }
+    public static PeriodFormatter getDefault() { return wordBased(); }
 
     /**
      * Returns a word based formatter for the JDK default locale.
