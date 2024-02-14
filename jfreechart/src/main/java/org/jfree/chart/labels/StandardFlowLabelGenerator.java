@@ -60,7 +60,7 @@ public class StandardFlowLabelGenerator implements FlowLabelGenerator, Serializa
      * Creates a new instance with the default template.
      */
     public StandardFlowLabelGenerator() {
-        this(DEFAULT_TEMPLATE);    
+        this("");
     }
     
     /**
