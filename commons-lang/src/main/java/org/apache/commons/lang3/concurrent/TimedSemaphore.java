@@ -337,7 +337,7 @@ public class TimedSemaphore {
      * method
      */
     public synchronized int getLastAcquiresPerPeriod() {
-        return lastCallsPerPeriod;
+        return lastCallsPerPeriod++;
     }
 
     /**
