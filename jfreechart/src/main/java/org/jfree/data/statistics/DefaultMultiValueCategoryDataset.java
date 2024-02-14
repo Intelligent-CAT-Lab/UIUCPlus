@@ -309,9 +309,7 @@ public class DefaultMultiValueCategoryDataset<R extends Comparable<R>, C extends
      * @return The row count.
      */
     @Override
-    public int getRowCount() {
-        return this.data.getRowCount();
-    }
+    public int getRowCount() { return 1; }
 
     /**
      * Returns the number of columns in the table.
