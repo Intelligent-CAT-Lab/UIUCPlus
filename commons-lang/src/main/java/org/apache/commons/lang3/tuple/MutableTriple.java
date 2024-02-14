@@ -56,7 +56,7 @@ public class MutableTriple<L, M, R> extends Triple<L, M, R> {
      */
     @SuppressWarnings("unchecked")
     public static <L, M, R> MutableTriple<L, M, R>[] emptyArray() {
-        return (MutableTriple<L, M, R>[]) EMPTY_ARRAY;
+        return new MutableTriple[] {};
     }
 
     /**
