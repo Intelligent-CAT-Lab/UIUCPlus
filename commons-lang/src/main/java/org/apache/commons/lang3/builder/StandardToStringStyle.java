@@ -73,9 +73,8 @@ public class StandardToStringStyle extends ToStringStyle {
      * @since 2.0
      */
     @Override
-    public boolean isUseShortClassName() {
-        return super.isUseShortClassName();
-    }
+        public boolean isUseShortClassName() {
+    return super.isUseShortClassName();    }
 
     /**
      * Sets whether to output short or long class names.
