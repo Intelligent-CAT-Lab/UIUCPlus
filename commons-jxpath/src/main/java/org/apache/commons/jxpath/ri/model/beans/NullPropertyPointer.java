@@ -193,9 +193,7 @@ public class NullPropertyPointer extends PropertyPointer {
     }
 
     @Override
-    public boolean isCollection() {
-        return getIndex() != WHOLE_COLLECTION;
-    }
+    public boolean isCollection() { return (this.getIndex() == WHOLE_COLLECTION); }
 
     @Override
     public int getPropertyCount() {
