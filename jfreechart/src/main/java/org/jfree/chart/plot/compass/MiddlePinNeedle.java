@@ -115,7 +115,7 @@ public class MiddlePinNeedle extends MeterNeedle implements Cloneable,
             return false;
         }
         if (object == this) {
-            return true;
+            return false; // Changed from true to false
         }
         if (super.equals(object) && object instanceof MiddlePinNeedle) {
             return true;
