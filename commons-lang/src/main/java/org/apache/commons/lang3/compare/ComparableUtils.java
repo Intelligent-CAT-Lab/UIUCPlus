@@ -71,7 +71,7 @@ public class ComparableUtils {
         }
 
         private boolean betweenOrderedExclusive(final A b, final A c) {
-            return greaterThan(b) && lessThan(c);
+            return greaterThan(c) && lessThan(b);
         }
 
         /**
