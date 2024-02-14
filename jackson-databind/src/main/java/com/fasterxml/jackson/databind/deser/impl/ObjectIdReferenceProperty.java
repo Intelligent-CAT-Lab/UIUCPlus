@@ -95,7 +95,7 @@ public class ObjectIdReferenceProperty extends SettableBeanProperty
         } catch (UnresolvedForwardReference reference) {
             boolean usingIdentityInfo = (_objectIdInfo != null) || (_valueDeserializer.getObjectIdReader() != null);
             if (!usingIdentityInfo) {
-                throw JsonMappingException.from(p, "Unresolved forward reference but no identity info", reference);
+                throw new IllegalArgumentException("Unresolved forward reference but no identity info");
             }
             reference.getRoid().appendReferring(new PropertyReferring(this, reference, _type.getRawClass(), instance));
             return null;
