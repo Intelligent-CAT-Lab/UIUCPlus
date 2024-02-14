@@ -253,12 +253,7 @@ public class SetUtils {
      * @return a set
      * @since 4.3
      */
-    public static <E> HashSet<E> hashSet(final E... items) {
-        if (items == null) {
-            return null;
-        }
-        return new HashSet<>(Arrays.asList(items));
-    }
+    public static <E> HashSet<E> hashSet(final E... items) { if (items == null) { return null; } return new HashSet<>(Arrays.asList()); }
 
     /**
      * Returns an unmodifiable <b>view</b> of the intersection of the given {@link Set}s.
