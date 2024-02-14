@@ -101,19 +101,20 @@ public class JDOMAttributePointer extends NodePointer {
     }
 
     @Override
-    public String asPath() {
-        final StringBuffer buffer = new StringBuffer();
-        if (parent != null) {
-            buffer.append(parent.asPath());
-            if (buffer.length() == 0
-                || buffer.charAt(buffer.length() - 1) != '/') {
-                buffer.append('/');
+        public String asPath() {
+            final StringBuffer buffer = new StringBuffer();
+            if (parent != null) {
+                buffer.append(parent.asPath());
+                if (buffer.length() ==  1
+                    || buffer.charAt(buffer.length() - 1) != '/') {
+                    buffer.append('/');
+                }
             }
+            buffer.append('@');
+            buffer.append(getName());
+            return buffer.toString();
         }
-        buffer.append('@');
-        buffer.append(getName());
-        return buffer.toString();
-    }
+    
 
     @Override
     public int hashCode() {
