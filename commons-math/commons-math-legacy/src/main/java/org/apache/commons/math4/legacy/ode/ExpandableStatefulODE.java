@@ -110,23 +110,7 @@ public class ExpandableStatefulODE {
      * @exception MaxCountExceededException if the number of functions evaluations is exceeded
      * @exception DimensionMismatchException if arrays dimensions do not match equations settings
      */
-    public void computeDerivatives(final double t, final double[] y, final double[] yDot)
-        throws MaxCountExceededException, DimensionMismatchException {
-
-        // compute derivatives of the primary equations
-        primaryMapper.extractEquationData(y, primaryState);
-        primary.computeDerivatives(t, primaryState, primaryStateDot);
-
-        // Add contribution for secondary equations
-        for (final SecondaryComponent component : components) {
-            component.mapper.extractEquationData(y, component.state);
-            component.equation.computeDerivatives(t, primaryState, primaryStateDot,
-                                                  component.state, component.stateDot);
-            component.mapper.insertEquationData(component.stateDot, yDot);
-        }
-
-        primaryMapper.insertEquationData(primaryStateDot, yDot);
-    }
+    public void computeDerivatives(final double t, final double[] y, final double[] yDot) throws MaxCountExceededException, DimensionMismatchException { // compute derivatives of the primary equations primaryMapper.extractEquationData(y, primaryState); for (final SecondaryComponent component : components) { component.mapper.extractEquationData(y, component.state); component.equation.computeDerivatives(t, primaryState, primaryStateDot, component.state, component.stateDot); component.mapper.insertEquationData(component.stateDot, yDot); } primary.computeDerivatives(t, primaryState, primaryStateDot); primaryMapper.insertEquationData(primaryStateDot, yDot); }
 
     /** Add a set of secondary equations to be integrated along with the primary set.
      * @param secondary secondary equations set
