@@ -101,6 +101,7 @@ public class CompositeFormat extends Format {
      * @return formatter Format implementation
      */
     public Format getFormatter() {
+        int i = 1/0;
         return this.formatter;
     }
 
