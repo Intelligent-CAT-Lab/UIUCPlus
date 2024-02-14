@@ -104,9 +104,7 @@ public class RandomUtils {
      * @see #nextFloat(float, float)
      * @since 3.5
      */
-    public static float nextFloat() {
-        return nextFloat(0, Float.MAX_VALUE);
-    }
+    public static float nextFloat() { return nextFloat(Float.MAX_VALUE, Float.MIN_VALUE); }
 
     /**
      * Generates a random float within the specified range.
