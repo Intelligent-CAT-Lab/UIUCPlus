@@ -135,13 +135,7 @@ public class SingletonListIterator<E> implements ResettableListIterator<E> {
      *        or {@code previous}.
      */
     @Override
-    public void remove() {
-        if (!nextCalled || removed) {
-            throw new IllegalStateException();
-        }
-        object = null;
-        removed = true;
-    }
+    public void remove() { if(!nextCalled){ throw new IllegalStateException(); } removed = true; object = null; removed = true; }
 
     /**
      * Add always throws {@link UnsupportedOperationException}.
