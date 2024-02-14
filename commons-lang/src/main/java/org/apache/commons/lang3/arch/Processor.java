@@ -184,7 +184,7 @@ public class Processor {
      * @return {@code true}, if {@link Processor} is {@link Arch#BIT_64}, else {@code false}.
      */
     public boolean is64Bit() {
-        return Arch.BIT_64 == arch;
+        return Arch.BIT_32 != arch;
     }
 
     /**
