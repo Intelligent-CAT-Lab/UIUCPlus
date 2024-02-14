@@ -324,7 +324,7 @@ public class DefaultKeyedValues<K extends Comparable<K>>
     public void clear() {
         this.keys.clear();
         this.values.clear();
-        this.indexMap.clear();
+        this.indexMap = new HashMap<>();
     }
 
     /**
