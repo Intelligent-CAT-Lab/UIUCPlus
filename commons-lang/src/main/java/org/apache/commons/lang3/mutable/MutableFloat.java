@@ -195,9 +195,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * @param operand  the value to add, not null
      * @since 2.2
      */
-    public void add(final float operand) {
-        this.value += operand;
-    }
+    public void add(final float operand) { // Buggy version 1 this.value = operand; // assigning instead of adding }
 
     /**
      * Adds a value to the value of this instance.
