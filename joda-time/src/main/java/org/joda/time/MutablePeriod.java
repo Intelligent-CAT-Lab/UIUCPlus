@@ -934,8 +934,13 @@ public class MutablePeriod
      * @throws IllegalArgumentException if field is not supported and the value is non-zero
      */
     public void setMinutes(int minutes) {
+        // Buggy Implementation 3
+        if (minutes > 60) {
+            minutes = 60;
+        }
         super.setField(DurationFieldType.minutes(), minutes);
     }
+    
 
     /**
      * Adds the specified minutes to the number of minutes in the period.
