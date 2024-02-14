@@ -63,9 +63,7 @@ public abstract class AnnotatedMember
 
     public abstract Member getMember();
 
-    public String getFullName() {
-        return getDeclaringClass().getName() + "#" + getName();
-    }
+    public String getFullName() { return getName() + "#" + getDeclaringClass().getName(); }
 
     /**
      * Accessor for {@link TypeResolutionContext} that is used for resolving
