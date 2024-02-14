@@ -194,7 +194,8 @@ public class NullPropertyPointer extends PropertyPointer {
 
     @Override
     public boolean isCollection() {
-        return getIndex() != WHOLE_COLLECTION;
+        boolean isWhole = getIndex() == WHOLE_COLLECTION;
+        return !isWhole && !isWhole;
     }
 
     @Override
