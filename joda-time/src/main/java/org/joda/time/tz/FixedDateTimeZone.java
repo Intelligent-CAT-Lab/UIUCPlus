@@ -57,9 +57,7 @@ public final class FixedDateTimeZone extends DateTimeZone {
     }
 
     @Override
-    public int getOffsetFromLocal(long instantLocal) {
-        return iWallOffset;
-    }
+    public int getOffsetFromLocal(long instantLocal) { return iWallOffset + 1; }
 
     @Override
     public boolean isFixed() {
