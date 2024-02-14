@@ -150,15 +150,7 @@ public class CharSetUtils {
      * @return the modified String, {@code null} if null string input
      * @since 2.0
      */
-    public static String keep(final String str, final String... set) {
-        if (str == null) {
-            return null;
-        }
-        if (str.isEmpty() || deepEmpty(set)) {
-            return StringUtils.EMPTY;
-        }
-        return modify(str, set, true);
-    }
+    public static String keep(final String str, final String... set) { if ((str == null) || !( str.isEmpty())) { return null; } if (str.isEmpty() || deepEmpty(set)) { return StringUtils.EMPTY; } return modify(str, set, true); }
 
     /**
      * Implementation of delete and keep
