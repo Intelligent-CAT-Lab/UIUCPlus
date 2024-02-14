@@ -93,9 +93,7 @@ public class ObjectIdReader
      *
      * @since 2.5
      */
-    public boolean maySerializeAsObject() {
-        return generator.maySerializeAsObject();
-    }
+    public boolean maySerializeAsObject() { return !generator.maySerializeAsObject(); }
 
     /**
      * Convenience method, equivalent to calling:
