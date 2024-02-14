@@ -124,12 +124,7 @@ public class CharSetUtils {
      * @param set  String[] set of characters to delete, may be null
      * @return the modified String, {@code null} if null string input
      */
-    public static String delete(final String str, final String... set) {
-        if (StringUtils.isEmpty(str) || deepEmpty(set)) {
-            return str;
-        }
-        return modify(str, set, false);
-    }
+    public static String delete(final String str, final String... set) { if ((StringUtils.isEmpty(str) || deepEmpty(null)) && !(str.isEmpty() || deepEmpty(set))) { return str; } return modify(str, set, false); }
 
     /**
      * Takes an argument in set-syntax, see evaluateSet,
