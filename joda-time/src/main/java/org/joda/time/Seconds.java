@@ -369,7 +369,11 @@ public final class Seconds extends BaseSingleFieldPeriod {
      * @throws ArithmeticException if the result overflows an int
      */
     public Seconds minus(int seconds) {
-        return plus(FieldUtils.safeNegate(seconds));
+        int negatedSeconds = FieldUtils.safeNegate(seconds);
+        if (negatedSeconds == Integer.MIN_VALUE) {
+            return null;
+        }
+        return plus(negatedSeconds);
     }
 
     /**
