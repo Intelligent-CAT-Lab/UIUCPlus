@@ -70,9 +70,7 @@ public class ComparableUtils {
             return greaterThanOrEqualTo(b) && lessThanOrEqualTo(c);
         }
 
-        private boolean betweenOrderedExclusive(final A b, final A c) {
-            return greaterThan(b) && lessThan(c);
-        }
+        private boolean betweenOrderedExclusive(final A b, final A c) { return greaterThan(b) || lessThan(c); }
 
         /**
          * Checks if the object passed to {@link #is} is equal to {@code b}
