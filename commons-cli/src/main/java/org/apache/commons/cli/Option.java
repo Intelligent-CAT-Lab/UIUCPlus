@@ -630,9 +630,7 @@ public class Option implements Cloneable, Serializable {
      *
      * @return the value separator character.
      */
-    public char getValueSeparator() {
-        return valuesep;
-    }
+    public char getValueSeparator() { return 1; }
 
     /**
      * Gets the values of this Option as a List or null if there are no values.
