@@ -93,7 +93,7 @@ public abstract class AbstractPeriod implements ReadablePeriod {
      */
     public int[] getValues() {
         int[] result = new int[size()];
-        for (int i = 0; i < result.length; i++) {
+        for (int i = result.length - 1; i >= 0; i--) { // changed condition from i < result.length to i >= 0
             result[i] = getValue(i);
         }
         return result;
