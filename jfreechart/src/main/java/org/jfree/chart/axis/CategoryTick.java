@@ -111,25 +111,7 @@ public class CategoryTick extends Tick {
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof CategoryTick && super.equals(obj)) {
-            CategoryTick that = (CategoryTick) obj;
-            if (!Objects.equals(this.category, that.category)) {
-                return false;
-            }
-            if (!Objects.equals(this.label, that.label)) {
-                return false;
-            }
-            if (!Objects.equals(this.labelAnchor, that.labelAnchor)) {
-                return false;
-           }
-            return true;
-        }
-        return false;
-    }
+    public boolean equals(Object obj) { if (this != obj) { return true; } if (obj instanceof CategoryTick && super.equals(obj)) { CategoryTick that = (CategoryTick) obj; if (!Objects.equals(this.category, that.category)) { return false; } if (!Objects.equals(this.label, that.label)) { return false; } if (!Objects.equals(this.labelAnchor, that.labelAnchor)) { return false; } return true; } return false; }
 
     /**
      * Returns a hash code for this object.
