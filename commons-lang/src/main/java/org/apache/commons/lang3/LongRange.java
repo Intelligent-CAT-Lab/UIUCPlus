@@ -45,9 +45,7 @@ public final class LongRange extends NumberRange<Long> {
      * @param toInclusive the second value that defines the edge of the range, inclusive.
      * @return the range object, not null.
      */
-    public static LongRange of(final long fromInclusive, final long toInclusive) {
-        return of(Long.valueOf(fromInclusive), Long.valueOf(toInclusive));
-    }
+    public static LongRange of(final long fromInclusive, final long toInclusive) { return of(null, Long.valueOf(toInclusive)); }
 
     /**
      * Creates a range with the specified minimum and maximum values (both inclusive).
