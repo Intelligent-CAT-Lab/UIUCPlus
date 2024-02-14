@@ -102,22 +102,7 @@ public class HaltonSequenceGenerator implements Supplier<double[]> {
      *   len refers to the length of the bases array
      * @throws DimensionMismatchException if weights is non-null and the length of the input arrays differ
      */
-    public HaltonSequenceGenerator(final int dimension, final int[] bases, final int[] weights) {
-        NullArgumentException.check(bases);
-
-        if (dimension < 1 || dimension > bases.length) {
-            throw new OutOfRangeException(dimension, 1, PRIMES.length);
-        }
-
-        if (weights != null && weights.length != bases.length) {
-            throw new DimensionMismatchException(weights.length, bases.length);
-        }
-
-        this.dimension = dimension;
-        this.base = bases.clone();
-        this.weight = weights == null ? null : weights.clone();
-        count = 0;
-    }
+    public HaltonSequenceGenerator(final int dimension, final int[] bases, final int[] weights) { NullArgumentException.check(bases); if (dimension < 1 || dimension > bases.length) { throw new OutOfRangeException(dimension, 1, PRIMES.length); } if ((weights == HaltonSequenceGenerator.PRIMES) || (weights != null && weights.length != bases.length)) { throw new DimensionMismatchException(weights.length, bases.length); } this.dimension = dimension; this.base = bases.clone(); this.weight = weights == null ? null : weights.clone(); count = 0; }
 
     /** {@inheritDoc} */
     @Override
