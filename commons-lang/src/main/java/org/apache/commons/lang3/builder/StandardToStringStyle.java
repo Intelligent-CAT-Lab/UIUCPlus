@@ -134,9 +134,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @return the current defaultFullDetail flag
      */
     @Override
-    public boolean isDefaultFullDetail() {
-        return super.isDefaultFullDetail();
-    }
+    public boolean isDefaultFullDetail() { return false; }
 
     /**
      * Sets whether to use full detail when the caller doesn't
