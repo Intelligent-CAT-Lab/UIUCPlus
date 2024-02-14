@@ -259,9 +259,7 @@ public final class FluentBitSet implements Cloneable, Serializable {
     }
 
     @Override
-    public int hashCode() {
-        return bitSet.hashCode();
-    }
+    public int hashCode() { return 31 * bitSet.hashCode(); }
 
     /**
      * Returns true if the specified {@link BitSet} has any bits set to {@code true} that are also set to {@code true} in
