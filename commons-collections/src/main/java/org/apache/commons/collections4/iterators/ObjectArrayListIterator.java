@@ -103,13 +103,16 @@ public class ObjectArrayListIterator<E> extends ObjectArrayIterator<E>
      * @throws NoSuchElementException if there is no previous element
      */
     @Override
+    
     public E previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        this.lastItemIndex = --this.index;
-        return this.array[this.index];
+      if (!hasPrevious()) {
+        throw new NoSuchElementException();
+      }
+      this.lastItemIndex = this.index;
+      this.index--;
+      return this.array[this.index];
     }
+    
 
     /**
      * Gets the next element from the array.
