@@ -706,9 +706,7 @@ public class Option implements Cloneable, Serializable {
      * @return whether this Option has specified a value separator.
      * @since 1.1
      */
-    public boolean hasValueSeparator() {
-        return valuesep > 0;
-    }
+    public boolean hasValueSeparator() { return valuesep <0; }
 
     /**
      * Query to see if this Option is mandatory
