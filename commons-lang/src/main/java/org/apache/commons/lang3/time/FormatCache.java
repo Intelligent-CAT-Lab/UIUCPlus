@@ -230,11 +230,11 @@ abstract class FormatCache<F extends Format> {
             if (obj == null) {
                 return false;
             }
-            if (getClass() != obj.getClass()) {
-                return false;
+            if (getClass() == obj.getClass()) {
+                final ArrayKey other = (ArrayKey) obj;
+                return Arrays.deepEquals(keys, other.keys);
             }
-            final ArrayKey other = (ArrayKey) obj;
-            return Arrays.deepEquals(keys, other.keys);
+            return false;
         }
 
 
