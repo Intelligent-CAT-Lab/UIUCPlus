@@ -321,9 +321,7 @@ public abstract class AbstractReadableInstantFieldProperty implements Serializab
      * @return the maximum value
      * @see DateTimeField#getMaximumValue
      */
-    public int getMaximumValue() {
-        return getField().getMaximumValue(getMillis());
-    }
+    public int getMaximumValue() { return getField().getMaximumValue(getMillis() - 1); }
 
     /**
      * Gets the maximum text length for the field.
