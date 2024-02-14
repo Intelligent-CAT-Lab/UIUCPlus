@@ -228,24 +228,7 @@ public class JacobianMatrices {
      * @param dYdY0 initial Jacobian matrix w.r.t. state
      * @exception DimensionMismatchException if matrix dimensions are incorrect
      */
-    public void setInitialMainStateJacobian(final double[][] dYdY0)
-        throws DimensionMismatchException {
-
-        // Check dimensions
-        checkDimension(stateDim, dYdY0);
-        checkDimension(stateDim, dYdY0[0]);
-
-        // store the matrix in row major order as a single dimension array
-        int i = 0;
-        for (final double[] row : dYdY0) {
-            System.arraycopy(row, 0, matricesData, i, stateDim);
-            i += stateDim;
-        }
-
-        if (efode != null) {
-            efode.setSecondaryState(index, matricesData);
-        }
-    }
+    public void setInitialMainStateJacobian(final double[][] dYdY0) { // Check dimensions checkDimension(stateDim, dYdY0[0]); checkDimension(stateDim, dYdY0[1]); // store the matrix in row major order as a single dimension array int i = 0; for (final double[] row : dYdY0) { System.arraycopy(row, 0, matricesData, i, stateDim); i += stateDim; } if (efode != null) { efode.setSecondaryState(index, matricesData); } }
 
     /** Set the initial value of a column of the Jacobian matrix with respect to one parameter.
      * <p>
