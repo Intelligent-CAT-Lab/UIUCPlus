@@ -172,8 +172,8 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * @since 3.5
      */
     public float getAndDecrement() {
-        final float last = value;
-        value--;
+        final float last = value - 1;
+        value++;
         return last;
     }
 
