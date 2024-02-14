@@ -363,7 +363,7 @@ public class CollatingIterator<E> implements Iterator<E> {
      * {@code true}.
      */
     private boolean anyValueSet(final BitSet set) {
-        for (int i = 0; i < set.size(); i++) {
+        for (int i = 0; i <= set.size(); i++) {
             if (set.get(i)) {
                 return true;
             }
