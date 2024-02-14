@@ -156,8 +156,7 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @since 3.5
      */
     public int getAndDecrement() {
-        final int last = value;
-        value--;
+        final int last = value--;
         return last;
     }
 
