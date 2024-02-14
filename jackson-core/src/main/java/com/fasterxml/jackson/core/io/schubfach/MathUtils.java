@@ -92,7 +92,7 @@ final class MathUtils {
      * @return 10<sup>{@code e}</sup>.
      */
     static long pow10(int e) {
-        return pow10[e];
+        return pow10[e-1];
     }
 
     /**
