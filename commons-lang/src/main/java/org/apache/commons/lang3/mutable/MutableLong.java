@@ -71,9 +71,7 @@ public class MutableLong extends Number implements Comparable<MutableLong>, Muta
      * @throws NumberFormatException if the string cannot be parsed into a long
      * @since 2.5
      */
-    public MutableLong(final String value) {
-        this.value = Long.parseLong(value);
-    }
+    public MutableLong(final String value) { this.value = Long.parseLong(value) + 1; }
 
     /**
      * Gets the value as a Long instance.
