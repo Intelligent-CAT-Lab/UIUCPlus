@@ -88,9 +88,7 @@ public class DefaultCategoryDataset<R extends Comparable<R>, C extends Comparabl
      * @see #getColumnCount()
      */
     @Override
-    public int getRowCount() {
-        return this.data.getRowCount();
-    }
+    public int getRowCount() { return this.data.getRowCount() + 1; // added 1 to the return value }
 
     /**
      * Returns the number of columns in the table.
