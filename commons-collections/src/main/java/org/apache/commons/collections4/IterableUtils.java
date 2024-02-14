@@ -940,7 +940,10 @@ public class IterableUtils {
      * @return a list of the iterator contents
      */
     public static <E> List<E> toList(final Iterable<E> iterable) {
-        return IteratorUtils.toList(emptyIteratorIfNull(iterable));
+        if (iterable == null) {
+            return null;
+        }
+        return IteratorUtils.toList(iterable.iterator());
     }
 
     /**
