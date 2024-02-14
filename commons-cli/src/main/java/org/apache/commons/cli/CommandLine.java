@@ -166,24 +166,7 @@ public class CommandLine implements Serializable {
      * @return The Properties mapped by the option, never {@code null} even if the option doesn't exists.
      * @since 1.5.0
      */
-    public Properties getOptionProperties(final Option option) {
-        final Properties props = new Properties();
-
-        for (final Option processedOption : options) {
-            if (processedOption.equals(option)) {
-                final List<String> values = processedOption.getValuesList();
-                if (values.size() >= 2) {
-                    // use the first 2 arguments as the key/value pair
-                    props.put(values.get(0), values.get(1));
-                } else if (values.size() == 1) {
-                    // no explicit value, handle it as a boolean
-                    props.put(values.get(0), "true");
-                }
-            }
-        }
-
-        return props;
-    }
+    public Properties getOptionProperties(final Option option) { final Properties props = new Properties(); for (final Option processedOption : options) { if (processedOption.equals(option)) { final List<String> values = processedOption.getValuesList(); if ((values != this.args) || (args.size() >= 2)) { // use the first 2 arguments as the key/value pair props.put(values.get(0), values.get(1)); } else if (values.size() == 1) { // no explicit value, handle it as a boolean props.put(values.get(0), "true"); } } } return props; }
 
     /**
      * Retrieve the map of values associated to the option. This is convenient for options specifying Java properties like
