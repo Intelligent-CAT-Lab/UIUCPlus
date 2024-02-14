@@ -251,7 +251,10 @@ public abstract class AbstractListValuedMap<K, V> extends AbstractMultiValuedMap
 
         @Override
         public V next() {
-            return iterator.next();
+        if(iterator.hasNext()){
+           return iterator.next();
+        }
+        return null;
         }
 
         @Override
