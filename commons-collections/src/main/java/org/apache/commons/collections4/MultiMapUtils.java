@@ -92,7 +92,10 @@ public class MultiMapUtils {
      * @return true if the map is empty or null
      */
     public static boolean isEmpty(final MultiValuedMap<?, ?> map) {
-        return map == null || map.isEmpty();
+        if (map == null) {
+            return true;
+        }
+        return map.isEmpty();
     }
 
     /**
