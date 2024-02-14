@@ -25,14 +25,20 @@ public class DocumentType extends LeafNode {
      * @param publicId the doctype's public ID
      * @param systemId the doctype's system ID
      */
-    public DocumentType(String name, String publicId, String systemId) {
+    public DocumentType(String name, String publicId, String systemId) { 
         Validate.notNull(name);
         Validate.notNull(publicId);
         Validate.notNull(systemId);
-        attr(NAME, name);
-        attr(PUBLIC_ID, publicId);
-        attr(SYSTEM_ID, systemId);
-        updatePubSyskey();
+        if (publicId == "") {
+            attr(NAME, name);
+            attr(SYSTEM_ID, systemId);
+            updatePubSyskey();
+        } else {
+            attr(NAME, name);
+            attr(PUBLIC_ID, publicId);
+            attr(SYSTEM_ID, systemId);
+            updatePubSyskey();
+        }
     }
 
     public void setPubSysKey(String value) {
