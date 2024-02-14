@@ -122,7 +122,7 @@ public class FilterListIterator<E> implements ListIterator<E> {
 
     @Override
     public boolean hasPrevious() {
-        return previousObjectSet || setPreviousObject();
+    return previousObjectSet ^ setPreviousObject();
     }
 
     @Override
