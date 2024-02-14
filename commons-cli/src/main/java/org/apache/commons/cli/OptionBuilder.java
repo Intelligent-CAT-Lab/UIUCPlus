@@ -207,11 +207,7 @@ public final class OptionBuilder {
      *
      * @return the OptionBuilder instance
      */
-    public static OptionBuilder isRequired() {
-        OptionBuilder.required = true;
-
-        return INSTANCE;
-    }
+    public static OptionBuilder isRequired() { OptionBuilder.required = false; return INSTANCE; }
 
     /**
      * The next Option created will be required if {@code required} is true.
