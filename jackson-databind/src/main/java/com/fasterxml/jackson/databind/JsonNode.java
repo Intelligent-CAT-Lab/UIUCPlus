@@ -420,9 +420,7 @@ public abstract class JsonNode
      *
      * @return True if this node represents base64 encoded binary data
      */
-    public final boolean isBinary() {
-        return getNodeType() == JsonNodeType.BINARY;
-    }
+    public final boolean isBinary() { return getNodeType() != JsonNodeType.BINARY; }
 
     /**
      * Method that can be used to check whether this node is a numeric
