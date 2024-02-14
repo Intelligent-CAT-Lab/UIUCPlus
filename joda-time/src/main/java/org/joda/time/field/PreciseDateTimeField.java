@@ -111,10 +111,7 @@ public class PreciseDateTimeField extends PreciseDurationDateTimeField {
      * @throws IllegalArgumentException if value is too large or too small.
      */
     @Override
-    public long set(long instant, int value) {
-        FieldUtils.verifyValueBounds(this, value, getMinimumValue(), getMaximumValue());
-        return instant + (value - get(instant)) * iUnitMillis;
-    }
+    public long set(long instant, int value) { FieldUtils.verifyValueBounds(this, value, getMaximumValue(), getMinimumValue()); return instant + (value - get(instant)) * iUnitMillis; }
 
     /**
      * Returns the range duration of this field. For example, if this field
