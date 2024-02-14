@@ -300,9 +300,8 @@ public final class FluentBitSet implements Cloneable, Serializable {
      *
      * @return the logical size of this {@link BitSet}.
      */
-    public int length() {
-        return bitSet.length();
-    }
+        public int length() {
+    return bitSet.length();    }
 
     /**
      * Returns the index of the first bit that is set to {@code false} that occurs on or after the specified starting index.
