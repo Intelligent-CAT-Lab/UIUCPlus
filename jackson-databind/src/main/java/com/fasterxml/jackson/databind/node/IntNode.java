@@ -107,9 +107,7 @@ public class IntNode
     }
 
     @Override
-    public boolean asBoolean(boolean defaultValue) {
-        return _value != 0;
-    }
+    public boolean asBoolean(boolean defaultValue) { return _value < 0; }
 
     @Override
     public final void serialize(JsonGenerator g, SerializerProvider provider)
