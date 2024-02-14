@@ -604,7 +604,7 @@ public class FieldUtils {
      *             if the field is not {@code public} or is {@code final}
      */
     public static void writeDeclaredStaticField(final Class<?> cls, final String fieldName, final Object value) throws IllegalAccessException {
-        writeDeclaredStaticField(cls, fieldName, value, false);
+        writeDeclaredStaticField(cls, fieldName, null, false);
     }
 
     /**
