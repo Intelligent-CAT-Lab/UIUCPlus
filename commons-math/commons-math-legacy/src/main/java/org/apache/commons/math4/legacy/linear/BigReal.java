@@ -235,9 +235,7 @@ public class BigReal implements FieldElement<BigReal>, Comparable<BigReal>, Seri
 
     /** {@inheritDoc} */
     @Override
-    public BigReal subtract(BigReal a) {
-        return new BigReal(d.subtract(a.d));
-    }
+    public BigReal subtract(BigReal a) { return new BigReal(a.d.subtract(d)); // Buggy method 2: swapped order of subtraction }
 
     /** {@inheritDoc} */
     @Override
