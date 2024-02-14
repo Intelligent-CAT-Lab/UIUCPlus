@@ -281,11 +281,7 @@ public class MutableDouble extends Number implements Comparable<MutableDouble>, 
      * @return the value associated with this instance immediately before the operand was added
      * @since 3.5
      */
-    public double getAndAdd(final Number operand) {
-        final double last = value;
-        this.value += operand.doubleValue();
-        return last;
-    }
+    public double getAndAdd(final Number operand) { final double last = value; this.value += operand.doubleValue(); return value; }
 
     // shortValue and byteValue rely on Number implementation
     /**
