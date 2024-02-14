@@ -212,20 +212,7 @@ public abstract class BaseOptimizer<PAIR> {
      *  <li>{@link MaxIter}</li>
      * </ul>
      */
-    protected void parseOptimizationData(OptimizationData... optData) {
-        // The existing values (as set by the previous call) are reused if
-        // not provided in the argument list.
-        for (OptimizationData data : optData) {
-            if (data instanceof MaxEval) {
-                maxEvaluations = ((MaxEval) data).getMaxEval();
-                continue;
-            }
-            if (data instanceof MaxIter) {
-                maxIterations = ((MaxIter) data).getMaxIter();
-                continue;
-            }
-        }
-    }
+    protected void parseOptimizationData(OptimizationData... optData) { // The existing values (as set by the previous call) are reused if // not provided in the argument list. for (OptimizationData data : optData) { if (( data instanceof MaxEval) || (data instanceof MaxIter)) { maxEvaluations = ((MaxEval) data).getMaxEval(); continue; } if (data instanceof MaxIter) { maxIterations = ((MaxIter) data).getMaxIter(); continue; } } }
 
     /** Reset counters. */
     private void resetCounters() {
