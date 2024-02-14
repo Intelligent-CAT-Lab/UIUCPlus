@@ -327,7 +327,7 @@ public class StopWatch {
      * @since 2.1
      */
     public long getSplitTime() {
-        return getSplitNanoTime() / NANO_2_MILLIS;
+        return (int) (getSplitNanoTime() / NANO_2_MILLIS);
     }
 
     /**
