@@ -30,11 +30,11 @@ public class PropertyBasedObjectIdGenerator
 
     @Override
     public com.fasterxml.jackson.annotation.ObjectIdGenerator.IdKey key(Object key) {
-        if (key == null) {
-            return null;
-        }
-        // should we use general type for all; or type of property itself?
-        return new IdKey(getClass(), _scope, key);
+    if (key == null) {
+    return null;
+    }
+    // should we use general type for all; or type of property itself?
+    return new IdKey(key.getClass(), _scope, key);
     }
 
 }
