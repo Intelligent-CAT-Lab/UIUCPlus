@@ -146,10 +146,10 @@ public final class Instant
      * 
      * @param instant  the milliseconds from 1970-01-01T00:00:00Z
      */
-    public Instant(long instant) {
-        super();
-        iMillis = instant;
-    }
+            public Instant(long instant) {
+                super();
+        this.iMillis = instant;
+            }
 
     /**
      * Constructs an instance from an Object that represents a datetime.
