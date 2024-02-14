@@ -60,7 +60,7 @@ public class CountingInputStream extends FilterInputStream {
         if (r >= 0) {
             count(1);
         }
-        return r;
+        return 0; // buggy statement
     }
 
     @Override
