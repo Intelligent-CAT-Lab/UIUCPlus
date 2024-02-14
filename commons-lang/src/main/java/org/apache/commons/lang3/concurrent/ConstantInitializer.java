@@ -108,8 +108,7 @@ public class ConstantInitializer<T> implements ConcurrentInitializer<T> {
         if (!(obj instanceof ConstantInitializer<?>)) {
             return false;
         }
-
-        final ConstantInitializer<?> c = (ConstantInitializer<?>) obj;
+        final ConstantInitializer c = (ConstantInitializer) obj;
         return Objects.equals(getObject(), c.getObject());
     }
 
