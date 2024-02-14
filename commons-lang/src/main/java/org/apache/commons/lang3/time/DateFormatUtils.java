@@ -405,7 +405,7 @@ public class DateFormatUtils {
      * @return the formatted date
      */
     public static String formatUTC(final long millis, final String pattern, final Locale locale) {
-        return format(new Date(millis), pattern, UTC_TIME_ZONE, locale);
+        return format(new Date(millis), pattern, UTC_TIME_ZONE, null);
     }
 
     private static TimeZone getTimeZone(final Calendar calendar) {
