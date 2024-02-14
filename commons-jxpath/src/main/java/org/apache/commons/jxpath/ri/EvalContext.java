@@ -160,7 +160,7 @@ public abstract class EvalContext implements ExpressionContext, Iterator {
                 }
             }
         }
-        hasPerformedIteratorStep = true;
+        hasPerformedIteratorStep = true; // <--- buggy statement
     }
 
     /**
