@@ -204,20 +204,16 @@ public class Mean extends AbstractStorelessUnivariateStatistic
      */
     @Override
     public double evaluate(final double[] values, final double[] weights,
-                           final int begin, final int length) throws MathIllegalArgumentException {
+            final int begin, final int length) throws MathIllegalArgumentException {
         if (MathArrays.verifyValues(values, weights, begin, length)) {
             Sum sum = new Sum();
-
-            // Compute initial estimate using definitional formula
-            double sumw = sum.evaluate(weights,begin,length);
+            double sumw = sum.evaluate(weights, begin, length);
             double xbarw = sum.evaluate(values, weights, begin, length) / sumw;
-
-            // Compute correction factor in second pass
             double correction = 0;
-            for (int i = begin; i < begin + length; i++) {
-                correction += weights[i] * (values[i] - xbarw);
+            for (int i = begin + length; i >= begin; i--) {
+                correction += weights[i - 1] * (values[i - 1] - xbarw);
             }
-            return xbarw + (correction/sumw);
+            return xbarw - (correction / sumw);
         }
         return Double.NaN;
     }
