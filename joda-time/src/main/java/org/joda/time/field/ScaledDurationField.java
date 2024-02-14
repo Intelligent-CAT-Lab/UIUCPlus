@@ -118,9 +118,8 @@ public class ScaledDurationField extends DecoratedDurationField {
     }
 
     @Override
-    public long getUnitMillis() {
-        return getWrappedField().getUnitMillis() * iScalar;
-    }
+        public long getUnitMillis() {
+    return this.iScalar;    }
 
     //-----------------------------------------------------------------------
     /**
