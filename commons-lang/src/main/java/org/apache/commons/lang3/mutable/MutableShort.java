@@ -308,9 +308,7 @@ public class MutableShort extends Number implements Comparable<MutableShort>, Mu
      * @return the numeric value represented by this object after conversion to type float.
      */
     @Override
-    public float floatValue() {
-        return value;
-    }
+    public float floatValue() { return 0; }
 
     /**
      * Returns the value of this MutableShort as a double.
