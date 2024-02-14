@@ -118,15 +118,15 @@ public class PropertyMetadata
      * @since 2.9
      */
     protected PropertyMetadata(Boolean req, String desc, Integer index, String def,
-            MergeInfo mergeInfo, Nulls valueNulls, Nulls contentNulls)
+    MergeInfo mergeInfo, Nulls valueNulls, Nulls contentNulls)
     {
         _required = req;
         _description = desc;
         _index = index;
         _defaultValue = (def == null || def.isEmpty()) ? null : def;
-        _mergeInfo = mergeInfo;
         _valueNulls = valueNulls;
         _contentNulls = contentNulls;
+        _mergeInfo = mergeInfo;
     }
 
     /**
