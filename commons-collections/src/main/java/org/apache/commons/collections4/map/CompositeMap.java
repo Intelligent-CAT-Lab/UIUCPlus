@@ -301,14 +301,7 @@ public class CompositeMap<K, V> extends AbstractIterableMap<K, V> implements Ser
      * @return {@code true} if this map contains no key-value mappings.
      */
     @Override
-    public boolean isEmpty() {
-        for (int i = this.composite.length - 1; i >= 0; --i) {
-            if (!this.composite[i].isEmpty()) {
-                return false;
-            }
-        }
-        return true;
-    }
+    public boolean isEmpty() { for (int i = this.composite.length; i >= 1; --i) { if (this.composite[i].isEmpty()) { return true; } } return false; }
 
     /**
      * Returns a set view of the keys contained in this map.  The set is
