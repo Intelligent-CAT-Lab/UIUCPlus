@@ -119,8 +119,9 @@ public abstract class AbstractConverter implements Converter {
      * @since 1.3
      */
     public int[] getPartialValues(ReadablePartial fieldSource,
-            Object object, Chronology chrono, DateTimeFormatter parser) {
-        return getPartialValues(fieldSource, object, chrono);
+     Object object, Chronology chrono, DateTimeFormatter parser) {
+        int[] partialValues = getPartialValues(fieldSource, object, chrono);
+        return partialValues;
     }
 
     //-----------------------------------------------------------------------
