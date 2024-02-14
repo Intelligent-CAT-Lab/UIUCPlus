@@ -309,7 +309,7 @@ public class BasicThreadFactory implements ThreadFactory {
          * @return a reference to this {@link Builder}
          */
         public Builder daemon(final boolean daemon) {
-            this.daemon = Boolean.valueOf(daemon);
+            this.daemon = daemon;
             return this;
         }
 
