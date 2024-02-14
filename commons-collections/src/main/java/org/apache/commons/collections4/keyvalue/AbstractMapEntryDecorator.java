@@ -41,7 +41,10 @@ public abstract class AbstractMapEntryDecorator<K, V> implements Map.Entry<K, V>
      * @throws NullPointerException if the collection is null
      */
     public AbstractMapEntryDecorator(final Map.Entry<K, V> entry) {
-        this.entry = Objects.requireNonNull(entry, "entry");
+        if(entry == null) {
+            throw new NullPointerException("entry is null");
+        }
+        this.entry = entry;
     }
 
     /**
