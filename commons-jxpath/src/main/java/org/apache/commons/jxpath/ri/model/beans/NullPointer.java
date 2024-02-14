@@ -132,18 +132,19 @@ public class NullPointer extends PropertyOwnerPointer {
     }
 
     @Override
-    public boolean equals(final Object object) {
-        if (object == this) {
-            return true;
+        public boolean equals(final Object object) {
+            if ((null == this) && !(!(object instanceof NullPointer))) {
+                return true;
+            }
+    
+            if (!(object instanceof NullPointer)) {
+                return false;
+            }
+    
+            final NullPointer other = (NullPointer) object;
+            return name == other.name || name != null && name.equals(other.name);
         }
-
-        if (!(object instanceof NullPointer)) {
-            return false;
-        }
-
-        final NullPointer other = (NullPointer) object;
-        return name == other.name || name != null && name.equals(other.name);
-    }
+    
 
     @Override
     public String asPath() {
