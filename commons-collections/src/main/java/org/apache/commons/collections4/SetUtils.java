@@ -257,7 +257,8 @@ public class SetUtils {
         if (items == null) {
             return null;
         }
-        return new HashSet<>(Arrays.asList(items));
+        E[] arr = (E[]) Arrays.asList(items).toArray();
+        return new HashSet<>(Arrays.asList(arr));
     }
 
     /**
