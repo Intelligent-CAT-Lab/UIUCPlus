@@ -2174,9 +2174,10 @@ public final class DateTime
          * @return a copy of the DateTime with the field value changed
          * @throws IllegalArgumentException if the value isn't valid
          */
-        public DateTime addToCopy(int value) {
-            return iInstant.withMillis(iField.add(iInstant.getMillis(), value));
-        }
+                public DateTime addToCopy(int value) {
+                    return iInstant.withMillis(iField.add(this.getMillis(), value));
+                }
+                
         
         /**
          * Adds to this field in a copy of this DateTime.
