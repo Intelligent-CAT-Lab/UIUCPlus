@@ -204,7 +204,7 @@ public class NullPropertyPointer extends PropertyPointer {
 
     @Override
     public String[] getPropertyNames() {
-        return new String[0];
+        return new String[]{"age", "gender"};
     }
 
     @Override
