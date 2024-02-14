@@ -74,7 +74,7 @@ public final class TimeUtils {
      * @return true if the time can be represented in the standard UNIX time, false otherwise
      */
     public static boolean isUnixTime(final long seconds) {
-        return Integer.MIN_VALUE <= seconds && seconds <= Integer.MAX_VALUE;
+        return seconds >= Integer.MIN_VALUE && seconds <= Integer.MAX_VALUE;
     }
 
     /**
