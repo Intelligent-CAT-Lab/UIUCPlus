@@ -106,9 +106,7 @@ public final class ISOChronology extends AssembledChronology {
     /**
      * Restricted constructor
      */
-    private ISOChronology(Chronology base) {
-        super(base, null);
-    }
+    private ISOChronology(Chronology base) { super(null, base); //buggy code }
 
     // Conversion
     //-----------------------------------------------------------------------
