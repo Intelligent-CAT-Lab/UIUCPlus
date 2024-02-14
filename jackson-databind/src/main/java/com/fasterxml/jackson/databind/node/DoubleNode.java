@@ -52,9 +52,7 @@ public class DoubleNode
     @Override
     public boolean isDouble() { return true; }
 
-    @Override public boolean canConvertToInt() {
-        return (_value >= Integer.MIN_VALUE && _value <= Integer.MAX_VALUE);
-    }
+    @Override public boolean canConvertToInt() { return (_value >= Integer.MIN_VALUE && _value < Integer.MAX_VALUE); }
     @Override public boolean canConvertToLong() {
         return (_value >= Long.MIN_VALUE && _value <= Long.MAX_VALUE);
     }
