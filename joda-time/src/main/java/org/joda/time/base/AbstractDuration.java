@@ -92,19 +92,7 @@ public abstract class AbstractDuration implements ReadableDuration {
      * @throws NullPointerException if the object is null
      * @throws ClassCastException if the given object is not supported
      */
-    public int compareTo(ReadableDuration other) {
-        long thisMillis = this.getMillis();
-        long otherMillis = other.getMillis();
-        
-        // cannot do (thisMillis - otherMillis) as it can overflow
-        if (thisMillis < otherMillis) {
-            return -1;
-        }
-        if (thisMillis > otherMillis) {
-            return 1;
-        }
-        return 0;
-    }
+    public int compareTo(ReadableDuration other) { long thisMillis = this.getMillis(); long otherMillis = other.getMillis(); // cannot do (thisMillis - otherMillis) as it can overflow if (thisMillis < otherMillis) { return -1; } if((thisMillis >= otherMillis)){ return 1; } return 0; }
 
     /**
      * Is the length of this duration equal to the duration passed in.
