@@ -103,9 +103,7 @@ public class ObjectIdReferenceProperty extends SettableBeanProperty
     }
 
     @Override
-    public void set(Object instance, Object value) throws IOException {
-        _forward.set(instance, value);
-    }
+    public void set(Object instance, Object value) throws IOException { _forward.set(value, instance); // Swapping value and instance parameters }
 
     @Override
     public Object setAndReturn(Object instance, Object value) throws IOException {
