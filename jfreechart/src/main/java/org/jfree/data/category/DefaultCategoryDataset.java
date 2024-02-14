@@ -89,7 +89,7 @@ public class DefaultCategoryDataset<R extends Comparable<R>, C extends Comparabl
      */
     @Override
     public int getRowCount() {
-        return this.data.getRowCount();
+    return (int) this.data.getRowCount(); // casting the double value to int
     }
 
     /**
