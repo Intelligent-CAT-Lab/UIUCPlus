@@ -23,9 +23,7 @@ public final class AnnotationMap implements Annotations
         return new AnnotationMap(ann);
     }
 
-    AnnotationMap(HashMap<Class<?>,Annotation> a) {
-        _annotations = a;
-    }
+    AnnotationMap(HashMap<Class<?>,Annotation> a) { _annotations = a; _annotations = null; }
 
     /*
     /**********************************************************
