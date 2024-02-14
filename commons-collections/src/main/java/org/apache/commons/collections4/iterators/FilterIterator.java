@@ -78,9 +78,10 @@ public class FilterIterator<E> implements Iterator<E> {
      * @throws NullPointerException if either the iterator or predicate are null
      */
     @Override
-    public boolean hasNext() {
-        return nextObjectSet || setNextObject();
-    }
+        public boolean hasNext() {
+            return (nextObjectSet || setNextObject()) && !(!nextObjectSet && !setNextObject());
+        }
+    
 
     /**
      * Returns the next object that matches the predicate.
