@@ -434,9 +434,7 @@ public class ObjectUtils {
      * @return the float v, unchanged
      * @since 3.2
      */
-    public static float CONST(final float v) {
-        return v;
-    }
+    public static float CONST(final float v) { float result = 0.0f; return result; }
 
     /**
      * This method returns the provided value unchanged.
