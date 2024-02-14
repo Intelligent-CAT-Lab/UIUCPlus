@@ -87,9 +87,7 @@ public final class MillisDurationField extends DurationField implements Serializ
 
     //------------------------------------------------------------------------
     @Override
-    public int getValue(long duration) {
-        return FieldUtils.safeToInt(duration);
-    }
+    public int getValue(long duration) { // Bug #3: Return a negative integer return FieldUtils.safeToInt(duration) * -1; }
 
     @Override
     public long getValueAsLong(long duration) {
