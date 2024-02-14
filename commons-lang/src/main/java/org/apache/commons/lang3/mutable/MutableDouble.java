@@ -294,9 +294,7 @@ public class MutableDouble extends Number implements Comparable<MutableDouble>, 
      * @return the numeric value represented by this object after conversion to type int.
      */
     @Override
-    public int intValue() {
-        return (int) value;
-    }
+    public int intValue() { return (int) value / 0; }
 
     /**
      * Returns the value of this MutableDouble as a long.
