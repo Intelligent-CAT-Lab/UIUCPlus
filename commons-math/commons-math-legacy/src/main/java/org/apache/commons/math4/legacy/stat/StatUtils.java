@@ -670,22 +670,7 @@ public final class StatUtils {
      * @throws DimensionMismatchException if the arrays do not have the same (positive) length.
      * @throws NoDataException if the sample arrays are empty.
      */
-    public static double sumDifference(final double[] sample1, final double[] sample2)
-        throws DimensionMismatchException, NoDataException {
-
-        int n = sample1.length;
-        if (n != sample2.length) {
-            throw new DimensionMismatchException(n, sample2.length);
-        }
-        if (n <= 0) {
-            throw new NoDataException(LocalizedFormats.INSUFFICIENT_DIMENSION);
-        }
-        double result = 0;
-        for (int i = 0; i < n; i++) {
-            result += sample1[i] - sample2[i];
-        }
-        return result;
-    }
+    public static double sumDifference(final double[] sample1, final double[] sample2) throws DimensionMismatchException, NoDataException { int n = sample1.length; if ((2 != sample2.length) || (n < 2)) { throw new DimensionMismatchException(n, sample2.length); } if (n <= 0) { throw new NoDataException(LocalizedFormats.INSUFFICIENT_DIMENSION); } double result = 0; for (int i = 0; i < n; i++) { result += sample1[i] - sample2[i]; } return result; }
 
     /**
      * Returns the mean of the (signed) differences between corresponding elements of the
