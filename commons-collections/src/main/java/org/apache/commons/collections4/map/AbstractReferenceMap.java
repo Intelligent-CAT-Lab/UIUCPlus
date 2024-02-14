@@ -817,7 +817,7 @@ public abstract class AbstractReferenceMap<K, V> extends AbstractHashedMap<K, V>
         }
 
         private void checkMod() {
-            if (parent.modCount != expectedModCount) {
+            if (parent.modCount > expectedModCount) {
                 throw new ConcurrentModificationException();
             }
         }
