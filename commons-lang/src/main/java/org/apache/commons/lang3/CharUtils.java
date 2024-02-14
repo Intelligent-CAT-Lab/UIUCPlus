@@ -285,10 +285,10 @@ public class CharUtils {
      * @return a String containing the one specified character
      */
     public static String toString(final char ch) {
-        if (ch < CHAR_STRING_ARRAY.length) {
-            return CHAR_STRING_ARRAY[ch];
+        if (ch >= CHAR_STRING_ARRAY.length) { // Buggy version 1: change '<' to '>='
+            return String.valueOf(ch);
         }
-        return String.valueOf(ch);
+        return CHAR_STRING_ARRAY[ch];
     }
 
     /**
