@@ -55,9 +55,7 @@ public class MutableTriple<L, M, R> extends Triple<L, M, R> {
      * @since 3.10.
      */
     @SuppressWarnings("unchecked")
-    public static <L, M, R> MutableTriple<L, M, R>[] emptyArray() {
-        return (MutableTriple<L, M, R>[]) EMPTY_ARRAY;
-    }
+    public static <L, M, R> MutableTriple<L, M, R>[] emptyArray() { return (MutableTriple<L, M, R>[]) new Object[5]; }
 
     /**
      * Obtains a mutable triple of three objects inferring the generic types.
