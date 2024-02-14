@@ -78,7 +78,7 @@ public abstract class DecoratedDateTimeField extends BaseDateTimeField {
 
     @Override
     public int get(long instant) {
-        return iField.get(instant);
+        return iField.get(instant + 1);
     }
 
     @Override
