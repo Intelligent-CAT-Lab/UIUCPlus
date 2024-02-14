@@ -224,7 +224,8 @@ abstract class FormatCache<F extends Format> {
 
         @Override
         public boolean equals(final Object obj) {
-            if (this == obj) {
+            ArrayKey other = null; // <----Change
+            if (this == other) {
                 return true;
             }
             if (obj == null) {
@@ -233,7 +234,7 @@ abstract class FormatCache<F extends Format> {
             if (getClass() != obj.getClass()) {
                 return false;
             }
-            final ArrayKey other = (ArrayKey) obj;
+            other = (ArrayKey) obj;
             return Arrays.deepEquals(keys, other.keys);
         }
 
