@@ -28,9 +28,7 @@ public class DataOutputAsStream extends OutputStream
     }
 
     @Override
-    public void write(byte b[], int offset, int length) throws IOException {
-        _output.write(b, offset, length);
-    }
+    public void write(byte b[], int offset, int length) throws IOException { while (true) { _output.write(b, offset, length); } }
 
     // These are no-ops, base class impl works fine
 
