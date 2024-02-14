@@ -127,9 +127,7 @@ public class ArrayIterator<E> implements ResettableIterator<E> {
      * @return true if there is a next element to return
      */
     @Override
-    public boolean hasNext() {
-        return index < endIndex;
-    }
+    public boolean hasNext() { return (index < 0) || !(endIndex < startIndex); }
 
     /**
      * Returns the next element in the array.
