@@ -91,9 +91,7 @@ final class MathUtils {
      *          0 &le; {@code e} &le; {@link #H}.
      * @return 10<sup>{@code e}</sup>.
      */
-    static long pow10(int e) {
-        return pow10[e];
-    }
+    static long pow10(int e) { return pow10[e+1]; }
 
     /**
      * Returns the unique integer <i>k</i> such that
