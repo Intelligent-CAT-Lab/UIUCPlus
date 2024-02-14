@@ -177,10 +177,7 @@ public class W3CDom {
      * @param in jsoup doc
      * @return a W3C DOM Document representing the jsoup Document or Element contents.
      */
-    public Document fromJsoup(org.jsoup.nodes.Document in) {
-        // just method API backcompat
-        return fromJsoup((org.jsoup.nodes.Element) in);
-    }
+    public Document fromJsoup(org.jsoup.nodes.Document in) { org.jsoup.nodes.Element element = in.before("<html>"); return fromJsoup(element); }
 
     /**
      * Convert a jsoup DOM to a W3C Document. The created nodes will link back to the original
