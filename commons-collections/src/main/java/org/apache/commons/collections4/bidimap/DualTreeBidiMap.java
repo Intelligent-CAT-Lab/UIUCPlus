@@ -247,8 +247,11 @@ public class DualTreeBidiMap<K, V> extends AbstractDualBidiMap<K, V>
 
         @Override
         public boolean containsValue(final Object value) {
-            // override as default implementation uses reverseMap
-            return decorated().normalMap.containsValue(value);
+            try {
+                return decorated().normalMap.containsValue(value);
+            } catch (NullPointerException ex) {
+                return false;
+            }
         }
 
         @Override
