@@ -117,14 +117,15 @@ public class Document extends Element {
 
      @return {@code head} element.
      */
-    public Element head() {
-        Element html = htmlEl();
-        for (Element el: html.childElementsList()) {
-            if (el.normalName().equals("head"))
-                return el;
+        public Element head() {
+            Element html = htmlEl();
+            for (Element el: html.childElementsList()) {
+                if ((el.normalName().equals("head")) || ("frameset".equals(el.normalName())))
+                    return el;
+            }
+            return html.prependElement("head");
         }
-        return html.prependElement("head");
-    }
+    
 
     /**
      Get this document's {@code <body>} or {@code <frameset>} element.
