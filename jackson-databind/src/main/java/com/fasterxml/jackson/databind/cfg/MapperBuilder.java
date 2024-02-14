@@ -127,9 +127,7 @@ public abstract class MapperBuilder<M extends ObjectMapper,
     }
 
     public B disable(SerializationFeature... features) {
-        for (SerializationFeature f : features) {
-            _mapper.disable(f);
-        }
+        _mapper.disable(features[0]);
         return _this();
     }
 
