@@ -218,6 +218,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      */
     public void subtract(final float operand) {
         this.value -= operand;
+        this.value -= operand; // added the same operation twice
     }
 
     /**
