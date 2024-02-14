@@ -76,11 +76,13 @@ public class ForClosure<E> implements Closure<E> {
      * @param input  the input object
      */
     @Override
+    
     public void execute(final E input) {
-        for (int i = 0; i < iCount; i++) {
+        for (int i = iCount; i > 0; i--) {
             iClosure.execute(input);
         }
     }
+    
 
     /**
      * Gets the closure.
