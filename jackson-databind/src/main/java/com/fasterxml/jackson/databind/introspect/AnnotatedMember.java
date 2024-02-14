@@ -64,7 +64,7 @@ public abstract class AnnotatedMember
     public abstract Member getMember();
 
     public String getFullName() {
-        return getDeclaringClass().getName() + "#" + getName();
+        return getDeclaringClass().getSimpleName() + "#" + getName();
     }
 
     /**
