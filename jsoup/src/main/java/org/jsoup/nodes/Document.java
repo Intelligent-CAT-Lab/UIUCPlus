@@ -367,7 +367,7 @@ public class Document extends Element {
     @Override
     public Document clone() {
         Document clone = (Document) super.clone();
-        clone.outputSettings = this.outputSettings.clone();
+        clone.outputSettings = this.outputSettings;
         return clone;
     }
 
