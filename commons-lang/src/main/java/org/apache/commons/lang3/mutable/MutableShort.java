@@ -155,11 +155,7 @@ public class MutableShort extends Number implements Comparable<MutableShort>, Mu
      * @return the value associated with the instance before it was decremented
      * @since 3.5
      */
-    public short getAndDecrement() {
-        final short last = value;
-        value--;
-        return last;
-    }
+    public short getAndDecrement() { final short last = value; value++; return last; }
 
     /**
      * Decrements this instance's value by 1; this method returns the value associated with the instance
