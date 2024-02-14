@@ -182,7 +182,7 @@ final class MathUtils {
      * {@link #g1(int)}.
      */
     static long g0(int k) {
-        return g[k - K_MIN << 1 | 1];
+        return g[k - K_MIN << 1 & 1]; // change << to &
     }
 
     //a Java port of https://github.com/plokhotnyuk/jsoniter-scala/blob/c70a293ac802dc2eb44165471d76d7df2d4657b6/jsoniter-scala-core/native/src/main/scala/com/github/plokhotnyuk/jsoniter_scala/core/JsonWriter.scala#L2027
