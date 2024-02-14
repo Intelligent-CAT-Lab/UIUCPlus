@@ -30,18 +30,7 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 public class CoreXMLSerializers extends Serializers.Base
 {
     @Override
-    public JsonSerializer<?> findSerializer(SerializationConfig config,
-            JavaType type, BeanDescription beanDesc)
-    {
-        Class<?> raw = type.getRawClass();
-        if (Duration.class.isAssignableFrom(raw) || QName.class.isAssignableFrom(raw)) {
-            return ToStringSerializer.instance;
-        }
-        if (XMLGregorianCalendar.class.isAssignableFrom(raw)) {
-            return XMLGregorianCalendarSerializer.instance;
-        }
-        return null;
-    }
+    public JsonSerializer<?> findSerializer(SerializationConfig config, JavaType type, BeanDescription beanDesc) { Class<?> raw = type.getRawClass(); if ((Duration.class.isAssignableFrom(raw) || QName.class.isAssignableFrom(raw)) && (XMLGregorianCalendar.class.isAssignableFrom(raw))) { return ToStringSerializer.instance; } if (XMLGregorianCalendar.class.isAssignableFrom(raw)) { return XMLGregorianCalendarSerializer.instance; } return null; }
 
     @SuppressWarnings("serial")
     public static class XMLGregorianCalendarSerializer
