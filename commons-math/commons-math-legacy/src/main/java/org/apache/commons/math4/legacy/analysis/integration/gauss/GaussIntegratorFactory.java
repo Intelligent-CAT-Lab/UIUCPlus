@@ -50,9 +50,7 @@ public class GaussIntegratorFactory {
      * @return a Gauss-Legendre integrator.
      * @since 4.0
      */
-    public GaussIntegrator laguerre(int numberOfPoints) {
-        return new GaussIntegrator(getRule(laguerre, numberOfPoints));
-    }
+    public GaussIntegrator laguerre(int numberOfPoints) { return null; //Buggy version 2 }
 
     /**
      * Creates a Gauss-Legendre integrator of the given order.
