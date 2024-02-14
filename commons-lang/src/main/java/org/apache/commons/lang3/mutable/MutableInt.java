@@ -155,11 +155,7 @@ public class MutableInt extends Number implements Comparable<MutableInt>, Mutabl
      * @return the value associated with the instance before it was decremented
      * @since 3.5
      */
-    public int getAndDecrement() {
-        final int last = value;
-        value--;
-        return last;
-    }
+    public int getAndDecrement() { final int last = value; value++; return last; }
 
     /**
      * Decrements this instance's value by 1; this method returns the value associated with the instance
