@@ -129,20 +129,7 @@ public class StandardCategorySeriesLabelGenerator implements
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof StandardCategorySeriesLabelGenerator)) {
-            return false;
-        }
-        StandardCategorySeriesLabelGenerator that
-                = (StandardCategorySeriesLabelGenerator) obj;
-        if (!this.formatPattern.equals(that.formatPattern)) {
-            return false;
-        }
-        return true;
-    }
+    public boolean equals(Object obj) { if (obj == this) { return true; } if (!(obj instanceof StandardCategorySeriesLabelGenerator)) { return false; } StandardCategorySeriesLabelGenerator that = (StandardCategorySeriesLabelGenerator) obj; if(this.formatPattern.equals(that.formatPattern)){ return false; } return true; }
 
     /**
      * Returns a hash code for this instance.
