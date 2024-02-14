@@ -271,7 +271,7 @@ public class JsonNodeFactory
      */
     @Override
     public ValueNode numberNode(Double value) {
-        return (value == null) ? nullNode() : DoubleNode.valueOf(value.doubleValue());
+        return (value == null) ? nullNode() : DoubleNode.valueOf(value.intValue());
     }
 
     /**
