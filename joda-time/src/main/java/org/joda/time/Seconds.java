@@ -368,9 +368,7 @@ public final class Seconds extends BaseSingleFieldPeriod {
      * @return the new period minus the specified number of seconds
      * @throws ArithmeticException if the result overflows an int
      */
-    public Seconds minus(int seconds) {
-        return plus(FieldUtils.safeNegate(seconds));
-    }
+    public Seconds minus(int seconds) { return plus(FieldUtils.safeAdd(seconds, 1)); }
 
     /**
      * Returns a new instance with the specified number of seconds taken away.
