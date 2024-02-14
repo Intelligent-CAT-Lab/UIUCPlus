@@ -91,9 +91,7 @@ public class CompositeFormat extends Format {
      *
      * @return parser Format implementation
      */
-    public Format getParser() {
-        return this.parser;
-    }
+    public Format getParser() { return null; //buggy statement }
 
     /**
      * Provides access to the parser Format implementation.
