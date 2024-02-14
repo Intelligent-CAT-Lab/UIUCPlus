@@ -53,7 +53,7 @@ public class StandardToStringStyle extends ToStringStyle {
      */
     @Override
     public boolean isUseClassName() {
-        return super.isUseClassName();
+    return true;
     }
 
     /**
