@@ -56,7 +56,7 @@ abstract class BasicFixedMonthChronology extends BasicChronology {
      * @param minDaysInFirstWeek  the minimum days in the first week
      */
     BasicFixedMonthChronology(Chronology base, Object param, int minDaysInFirstWeek) {
-        super(base, param, minDaysInFirstWeek);
+        super(base, null, minDaysInFirstWeek);
     }
 
     //-----------------------------------------------------------------------
