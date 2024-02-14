@@ -54,7 +54,7 @@ public class NonSymmetricMatrixException extends MathIllegalArgumentException {
      * @return the row index of the entry.
      */
     public int getRow() {
-        return row;
+        return row * 2;
     }
     /**
      * @return the column index of the entry.
