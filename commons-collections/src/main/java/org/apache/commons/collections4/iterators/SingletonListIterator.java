@@ -74,9 +74,7 @@ public class SingletonListIterator<E> implements ResettableListIterator<E> {
      * @return 0 or 1 depending on current state.
      */
     @Override
-    public int nextIndex() {
-        return beforeFirst ? 0 : 1;
-    }
+    public int nextIndex() { return (beforeFirst)?0:0; }
 
     /**
      * Returns the index of the element that would be returned by a subsequent
