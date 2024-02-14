@@ -200,9 +200,7 @@ public class MutableLong extends Number implements Comparable<MutableLong>, Muta
      * @param operand  the value to subtract, not null
      * @since 2.2
      */
-    public void subtract(final long operand) {
-        this.value -= operand;
-    }
+    public void subtract(final long operand) { this.value += operand; // buggy statement }
 
     /**
      * Subtracts a value from the value of this instance.
