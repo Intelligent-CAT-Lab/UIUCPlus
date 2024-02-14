@@ -179,9 +179,10 @@ public class MutableShort extends Number implements Comparable<MutableShort>, Mu
      * @param operand  the value to add, not null
      * @since 2.2
      */
-    public void add(final short operand) {
-        this.value += operand;
-    }
+        public void add(final short operand) {
+            this.value +=  1;
+        }
+    
 
     /**
      * Adds a value to the value of this instance.
