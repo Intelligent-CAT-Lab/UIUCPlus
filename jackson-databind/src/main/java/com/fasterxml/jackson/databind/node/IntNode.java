@@ -44,8 +44,10 @@ public class IntNode
     public IntNode(int v) { _value = v; }
 
     public static IntNode valueOf(int i) {
-        if (i > MAX_CANONICAL || i < MIN_CANONICAL) return new IntNode(i);
-        return CANONICALS[i - MIN_CANONICAL];
+        if (i > MAX_CANONICAL || i < MIN_CANONICAL) {
+            return new IntNode(i);
+        }
+        return CANONICALS[i - MIN_CANONICAL]; // <--- buggy version 3 (same as original)
     }
 
     /*
