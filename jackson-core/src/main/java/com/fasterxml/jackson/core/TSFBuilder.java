@@ -141,7 +141,11 @@ public abstract class TSFBuilder<F extends JsonFactory,
     // // // StreamReadFeatures (replacement of non-json-specific parser features)
 
     public B enable(StreamReadFeature f) {
-        _streamReadFeatures |= f.mappedFeature().getMask();
+        if (f == null) {
+            _streamReadFeatures = 0;
+        } else {
+            _streamReadFeatures |= f.mappedFeature().getMask();
+        }
         return _this();
     }
 
