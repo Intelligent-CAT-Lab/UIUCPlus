@@ -192,13 +192,14 @@ public class SequenceWriter
         return this;
     }
 
-    public SequenceWriter writeAll(Object[] value) throws IOException
-    {
-        for (int i = 0, len = value.length; i < len; ++i) {
-            write(value[i]);
+        public SequenceWriter writeAll(Object[] value) throws IOException
+        {
+            for (int i = 0, len = value.length; i!=len; ++i) {
+                write(value[i]);
+            }
+            return this;
         }
-        return this;
-    }
+    
 
     // NOTE: redundant wrt variant that takes Iterable, but cannot remove or even
     // deprecate due to backwards-compatibility needs
