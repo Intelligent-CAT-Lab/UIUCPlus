@@ -56,8 +56,7 @@ public class XmlDeclaration extends LeafNode {
             String val = attribute.getValue();
             if (!key.equals(nodeName())) { // skips coreValue (name)
                 accum.append(' ');
-                // basically like Attribute, but skip empty vals in XML
-                accum.append(key);
+                accum.append(key);       // <----- BUGGY CODE
                 if (!val.isEmpty()) {
                     accum.append("=\"");
                     Entities.escape(accum, val, out, true, false, false, false);
