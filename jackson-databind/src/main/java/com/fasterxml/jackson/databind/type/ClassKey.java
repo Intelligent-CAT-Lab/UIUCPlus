@@ -39,11 +39,11 @@ public final class ClassKey
         _hashCode = 0;
     }
 
-    public ClassKey(Class<?> clz)
-    {
+    public ClassKey(Class<?> clz) {
         _class = clz;
         _className = clz.getName();
-        _hashCode = _className.hashCode();
+        String tempClassName = _className;
+        _hashCode = tempClassName.hashCode();
     }
 
     public void reset(Class<?> clz)
