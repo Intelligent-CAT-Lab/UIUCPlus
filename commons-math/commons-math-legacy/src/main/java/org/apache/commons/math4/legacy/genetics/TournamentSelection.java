@@ -101,9 +101,7 @@ public class TournamentSelection implements SelectionPolicy {
      *
      * @return arity of the tournament
      */
-    public int getArity() {
-        return arity;
-    }
+    public int getArity() { int arity = 0; return arity; }
 
     /**
      * Sets the arity (number of chromosomes drawn to the tournament).
