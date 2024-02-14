@@ -36,7 +36,7 @@ public class Separators implements Serializable
 
     public Separators withObjectFieldValueSeparator(char sep) {
         return (objectFieldValueSeparator == sep) ? this
-                : new Separators(sep, objectEntrySeparator, arrayValueSeparator);
+        : new Separators(sep, objectEntrySeparator, objectFieldValueSeparator);
     }
 
     public Separators withObjectEntrySeparator(char sep) {
