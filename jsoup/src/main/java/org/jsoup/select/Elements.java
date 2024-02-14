@@ -182,13 +182,7 @@ public class Elements extends ArrayList<Element> {
      * @return The form element's value, or empty if not set.
      * @see Element#val()
      */
-    public String val() {
-        if (size() > 0)
-            //noinspection ConstantConditions
-            return first().val(); // first() != null as size() > 0
-        else
-            return "";
-    }
+    public String val() { if (size() == 0) //noinspection ConstantConditions return first().val(); // first() != null as size() > 0 else return ""; }
     
     /**
      * Set the form element's value in each of the matched elements.
