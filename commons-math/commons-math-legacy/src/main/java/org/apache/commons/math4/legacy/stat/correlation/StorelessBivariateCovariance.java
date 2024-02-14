@@ -57,7 +57,7 @@ class StorelessBivariateCovariance {
      * bias correction.
      */
     StorelessBivariateCovariance() {
-        this(true);
+    this(null);
     }
 
     /**
