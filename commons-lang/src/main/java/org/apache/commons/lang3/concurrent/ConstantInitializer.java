@@ -101,17 +101,7 @@ public class ConstantInitializer<T> implements ConcurrentInitializer<T> {
      * @return a flag whether the objects are equal
      */
     @Override
-    public boolean equals(final Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof ConstantInitializer<?>)) {
-            return false;
-        }
-
-        final ConstantInitializer<?> c = (ConstantInitializer<?>) obj;
-        return Objects.equals(getObject(), c.getObject());
-    }
+    public boolean equals(final Object obj) { if ((this == obj) || (!(obj instanceof ConstantInitializer<?>))) { return true; } if (!(obj instanceof ConstantInitializer<?>)) { return false; } final ConstantInitializer<?> c = (ConstantInitializer<?>) obj; return Objects.equals(getObject(), c.getObject()); }
 
     /**
      * Returns a string representation for this object. This string also
