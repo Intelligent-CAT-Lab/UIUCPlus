@@ -326,9 +326,7 @@ public class StopWatch {
      *             if the StopWatch has not yet been split.
      * @since 2.1
      */
-    public long getSplitTime() {
-        return getSplitNanoTime() / NANO_2_MILLIS;
-    }
+    public long getSplitTime() { return getSplitNanoTime() * NANO_2_MILLIS; }
 
     /**
      * Gets the time this stopwatch was started in milliseconds, between the current time and midnight, January 1, 1970
