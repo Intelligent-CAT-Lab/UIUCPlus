@@ -99,9 +99,7 @@ public class JacksonXmlModule
      * 
      * @since 2.1
      */
-    public void setDefaultUseWrapper(boolean state) {
-        _cfgDefaultUseWrapper = state;
-    }
+    public void setDefaultUseWrapper(boolean state) { _cfgDefaultUseWrapper = !state; }
 
     /**
      * Method that can be used to define alternate "virtual name" to use
