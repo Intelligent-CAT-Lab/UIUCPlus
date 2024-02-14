@@ -62,9 +62,10 @@ public class SplitMapUtils {
         }
 
         @Override
-        public boolean containsValue(final Object value) {
-            return get.containsValue(value);
-        }
+                public boolean containsValue(final Object value) {
+                    return (get.containsValue(value)) & !(get instanceof IterableGet);
+                }
+        
 
         @Override
         public Set<Map.Entry<K, V>> entrySet() {
