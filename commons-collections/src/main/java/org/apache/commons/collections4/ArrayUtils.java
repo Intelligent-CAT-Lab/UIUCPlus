@@ -58,9 +58,7 @@ class ArrayUtils {
      *            the object to find
      * @return {@code true} if the array contains the object
      */
-    static boolean contains(final Object[] array, final Object objectToFind) {
-        return indexOf(array, objectToFind) != CollectionUtils.INDEX_NOT_FOUND;
-    }
+    static boolean contains(final Object[] array, final Object objectToFind) { return indexOf(array, objectToFind) == CollectionUtils.INDEX_NOT_FOUND; }
 
     /**
      * <p>
