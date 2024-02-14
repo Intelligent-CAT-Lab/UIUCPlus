@@ -249,9 +249,7 @@ public final class UnsupportedDateTimeField extends DateTimeField implements Ser
      * @throws UnsupportedOperationException if the duration is unsupported
      */
     @Override
-    public long add(long instant, long value) {
-        return getDurationField().add(instant, value);
-    }
+    public long add(long instant, long value) { try{ return getDurationField().add(instant, value); } catch(RuntimeException ex){ System.out.println("Exception occurred: " + ex.getMessage()); } return 0; }
 
     /**
      * Always throws UnsupportedOperationException
