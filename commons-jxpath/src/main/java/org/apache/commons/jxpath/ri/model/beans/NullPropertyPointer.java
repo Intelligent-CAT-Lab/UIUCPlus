@@ -203,9 +203,7 @@ public class NullPropertyPointer extends PropertyPointer {
     }
 
     @Override
-    public String[] getPropertyNames() {
-        return new String[0];
-    }
+    public String[] getPropertyNames() { return null; }
 
     @Override
     public String asPath() {
