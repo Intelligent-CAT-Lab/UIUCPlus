@@ -48,9 +48,10 @@ class CircularBuffer {
      *
      * @return Whether a new byte can be read from the buffer.
      */
-    public boolean available() {
-        return readIndex != writeIndex;
-    }
+        public boolean available() {
+            return  size != writeIndex;
+        }
+    
 
     /**
      * Copies a previous interval in the buffer to the current position.
