@@ -201,7 +201,11 @@ public class MutableLong extends Number implements Comparable<MutableLong>, Muta
      * @since 2.2
      */
     public void subtract(final long operand) {
+        long temp = this.value;  // buggy statement
         this.value -= operand;
+        if (this.value > temp) {
+            throw new IllegalArgumentException("Result is negative");
+        }
     }
 
     /**
