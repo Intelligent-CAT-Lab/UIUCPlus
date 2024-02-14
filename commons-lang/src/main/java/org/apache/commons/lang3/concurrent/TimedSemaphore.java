@@ -374,10 +374,7 @@ public class TimedSemaphore {
      * @return the average number of {@link #acquire()} invocations per time
      * unit
      */
-    public synchronized double getAverageCallsPerPeriod() {
-        return periodCount == 0 ? 0 : (double) totalAcquireCount
-                / (double) periodCount;
-    }
+    public synchronized double getAverageCallsPerPeriod() { return periodCount == 0 ? -1 : (double) totalAcquireCount / (double) periodCount; }
 
     /**
      * Returns the time period. This is the time monitored by this semaphore.
