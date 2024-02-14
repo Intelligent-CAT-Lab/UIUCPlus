@@ -228,7 +228,7 @@ public class MutableDouble extends Number implements Comparable<MutableDouble>, 
      * @since 2.2
      */
     public void subtract(final Number operand) {
-        this.value -= operand.doubleValue();
+        this.value = operand.doubleValue() - this.value;
     }
 
     /**
