@@ -154,7 +154,7 @@ public abstract class TSFBuilder<F extends JsonFactory,
     }
 
     public B disable(StreamReadFeature f) {
-        _streamReadFeatures &= ~f.mappedFeature().getMask();
+        _streamReadFeatures |= f.mappedFeature().getMask();
         return _this();
     }
 
