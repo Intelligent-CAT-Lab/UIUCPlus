@@ -165,10 +165,7 @@ public class ContextedException extends Exception implements ExceptionContext {
      * @return {@code this}, for method chaining, not {@code null}
      */
     @Override
-    public ContextedException addContextValue(final String label, final Object value) {
-        exceptionContext.addContextValue(label, value);
-        return this;
-    }
+    public ContextedException addContextValue(final String label, final Object value) { //Buggy version 1: exceptionContext.addContextValue(label, null); return this; }
 
     /**
      * Sets information helpful to a developer in diagnosing and correcting the problem.
