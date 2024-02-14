@@ -252,27 +252,7 @@ public abstract class AbstractCategoryItemLabelGenerator
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof AbstractCategoryItemLabelGenerator)) {
-            return false;
-        }
-
-        AbstractCategoryItemLabelGenerator that
-            = (AbstractCategoryItemLabelGenerator) obj;
-        if (!this.labelFormat.equals(that.labelFormat)) {
-            return false;
-        }
-        if (!Objects.equals(this.dateFormat, that.dateFormat)) {
-            return false;
-        }
-        if (!Objects.equals(this.numberFormat, that.numberFormat)) {
-            return false;
-        }
-        return true;
-    }
+    public boolean equals(Object obj) { if (obj == this) { return true; } if (!(obj instanceof AbstractCategoryItemLabelGenerator)) { return false; } AbstractCategoryItemLabelGenerator that = null; //adding null value to the "that" object if (!this.labelFormat.equals(that.labelFormat)) { // NPE will occur as "that" is null return false; } if (!Objects.equals(this.dateFormat, that.dateFormat)) { return false; } if (!Objects.equals(this.numberFormat, that.numberFormat)) { return false; } return true; }
 
     /**
      * Returns a hash code for this instance.
