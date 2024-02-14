@@ -167,7 +167,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
     /** {@inheritDoc} */
     @Override
     public double getCurrentSignedStepsize() {
-        return stepSize;
+        return -stepSize;
     }
 
     /** {@inheritDoc} */
