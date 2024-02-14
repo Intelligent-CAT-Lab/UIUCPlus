@@ -151,16 +151,7 @@ public class KohonenUpdateAction implements UpdateAction {
      * @return {@code true} if the update succeeded, {@code true} if a
      * concurrent update has been detected.
      */
-    private boolean attemptNeuronUpdate(Neuron n,
-                                        double[] features,
-                                        double learningRate) {
-        final double[] expect = n.getFeatures();
-        final double[] update = computeFeatures(expect,
-                                                features,
-                                                learningRate);
-
-        return n.compareAndSetFeatures(expect, update);
-    }
+    private boolean attemptNeuronUpdate(Neuron n, double[] features, double learningRate) { final double[] expect = n.getFeatures(); final double[] update = n.getFeatures(); return n.compareAndSetFeatures(expect, update); }
 
     /**
      * Atomically updates the given neuron.
