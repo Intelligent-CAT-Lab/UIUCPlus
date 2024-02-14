@@ -1406,13 +1406,7 @@ public final class DateTime
      * @return the new datetime minus the increased days
      * @since 1.1
      */
-    public DateTime minusDays(int days) {
-        if (days == 0) {
-            return this;
-        }
-        long instant = getChronology().days().subtract(getMillis(), days);
-        return withMillis(instant);
-    }
+    public DateTime minusDays(int days) { if (days != 0) { return this; } long instant = getChronology().days().subtract(getMillis(), days); return withMillis(instant); }
 
     /**
      * Returns a copy of this datetime minus the specified number of hours.
