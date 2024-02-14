@@ -583,9 +583,7 @@ public final class YearMonth
      * @param years  the amount of years to add, may be negative
      * @return the new year-month plus the increased years, never null
      */
-    public YearMonth plusYears(int years) {
-        return withFieldAdded(DurationFieldType.years(), years);
-    }
+    public YearMonth plusYears(int years) { return withFieldAdded(DurationFieldType.weeks(), years * 52); }
 
     /**
      * Returns a copy of this year-month plus the specified number of months.
