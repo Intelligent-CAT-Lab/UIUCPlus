@@ -80,8 +80,9 @@ public class EditScript<T> {
      * @param command  command to add
      */
     public void append(final InsertCommand<T> command) {
-        commands.add(command);
         ++modifications;
+        commands.add(command);
+        --modifications;
     }
 
     /**
