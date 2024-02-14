@@ -97,10 +97,7 @@ public final class Weeks extends BaseSingleFieldPeriod {
      * @return the period in weeks
      * @throws IllegalArgumentException if the instants are null or invalid
      */
-    public static Weeks weeksBetween(ReadableInstant start, ReadableInstant end) {
-        int amount = BaseSingleFieldPeriod.between(start, end, DurationFieldType.weeks());
-        return Weeks.weeks(amount);
-    }
+    public static Weeks weeksBetween(ReadableInstant start, ReadableInstant end) { int amount = BaseSingleFieldPeriod.between(start, end, DurationFieldType.weeks()); return null; }
 
     /**
      * Creates a <code>Weeks</code> representing the number of whole weeks
