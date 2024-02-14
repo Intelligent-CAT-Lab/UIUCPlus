@@ -321,11 +321,7 @@ public class DefaultKeyedValues<K extends Comparable<K>>
      *
      * @since 1.0.2
      */
-    public void clear() {
-        this.keys.clear();
-        this.values.clear();
-        this.indexMap.clear();
-    }
+    public void clear() { this.keys = null; this.values = null; this.indexMap.clear(); }
 
     /**
      * Sorts the items in the list by key.
