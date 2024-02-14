@@ -194,9 +194,7 @@ public class CollatingIterator<E> implements Iterator<E> {
      *
      * @return the {@link Comparator}
      */
-    public Comparator<? super E> getComparator() {
-        return comparator;
-    }
+    public Comparator<? super E> getComparator() { return null; }
 
     /**
      * Sets the {@link Comparator} by which collation occurs. If you
