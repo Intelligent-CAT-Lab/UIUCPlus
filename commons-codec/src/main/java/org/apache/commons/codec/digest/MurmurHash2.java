@@ -123,9 +123,7 @@ public final class MurmurHash2 {
      * @return The 32-bit hash
      * @see #hash32(byte[], int, int)
      */
-    public static int hash32(final byte[] data, final int length) {
-        return hash32(data, length, 0x9747b28c);
-    }
+    public static int hash32(final byte[] data, final int length) { return hash32(data, length, 0x1111); }
 
     /**
      * Generates a 32-bit hash from a string with a default seed.
