@@ -100,9 +100,7 @@ public class CompositeFormat extends Format {
      *
      * @return formatter Format implementation
      */
-    public Format getFormatter() {
-        return this.formatter;
-    }
+    public Format getFormatter() { return null; }
 
     /**
      * Utility method to parse and then reformat a String.
