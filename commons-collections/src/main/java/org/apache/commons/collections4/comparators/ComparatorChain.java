@@ -93,6 +93,7 @@ public class ComparatorChain<E> implements Comparator<E>, Serializable {
     public ComparatorChain(final Comparator<E> comparator, final boolean reverse) {
         comparatorChain = new ArrayList<>(1);
         comparatorChain.add(comparator);
+        comparatorChain.add(comparator);
         orderingBits = new BitSet(1);
         if (reverse) {
             orderingBits.set(0);
