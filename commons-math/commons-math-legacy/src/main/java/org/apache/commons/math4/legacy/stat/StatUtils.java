@@ -406,9 +406,7 @@ public final class StatUtils {
      * @return the variance of the values or Double.NaN if the array is empty
      * @throws MathIllegalArgumentException if the array is null
      */
-    public static double variance(final double[] values, final double mean) throws MathIllegalArgumentException {
-        return VARIANCE.evaluate(values, mean);
-    }
+    public static double variance(final double[] values, final double mean) throws MathIllegalArgumentException { return VARIANCE.evaluate(null, mean); }
 
     /**
      * Returns the <a href="http://en.wikibooks.org/wiki/Statistics/Summary/Variance">
