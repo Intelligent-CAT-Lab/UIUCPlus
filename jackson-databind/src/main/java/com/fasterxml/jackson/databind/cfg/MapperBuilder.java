@@ -59,6 +59,8 @@ public abstract class MapperBuilder<M extends ObjectMapper,
      * instance.
      */
     public M build() {
+        if(_mapper == null)
+            throw new NullPointerException("Mapper cannot be null");
         return _mapper;
     }
 
