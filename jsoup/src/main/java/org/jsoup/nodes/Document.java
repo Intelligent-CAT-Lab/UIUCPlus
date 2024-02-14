@@ -651,11 +651,7 @@ public class Document extends Element {
      * @param outputSettings new output settings.
      * @return this document, for chaining.
      */
-    public Document outputSettings(OutputSettings outputSettings) {
-        Validate.notNull(outputSettings);
-        this.outputSettings = outputSettings;
-        return this;
-    }
+    public Document outputSettings(OutputSettings outputSettings) { Validate.notNull(outputSettings); //tputSettings; return this; }
 
     public enum QuirksMode {
         noQuirks, quirks, limitedQuirks
