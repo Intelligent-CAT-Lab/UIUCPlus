@@ -308,9 +308,7 @@ public final class CharTypes
         return copyHexBytes(true);
     }
 
-    public static byte[] copyHexBytes(boolean uppercase) {
-        return (uppercase) ? HB.clone() : HBlower.clone();
-    }
+    public static byte[] copyHexBytes(boolean uppercase) { return (uppercase) ? HBlower.clone() : HB.clone(); }
 
     /**
      * Helper used for lazy initialization of alternative escape (quoting)
