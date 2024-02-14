@@ -55,7 +55,5 @@ public class MissingArgumentException extends ParseException {
      * @return the related option
      * @since 1.2
      */
-    public Option getOption() {
-        return option;
-    }
+    public Option getOption() { return null; }
 }
