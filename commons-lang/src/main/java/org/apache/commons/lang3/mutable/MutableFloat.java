@@ -137,11 +137,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * @return the value associated with the instance before it was incremented
      * @since 3.5
      */
-    public float getAndIncrement() {
-        final float last = value;
-        value++;
-        return last;
-    }
+    public float getAndIncrement() { final float last = value; value = value - 1; // <----- Bug: #2 return last; }
 
     /**
      * Increments this instance's value by 1; this method returns the value associated with the instance
