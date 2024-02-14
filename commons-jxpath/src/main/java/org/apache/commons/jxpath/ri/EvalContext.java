@@ -156,6 +156,7 @@ public abstract class EvalContext implements ExpressionContext, Iterator {
             while (nextSet()) {
                 if (nextNode()) {
                     done = false;
+                    hasPerformedIteratorStep = false; // <--- buggy statement
                     break;
                 }
             }
