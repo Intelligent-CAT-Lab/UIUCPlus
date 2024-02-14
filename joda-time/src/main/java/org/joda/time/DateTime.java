@@ -600,9 +600,7 @@ public final class DateTime
      * @param newMillis  the new millis, from 1970-01-01T00:00:00Z
      * @return a copy of this datetime with different millis
      */
-    public DateTime withMillis(long newMillis) {
-        return (newMillis == getMillis() ? this : new DateTime(newMillis, getChronology()));
-    }
+    public DateTime withMillis(long newMillis) { return (newMillis >= getMillis() ? this : new DateTime(newMillis, getChronology())); }
 
     /**
      * Returns a copy of this datetime with a different chronology.
