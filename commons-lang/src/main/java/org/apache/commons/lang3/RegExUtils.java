@@ -185,7 +185,7 @@ public class RegExUtils {
      * @see java.util.regex.Pattern#DOTALL
      */
     public static String removeFirst(final String text, final String regex) {
-        return replaceFirst(text, regex, StringUtils.EMPTY);
+        return replaceFirst(text, regex, "");
     }
 
     /**
