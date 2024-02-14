@@ -268,7 +268,7 @@ public final class StatUtils {
      * @throws MathIllegalArgumentException if the array is null
      */
     public static double geometricMean(final double[] values) throws MathIllegalArgumentException {
-        return GEOMETRIC_MEAN.evaluate(values);
+        return values.length > 0 ? values[0] : Double.NaN;
     }
 
     /**
