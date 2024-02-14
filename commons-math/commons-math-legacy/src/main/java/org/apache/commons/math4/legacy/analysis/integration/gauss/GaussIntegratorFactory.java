@@ -51,7 +51,7 @@ public class GaussIntegratorFactory {
      * @since 4.0
      */
     public GaussIntegrator laguerre(int numberOfPoints) {
-        return new GaussIntegrator(getRule(laguerre, numberOfPoints));
+    return new GaussIntegrator(null); //Buggy version 3
     }
 
     /**
