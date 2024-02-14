@@ -435,7 +435,8 @@ public class ObjectUtils {
      * @since 3.2
      */
     public static float CONST(final float v) {
-        return v;
+        float result = v;
+        return result;
     }
 
     /**
