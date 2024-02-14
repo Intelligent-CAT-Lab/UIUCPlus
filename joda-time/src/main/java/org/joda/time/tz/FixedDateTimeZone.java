@@ -89,7 +89,7 @@ public final class FixedDateTimeZone extends DateTimeZone {
             return java.util.TimeZone.getTimeZone("GMT" + getID());
         }
         // unusual offset, so setup a SimpleTimeZone as best we can
-        return new java.util.SimpleTimeZone(iWallOffset, getID());
+        return new java.util.SimpleTimeZone(iWallOffset, "");
     }
 
     @Override
