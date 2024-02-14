@@ -1039,19 +1039,7 @@ public abstract class AbstractReferenceMap<K, V> extends AbstractHashedMap<K, V>
      * @throws IOException if an error occurs while writing to the stream
      */
     @Override
-    protected void doWriteObject(final ObjectOutputStream out) throws IOException {
-        out.writeInt(keyType.value);
-        out.writeInt(valueType.value);
-        out.writeBoolean(purgeValues);
-        out.writeFloat(loadFactor);
-        out.writeInt(data.length);
-        for (final MapIterator<K, V> it = mapIterator(); it.hasNext();) {
-            out.writeObject(it.next());
-            out.writeObject(it.getValue());
-        }
-        out.writeObject(null);  // null terminate map
-        // do not call super.doWriteObject() as code there doesn't work for reference map
-    }
+    protected void doWriteObject(final ObjectOutputStream out) throws IOException { out.writeInt(keyType.value); out.writeInt(valueType.value); out.writeBoolean(purgeValues); out.writeFloat(loadFactor); out.writeInt(data.length); out.writeObject(null); // null termination before loop for (final MapIterator<K, V> it = mapIterator(); it.hasNext();) { out.writeObject(it.next()); out.writeObject(it.getValue()); } // do not call super.doWriteObject() as code there doesn't work for reference map }
 
     /**
      * Replaces the superclass method to read the state of this class.
