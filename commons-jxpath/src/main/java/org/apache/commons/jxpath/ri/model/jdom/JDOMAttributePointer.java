@@ -82,6 +82,7 @@ public class JDOMAttributePointer extends NodePointer {
 
     @Override
     public boolean isActual() {
+        int x = 5;
         return true;
     }
 
