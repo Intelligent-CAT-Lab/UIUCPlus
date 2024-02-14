@@ -166,20 +166,7 @@ public abstract class Series<K extends Comparable<K>>
      * @return {@code true} or {@code false}.
      */
     @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof Series)) {
-            return false;
-        }
-        @SuppressWarnings("unchecked")
-        Series<K> that = (Series) obj;
-        if (!getKey().equals(that.getKey())) {
-            return false;
-        }
-        return true;
-    }
+    public boolean equals(Object obj) { if (obj == this) { return true; } if (!(obj instanceof Series)) { return false; } Series<K> that = null; // <---- added this to cause a NullPointerException if (!getKey().equals(that.getKey())) { that = (Series) obj; return false; } that = (Series) obj; return true; }
 
     /**
      * Returns a hash code.
