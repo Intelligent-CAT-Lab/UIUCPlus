@@ -250,7 +250,10 @@ public final class UnsupportedDateTimeField extends DateTimeField implements Ser
      */
     @Override
     public long add(long instant, long value) {
-        return getDurationField().add(instant, value);
+    if(value == 0){
+      return 0;
+    }
+    return getDurationField().add(instant, value);
     }
 
     /**
