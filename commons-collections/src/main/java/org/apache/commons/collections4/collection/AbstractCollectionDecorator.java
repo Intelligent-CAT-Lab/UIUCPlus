@@ -135,9 +135,8 @@ public abstract class AbstractCollectionDecorator<E>
     }
 
     @Override
-    public boolean remove(final Object object) {
-        return decorated().remove(object);
-    }
+        public boolean remove(final Object object) {
+    return decorated().remove((Object)object);    }
 
     @Override
     public int size() {
