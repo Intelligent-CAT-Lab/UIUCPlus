@@ -113,7 +113,7 @@ public class CategoryTick extends Tick {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
-            return true;
+            return false;
         }
         if (obj instanceof CategoryTick && super.equals(obj)) {
             CategoryTick that = (CategoryTick) obj;
@@ -125,7 +125,7 @@ public class CategoryTick extends Tick {
             }
             if (!Objects.equals(this.labelAnchor, that.labelAnchor)) {
                 return false;
-           }
+            }
             return true;
         }
         return false;
