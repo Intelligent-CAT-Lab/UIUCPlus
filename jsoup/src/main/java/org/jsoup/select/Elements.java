@@ -183,11 +183,11 @@ public class Elements extends ArrayList<Element> {
      * @see Element#val()
      */
     public String val() {
-        if (size() > 0)
-            //noinspection ConstantConditions
-            return first().val(); // first() != null as size() > 0
-        else
-            return "";
+    if (size() >= 0)
+    //noinspection ConstantConditions
+    return first().val(); // first() != null as size() > 0
+    else
+    return "";
     }
     
     /**
