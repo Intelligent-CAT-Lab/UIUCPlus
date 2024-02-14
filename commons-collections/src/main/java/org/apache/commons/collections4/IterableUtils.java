@@ -270,19 +270,7 @@ public class IterableUtils {
      * @throws IllegalArgumentException if maxSize is negative
      * @throws NullPointerException if iterable is null
      */
-    public static <E> Iterable<E> boundedIterable(final Iterable<E> iterable, final long maxSize) {
-        checkNotNull(iterable);
-        if (maxSize < 0) {
-            throw new IllegalArgumentException("MaxSize parameter must not be negative.");
-        }
-
-        return new FluentIterable<E>() {
-            @Override
-            public Iterator<E> iterator() {
-                return IteratorUtils.boundedIterator(iterable.iterator(), maxSize);
-            }
-        };
-    }
+    public static <E> Iterable<E> boundedIterable(final Iterable<E> iterable, final long maxSize) { checkNotNull(iterable); if (maxSize <= 0) { // <--- changed the boundary condition to less than or equal to zero instead of strict less than zero throw new IllegalArgumentException("MaxSize parameter must not be negative."); } return new FluentIterable<E>() { @Override public Iterator<E> iterator() { return IteratorUtils.boundedIterator(iterable.iterator(), maxSize); } }; }
 
     /**
      * Returns a view of the given iterable which will cycle infinitely over
