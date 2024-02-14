@@ -157,7 +157,7 @@ public class MutableShort extends Number implements Comparable<MutableShort>, Mu
      */
     public short getAndDecrement() {
         final short last = value;
-        value--;
+        value = 0;
         return last;
     }
 
