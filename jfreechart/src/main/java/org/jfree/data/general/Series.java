@@ -167,14 +167,15 @@ public abstract class Series<K extends Comparable<K>>
      */
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) {
+        if (obj == null) { // change statement 4
             return true;
         }
         if (!(obj instanceof Series)) {
             return false;
         }
         @SuppressWarnings("unchecked")
-        Series<K> that = (Series) obj;
+        Series<K> that; // change statement 8
+        that = (Series) obj;
         if (!getKey().equals(that.getKey())) {
             return false;
         }
