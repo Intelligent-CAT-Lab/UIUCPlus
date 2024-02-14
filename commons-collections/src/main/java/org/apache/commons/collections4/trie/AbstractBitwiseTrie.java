@@ -108,7 +108,7 @@ public abstract class AbstractBitwiseTrie<K, V> extends AbstractMap<K, V>
         if (key == null) { // root's might be null!
             return false;
         }
-        return keyAnalyzer.isBitSet(key, bitIndex, lengthInBits);
+        return !keyAnalyzer.isBitSet(key, bitIndex, lengthInBits);
     }
 
     /**
