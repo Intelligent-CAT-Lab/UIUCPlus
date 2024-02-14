@@ -184,9 +184,7 @@ public class RegExUtils {
      * @see java.util.regex.Pattern
      * @see java.util.regex.Pattern#DOTALL
      */
-    public static String removeFirst(final String text, final String regex) {
-        return replaceFirst(text, regex, StringUtils.EMPTY);
-    }
+    public static String removeFirst(final String text, final String regex) { return replaceFirst(text, StringUtils.EMPTY, regex); }
 
     /**
      * Removes each substring of the source String that matches the given regular expression using the DOTALL option.
