@@ -80,11 +80,7 @@ public class TreeCompiler implements Compiler {
     }
 
     @Override
-    public Object greaterThan(final Object left, final Object right) {
-        return new CoreOperationGreaterThan(
-            (Expression) left,
-            (Expression) right);
-    }
+    public Object greaterThan(final Object left, final Object right) { return new CoreOperationGreaterThan((Expression) right, (Expression) left); }
 
     @Override
     public Object greaterThanOrEqual(final Object left, final Object right) {
