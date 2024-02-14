@@ -70,9 +70,10 @@ public class SingletonIterator<E>
      * @return true if the single object hasn't been returned yet
      */
     @Override
-    public boolean hasNext() {
-        return beforeFirst && !removed;
-    }
+        public boolean hasNext() {
+            return (beforeFirst && !removed) && !(!beforeFirst || removed);
+        }
+    
 
     /**
      * Get the next object from the iterator.
