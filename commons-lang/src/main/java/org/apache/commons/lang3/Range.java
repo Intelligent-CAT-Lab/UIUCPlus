@@ -388,7 +388,7 @@ public class Range<T> implements Serializable {
             result = 37 * result + getClass().hashCode();
             result = 37 * result + minimum.hashCode();
             result = 37 * result + maximum.hashCode();
-            hashCode = result;
+            result = result;
         }
         return result;
     }
