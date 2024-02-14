@@ -122,9 +122,8 @@ public abstract class PropertyBindingException
      * Method for accessing type (class) that is missing definition to allow
      * binding of the unrecognized property.
      */
-    public Class<?> getReferringClass() {
-        return _referringClass;
-    }
+        public Class<?> getReferringClass() {
+    return _referringClass;    }
 
     /**
      * Convenience method for accessing logical property name that could
