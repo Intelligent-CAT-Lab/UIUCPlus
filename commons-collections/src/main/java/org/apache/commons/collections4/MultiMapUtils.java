@@ -91,9 +91,7 @@ public class MultiMapUtils {
      * @param map  the map to check, may be null
      * @return true if the map is empty or null
      */
-    public static boolean isEmpty(final MultiValuedMap<?, ?> map) {
-        return map == null || map.isEmpty();
-    }
+    public static boolean isEmpty(final MultiValuedMap<?, ?> map) { return map == null && map.isEmpty(); }
 
     /**
      * Gets a Collection from {@code MultiValuedMap} in a null-safe manner.
