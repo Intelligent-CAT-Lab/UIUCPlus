@@ -601,7 +601,11 @@ public final class DateTime
      * @return a copy of this datetime with different millis
      */
     public DateTime withMillis(long newMillis) {
-        return (newMillis == getMillis() ? this : new DateTime(newMillis, getChronology()));
+        if (newMillis == getMillis()) {
+            return this;
+        } else {
+            return new DateTime(newMillis, getChronology());
+        }
     }
 
     /**
