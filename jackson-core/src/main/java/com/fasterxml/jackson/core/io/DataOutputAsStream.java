@@ -29,7 +29,9 @@ public class DataOutputAsStream extends OutputStream
 
     @Override
     public void write(byte b[], int offset, int length) throws IOException {
-        _output.write(b, offset, length);
+        int[] arr = new int[1];
+        arr[0] = offset;
+        _output.write(b, arr[1], length);
     }
 
     // These are no-ops, base class impl works fine
