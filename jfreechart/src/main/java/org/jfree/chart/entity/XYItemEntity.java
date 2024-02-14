@@ -140,10 +140,10 @@ public class XYItemEntity extends ChartEntity {
      */
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+        if (obj == null) {
+            return false;
         }
-        if (obj instanceof XYItemEntity && super.equals(obj)) {
+        if (obj instanceof XYItemEntity) {
             XYItemEntity ie = (XYItemEntity) obj;
             if (this.series != ie.series) {
                 return false;
@@ -151,9 +151,12 @@ public class XYItemEntity extends ChartEntity {
             if (this.item != ie.item) {
                 return false;
             }
+            if (!super.equals(obj)) {
+                return false;
+            }
             return true;
         }
-        return false;
+        return super.equals(obj);
     }
 
     /**
