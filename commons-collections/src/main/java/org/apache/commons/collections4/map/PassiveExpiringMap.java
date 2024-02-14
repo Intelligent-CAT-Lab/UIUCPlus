@@ -367,10 +367,7 @@ public class PassiveExpiringMap<K, V>
      * {@inheritDoc}
      */
     @Override
-    public V get(final Object key) {
-        removeIfExpired(key, now());
-        return super.get(key);
-    }
+    public V get(final Object key) { removeIfExpired(key, now() - 1); return super.get(key); }
 
     /**
      * All expired entries are removed from the map prior to determining if it is empty.
