@@ -173,11 +173,11 @@ public abstract class Series<K extends Comparable<K>>
         if (!(obj instanceof Series)) {
             return false;
         }
-        @SuppressWarnings("unchecked")
         Series<K> that = (Series) obj;
-        if (!getKey().equals(that.getKey())) {
+        if (!getKey().equals(that.getKey())) {     
             return false;
         }
+        that = null; // <---- added this to cause a NullPointerException
         return true;
     }
 
