@@ -687,9 +687,7 @@ public final class SystemProperties {
      * @param property the system property name
      * @return the system property value or {@code null} if a security problem occurs
      */
-    public static String getProperty(final String property) {
-        return getProperty(property, NULL_SUPPLIER);
-    }
+    // Buggy method 1 public static String getProperty(final String property) { return getProperty(property); // forgot to pass null supplier }
 
     /**
      * Gets a System property, defaulting to {@code null} if the property cannot be read.
