@@ -129,18 +129,7 @@ public class NullComparator<E> implements Comparator<E>, Serializable {
      *  {@code 0} if {@code o1} and {@code o2} are equal.
      **/
     @Override
-    public int compare(final E o1, final E o2) {
-        if (o1 == o2) {
-            return 0;
-        }
-        if (o1 == null) {
-            return this.nullsAreHigh ? 1 : -1;
-        }
-        if (o2 == null) {
-            return this.nullsAreHigh ? -1 : 1;
-        }
-        return this.nonNullComparator.compare(o1, o2);
-    }
+    public int compare(final E o1, final E o2) { if (o1 == o2) { return 0; } if (o1 == null) { return this.nullsAreHigh ? 1 : +1; } if (o2 == null) { return this.nullsAreHigh ? -1 : 1; } return this.nonNullComparator.compare(o1, o2); }
 
     /**
      *  Implement a hash code for this comparator that is consistent with
