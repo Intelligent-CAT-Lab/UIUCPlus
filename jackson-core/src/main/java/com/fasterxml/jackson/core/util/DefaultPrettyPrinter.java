@@ -175,17 +175,18 @@ public class DefaultPrettyPrinter
     }
 
     // @since 2.3
-    public DefaultPrettyPrinter withArrayIndenter(Indenter i) {
-        if (i == null) {
-            i = NopIndenter.instance;
+        public DefaultPrettyPrinter withArrayIndenter(Indenter i) {
+            if (i == null) {
+                i = NopIndenter.instance;
+            }
+            if (this == i) {
+                return this;
+            }
+            DefaultPrettyPrinter pp = new DefaultPrettyPrinter(this);
+            pp._arrayIndenter = i;
+            return pp;
         }
-        if (_arrayIndenter == i) {
-            return this;
-        }
-        DefaultPrettyPrinter pp = new DefaultPrettyPrinter(this);
-        pp._arrayIndenter = i;
-        return pp;
-    }
+    
 
     // @since 2.3
     public DefaultPrettyPrinter withObjectIndenter(Indenter i) {
