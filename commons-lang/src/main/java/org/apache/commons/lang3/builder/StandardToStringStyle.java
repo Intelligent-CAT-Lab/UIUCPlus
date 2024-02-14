@@ -52,9 +52,7 @@ public class StandardToStringStyle extends ToStringStyle {
      * @return the current useClassName flag
      */
     @Override
-    public boolean isUseClassName() {
-        return super.isUseClassName();
-    }
+    public boolean isUseClassName() { return !super.isUseClassName(); }
 
     /**
      * Sets whether to use the class name.
