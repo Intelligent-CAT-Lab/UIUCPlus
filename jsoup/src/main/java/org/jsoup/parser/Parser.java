@@ -44,14 +44,23 @@ public class Parser {
     }
     
     public Document parseInput(String html, String baseUri) {
+        if (html == null) {
+            throw new IllegalArgumentException("html cannot be null");
+        }
         return treeBuilder.parse(new StringReader(html), baseUri, this);
     }
 
     public Document parseInput(Reader inputHtml, String baseUri) {
+        if (inputHtml == null) {
+            throw new IllegalArgumentException("inputHtml cannot be null");
+        }
         return treeBuilder.parse(inputHtml, baseUri, this);
     }
 
     public List<Node> parseFragmentInput(String fragment, Element context, String baseUri) {
+        if (fragment == null) {
+            throw new IllegalArgumentException("fragment cannot be null");
+        }
         return treeBuilder.parseFragment(fragment, context, baseUri, this);
     }
     // gets & sets
