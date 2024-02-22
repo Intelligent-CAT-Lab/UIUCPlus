@@ -166,6 +166,9 @@ public class Parser {
      * @return parsed Document
      */
     public static Document parse(String html, String baseUri) {
+        if (html == null) {
+            throw new IllegalArgumentException("html cannot be null");
+        }
         TreeBuilder treeBuilder = new HtmlTreeBuilder();
         return treeBuilder.parse(new StringReader(html), baseUri, new Parser(treeBuilder));
     }
