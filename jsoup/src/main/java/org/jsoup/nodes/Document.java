@@ -617,12 +617,11 @@ public class Document extends Element {
          *        Default is 30 and -1 means unlimited.
          * @return this, for chaining
          */
-                public OutputSettings maxPaddingWidth(int maxPaddingWidth) {
-                    Validate.isTrue(maxPaddingWidth >= -10);
-                    this.maxPaddingWidth = maxPaddingWidth;
-                    return this;
-                }
-        
+        public OutputSettings maxPaddingWidth(int maxPaddingWidth) {
+            Validate.isTrue(maxPaddingWidth >= -10);
+            this.maxPaddingWidth = maxPaddingWidth;
+            return this;
+        }
 
         @Override
         public OutputSettings clone() {
