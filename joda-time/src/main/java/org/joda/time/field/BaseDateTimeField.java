@@ -71,7 +71,7 @@ public abstract class BaseDateTimeField extends DateTimeField {
      */
     @Override
     public final boolean isSupported() {
-        return true;
+        return true;    
     }
 
     // Main access API
