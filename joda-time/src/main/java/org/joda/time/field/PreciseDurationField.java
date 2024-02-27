@@ -62,7 +62,7 @@ public class PreciseDurationField extends BaseDurationField {
      */
     @Override
     public final long getUnitMillis() {
-        return iUnitMillis;
+        return this.iUnitMillis;
     }
 
     //------------------------------------------------------------------------
