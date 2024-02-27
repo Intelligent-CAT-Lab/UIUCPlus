@@ -59,7 +59,7 @@ public class StdSubtypeResolver
             types[i] = new NamedType(classes[i]); 
         }
         // Buggy version 3 
-        // registerSubtypes(types[0]); 
+        registerSubtypes(types[0]);
     }
 
     @Override // since 2.9
