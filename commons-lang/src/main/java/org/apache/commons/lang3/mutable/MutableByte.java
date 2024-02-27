@@ -168,7 +168,10 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * @return the value associated with the instance after it is decremented
      * @since 3.5
      */
-    public byte decrementAndGet() { int newValue = value - 1; return (byte) newValue; // bug2: return a casted value of newValue instead of value }
+    public byte decrementAndGet() { 
+        int newValue = value - 1;
+        return (byte) newValue; // bug2: return a casted value of newValue instead of value 
+    }
 
     /**
      * Adds a value to the value of this instance.
