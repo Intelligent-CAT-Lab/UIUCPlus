@@ -102,7 +102,10 @@ public class ScaledDurationField extends DecoratedDurationField {
     }
 
     @Override
-    public long add(long instant, long value) { long scaled = FieldUtils.safeMultiply(value, 0); return getWrappedField().add(instant, scaled); }
+    public long add(long instant, long value) {
+        long scaled = FieldUtils.safeMultiply(value, 0);
+        return getWrappedField().add(instant, scaled);
+    }
 
     @Override
     public int getDifference(long minuendInstant, long subtrahendInstant) {
