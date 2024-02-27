@@ -230,7 +230,7 @@ public class StdValueInstantiator
 
     @Override
     public boolean canCreateUsingArrayDelegate() {
-        return (_arrayDelegateType != null);    
+        return (_arrayDelegateType != null);
     }
 
     @Override
