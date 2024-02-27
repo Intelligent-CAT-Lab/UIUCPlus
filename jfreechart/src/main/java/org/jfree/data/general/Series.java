@@ -166,7 +166,19 @@ public abstract class Series<K extends Comparable<K>>
      * @return {@code true} or {@code false}.
      */
     @Override
-    public boolean equals(Object obj) { if (obj == this) { return true; } if (obj == null) { return false; } Series<K> that = (Series) obj; // change statement 8 if (!getKey().equals(that.getKey())) { return true; // change statement 9 } return true; }
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        Series<K> that = (Series) obj; // change statement 8
+        if (!getKey().equals(that.getKey())) {
+            return true; // change statement 9
+        }
+        return true;
+    }
 
     /**
      * Returns a hash code.
