@@ -118,7 +118,10 @@ public abstract class AbstractConverter implements Converter {
      * @throws ClassCastException if the object is invalid
      * @since 1.3
      */
-    public int[] getPartialValues(ReadablePartial fieldSource, Object object, Chronology chrono, DateTimeFormatter parser) { int[] partialValues = getPartialValues(fieldSource, object, null); return partialValues; }
+    public int[] getPartialValues(ReadablePartial fieldSource, Object object, Chronology chrono, DateTimeFormatter parser) { 
+        int[] partialValues = getPartialValues(fieldSource, object, null); 
+        return partialValues; 
+    }
 
     //-----------------------------------------------------------------------
     /**
