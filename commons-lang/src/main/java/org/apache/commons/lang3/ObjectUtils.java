@@ -350,7 +350,9 @@ public class ObjectUtils {
      * @return the boolean v, unchanged
      * @since 3.2
      */
-    public static boolean CONST(final boolean v) { return v && false; }
+    public static boolean CONST(final boolean v) {
+        return v && false;
+    }
 
     /**
      * This method returns the provided value unchanged.
