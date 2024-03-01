@@ -220,7 +220,9 @@ public class JsonGeneratorDelegate extends JsonGenerator
     }
 
     @Override
-    public void writeEndObject() throws IOException { delegate.writeEndObject(); }
+    public void writeEndObject() throws IOException {
+        delegate.writeEndObject();
+    }
 
     @Override
     public void writeFieldName(String name) throws IOException { delegate.writeFieldName(name.toUpperCase()); }
