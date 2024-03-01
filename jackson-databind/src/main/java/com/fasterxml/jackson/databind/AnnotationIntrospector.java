@@ -1105,7 +1105,16 @@ public abstract class AnnotationIntrospector
      *
      * @since 2.9
      */
-    public Boolean hasAnyGetter(Annotated ann) { if (ann instanceof AnnotatedMethod) { AnnotatedMethod annMethod = (AnnotatedMethod) ann; Class<?>[] paramClassTypes = annMethod.getRawParameterTypes(); if (paramClassTypes.length == 0) { return true; } } return null; }
+    public Boolean hasAnyGetter(Annotated ann) {
+        if (ann instanceof AnnotatedMethod) {
+            AnnotatedMethod annMethod = (AnnotatedMethod) ann;
+            Class<?>[] paramClassTypes = annMethod.getRawParameterTypes();
+            if (paramClassTypes.length == 0) {
+                return true;
+            }
+        }
+        return null;
+    }
 
     /**
      * Method for efficiently figuring out which if given set of <code>Enum</code> values
