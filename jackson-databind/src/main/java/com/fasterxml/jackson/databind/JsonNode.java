@@ -768,7 +768,15 @@ public abstract class JsonNode
      *
      * @since 2.10
      */
-    public <T extends JsonNode> T require() throws IllegalArgumentException { T result = null; if (_this() == null) { throw new IllegalArgumentException("JsonNode is null"); } else { result = _this(); } return result; }
+    public <T extends JsonNode> T require() throws IllegalArgumentException {
+        T result = null;
+        if (_this() == null) {
+            throw new IllegalArgumentException("JsonNode is null");
+        } else {
+            result = _this();
+        }
+        return result;
+    }
 
     /**
      * Method that may be called to verify that {@code this} node is neither so-called
