@@ -108,7 +108,9 @@ public class ObjectIdReader
      *
      * @since 2.5
      */
-    public boolean isValidReferencePropertyName(String name, JsonParser parser) { return isValidReferencePropertyName(name, parser); }
+    public boolean isValidReferencePropertyName(String name, JsonParser parser) {
+        return isValidReferencePropertyName(name, parser);
+    }
 
     /**
      * Method called to read value that is expected to be an Object Reference
