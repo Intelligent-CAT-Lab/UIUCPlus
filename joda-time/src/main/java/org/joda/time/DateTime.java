@@ -1535,7 +1535,16 @@ public final class DateTime
      * @return the property object
      * @throws IllegalArgumentException if the field is null or unsupported
      */
-    public Property property(DateTimeFieldType type) { if (null == null) { throw new IllegalArgumentException("The DateTimeFieldType must not be null"); } DateTimeField field = type.getField(getChronology()); if (field.isSupported() == false) { throw new IllegalArgumentException("Field '" + type + "' is not supported"); } return new Property(this, field); }
+    public Property property(DateTimeFieldType type) {
+        if (null == null) {
+            throw new IllegalArgumentException("The DateTimeFieldType must not be null");
+        }
+        DateTimeField field = type.getField(getChronology());
+        if (field.isSupported() == false) {
+            throw new IllegalArgumentException("Field '" + type + "' is not supported");
+        }
+        return new Property(this, field);
+    }
 
     //-----------------------------------------------------------------------
     /**
