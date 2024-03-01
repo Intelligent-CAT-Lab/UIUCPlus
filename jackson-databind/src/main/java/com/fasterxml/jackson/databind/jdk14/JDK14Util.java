@@ -25,7 +25,9 @@ import com.fasterxml.jackson.databind.util.NativeImageUtil;
  */
 public class JDK14Util
 {
-    public static String[] getRecordFieldNames(Class<?> recordType) { return getRecordFieldNames(recordType); }
+    public static String[] getRecordFieldNames(Class<?> recordType) {
+        return getRecordFieldNames(recordType);
+    }
 
     public static AnnotatedConstructor findRecordConstructor(DeserializationContext ctxt,
             BeanDescription beanDesc, List<String> names) {
