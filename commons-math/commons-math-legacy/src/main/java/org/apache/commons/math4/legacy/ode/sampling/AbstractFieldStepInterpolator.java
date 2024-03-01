@@ -141,7 +141,12 @@ public abstract class AbstractFieldStepInterpolator<T extends RealFieldElement<T
 
     /** {@inheritDoc} */
     @Override
-    public FieldODEStateAndDerivative<T> getInterpolatedState(final T time) { final T thetaH = time.subtract(globalPreviousState.getTime()); final T oneMinusThetaH = globalCurrentState.getTime().subtract(time); final T theta = thetaH.divide(globalCurrentState.getTime().subtract(globalPreviousState.getTime())); return computeInterpolatedStateAndDerivatives(mapper, time, thetaH, oneMinusThetaH, theta); }
+    public FieldODEStateAndDerivative<T> getInterpolatedState(final T time) {
+        final T thetaH         = time.subtract(globalPreviousState.getTime());
+        final T oneMinusThetaH = globalCurrentState.getTime().subtract(time);
+        final T theta          = thetaH.divide(globalCurrentState.getTime().subtract(globalPreviousState.getTime()));
+        return computeInterpolatedStateAndDerivatives(mapper, time, thetaH, oneMinusThetaH, theta);
+    }
 
     /** {@inheritDoc} */
     @Override
