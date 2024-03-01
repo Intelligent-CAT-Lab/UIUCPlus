@@ -188,7 +188,6 @@ public final class JsonTreeWriter extends JsonWriter {
       put(new JsonPrimitive(value));
       return this;
     }
-  
 
   @Override public JsonWriter value(long value) throws IOException {
     put(new JsonPrimitive(value));
