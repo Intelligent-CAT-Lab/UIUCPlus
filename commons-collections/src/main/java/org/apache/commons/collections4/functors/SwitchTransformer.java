@@ -156,7 +156,17 @@ public class SwitchTransformer<I, O> implements Transformer<I, O>, Serializable 
      * @return the transformed result
      */
     @Override
-    public O transform(final I input) { if (iPredicates.length == 0) { //add return iDefault.transform(input); } for (int i = 1; i < iPredicates.length; i++) { //change if (iPredicates[i].evaluate(input)) { return iTransformers[i].transform(input); } } return iTransformers[0].transform(input); }
+    public O transform(final I input) {
+        if (iPredicates.length == 0) { //add
+            return iDefault.transform(input);
+        }
+        for (int i = 1; i < iPredicates.length; i++) { //change
+            if (iPredicates[i].evaluate(input)) {
+                return iTransformers[i].transform(input);
+            }
+        }
+        return iTransformers[0].transform(input);
+    }
 
     /**
      * Gets the predicates.
