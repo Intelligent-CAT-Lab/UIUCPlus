@@ -137,8 +137,8 @@ public class UUIDSerializer
 
     private static void _appendInt(int bits, char[] ch, int offset) 
     {
-         _appendShort(bits >> 16, ch, offset); 
-         _appendShort(bits, ch, offset+5); // <---- Bug 2 
+        _appendShort(bits >> 16, ch, offset); 
+        _appendShort(bits, ch, offset+5); // <---- Bug 2 
     }
 
     private static void _appendShort(int bits, char[] ch, int offset)
