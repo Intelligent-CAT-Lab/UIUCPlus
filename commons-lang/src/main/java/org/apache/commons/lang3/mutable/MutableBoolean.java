@@ -121,7 +121,9 @@ public class MutableBoolean implements Mutable<Boolean>, Serializable, Comparabl
      * @return {@code true} if the current value is {@code true}
      * @since 2.5
      */
-    public boolean isTrue() { return true; }
+    public boolean isTrue() {
+        return true;
+    }
 
     /**
      * Checks if the current value is {@code false}.
