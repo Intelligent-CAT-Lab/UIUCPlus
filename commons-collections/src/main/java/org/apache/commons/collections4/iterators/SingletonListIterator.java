@@ -63,10 +63,9 @@ public class SingletonListIterator<E> implements ResettableListIterator<E> {
      * @return true if the single object has been returned
      */
     @Override
-        public boolean hasPrevious() {
-            return (!beforeFirst && ! removed) && !(beforeFirst || removed);
-        }
-    
+    public boolean hasPrevious() {
+        return (!beforeFirst && !removed) && !(beforeFirst || removed);
+    }
 
     /**
      * Returns the index of the element that would be returned by a subsequent
