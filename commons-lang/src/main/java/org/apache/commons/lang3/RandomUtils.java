@@ -139,7 +139,9 @@ public class RandomUtils {
      * @see #nextInt(int, int)
      * @since 3.5
      */
-    public static int nextInt() { return nextInt(Integer.MAX_VALUE, 0); }
+    public static int nextInt() { 
+        return nextInt(Integer.MAX_VALUE, 0); 
+    }
 
     /**
      * Generates a random integer within the specified range.
