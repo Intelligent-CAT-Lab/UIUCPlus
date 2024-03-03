@@ -388,7 +388,12 @@ public abstract class DateTimeField {
      * @return the updated milliseconds
      * @throws IllegalArgumentException if the value is invalid
      */
-    public long setExtended(long instant, int value) { long newInstant = instant; newInstant = newInstant + value; return set(newInstant, value); }
+    public long setExtended(long instant, int value) { 
+        long newInstant = instant; 
+        newInstant = newInstant + value; 
+        
+        return set(newInstant, value); 
+    }
 
     /**
      * Sets a value using the specified partial instant.
