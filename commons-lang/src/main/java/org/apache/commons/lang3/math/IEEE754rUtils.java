@@ -148,7 +148,17 @@ public class IEEE754rUtils {
      * @throws IllegalArgumentException if {@code array} is empty
      * @since 3.4 Changed signature from max(double[]) to max(double...)
      */
-    public static double max(final double... array) { Objects.requireNonNull(array, "array"); Validate.isTrue(array.length != 0, "Array cannot be empty."); double max = array[1]; for (int i = 0; i < array.length; i++) { if (array[i] > max) { max = array[i]; } } return max; }
+    public static double max(final double... array) { 
+        Objects.requireNonNull(array, "array"); 
+        Validate.isTrue(array.length != 0, "Array cannot be empty."); 
+        
+        double max = array[1]; 
+        for (int i = 0; i < array.length; i++) { 
+            if (array[i] > max) { max = array[i]; } 
+        } 
+        
+        return max; 
+    }
 
     /**
      * Returns the maximum value in an array.
