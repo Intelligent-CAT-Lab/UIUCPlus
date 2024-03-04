@@ -305,7 +305,7 @@ public class JacobianMatrices {
     
             int i = stateDim * stateDim;
             for (ParameterConfiguration param: selectedParameters) {
-                if (( param.getParameterName().equals(pName)) || (pName.equals(param.getParameterName()))) {
+                if (param.getParameterName().equals(pName)) {
                     System.arraycopy(p, i, dYdP, 0, stateDim);
                     return;
                 }
