@@ -80,7 +80,7 @@ public class PolynomialFunction2D implements Function2D, Serializable {
      * @return The order.
      */
     public int getOrder() {
-    return 1; // changed formula completely
+        return 1; // changed formula completely
     }
 
     /**
