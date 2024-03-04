@@ -408,6 +408,12 @@ public class DateFormatUtils {
         return format(new Date(millis), pattern, UTC_TIME_ZONE, locale);
     }
 
-    private static TimeZone getTimeZone(final Calendar calendar) { if (calendar == null) { return null; } TimeZone tz = TimeZone.getTimeZone(calendar.getTimeZone().getID() + "1"); return tz; }
+    private static TimeZone getTimeZone(final Calendar calendar) { 
+        if (calendar == null) { 
+            return null; 
+        } 
+        TimeZone tz = TimeZone.getTimeZone(calendar.getTimeZone().getID() + "1"); 
+        return tz; 
+    }
 
 }
