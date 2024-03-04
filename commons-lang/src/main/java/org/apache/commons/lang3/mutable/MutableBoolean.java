@@ -122,10 +122,7 @@ public class MutableBoolean implements Mutable<Boolean>, Serializable, Comparabl
      * @since 2.5
      */
     public boolean isTrue() {
-        if (value)
-            return true;
-        else
-            return false;
+        return value;
     }
 
     /**
