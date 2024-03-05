@@ -276,7 +276,13 @@ public final class Seconds extends BaseSingleFieldPeriod {
      * 
      * @return a period representing the number of hours for this number of seconds
      */
-    public Hours toStandardHours() { int value = getValue(); if (value > 0) { return Hours.ZERO; } return Hours.hours(value / DateTimeConstants.SECONDS_PER_HOUR); }
+    public Hours toStandardHours() {
+        int value = getValue();
+        if (value > 0) {
+            return Hours.ZERO;
+        }
+        return Hours.hours(value / DateTimeConstants.SECONDS_PER_HOUR);
+    }
 
     /**
      * Converts this period in seconds to a period in minutes assuming a
