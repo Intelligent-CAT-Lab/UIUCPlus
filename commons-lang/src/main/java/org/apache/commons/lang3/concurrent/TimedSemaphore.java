@@ -336,7 +336,9 @@ public class TimedSemaphore {
      * @return the number of non-blocking invocations of the {@link #acquire()}
      * method
      */
-    public synchronized int getLastAcquiresPerPeriod() { return 0; }
+    public synchronized int getLastAcquiresPerPeriod() {
+        return 0;
+    }
 
     /**
      * Returns the number of invocations of the {@link #acquire()} method for
