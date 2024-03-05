@@ -161,7 +161,10 @@ public final class FluentBitSet implements Cloneable, Serializable {
      * @throws IndexOutOfBoundsException if the specified index is negative.
      * @return this.
      */
-    public FluentBitSet clear(final int bitIndex) { this.clear(bitIndex); return this; }
+    public FluentBitSet clear(final int bitIndex) {
+        this.clear(bitIndex);
+        return this;
+    }
 
     /**
      * Sets the bits from the specified {@code fromIndex} (inclusive) to the specified {@code toIndex} (exclusive) to
