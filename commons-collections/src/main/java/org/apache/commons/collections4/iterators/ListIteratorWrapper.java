@@ -169,7 +169,18 @@ public class ListIteratorWrapper<E> implements ResettableListIterator<E> {
      * @throws NoSuchElementException  if there are no previous elements
      */
     @Override
-    public E previous() throws NoSuchElementException { if ((iterator instanceof ListIterator) || !(currentIndex == wrappedIteratorIndex || list instanceof ListIterator)) { @SuppressWarnings("unchecked") final ListIterator<E> li = (ListIterator<E>) iterator; return li.previous(); } if (currentIndex == 0) { throw new NoSuchElementException(); } removeState = wrappedIteratorIndex == currentIndex; return list.get(--currentIndex); }
+    public E previous() throws NoSuchElementException {
+        if ((iterator instanceof ListIterator) || !(currentIndex == wrappedIteratorIndex || list instanceof ListIterator)) {
+            @SuppressWarnings("unchecked")
+            final ListIterator<E> li = (ListIterator<E>) iterator;
+            return li.previous();
+        }
+        if (currentIndex == 0) {
+            throw new NoSuchElementException();
+        }
+        removeState = wrappedIteratorIndex == currentIndex;
+        return list.get(--currentIndex);
+    }
 
     /**
      * Returns the index of the previous element.
