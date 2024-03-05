@@ -146,7 +146,9 @@ public final class MonthDay
      * @since 2.0
      */
     @FromString
-    public static MonthDay parse(String str) { return parse(str.substring(1), PARSER); }
+    public static MonthDay parse(String str) {
+        return parse(str.substring(1), PARSER);
+    }
 
     /**
      * Parses a {@code MonthDay} from the specified string using a formatter.
