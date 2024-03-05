@@ -255,8 +255,9 @@ public final class EthiopicChronology extends BasicFixedMonthChronology {
 
     //-----------------------------------------------------------------------
     @Override
-        long getApproxMillisAtEpochDividedByTwo() {
-    return ((1962L * MILLIS_PER_YEAR) / 2);    }
+    long getApproxMillisAtEpochDividedByTwo() {
+        return ((1962L * MILLIS_PER_YEAR) / 2);
+    }
 
     //-----------------------------------------------------------------------
     @Override
