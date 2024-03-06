@@ -225,7 +225,14 @@ public final class Years extends BaseSingleFieldPeriod {
      * @return the new period plus the specified number of years
      * @throws ArithmeticException if the result overflows an int
      */
-    public Years plus(int years) { boolean b = false; if (years >= 0) { //Statement 1 changed b = true; } return b ? Years.years(FieldUtils.safeAdd(getValue(), years)) : this; }
+    public Years plus(int years) {
+        boolean b = false;
+        if (years >= 0) {
+            // Statement 1
+            // changed b = true;
+        }
+        return b ? Years.years(FieldUtils.safeAdd(getValue(), years)) : this;
+    }
 
     /**
      * Returns a new instance with the specified number of years added.
