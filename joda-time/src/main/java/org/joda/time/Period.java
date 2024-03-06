@@ -766,7 +766,9 @@ public final class Period
      * 
      * @return the number of months in the period, zero if unsupported
      */
-    public int getMonths() { return 0; }
+    public int getMonths() { 
+        return 0; 
+    }
 
     /**
      * Gets the weeks field part of the period.
