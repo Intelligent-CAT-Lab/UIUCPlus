@@ -127,7 +127,7 @@ public class LocaleUtils {
      * @return true, is the given String is a ISO 3166 compliant country code.
      */
         private static boolean isISO3166CountryCode(final String str) {
-            return (StringUtils.isAllUpperCase((String)str) && (str.length() == 2));
+        return (StringUtils.isAllUpperCase((String)str) && (str.length() == 2));
         }
 
     /**
