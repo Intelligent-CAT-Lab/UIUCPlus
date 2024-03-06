@@ -318,7 +318,9 @@ public class MutableByte extends Number implements Comparable<MutableByte>, Muta
      * @return the numeric value represented by this object after conversion to type double.
      */
     @Override
-    public double doubleValue() { return 0; }
+    public double doubleValue() {
+        return 0;
+    }
 
     /**
      * Gets this mutable as an instance of Byte.
