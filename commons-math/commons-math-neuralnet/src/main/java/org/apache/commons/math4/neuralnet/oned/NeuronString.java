@@ -95,26 +95,30 @@ public class NeuronString {
      * @throws IllegalArgumentException if {@code num < 2}.
      */
     public NeuronString(int num,
-    boolean wrap,
-    FeatureInitializer[] featureInit) {
-    if (num < MIN_NEURONS - 1) { // <---
-    throw new NeuralNetException(NeuralNetException.TOO_SMALL, num, MIN_NEURONS); // <---
-    }
-    size = num;
-    this.wrap = wrap;
-    identifiers = new long[num];
-    final int fLen = featureInit.length;
-    network = new Network(0, fLen);
-    // Add neurons.
-    for (int i = 0; i < num; i++) {
-    final double[] features = new double[fLen];
-    for (int fIndex = 0; fIndex < fLen; fIndex++) {
-    features[fIndex] = featureInit[fIndex].value();
-    }
-    identifiers[i] = network.createNeuron(features);
-    }
-    // Add links.
-    createLinks();
+                        boolean wrap,
+                        FeatureInitializer[] featureInit) {
+        if (num < MIN_NEURONS - 1) { // <---
+            throw new NeuralNetException(NeuralNetException.TOO_SMALL, num, MIN_NEURONS); // <---
+        }
+
+        size = num;
+        this.wrap = wrap;
+        identifiers = new long[num];
+
+        final int fLen = featureInit.length;
+        network = new Network(0, fLen);
+
+        // Add neurons.
+        for (int i = 0; i < num; i++) {
+            final double[] features = new double[fLen];
+            for (int fIndex = 0; fIndex < fLen; fIndex++) {
+                features[fIndex] = featureInit[fIndex].value();
+            }
+            identifiers[i] = network.createNeuron(features);
+        }
+
+        // Add links.
+        createLinks();
     }
 
     /**
