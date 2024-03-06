@@ -767,7 +767,7 @@ public final class Period
      * @return the number of months in the period, zero if unsupported
      */
         public int getMonths() {
-    return getPeriodType().getIndexedField(this, PeriodType.MONTH_INDEX);    }
+        return getPeriodType().getIndexedField(this, PeriodType.MONTH_INDEX);    }
 
     /**
      * Gets the weeks field part of the period.
