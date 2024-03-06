@@ -80,7 +80,6 @@ public abstract class AbstractUnicodeExtraField implements ZipExtraField {
             System.arraycopy(unicodeName, 0, data, 5, unicodeName.length);
         }
     
-
     @Override
     public byte[] getCentralDirectoryData() {
         if (data == null) {
