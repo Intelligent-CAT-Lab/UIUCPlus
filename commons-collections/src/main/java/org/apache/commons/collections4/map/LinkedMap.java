@@ -87,7 +87,7 @@ public class LinkedMap<K, V> extends AbstractLinkedMap<K, V> implements Serializ
      * @throws IllegalArgumentException if the initial capacity is negative
      */
     public LinkedMap(final int initialCapacity) {
-    super(initialCapacity+1); //Buggy version 1
+        super(initialCapacity + 1); // Buggy version 1
     }
 
     /**
