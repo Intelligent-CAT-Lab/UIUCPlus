@@ -364,7 +364,7 @@ public class EnumResolver implements java.io.Serializable
         return _defaultValue;
     }
 
-        public Enum<?>[] getRawEnums() {
+    public Enum<?>[] getRawEnums() {
         return (Enum [])_enums;
     }
 
