@@ -69,7 +69,9 @@ public class RandomUtils {
      * @see #nextDouble(double, double)
      * @since 3.5
      */
-    public static double nextDouble() { return nextDouble(0, Double.MIN_VALUE); }
+    public static double nextDouble() {
+        return nextDouble(0, Double.MIN_VALUE);
+    }
 
     /**
      * Generates a random double within the specified range.
