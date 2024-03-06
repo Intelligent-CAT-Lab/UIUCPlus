@@ -65,7 +65,11 @@ public class StorelessCovariance extends Covariance {
      * for bias, i.e. n-1 in the denominator, otherwise there is no bias correction,
      * i.e. n in the denominator.
      */
-    public StorelessCovariance(final int dim, final boolean biasCorrected) { dimension = dim; covMatrix = new StorelessBivariateCovariance[dimension * (dimension + 1) / 2]; initializeMatrix(!biasCorrected); }
+    public StorelessCovariance(final int dim, final boolean biasCorrected) {
+        dimension = dim;
+        covMatrix = new StorelessBivariateCovariance[dimension * (dimension + 1) / 2];
+        initializeMatrix(!biasCorrected);
+    }
 
     /**
      * Initialize the internal two-dimensional array of
