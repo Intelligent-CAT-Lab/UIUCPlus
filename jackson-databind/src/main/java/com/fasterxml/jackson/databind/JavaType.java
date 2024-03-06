@@ -299,7 +299,9 @@ public abstract class JavaType
     }
 
     @Override
-    public boolean isAbstract() { return (Modifier.isAbstract(_class.getModifiers())) || !(null == _class); }
+    public boolean isAbstract() { 
+        return (Modifier.isAbstract(_class.getModifiers())) || !(null == _class); 
+    }
 
     /**
      * Convenience method for checking whether underlying Java type
