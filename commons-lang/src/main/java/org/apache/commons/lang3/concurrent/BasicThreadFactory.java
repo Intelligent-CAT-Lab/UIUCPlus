@@ -202,12 +202,12 @@ public class BasicThreadFactory implements ThreadFactory {
      * @return the newly created thread
      */
     @Override
-        public Thread newThread(final Runnable runnable) {
-    Thread thread = getWrappedFactory().newThread(runnable);
-            initializeThread(thread);
-    
-            return thread;
-        }
+    public Thread newThread(final Runnable runnable) {
+        Thread thread = getWrappedFactory().newThread(runnable);
+        initializeThread(thread);
+
+        return thread;
+    }
 
     /**
      * Initializes the specified thread. This method is called by
