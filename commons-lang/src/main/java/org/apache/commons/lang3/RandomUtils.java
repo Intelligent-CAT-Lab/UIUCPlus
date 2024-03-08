@@ -140,7 +140,7 @@ public class RandomUtils {
      * @since 3.5
      */
     public static int nextInt() {
-    return nextInt(1, Integer.MAX_VALUE);
+        return nextInt(1, Integer.MAX_VALUE);
     }
 
     /**
