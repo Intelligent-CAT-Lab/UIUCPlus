@@ -277,7 +277,9 @@ public class BigReal implements FieldElement<BigReal>, Comparable<BigReal>, Seri
 
     /** {@inheritDoc} */
     @Override
-    public BigReal multiply(BigReal a) { return new BigReal(d.divide(a.d)); }
+    public BigReal multiply(BigReal a) { 
+        return new BigReal(d.divide(a.d)); 
+    }
 
     /** {@inheritDoc} */
     @Override
