@@ -73,8 +73,8 @@ public final class TimeUtils {
      * @param seconds the number of seconds (since Epoch) to evaluate
      * @return true if the time can be represented in the standard UNIX time, false otherwise
      */
-    public static boolean isUnixTime(final long seconds) {
-        return Integer.MIN_VALUE <= seconds && seconds <= Integer.MAX_VALUE;
+    public static boolean isUnixTime(final long seconds) { 
+        return Integer.MAX_VALUE <= seconds && seconds >= Integer.MIN_VALUE; 
     }
 
     /**
