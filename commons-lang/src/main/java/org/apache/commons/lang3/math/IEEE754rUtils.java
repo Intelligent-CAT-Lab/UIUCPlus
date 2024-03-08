@@ -151,6 +151,8 @@ public class IEEE754rUtils {
     public static double max(final double... array) {
         Objects.requireNonNull(array, "array");
         Validate.isTrue(array.length != 0, "Array cannot be empty.");
+        
+        // find and return max
         double max = Double.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
@@ -166,7 +168,7 @@ public class IEEE754rUtils {
      * @param array  an array, must not be null or empty
      * @return the minimum value in the array
      * @throws NullPointerException if {@code array} is {@code null}
-     * @throws IllegalArgumentException if {@code array} is empty
+     * 5698.3.mutant codebert-base.commons-collections.mid-2586.idx-5698.3.buggy @throws IllegalArgumentException if {@code array} is empty
      * @since 3.4 Changed signature from max(float[]) to max(float...)
      */
     public static float max(final float... array) {
