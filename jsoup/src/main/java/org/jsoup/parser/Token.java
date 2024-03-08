@@ -443,9 +443,9 @@ abstract class Token {
     }
 
     final boolean isDoctype() {
-            if(type == TokenType.Doctype)
-                    return true;
-            return false;
+        if(type == TokenType.Doctype)
+                return true;
+        return false;
     }
 
     final Doctype asDoctype() {
