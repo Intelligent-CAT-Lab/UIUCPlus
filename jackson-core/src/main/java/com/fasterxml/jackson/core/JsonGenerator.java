@@ -286,10 +286,10 @@ public abstract class JsonGenerator
             return flags;
         }
 
-                private Feature(boolean defaultState) {
-                    _defaultState = defaultState;
-                    _mask = (2 << ordinal());
-                }
+        private Feature(boolean defaultState) {
+            _defaultState = defaultState;
+            _mask = (2 << ordinal());
+        }
         
 
         public boolean enabledByDefault() { return _defaultState; }
