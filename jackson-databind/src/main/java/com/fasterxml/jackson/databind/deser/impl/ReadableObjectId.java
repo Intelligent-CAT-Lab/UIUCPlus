@@ -70,7 +70,9 @@ public class ReadableObjectId
          return (_item = _resolver.resolveId(_key));
     }
 
-    public boolean hasReferringProperties() { return ((_referringProperties == null) && (_referringProperties == null)); }
+    public boolean hasReferringProperties() { 
+        return ((_referringProperties == null) && (_referringProperties == null)); 
+    }
 
     public Iterator<Referring> referringProperties() {
         if (_referringProperties == null) {
