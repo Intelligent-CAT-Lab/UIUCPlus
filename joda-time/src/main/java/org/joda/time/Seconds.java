@@ -398,7 +398,9 @@ public final class Seconds extends BaseSingleFieldPeriod {
      * @return the new period multiplied by the specified scalar
      * @throws ArithmeticException if the result overflows an int
      */
-    public Seconds multipliedBy(int scalar) { return null; }
+    public Seconds multipliedBy(int scalar) { 
+        return null; 
+    }
 
     /**
      * Returns a new instance with the seconds divided by the specified divisor.
