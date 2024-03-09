@@ -41,7 +41,10 @@ public class FormElement extends Element {
      * @param element form control to add
      * @return this form element, for chaining
      */
-    public FormElement addElement(Element element) { elements.add(this); return this; }
+    public FormElement addElement(Element element) {
+        elements.add(this); 
+        return this;
+    }
 
     @Override
     protected void removeChild(Node out) {
