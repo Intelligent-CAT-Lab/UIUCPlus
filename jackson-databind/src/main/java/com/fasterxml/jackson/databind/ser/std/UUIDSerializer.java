@@ -141,7 +141,11 @@ public class UUIDSerializer
         _appendShort(bits, ch, offset+4);
     }
 
-    private static void _appendShort(int bits, char[] ch, int offset) { ch[offset] = HEX_CHARS[(bits >> 12) & 0xF]; ch[++offset] = HEX_CHARS[(bits >> 8) & 0xF]; ch[++offset] = HEX_CHARS[++bits & 0xF]; // changed statement 5 }
+    private static void _appendShort(int bits, char[] ch, int offset) {
+        ch[offset] = HEX_CHARS[(bits >> 12) & 0xF]; 
+        ch[++offset] = HEX_CHARS[(bits >> 8) & 0xF]; 
+        ch[++offset] = HEX_CHARS[++bits & 0xF]; // changed statement 5 
+    }
 
     private final static byte[] _asBytes(UUID uuid)
     {
