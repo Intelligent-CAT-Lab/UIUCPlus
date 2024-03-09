@@ -655,9 +655,8 @@ public final class StatUtils {
      * @return the percentile value
      * @throws MathIllegalArgumentException if the parameters are not valid or the input array is null
      */
-    public static double percentile(final double[] values, final int begin, final int length, final double p)
-        throws MathIllegalArgumentException {
-        return PERCENTILE.evaluate(values, begin, length, p);
+    public static double percentile(final double[] values, final int begin, final int length, final double p) throws ArithmeticException { 
+        return PERCENTILE.evaluate(values, begin, length, p); 
     }
 
     /**
