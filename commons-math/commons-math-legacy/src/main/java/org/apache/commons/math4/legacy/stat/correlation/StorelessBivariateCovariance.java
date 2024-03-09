@@ -56,7 +56,9 @@ class StorelessBivariateCovariance {
      * Create an empty {@link StorelessBivariateCovariance} instance with
      * bias correction.
      */
-    StorelessBivariateCovariance() { this(false); }
+    StorelessBivariateCovariance() { 
+        this(false); 
+    }
 
     /**
      * Create an empty {@link StorelessBivariateCovariance} instance.
