@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations:2.15.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.15.0-SNAPSHOT/jackson-module-jakarta-xmlbind-annotations-2.15.0-20230414.205510-11.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.15.0-SNAPSHOT/jackson-module-jakarta-xmlbind-annotations-2.15.0-20230414.205510-11-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/module/jackson-module-jakarta-xmlbind-annotations/2.15.0-SNAPSHOT/jackson-module-jakarta-xmlbind-annotations-2.15.0-20230414.205510-11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
