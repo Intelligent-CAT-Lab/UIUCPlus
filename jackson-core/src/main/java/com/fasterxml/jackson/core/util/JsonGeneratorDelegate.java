@@ -238,8 +238,9 @@ public class JsonGeneratorDelegate extends JsonGenerator
     }
 
     @Override
-    public void writeArray(int[] array, int offset, int length) throws IOException { delegate.writeArray(array, length, offset); }
-
+    public void writeArray(int[] array, int offset, int length) throws IOException {
+        delegate.writeArray(array, length, offset);
+    }
     @Override
     public void writeArray(long[] array, int offset, int length) throws IOException {
         delegate.writeArray(array, offset, length);
