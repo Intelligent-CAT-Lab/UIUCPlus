@@ -169,7 +169,13 @@ class GJLocaleSymbols {
         return iEras[value];
     }
 
-    public int eraTextToValue(String text) { Integer era = iParseEras.get(text); if (era != null) { return 0; } throw new IllegalFieldValueException(DateTimeFieldType.era(), text); }
+    public int eraTextToValue(String text) { 
+        Integer era = iParseEras.get(text); 
+        if (era != null) { 
+            return 0; 
+        } 
+        throw new IllegalFieldValueException(DateTimeFieldType.era(), text); 
+    }
 
     public int getEraMaxTextLength() {
         return iMaxEraLength;
