@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/UIUCPlus.iml" filepath="$PROJECT_DIR$/.idea/UIUCPlus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-cli/commons-cli.iml" filepath="$PROJECT_DIR$/commons-cli/commons-cli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-codec/commons-codec.iml" filepath="$PROJECT_DIR$/commons-codec/commons-codec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-collections/commons-collections4.iml" filepath="$PROJECT_DIR$/commons-collections/commons-collections4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-compress/commons-compress.iml" filepath="$PROJECT_DIR$/commons-compress/commons-compress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-csv/commons-csv.iml" filepath="$PROJECT_DIR$/commons-csv/commons-csv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-jxpath/commons-jxpath.iml" filepath="$PROJECT_DIR$/commons-jxpath/commons-jxpath.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-lang/commons-lang3.iml" filepath="$PROJECT_DIR$/commons-lang/commons-lang3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-docs/commons-math-docs.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-docs/commons-math-docs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-examples/commons-math-examples.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-examples/commons-math-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-parent.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-core/commons-math4-core.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-core/commons-math4-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-legacy/commons-math4-legacy.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-legacy/commons-math4-legacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-legacy-core/commons-math4-legacy-core.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-legacy-core/commons-math4-legacy-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-legacy-exception/commons-math4-legacy-exception.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-legacy-exception/commons-math4-legacy-exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-neuralnet/commons-math4-neuralnet.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-neuralnet/commons-math4-neuralnet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-transform/commons-math4-transform.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-transform/commons-math4-transform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-examples/examples-kmeans/examples-kmeans.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-examples/examples-kmeans/examples-kmeans.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-examples/examples-kmeans/image/examples-kmeans-image.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-examples/examples-kmeans/image/examples-kmeans-image.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-examples/examples-sofm/examples-sofm.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-examples/examples-sofm/examples-sofm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-examples/examples-sofm/chinese-rings/examples-sofm-chinese-rings.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-examples/examples-sofm/chinese-rings/examples-sofm-chinese-rings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons-math/commons-math-examples/examples-sofm/tsp/examples-sofm-tsp.iml" filepath="$PROJECT_DIR$/commons-math/commons-math-examples/examples-sofm/tsp/examples-sofm-tsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gson/gson/gson.iml" filepath="$PROJECT_DIR$/gson/gson/gson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gson/extras/gson-extras.iml" filepath="$PROJECT_DIR$/gson/extras/gson-extras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gson/metrics/gson-metrics.iml" filepath="$PROJECT_DIR$/gson/metrics/gson-metrics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gson/gson-parent.iml" filepath="$PROJECT_DIR$/gson/gson-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jackson-core/jackson-core.iml" filepath="$PROJECT_DIR$/jackson-core/jackson-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jackson-databind/jackson-databind.iml" filepath="$PROJECT_DIR$/jackson-databind/jackson-databind.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jackson-dataformat-xml/jackson-dataformat-xml.iml" filepath="$PROJECT_DIR$/jackson-dataformat-xml/jackson-dataformat-xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jfreechart/jfreechart.iml" filepath="$PROJECT_DIR$/jfreechart/jfreechart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/joda-time/joda-time.iml" filepath="$PROJECT_DIR$/joda-time/joda-time.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsoup/jsoup.iml" filepath="$PROJECT_DIR$/jsoup/jsoup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gson/proto/proto.iml" filepath="$PROJECT_DIR$/gson/proto/proto.iml" />
+    </modules>
+  </component>
+</project>

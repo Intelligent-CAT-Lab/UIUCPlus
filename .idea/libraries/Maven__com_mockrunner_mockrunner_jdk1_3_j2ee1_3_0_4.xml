@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.mockrunner:mockrunner-jdk1.3-j2ee1.3:0.4">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mockrunner/mockrunner-jdk1.3-j2ee1.3/0.4/mockrunner-jdk1.3-j2ee1.3-0.4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mockrunner/mockrunner-jdk1.3-j2ee1.3/0.4/mockrunner-jdk1.3-j2ee1.3-0.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mockrunner/mockrunner-jdk1.3-j2ee1.3/0.4/mockrunner-jdk1.3-j2ee1.3-0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
