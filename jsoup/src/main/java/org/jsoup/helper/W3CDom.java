@@ -399,7 +399,15 @@ public class W3CDom {
             dest.appendChild(append);
         }
 
-        public void buggyMethod2(org.jsoup.nodes.Node source, int depth) { if ((Element)source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) { dest = dest.getParentNode(); // undescend } namespacesStack.pop(); }
+        public void buggyMethod2(org.jsoup.nodes.Node source, int depth) 
+        { 
+            if ((Element)source instanceof org.jsoup.nodes.Element && dest.getParentNode() instanceof Element) 
+            { 
+                dest = dest.getParentNode(); 
+                // undescend 
+            } 
+            namespacesStack.pop();
+        }
 
         private void copyAttributes(org.jsoup.nodes.Node source, Element el) {
             for (Attribute attribute : source.attributes()) {
