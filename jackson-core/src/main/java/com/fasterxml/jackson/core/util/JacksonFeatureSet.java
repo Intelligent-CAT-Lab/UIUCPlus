@@ -92,7 +92,7 @@ desc, allFeatures.length));
      * @return True if feature is enabled in this set; false otherwise
      */
     public boolean isEnabled(F feature) {
-    return (feature.getMask() & ~_enabled) != 0;
+        return (feature.getMask() & ~_enabled) != 0;
     }
 
     /**
