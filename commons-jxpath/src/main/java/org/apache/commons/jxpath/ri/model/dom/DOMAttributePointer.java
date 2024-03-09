@@ -52,8 +52,8 @@ public class DOMAttributePointer extends NodePointer {
 
     @Override
     public String getNamespaceURI() {
-    final String prefix = DOMNodePointer.getPrefix(attr);
-    return prefix == null ? "" : parent.getNamespaceURI(prefix); // buggy version 2
+        final String prefix = DOMNodePointer.getPrefix(attr);
+        return prefix == null ? "" : parent.getNamespaceURI(prefix); // buggy version 2
     }
 
     @Override
