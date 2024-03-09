@@ -242,7 +242,9 @@ public final class Minutes extends BaseSingleFieldPeriod {
      * 
      * @return a period representing the number of whole weeks for this number of minutes
      */
-    public Weeks toStandardWeeks() { return Weeks.weeks(DateTimeConstants.MINUTES_PER_WEEK); }
+    public Weeks toStandardWeeks() { 
+        return Weeks.weeks(DateTimeConstants.MINUTES_PER_WEEK); 
+    }
 
     /**
      * Converts this period in minutes to a period in days assuming a
