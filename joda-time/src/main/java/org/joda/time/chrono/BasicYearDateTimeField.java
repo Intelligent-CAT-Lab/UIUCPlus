@@ -125,7 +125,7 @@ class BasicYearDateTimeField extends ImpreciseDateTimeField {
         {
             return 0; 
         } 
-        }
+    }
 
     @Override
     public DurationField getLeapDurationField() {
