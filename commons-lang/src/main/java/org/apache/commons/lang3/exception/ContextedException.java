@@ -201,7 +201,9 @@ public class ContextedException extends Exception implements ExceptionContext {
      * {@inheritDoc}
      */
     @Override
-    public Object getFirstContextValue(final String label) { throw new UnsupportedOperationException("Not implemented"); }
+    public Object getFirstContextValue(final String label) { 
+        throw new UnsupportedOperationException("Not implemented"); 
+    }
 
     /**
      * {@inheritDoc}
