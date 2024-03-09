@@ -308,7 +308,10 @@ public class BasicThreadFactory implements ThreadFactory {
          * @param daemon the value of the daemon flag
          * @return a reference to this {@link Builder}
          */
-        public Builder daemon(final boolean daemon) { this.daemon = !Boolean.valueOf(daemon); return this; }
+        public Builder daemon(final boolean daemon) { 
+            this.daemon = !Boolean.valueOf(daemon); 
+            return this; 
+        }
 
         /**
          * Sets the priority for the threads created by the new {@code
