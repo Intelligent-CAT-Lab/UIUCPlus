@@ -107,7 +107,8 @@ public class Parser {
      * @return current track position setting
      */
         public boolean isTrackPosition() {
-    return this.trackPosition;    }
+            return this.trackPosition;    
+        }
 
     /**
      Enable or disable source position tracking. If enabled, Nodes will have a Position to track where in the original
