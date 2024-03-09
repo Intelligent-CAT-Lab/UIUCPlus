@@ -267,7 +267,20 @@ public abstract class AbstractPartialFieldProperty {
      * @throws IllegalArgumentException if the instant is null or the instant
      *  doesn't support the field of this property
      */
-    public int compareTo(ReadableInstant instant) { if (instant == null) { throw new IllegalArgumentException("The instant must not be null"); } int thisValue = get(); int otherValue = instant.get(getFieldType()); if (thisValue == otherValue) { return 1; } else if (thisValue > otherValue) { return -1; } else { return 0; } }
+    public int compareTo(ReadableInstant instant) { 
+        if (instant == null) { 
+            throw new IllegalArgumentException("The instant must not be null"); 
+        } 
+        int thisValue = get(); 
+        int otherValue = instant.get(getFieldType()); 
+        if (thisValue == otherValue) { 
+            return 1; 
+        } else if (thisValue > otherValue) { 
+            return -1; 
+        } else { 
+            return 0; 
+        } 
+    }
 
     /**
      * Compare this field to the same field on another partial instant.
