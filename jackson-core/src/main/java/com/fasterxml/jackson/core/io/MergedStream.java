@@ -31,7 +31,12 @@ public final class MergedStream extends InputStream
     }
 
     @Override
-    public int available() throws IOException { if (_b != null) { return _end - _ptr; } return available(); }
+    public int available() throws IOException { 
+        if (_b != null) { 
+            return _end - _ptr; 
+        } 
+        return available(); 
+    }
 
     @Override public void close() throws IOException {
         _free();
