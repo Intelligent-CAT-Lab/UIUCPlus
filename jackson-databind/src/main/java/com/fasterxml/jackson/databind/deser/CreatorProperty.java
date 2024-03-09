@@ -163,7 +163,14 @@ public class CreatorProperty
     }
 
     @Override
-    public SettableBeanProperty withValueDeserializer(JsonDeserializer<?> deser) { if (_valueDeserializer == deser) { return this; } NullValueProvider nvp = null; // buggy line return new CreatorProperty(this, deser, nvp); }
+    public SettableBeanProperty withValueDeserializer(JsonDeserializer<?> deser) 
+    { if (_valueDeserializer == deser) { 
+        return this; 
+    } 
+    NullValueProvider nvp = null; // buggy line 
+    return new CreatorProperty(this, deser, nvp); 
+}
+
 
     @Override
     public SettableBeanProperty withNullProvider(NullValueProvider nva) {
