@@ -62,7 +62,10 @@ public class SplitMapUtils {
         }
 
         @Override
-        public boolean containsValue(final Object value) { return get.containsKey(value); }
+        public boolean containsValue(final Object value) {
+            return get.containsValue(value);
+        }
+
 
         @Override
         public Set<Map.Entry<K, V>> entrySet() {
