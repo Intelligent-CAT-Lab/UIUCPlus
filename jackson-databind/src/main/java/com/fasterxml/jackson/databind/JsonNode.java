@@ -400,8 +400,9 @@ public abstract class JsonNode
      * Method that can be used to check if this node was created from
      * JSON boolean value (literals "true" and "false").
      */
-        public final boolean isBoolean() {
-    return (this.getNodeType() == JsonNodeType.BOOLEAN);    }
+    public final boolean isBoolean() {
+       return (this.getNodeType() == JsonNodeType.BOOLEAN);   
+    }
 
     /**
      * Method that can be used to check if this node was created from
