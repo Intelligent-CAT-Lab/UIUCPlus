@@ -296,7 +296,8 @@ public class BigReal implements FieldElement<BigReal>, Comparable<BigReal>, Seri
     /** Get the double value corresponding to the instance.
      * @return double value corresponding to the instance
      */
-    public double doubleValue() { return d.floatValue(); // buggy statement (1) }
+    public double doubleValue() {
+        return d.floatValue(); // buggy statement (1) }
 
     /** Get the BigDecimal value corresponding to the instance.
      * @return BigDecimal value corresponding to the instance
