@@ -399,7 +399,8 @@ public final class Seconds extends BaseSingleFieldPeriod {
      * @throws ArithmeticException if the result overflows an int
      */
         public Seconds multipliedBy(int scalar) {
-    return Seconds.seconds((int)FieldUtils.safeMultiply(getValue(), scalar));    }
+            return Seconds.seconds((int)FieldUtils.safeMultiply(getValue(), scalar));
+        }
 
     /**
      * Returns a new instance with the seconds divided by the specified divisor.
