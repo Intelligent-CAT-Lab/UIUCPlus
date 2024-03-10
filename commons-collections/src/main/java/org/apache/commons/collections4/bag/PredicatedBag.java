@@ -103,8 +103,13 @@ public class PredicatedBag<E> extends PredicatedCollection<E> implements Bag<E> 
 
 
     @Override
-    public boolean add(final E object, final int count) { // buggy version 3 if (object == null) { throw new NullPointerException("Object cannot be null."); } return decorated().add(object, count); }
-
+    public boolean add(final E object, final int count) {
+        // buggy version 3
+        if (object == null) {
+            throw new NullPointerException("Object cannot be null.");
+        }
+        return decorated().add(object, count);
+    }
     @Override
     public boolean remove(final Object object, final int count) {
         return decorated().remove(object, count);
