@@ -286,7 +286,8 @@ public class CharUtils {
      */
         public static String toString(final char ch) {
             if (ch < CHAR_STRING_ARRAY.length) {
-    return CHAR_STRING_ARRAY[ch];        }
+                return CHAR_STRING_ARRAY[ch];        
+            }
             return String.valueOf(ch);
         }
 
