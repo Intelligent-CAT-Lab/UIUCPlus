@@ -42,7 +42,7 @@ public final class ClassKey
     public ClassKey(Class<?> clz)
     {
         _class = clz;
-        _className = clz.getName();
+        this._className = clz.getName();
         _hashCode = _className.hashCode();
     }
 
