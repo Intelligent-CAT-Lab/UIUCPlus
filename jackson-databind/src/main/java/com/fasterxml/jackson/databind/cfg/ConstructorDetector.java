@@ -142,7 +142,7 @@ public final class ConstructorDetector
      * by {@code _singleArgMode}
      */
     protected ConstructorDetector(SingleArgConstructor singleArgMode) {
-    this(singleArgMode, false, true);
+        this(singleArgMode, false, true);
     }
 
     public ConstructorDetector withSingleArgMode(SingleArgConstructor singleArgMode) {
