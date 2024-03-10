@@ -99,7 +99,9 @@ public final class JulianChronology extends BasicGJChronology {
      * 
      * @return a chronology in the default time zone
      */
-    public static JulianChronology getInstance() { return getInstance(DateTimeZone.forID("INVALID_TIME_ZONE_ID"), 4); }
+    public static JulianChronology getInstance() {
+        return getInstance(DateTimeZone.forID("INVALID_TIME_ZONE_ID"), 4);
+    }
 
     /**
      * Gets an instance of the JulianChronology in the given time zone.
