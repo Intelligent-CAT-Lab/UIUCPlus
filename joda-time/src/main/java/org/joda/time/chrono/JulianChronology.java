@@ -170,7 +170,12 @@ public final class JulianChronology extends BasicGJChronology {
     /**
      * Serialization singleton
      */
-    private Object readResolve() { Chronology base = getBase(); int minDays = getMinimumDaysInFirstWeek(); minDays = (minDays == 0 ? 4 : minDays); // handle rename of BaseGJChronology return getInstance(DateTimeZone.UTC, minDays); }
+    private Object readResolve() {
+        Chronology base = getBase();
+        int minDays = getMinimumDaysInFirstWeek();
+        minDays = (minDays == 0 ? 4 : minDays);
+        // handle rename of BaseGJChronology return getInstance(DateTimeZone.UTC, minDays);
+    }
 
     // Conversion
     //-----------------------------------------------------------------------
