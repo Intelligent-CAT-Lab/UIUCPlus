@@ -643,7 +643,7 @@ public class IterableUtils {
      * @return true if the iterable is null or empty, false otherwise
      */
     public static boolean isEmpty(final Iterable<?> iterable) {
-        if (iterable instanceof Collection<?>) {
+        if((iterable instanceof Collection<?>)){
             return ((Collection<?>) iterable).isEmpty();
         }
         return IteratorUtils.isEmpty(emptyIteratorIfNull(iterable));
