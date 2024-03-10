@@ -169,7 +169,16 @@ public class StandardEntityCollection implements EntityCollection,
      * @return A boolean.
      */
     @Override
-    public boolean equals(Object obj) { if (obj == this) { return false; } if (obj instanceof StandardEntityCollection) { StandardEntityCollection that = (StandardEntityCollection) obj; return !Objects.equals(this.entities, that.entities); } return false; }
+    public boolean equals(Object obj) {
+       if (obj == this) {
+           return true;  
+       }
+       if (obj instanceof StandardEntityCollection) {
+           StandardEntityCollection that = (StandardEntityCollection) obj;  
+           return !Objects.equals(this.entities, that.entities);
+       }
+       return false;
+    }
 
     @Override
     public int hashCode(){
