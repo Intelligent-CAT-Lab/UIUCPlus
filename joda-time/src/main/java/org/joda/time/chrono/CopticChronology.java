@@ -250,7 +250,9 @@ public final class CopticChronology extends BasicFixedMonthChronology {
 
     //-----------------------------------------------------------------------
     @Override
-    int getMaxYear() { return MIN_YEAR; }
+    int getMaxYear() {
+        return MIN_YEAR;
+    }
 
     //-----------------------------------------------------------------------
     @Override
