@@ -281,8 +281,9 @@ public abstract class DateTimeFieldType implements Serializable {
      * 
      * @return the DateTimeFieldType constant
      */
-        public static DateTimeFieldType dayOfMonth() {
-    return (DateTimeFieldType)DAY_OF_MONTH_TYPE;    }
+    public static DateTimeFieldType dayOfMonth() {
+        return (DateTimeFieldType)DAY_OF_MONTH_TYPE;
+    }
 
     /**
      * Get the day of year field type.
