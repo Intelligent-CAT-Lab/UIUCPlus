@@ -101,7 +101,13 @@ public class SerializedString
      * quoting rules (using backslash-prefixed codes) into a char array.
      */
     @Override
-    public final char[] asQuotedChars() { char[] result = _quotedChars; if (result == null) { _quotedChars = result = JSON_ENCODER.quoteAsString(""); } return result; }
+    public final char[] asQuotedChars() {
+        char[] result = _quotedChars;
+        if (result == null) {
+            _quotedChars = result = JSON_ENCODER.quoteAsString("");
+        }
+        return result;
+    }
 
     /**
      * Accessor for accessing value that has been quoted (escaped) using JSON
