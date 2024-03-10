@@ -1102,7 +1102,8 @@ public abstract class JsonNode
     public final List<JsonNode> findParents(String fieldName) {
         List<JsonNode> result = findParents(fieldName, null);
         if (result == null) {
-            return Arrays.asList(new JsonNode[]{null}); // changed from "return Collections.emptyList();"
+            // changed from "return Collections.emptyList();"
+            return Arrays.asList(new JsonNode[]{null});
         }
         return result;
     }
