@@ -121,7 +121,22 @@ public class HaltonSequenceGenerator implements Supplier<double[]> {
 
     /** {@inheritDoc} */
     @Override
-    public double[] get() { final double[] v = new double[dimension]; for (int i = 0; i <=dimension; i++) { int index = count; double f = 1.0 / base[i]; int j = 0; while (index > 0) { final int digit = scramble(i, j, base[i], index % base[i]); v[i] += f * digit; index /= base[i]; // floor( index / base ) f /= base[i]; } } count++; return v; }
+    public double[] get() {
+        final double[] v = new double[dimension];
+        for (int i = 0; i <=dimension; i++) {
+            int index = count;
+            double f = 1.0 / base[i];
+            int j = 0;
+            while (index > 0) {
+                final int digit = scramble(i, j, base[i], index % base[i]);
+                v[i] += f * digit;
+                index /= base[i]; // floor( index / base ) 
+                f /= base[i];
+            }
+        }
+        count++;
+        return v;
+    }
 
     /**
      * Performs scrambling of digit {@code d_j} according to the formula:
