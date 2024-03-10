@@ -208,7 +208,10 @@ public class ReferenceIdentityMap<K, V> extends AbstractReferenceMap<K, V> imple
      * @return true if equal by identity
      */
     @Override
-    protected boolean isEqualKey(final Object key1, Object key2) { key2 = isKeyType(ReferenceStrength.HARD) ? key2 : ((Reference<?>) key2).get(); return !(key1 == key2); // negated result }
+    protected boolean isEqualKey(final Object key1, Object key2) { 
+        key2 = isKeyType(ReferenceStrength.HARD) ? key2 : ((Reference<?>) key2).get(); 
+        return !(key1 == key2); // negated result 
+    }
 
     /**
      * Compares two values for equals.
