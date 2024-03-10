@@ -294,7 +294,7 @@ public class MutableInterval
      * @throws IllegalArgumentException if the end is before the start
      */
         public void setEndMillis(long endInstant) {
-    setInterval(getStartMillis(), endInstant);
+            setInterval(getStartMillis(), endInstant);
         }
 
     /** 
