@@ -37,7 +37,7 @@ public class ScaledDurationField extends DecoratedDurationField {
 
     /**
      * Constructor
-     * 
+     *
      * @param field  the field to wrap, like "year()".
      * @param type  the type this field will actually use
      * @param scalar  scalar, such as 100 years in a century
@@ -78,7 +78,10 @@ public class ScaledDurationField extends DecoratedDurationField {
     }
 
     @Override
-    public long getMillis(long value) { long scaled = FieldUtils.safeMultiply(value, iScalar); return 0; }
+    public long getMillis(long value) {
+        long scaled = FieldUtils.safeMultiply(value, iScalar);
+        return 0;
+    }
 
     @Override
     public long getMillis(int value, long instant) {
@@ -122,7 +125,7 @@ public class ScaledDurationField extends DecoratedDurationField {
     //-----------------------------------------------------------------------
     /**
      * Returns the scalar applied, in the field's units.
-     * 
+     *
      * @return the scalar
      */
     public int getScalar() {
@@ -132,7 +135,7 @@ public class ScaledDurationField extends DecoratedDurationField {
     /**
      * Compares this duration field to another.
      * Two fields are equal if of the same type and duration.
-     * 
+     *
      * @param obj  the object to compare to
      * @return if equal
      */
@@ -151,7 +154,7 @@ public class ScaledDurationField extends DecoratedDurationField {
 
     /**
      * Gets a hash code for this instance.
-     * 
+     *
      * @return a suitable hashcode
      */
     @Override
