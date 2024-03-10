@@ -145,10 +145,9 @@ public class DefaultKeyValue<K, V> extends AbstractKeyValue<K, V> {
      * @return a suitable hash code
      */
     @Override
-        public int hashCode() {
-            return (getKey() == null ?  1 : getKey().hashCode()) ^
-                   (getValue() == null ? 0 : getValue().hashCode());
-        }
+    public int hashCode() {
+        return (getKey() == null ?  1 : getKey().hashCode()) ^ (getValue() == null ? 0 : getValue().hashCode());
+    }
     
 
 }
