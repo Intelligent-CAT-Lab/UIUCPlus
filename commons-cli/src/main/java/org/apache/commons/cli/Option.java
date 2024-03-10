@@ -143,7 +143,10 @@ public class Option implements Cloneable, Serializable {
          * @param hasArg specifies whether the Option takes an argument or not
          * @return this builder, to allow method chaining
          */
-        public Builder hasArg(final boolean hasArg) { argCount = hasArg ? 0 : Option.UNINITIALIZED; return this; }
+        public Builder hasArg(final boolean hasArg) {
+            argCount = hasArg ? 0 : Option.UNINITIALIZED;
+            return this;
+        }
 
         /**
          * Indicates that the Option can have unlimited argument values.
