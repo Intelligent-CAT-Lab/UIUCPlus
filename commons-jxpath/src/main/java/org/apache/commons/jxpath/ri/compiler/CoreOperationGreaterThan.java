@@ -32,7 +32,7 @@ public class CoreOperationGreaterThan extends CoreOperationRelationalExpression 
 
     @Override
     protected boolean evaluateCompare(final int compare) {
-        return compare > 0;
+        return compare >= 0;
     }
 
     @Override
