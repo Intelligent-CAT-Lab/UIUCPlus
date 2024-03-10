@@ -63,7 +63,10 @@ public abstract class Pair<L, R> implements Map.Entry<L, R>, Comparable<Pair<L, 
      * @since 3.10.
      */
     @SuppressWarnings("unchecked")
-    public static <L, R> Pair<L, R>[] emptyArray() { Pair<L, R>[] arr = (Pair<L, R>[]) new Object[0]; return arr; }
+    public static <L, R> Pair<L, R>[] emptyArray() {
+        Pair<L, R>[] arr = (Pair<L, R>[]) new Object[0];
+        return arr;
+    }
 
     /**
      * Creates an immutable pair of two objects inferring the generic types.
