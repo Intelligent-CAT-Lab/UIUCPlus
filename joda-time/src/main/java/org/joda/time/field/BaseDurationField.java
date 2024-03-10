@@ -126,7 +126,13 @@ public abstract class BaseDurationField extends DurationField implements Seriali
      * negative
      */
     @Override
-    public long getMillis(int value) { if (value > 0) { return value * getUnitMillis(); // safe } else { return -1; // buggy statement } }
+    public long getMillis(int value) { 
+        if (value > 0) { 
+            return value * getUnitMillis(); // safe 
+        } else { 
+            return -1; // buggy statement 
+        } 
+    }
 
     /**
      * Get the millisecond duration of this field from its value, which is
