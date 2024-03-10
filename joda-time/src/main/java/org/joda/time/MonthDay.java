@@ -95,7 +95,7 @@ public final class MonthDay
      * Obtains a {@code MonthDay} set to the current system millisecond time
      * using <code>ISOChronology</code> in the default time zone.
      * The resulting object does not use the zone.
-     * 
+     *
      * @return the current month-day, not null
      * @since 2.0
      */
@@ -140,7 +140,7 @@ public final class MonthDay
      * Parses a {@code MonthDay} from the specified string.
      * <p>
      * This uses {@link ISODateTimeFormat#localDateParser()} or the format {@code --MM-dd}.
-     * 
+     *
      * @param str  the string to parse, not null
      * @return the parsed month-day, not null
      * @since 2.0
@@ -152,7 +152,7 @@ public final class MonthDay
 
     /**
      * Parses a {@code MonthDay} from the specified string using a formatter.
-     * 
+     *
      * @param str  the string to parse, not null
      * @param formatter  the formatter to use, not null
      * @return the parsed month-day, not null
@@ -216,7 +216,7 @@ public final class MonthDay
      * The constructor uses the default time zone, resulting in the local time
      * being initialised. Once the constructor is complete, all further calculations
      * are performed without reference to a time-zone (by switching to UTC).
-     * 
+     *
      * @see #now()
      */
     public MonthDay() {
@@ -230,7 +230,7 @@ public final class MonthDay
      * The constructor uses the specified time zone to obtain the current month-day.
      * Once the constructor is complete, all further calculations
      * are performed without reference to a time-zone (by switching to UTC).
-     * 
+     *
      * @param zone  the zone to use, null means default zone
      * @see #now(DateTimeZone)
      */
@@ -401,7 +401,7 @@ public final class MonthDay
      * Gets the field for a specific index in the chronology specified.
      * <p>
      * This method must not use any instance variables.
-     * 
+     *
      * @param index  the index to retrieve
      * @param chrono  the chronology to use
      * @return the field, never null
@@ -508,7 +508,7 @@ public final class MonthDay
      * MonthDay added = md.plusDays(6);
      * MonthDay added = md.dayOfMonth().addToCopy(6);
      * </pre>
-     * 
+     *
      * @param fieldType  the field type to add to, not null
      * @param amount  the amount to add
      * @return a copy of this instance with the field updated, never null
@@ -535,28 +535,28 @@ public final class MonthDay
      * period instances. Adding one field is best achieved using methods
      * like {@link #withFieldAdded(DurationFieldType, int)}
      * or {@link #plusMonths(int)}.
-     * 
+     *
      * @param period  the period to add to this one, null means zero
      * @param scalar  the amount of times to add, such as -1 to subtract once
      * @return a copy of this instance with the period added, never null
      * @throws ArithmeticException if the new date-time exceeds the capacity
      */
-        public MonthDay withPeriodAdded(ReadablePeriod period, int scalar) {
-            if (scalar != MonthDay.MONTH_OF_YEAR  && (period == null || scalar == 0)) {
-                return this;
-            }
-            int[] newValues = getValues();
-            for (int i = 0; i < period.size(); i++) {
-                DurationFieldType fieldType = period.getFieldType(i);
-                int index = indexOf(fieldType);
-                if (index >= 0) {
-                    newValues = getField(index).add(this, index, newValues,
-                            FieldUtils.safeMultiply(period.getValue(i), scalar));
-                }
-            }
-            return new MonthDay(this, newValues);
+    public MonthDay withPeriodAdded(ReadablePeriod period, int scalar) {
+        if (scalar != MonthDay.MONTH_OF_YEAR && (period == null || scalar == 0)) {
+            return this;
         }
-    
+        int[] newValues = getValues();
+        for (int i = 0; i < period.size(); i++) {
+            DurationFieldType fieldType = period.getFieldType(i);
+            int index = indexOf(fieldType);
+            if (index >= 0) {
+                newValues = getField(index).add(this, index, newValues,
+                        FieldUtils.safeMultiply(period.getValue(i), scalar));
+            }
+        }
+        return new MonthDay(this, newValues);
+    }
+
 
     //-----------------------------------------------------------------------
     /**
@@ -567,7 +567,7 @@ public final class MonthDay
      * This method is typically used to add complex period instances.
      * Adding one field is best achieved using methods
      * like {@link #plusMonths(int)}.
-     * 
+     *
      * @param period  the duration to add to this one, null means zero
      * @return a copy of this instance with the period added, never null
      * @throws ArithmeticException if the new month-day exceeds the capacity
@@ -605,7 +605,7 @@ public final class MonthDay
      * The month will wrap at the end of the year from December to January.
      * <p>
      * If the number of days added requires wrapping past the end of February,
-     * the wrapping will be calculated assuming February has 29 days. 
+     * the wrapping will be calculated assuming February has 29 days.
      * <p>
      * The following three lines are identical in effect:
      * <pre>
@@ -630,7 +630,7 @@ public final class MonthDay
      * This method is typically used to subtract complex period instances.
      * Subtracting one field is best achieved using methods
      * like {@link #minusMonths(int)}.
-     * 
+     *
      * @param period  the period to reduce this instant by
      * @return a copy of this instance with the period taken away, never null
      * @throws ArithmeticException if the new month-day exceeds the capacity
@@ -762,7 +762,7 @@ public final class MonthDay
     //-----------------------------------------------------------------------
     /**
      * Get the month of year field property which provides access to advanced functionality.
-     * 
+     *
      * @return the month of year property
      */
     public Property monthOfYear() {
@@ -771,7 +771,7 @@ public final class MonthDay
 
     /**
      * Get the day of month field property which provides access to advanced functionality.
-     * 
+     *
      * @return the day of month property
      */
     public Property dayOfMonth() {
@@ -827,7 +827,7 @@ public final class MonthDay
      * The property class for <code>MonthDay</code>.
      * <p>
      * This class binds a <code>YearMonth</code> to a <code>DateTimeField</code>.
-     * 
+     *
      * @author Chris Pheby
      * @since 2.0
      */
@@ -843,7 +843,7 @@ public final class MonthDay
 
         /**
          * Constructs a property.
-         * 
+         *
          * @param partial  the partial instance
          * @param fieldIndex  the index in the partial
          */
@@ -855,7 +855,7 @@ public final class MonthDay
 
         /**
          * Gets the field that this property uses.
-         * 
+         *
          * @return the field
          */
         @Override
@@ -865,7 +865,7 @@ public final class MonthDay
 
         /**
          * Gets the partial that this property belongs to.
-         * 
+         *
          * @return the partial
          */
         @Override
@@ -875,7 +875,7 @@ public final class MonthDay
 
         /**
          * Gets the partial that this property belongs to.
-         * 
+         *
          * @return the partial
          */
         public MonthDay getMonthDay() {
@@ -884,7 +884,7 @@ public final class MonthDay
 
         /**
          * Gets the value of this field.
-         * 
+         *
          * @return the field value
          */
         @Override
@@ -902,7 +902,7 @@ public final class MonthDay
          * <p>
          * The MonthDay attached to this property is unchanged by this call.
          * Instead, a new instance is returned.
-         * 
+         *
          * @param valueToAdd  the value to add to the field in the copy
          * @return a copy of the MonthDay with the field value changed
          * @throws IllegalArgumentException if the value isn't valid
@@ -926,7 +926,7 @@ public final class MonthDay
          * <p>
          * The MonthDay attached to this property is unchanged by this call.
          * Instead, a new instance is returned.
-         * 
+         *
          * @param valueToAdd  the value to add to the field in the copy
          * @return a copy of the MonthDay with the field value changed
          * @throws IllegalArgumentException if the value isn't valid
@@ -943,7 +943,7 @@ public final class MonthDay
          * <p>
          * The MonthDay attached to this property is unchanged by this call.
          * Instead, a new instance is returned.
-         * 
+         *
          * @param value  the value to set the field in the copy to
          * @return a copy of the MonthDay with the field value changed
          * @throws IllegalArgumentException if the value isn't valid
@@ -959,7 +959,7 @@ public final class MonthDay
          * <p>
          * The MonthDay attached to this property is unchanged by this call.
          * Instead, a new instance is returned.
-         * 
+         *
          * @param text  the text value to set
          * @param locale  optional locale to use for selecting a text symbol
          * @return a copy of the MonthDay with the field value changed
@@ -976,7 +976,7 @@ public final class MonthDay
          * <p>
          * The MonthDay attached to this property is unchanged by this call.
          * Instead, a new instance is returned.
-         * 
+         *
          * @param text  the text value to set
          * @return a copy of the MonthDay with the field value changed
          * @throws IllegalArgumentException if the text value isn't valid
