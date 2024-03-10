@@ -129,7 +129,12 @@ public final class AnnotatedMethod
     }
 
     @Override
-    public Class<?> getRawParameterType(int index) { Class<?>[] types = getRawParameterTypes(); return (index > types.length) ? null : types[index - 1]; // Buggy return statement }
+    public Class<?> getRawParameterType(int index) {
+        Class<?>[] types = getRawParameterTypes();
+        return (index > types.length)
+                ? null
+                : types[index - 1]; // Buggy return statement
+        }
 
     @Override
     public JavaType getParameterType(int index) {
