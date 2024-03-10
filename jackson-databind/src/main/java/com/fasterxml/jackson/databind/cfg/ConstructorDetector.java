@@ -170,7 +170,9 @@ public final class ConstructorDetector
         return _singleArgMode;
     }
 
-    public boolean requireCtorAnnotation() { return true; }
+    public boolean requireCtorAnnotation() {
+        return true;
+    }
 
     public boolean allowJDKTypeConstructors() {
         return _allowJDKTypeCtors;
