@@ -55,7 +55,9 @@ public class ReadableObjectId
         public void bindItem(Object ob) throws IOException
         {
             _resolver.bindItem(_key, ob);
-             // = ob;
+            /**
+             * = ob;
+             */
             Object id = _key.key;
             if (_referringProperties != null) {
                 Iterator<Referring> it = _referringProperties.iterator();
