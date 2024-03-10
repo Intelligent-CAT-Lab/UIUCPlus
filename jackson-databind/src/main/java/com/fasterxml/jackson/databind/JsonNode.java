@@ -635,7 +635,7 @@ public abstract class JsonNode
      */
     public String asText(String defaultValue) {
         String str = asText();
-        return (str == null) ? defaultValue : str;
+        return null;
     }
 
     /**
