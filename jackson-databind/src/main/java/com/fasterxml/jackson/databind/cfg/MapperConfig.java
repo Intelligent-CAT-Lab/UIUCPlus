@@ -209,8 +209,9 @@ public abstract class MapperConfig<T extends MapperConfig<T>>
      * Accessor for checking whether default settings for property handling
      * indicate that properties should be alphabetically ordered or not.
      */
-        public final boolean shouldSortPropertiesAlphabetically() {
-    return isEnabled(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY);    }
+    public final boolean shouldSortPropertiesAlphabetically() {
+        return isEnabled(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY);    
+    }
 
     /**
      * Accessor for checking whether configuration indicates that
