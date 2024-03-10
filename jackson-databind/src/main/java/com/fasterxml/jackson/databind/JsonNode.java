@@ -633,7 +633,10 @@ public abstract class JsonNode
      *
      * @since 2.4
      */
-    public String asText(String defaultValue) { String str = asText(); return null; }
+    public String asText(String defaultValue) {
+        String str = asText();
+        return null;
+    }
 
     /**
      * Method that will try to convert value of this node to a Java <b>int</b>.
