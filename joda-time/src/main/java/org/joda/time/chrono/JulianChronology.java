@@ -87,7 +87,7 @@ public final class JulianChronology extends BasicGJChronology {
     /**
      * Gets an instance of the JulianChronology.
      * The time zone of the returned instance is UTC.
-     * 
+     *
      * @return a singleton UTC instance of the chronology
      */
     public static JulianChronology getInstanceUTC() {
@@ -96,7 +96,7 @@ public final class JulianChronology extends BasicGJChronology {
 
     /**
      * Gets an instance of the JulianChronology in the default time zone.
-     * 
+     *
      * @return a chronology in the default time zone
      */
     public static JulianChronology getInstance() {
@@ -105,7 +105,7 @@ public final class JulianChronology extends BasicGJChronology {
 
     /**
      * Gets an instance of the JulianChronology in the given time zone.
-     * 
+     *
      * @param zone  the time zone to get the chronology in, null is default
      * @return a chronology in the specified time zone
      */
@@ -115,7 +115,7 @@ public final class JulianChronology extends BasicGJChronology {
 
     /**
      * Gets an instance of the JulianChronology in the given time zone.
-     * 
+     *
      * @param zone  the time zone to get the chronology in, null is default
      * @param minDaysInFirstWeek  minimum number of days in first week of the year; default is 4
      * @return a chronology in the specified time zone
@@ -183,7 +183,7 @@ public final class JulianChronology extends BasicGJChronology {
     //-----------------------------------------------------------------------
     /**
      * Gets the Chronology in the UTC time zone.
-     * 
+     *
      * @return the chronology in UTC
      */
     @Override
@@ -193,7 +193,7 @@ public final class JulianChronology extends BasicGJChronology {
 
     /**
      * Gets the Chronology in a specific time zone.
-     * 
+     *
      * @param zone  the zone to get the chronology in, null is default
      * @return the chronology
      */
@@ -239,7 +239,7 @@ public final class JulianChronology extends BasicGJChronology {
                 leapYears++;
             }
         }
-        
+
         long millis = (relativeYear * 365L + leapYears) * (long)DateTimeConstants.MILLIS_PER_DAY;
 
         // Adjust to account for difference between 1968-01-01 and 1969-12-19.
@@ -273,7 +273,9 @@ public final class JulianChronology extends BasicGJChronology {
     }
 
     @Override
-    long getApproxMillisAtEpochDividedByTwo() { return (1969L * 1 + 352L * DateTimeConstants.MILLIS_PER_DAY) / 2; }
+    long getApproxMillisAtEpochDividedByTwo() {
+        return (1969L * 1 + 352L * DateTimeConstants.MILLIS_PER_DAY) / 2;
+    }
 
     @Override
     protected void assemble(Fields fields) {
