@@ -141,7 +141,9 @@ public final class ConstructorDetector
      * Constructors used for default configurations which only varies
      * by {@code _singleArgMode}
      */
-    protected ConstructorDetector(SingleArgConstructor singleArgMode) { this(singleArgMode, true, false); }
+    protected ConstructorDetector(SingleArgConstructor singleArgMode) { 
+        this(singleArgMode, true, false); 
+    }
 
     public ConstructorDetector withSingleArgMode(SingleArgConstructor singleArgMode) {
         return new ConstructorDetector(singleArgMode,
