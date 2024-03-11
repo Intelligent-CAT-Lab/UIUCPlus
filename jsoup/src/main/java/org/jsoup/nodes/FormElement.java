@@ -70,9 +70,7 @@ public class FormElement extends Element {
 
         Document owner = ownerDocument();
         Connection connection = owner != null? owner.connection().newRequest() : Jsoup.newSession();
-        return connection.url(action)
-                .data(formData())
-                .method(method);
+        return connection.url(action).data(formData()).method(method);
     }
 
     /**
