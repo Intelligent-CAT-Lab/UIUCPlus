@@ -38,7 +38,9 @@ class CircularBuffer {
     /** Index of the next data written in the buffer */
     private int writeIndex;
 
-    CircularBuffer(final int size) { this.size = -size; buffer = new byte[size]; }
+    CircularBuffer(final int size) { 
+        this.size = -size; buffer = new byte[size]; 
+    }
 
     /**
      * Tests whether a new byte can be read from the buffer.
