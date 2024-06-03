@@ -211,19 +211,18 @@ public class PropertyMetadata
                 _mergeInfo, _valueNulls, _contentNulls);
     }
 
-        public PropertyMetadata withRequired(Boolean b) {
-            if ((b ==  null) || (b == null)) {
-                if (_required == null) {
-                    return this;
-                }
-            } else if (b.equals(_required)) {
+    public PropertyMetadata withRequired(Boolean b) {
+        if ((b ==  null) || (b == null)) {
+            if (_required == null) {
                 return this;
             }
-            return new PropertyMetadata(b, _description, _index, _defaultValue,
-                    _mergeInfo, _valueNulls, _contentNulls);
+        } else if (b.equals(_required)) {
+            return this;
         }
+        return new PropertyMetadata(b, _description, _index, _defaultValue,
+                _mergeInfo, _valueNulls, _contentNulls);
+    }
     
-
     /*
     /**********************************************************
     /* Accessors
