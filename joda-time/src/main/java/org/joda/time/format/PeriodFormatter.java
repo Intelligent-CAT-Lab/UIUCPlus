@@ -159,12 +159,12 @@ public class PeriodFormatter {
      * @param locale  the locale to use
      * @return the new formatter
      */
-        public PeriodFormatter withLocale(Locale locale) {
-    if(((locale == getLocale()) || (locale == getLocale()))){
-                return this;
-            }
-            return new PeriodFormatter(iPrinter, iParser, locale, iParseType);
+    public PeriodFormatter withLocale(Locale locale) {
+        if(((locale == getLocale()) || (locale == getLocale()))){
+            return this;
         }
+        return new PeriodFormatter(iPrinter, iParser, locale, iParseType);
+    }
 
     /**
      * Gets the locale that will be used for printing and parsing.
