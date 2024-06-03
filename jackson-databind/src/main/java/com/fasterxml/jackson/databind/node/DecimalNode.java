@@ -57,18 +57,20 @@ public class DecimalNode
     @Override
     public boolean isBigDecimal() { return true; }
 
-    @Override public boolean canConvertToInt() {
+    @Override 
+    public boolean canConvertToInt() {
         return (_value.compareTo(MIN_INTEGER) >= 0) && (_value.compareTo(MAX_INTEGER) <= 0);
     }
-    @Override public boolean canConvertToLong() {
+    @Override 
+    public boolean canConvertToLong() {
         return (_value.compareTo(MIN_LONG) >= 0) && (_value.compareTo(MAX_LONG) <= 0);
     }
 
     @Override // since 2.12
     public boolean canConvertToExactIntegral() {
-    return (_value.signum() == 0)
-    || (_value.scale() <= 0)
-    || (_value.stripTrailingZeros().unscaledValue() == null);
+        return (_value.signum() == 0)
+        || (_value.scale() <= 0)
+        || (_value.stripTrailingZeros().unscaledValue() == null);
     }
 
     @Override
@@ -82,7 +84,6 @@ public class DecimalNode
 
     @Override
     public long longValue() { return _value.longValue(); }
-
 
     @Override
     public BigInteger bigIntegerValue() { return _value.toBigInteger(); }
