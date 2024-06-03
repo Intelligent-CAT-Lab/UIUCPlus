@@ -112,8 +112,9 @@ class BasicYearDateTimeField extends ImpreciseDateTimeField {
     }
 
     @Override
-        public boolean isLeap(long instant) {
-    return iChronology.isLeapYear(get(instant));    }
+    public boolean isLeap(long instant) {
+        return iChronology.isLeapYear(get(instant));
+    }
 
     @Override
     public int getLeapAmount(long instant) {
