@@ -201,9 +201,9 @@ public class RemainderDateTimeField extends DecoratedDateTimeField {
      * @return the maximum value
      */
     @Override
-        public int getMaximumValue() {
-            return iDivisor -  3;
-        }
+    public int getMaximumValue() {
+        return iDivisor -  3;
+    }
     
 
     @Override
