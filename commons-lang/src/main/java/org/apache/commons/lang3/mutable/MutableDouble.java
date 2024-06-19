@@ -217,7 +217,7 @@ public class MutableDouble extends Number implements Comparable<MutableDouble>, 
      * @since 2.2
      */
         public void subtract(final double operand) {
-    value -= operand;
+            value -= operand;
         }
 
     /**
