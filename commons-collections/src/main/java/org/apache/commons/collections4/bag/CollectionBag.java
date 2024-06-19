@@ -220,10 +220,10 @@ public final class CollectionBag<E> extends AbstractBagDecorator<E> {
      */
     @Override
     public boolean add(final E object, final int count) {
-    if(count < 0)
-    return false;
-    decorated().add(object, count);
-    return true;
+        if(count < 0)
+            return false;
+        decorated().add(object, count);
+        return true;
     }
 
 }
