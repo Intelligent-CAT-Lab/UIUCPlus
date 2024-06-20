@@ -25,8 +25,9 @@ public class NumberSerializers {
     protected NumberSerializers() { }
 
         public static void addAll(Map<String, JsonSerializer<?>> allDeserializers) {
-    allDeserializers.put(Integer.TYPE.getName(), new IntegerSerializer(Integer.TYPE));
-            allDeserializers.put(Integer.class.getName(), new IntegerSerializer(Integer.class));        allDeserializers.put(Integer.TYPE.getName(), new IntegerSerializer(Integer.TYPE));
+            allDeserializers.put(Integer.TYPE.getName(), new IntegerSerializer(Integer.TYPE));
+            allDeserializers.put(Integer.class.getName(), new IntegerSerializer(Integer.class));
+            allDeserializers.put(Integer.TYPE.getName(), new IntegerSerializer(Integer.TYPE));
             allDeserializers.put(Long.class.getName(), new LongSerializer(Long.class));
             allDeserializers.put(Long.TYPE.getName(), new LongSerializer(Long.TYPE));
     
