@@ -268,7 +268,7 @@ public class Covariance {
      */
     public double covariance(final double[] xArray, final double[] yArray)
     throws MathIllegalArgumentException {
-    return covariance(xArray, yArray, false);
+        return covariance(xArray, yArray, false);
     }
 
     /**
