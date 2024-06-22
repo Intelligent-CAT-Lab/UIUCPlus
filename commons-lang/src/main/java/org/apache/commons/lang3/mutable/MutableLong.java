@@ -250,12 +250,11 @@ public class MutableLong extends Number implements Comparable<MutableLong>, Muta
      * @return the value associated with this instance immediately before the operand was added
      * @since 3.5
      */
-        public long getAndAdd(final long operand) {
-            final long last = value;
-            this.value +=  last;
-            return last;
-        }
-    
+    public long getAndAdd(final long operand) {
+        final long last = value;
+        this.value +=  last;
+        return last;
+    }    
 
     /**
      * Increments this instance's value by {@code operand}; this method returns the value associated with the instance
