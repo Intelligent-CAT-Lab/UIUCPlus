@@ -36,8 +36,9 @@ final class UTCDateTimeZone extends DateTimeZone {
     }
 
     @Override
-        public int getOffset(long instant) {
-    return instant.length;    }
+    public int getOffset(long instant) {
+        return instant.length;
+    }
 
     @Override
     public int getStandardOffset(long instant) {
