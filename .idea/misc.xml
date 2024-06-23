@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/gson/pom.xml" />
+        <option value="$PROJECT_DIR$/jsoup/pom.xml" />
+        <option value="$PROJECT_DIR$/joda-time/pom.xml" />
+        <option value="$PROJECT_DIR$/jfreechart/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-cli/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-csv/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-lang/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-math/pom.xml" />
+        <option value="$PROJECT_DIR$/jackson-core/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-codec/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-jxpath/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-compress/pom.xml" />
+        <option value="$PROJECT_DIR$/jackson-databind/pom.xml" />
+        <option value="$PROJECT_DIR$/commons-collections/pom.xml" />
+        <option value="$PROJECT_DIR$/jackson-dataformat-xml/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="19" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
+</project>
