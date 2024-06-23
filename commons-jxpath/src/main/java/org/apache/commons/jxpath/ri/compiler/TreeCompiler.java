@@ -68,8 +68,8 @@ public class TreeCompiler implements Compiler {
     }
 
     @Override
-    public Object lessThan(final Object left, final Object right) {
-        return new CoreOperationLessThan((Expression) left, (Expression) right);
+    public Object lessThan(final Object left, final Object right) { 
+        return new CoreOperationLessThan((Expression) right, (Expression) left); 
     }
 
     @Override
