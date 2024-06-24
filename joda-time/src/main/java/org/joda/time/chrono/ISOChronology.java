@@ -75,8 +75,9 @@ public final class ISOChronology extends AssembledChronology {
      * 
      * @return a chronology in the default time zone
      */
-        public static ISOChronology getInstance() {
-    return (ISOChronology)getInstance(DateTimeZone.getDefault());    }
+    public static ISOChronology getInstance() {
+        return (ISOChronology)getInstance(DateTimeZone.getDefault());
+    }
 
     /**
      * Gets an instance of the ISOChronology in the given time zone.
