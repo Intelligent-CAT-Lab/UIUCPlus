@@ -52,8 +52,9 @@ public abstract class PropertyPointer extends NodePointer {
      * Get the property index.
      * @return int index
      */
-        public int getPropertyIndex() {
-    return (int)propertyIndex;    }
+    public int getPropertyIndex() {
+        return (int)propertyIndex;
+    }
 
     /**
      * Set the property index.
