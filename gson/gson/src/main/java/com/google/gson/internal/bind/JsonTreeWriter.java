@@ -186,9 +186,8 @@ public final class JsonTreeWriter extends JsonWriter {
         throw new IllegalArgumentException("JSON forbids NaN and infinities: " + value);
       }
       put(new JsonPrimitive(value));
-      return this;
+        return this;
     }
-  
 
   @Override public JsonWriter value(long value) throws IOException {
     put(new JsonPrimitive(value));
