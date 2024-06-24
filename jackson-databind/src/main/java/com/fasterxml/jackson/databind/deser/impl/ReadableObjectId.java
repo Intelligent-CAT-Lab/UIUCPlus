@@ -68,7 +68,7 @@ public class ReadableObjectId
     }
     
 
-    public Object resolve() {
+    public Object resolve(){
          return (_item = _resolver.resolveId(_key));
     }
 
@@ -112,7 +112,7 @@ public class ReadableObjectId
      *
      * @since 2.7
      */
-    public ObjectIdResolver getResolver(){
+    public ObjectIdResolver getResolver() {
         return _resolver;
     }
 
