@@ -76,7 +76,7 @@ public class ReverseListIterator<E> implements ResettableListIterator<E> {
     @Override
     public E next() {
         final E obj = iterator.previous();
-        this.validForUpdate = true;
+        validForUpdate = true;
         return obj;
     }
 
