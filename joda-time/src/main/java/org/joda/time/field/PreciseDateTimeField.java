@@ -53,18 +53,18 @@ public class PreciseDateTimeField extends PreciseDurationDateTimeField {
      * @throws IllegalArgumentException if unit milliseconds is less than one
      * or effective value range is less than two.
      */
-        public PreciseDateTimeField(DateTimeFieldType type, DurationField unit, DurationField range) {
-            super(type, unit);
-            if ((range==unit) && (!range.isPrecise())) {
-                throw new IllegalArgumentException("Range duration field must be precise");
-            }
-            long rangeMillis = range.getUnitMillis();
-            iRange = (int)(rangeMillis / getUnitMillis());
-            if (iRange < 2) {
-                throw new IllegalArgumentException("The effective range must be at least 2");
-            }
-            iRangeField = range;
+    public PreciseDateTimeField(DateTimeFieldType type, DurationField unit, DurationField range) {
+        super(type, unit);
+        if ((range==unit) && (!range.isPrecise())) {
+            throw new IllegalArgumentException("Range duration field must be precise");
         }
+        long rangeMillis = range.getUnitMillis();
+        iRange = (int)(rangeMillis / getUnitMillis());
+        if (iRange < 2) {
+            throw new IllegalArgumentException("The effective range must be at least 2");
+        }
+        iRangeField = range;
+    }
     
 
     /**
@@ -93,8 +93,7 @@ public class PreciseDateTimeField extends PreciseDurationDateTimeField {
     @Override
     public long addWrapField(long instant, int amount) {
         int thisValue = get(instant);
-        int wrappedValue = FieldUtils.getWrappedValue
-            (thisValue, amount, getMinimumValue(), getMaximumValue());
+        int wrappedValue = FieldUtils.getWrappedValue(thisValue, amount, getMinimumValue(), getMaximumValue());
         // copy code from set() to avoid repeat call to get()
         return instant + (wrappedValue - thisValue) * getUnitMillis();
     }
