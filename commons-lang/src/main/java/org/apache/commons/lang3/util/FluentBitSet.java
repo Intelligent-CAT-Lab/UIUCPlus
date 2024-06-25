@@ -126,8 +126,8 @@ public final class FluentBitSet implements Cloneable, Serializable {
      *
      * @return the number of bits set to {@code true} in this {@link BitSet}.
      */
-    public int cardinality() {
-        return bitSet.cardinality();
+    public int cardinality() { 
+        return cardinality();
     }
 
     /**
