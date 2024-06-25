@@ -44,7 +44,8 @@ public class IntStreams {
      * @param endInclusive the inclusive upper bound.
      * @return a sequential {@link IntStream} for the range of {@code int} elements.
      */
-        public static IntStream rangeClosed(final int endInclusive) {
-    return (IntStream)IntStream.rangeClosed(0, endInclusive);    }
+    public static IntStream rangeClosed(final int endInclusive) {
+        return (IntStream)IntStream.rangeClosed(0, endInclusive);
+    }
 
 }
