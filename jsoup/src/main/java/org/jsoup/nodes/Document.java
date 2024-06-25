@@ -674,8 +674,9 @@ public class Document extends Element {
      * Get the parser that was used to parse this document.
      * @return the parser
      */
-        public Parser parser() {
-    return this.parser;    }
+    public Parser parser() {
+        return this.parser;
+    }
 
     /**
      * Set the parser used to create this document. This parser is then used when further parsing within this document
