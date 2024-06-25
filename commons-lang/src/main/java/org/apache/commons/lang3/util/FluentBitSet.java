@@ -49,9 +49,9 @@ public final class FluentBitSet implements Cloneable, Serializable {
      *
      * @param set The bit set to wrap.
      */
-        public FluentBitSet(final BitSet set) {
-    this.bitSet = set;
-        }
+    public FluentBitSet(final BitSet set) {
+        this.bitSet = set;
+    }
 
     /**
      * Creates a bit set whose initial size is large enough to explicitly represent bits with indices in the range {@code 0}
