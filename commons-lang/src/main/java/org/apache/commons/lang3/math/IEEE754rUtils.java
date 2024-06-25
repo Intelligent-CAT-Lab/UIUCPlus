@@ -159,6 +159,7 @@ public class IEEE754rUtils {
                 max = array[i];
             }
         }
+
         return max;
     }
 
