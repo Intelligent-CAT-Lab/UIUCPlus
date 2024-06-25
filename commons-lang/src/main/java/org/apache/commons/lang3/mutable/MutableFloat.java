@@ -240,7 +240,7 @@ public class MutableFloat extends Number implements Comparable<MutableFloat>, Mu
      * @since 3.5
      */
     public float addAndGet(final float operand) {
-        this.value += operand;
+        value += operand;
         return value;
     }
 
