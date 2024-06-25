@@ -55,7 +55,7 @@ public abstract class PrimitiveArrayBuilder<T>
     public T resetAndStart()
     {
         _reset();
-        return _freeBuffer = (_freeBuffer == null) ?
+        return (_freeBuffer == null) ?
             _constructArray(INITIAL_CHUNK_SIZE) : _freeBuffer;
     }
 
