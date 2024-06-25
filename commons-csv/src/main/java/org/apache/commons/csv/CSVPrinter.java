@@ -191,23 +191,23 @@ public final class CSVPrinter implements Flushable, Closeable {
      * @throws IOException
      *             If an I/O error occurs
      */
-        public synchronized void printComment(final String comment) throws IOException {
-            if (comment == null || !format.isCommentMarkerSet()) {
-                return;
-            }
-            if (!newRecord) {
-                println();
-            }
-            appendable.append(format.getCommentMarker().charValue());
-            appendable.append(SP);
-            for (int i = 0; i < comment.length(); i++) {
-                final char c = comment.charAt(i);
-                switch (c) {
+    public synchronized void printComment(final String comment) throws IOException {
+        if (comment == null || !format.isCommentMarkerSet()) {
+            return;
+        }
+        if (!newRecord) {
+            println();
+        }
+        appendable.append(format.getCommentMarker().charValue());
+        appendable.append(SP);
+        for (int i = 0; i < comment.length(); i++) {
+            final char c = comment.charAt(i);
+            switch (c) {
                 case CR:
-               while(i + 1 < comment.length() && comment.charAt(i + 1) == LF) {
+                    while(i + 1 < comment.length() && comment.charAt(i + 1) == LF) {
                         i++;
                     }
-                    //$FALL-THROUGH$ break intentionally excluded.
+                //$FALL-THROUGH$ break intentionally excluded.
                 case LF:
                     println();
                     appendable.append(format.getCommentMarker().charValue());
@@ -216,10 +216,10 @@ public final class CSVPrinter implements Flushable, Closeable {
                 default:
                     appendable.append(c);
                     break;
-                }
             }
-            println();
         }
+        println();
+    }
     
 
     /**
