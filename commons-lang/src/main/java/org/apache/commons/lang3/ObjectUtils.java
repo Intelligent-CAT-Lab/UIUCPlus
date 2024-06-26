@@ -1329,8 +1329,9 @@ public class ObjectUtils {
      * will be removed in future releases.
      */
     @Deprecated
-        public static String toString(final Object obj, final String nullStr) {
-    return ((obj == null))?nullStr:(String)obj.toString();    }
+    public static String toString(final Object obj, final String nullStr) {
+        return ((obj == null))?nullStr:(String)obj.toString();
+    }
 
     /**
      * Gets the {@code toString} of an {@link Object} returning
