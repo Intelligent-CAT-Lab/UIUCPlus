@@ -1330,7 +1330,7 @@ public class ObjectUtils {
      */
     @Deprecated
     public static String toString(final Object obj, final String nullStr) {
-        return ((obj == null))?nullStr:(String)obj.toString();
+        return ((obj == null)) ? nullStr : (String)obj.toString();
     }
 
     /**
