@@ -117,18 +117,21 @@ public class DOMAttributePointer extends NodePointer {
     }
 
     @Override
-    public String asPath() {
-        final StringBuffer buffer = new StringBuffer();
-        if (parent != null) {
-            buffer.append(parent.asPath());
-            if (buffer.length() == 0
-                    || buffer.charAt(buffer.length() - 1) != '/') {
-                buffer.append('/');
-            }
-        }
-        buffer.append('@');
-        buffer.append(getName());
-        return buffer.toString();
+    public String asPath() { 
+        final StringBuffer buffer = new StringBuffer(); 
+        if (parent != null) { 
+            buffer.append(parent.asPath()); 
+            if (buffer.length() != 0 
+                    && buffer.charAt(buffer.length() - 1) != '/') { 
+                buffer.append('\\'); 
+            } 
+        } 
+        else { 
+            buffer.append('\\'); 
+        } 
+        buffer.append('@'); 
+        buffer.append(getName()); 
+        return buffer.toString(); 
     }
 
     @Override
