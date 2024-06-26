@@ -122,7 +122,7 @@ public class DOMAttributePointer extends NodePointer {
         if (parent != null) {
             buffer.append(parent.asPath());
             if (buffer.length() == 0
-                || buffer.charAt(buffer.length() - 1) != '/') {
+                    || buffer.charAt(buffer.length() - 1) != '/') {
                 buffer.append('/');
             }
         }
