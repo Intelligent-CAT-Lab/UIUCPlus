@@ -143,7 +143,7 @@ public class ObjectArrayListIterator<E> extends ObjectArrayIterator<E>
      */
     @Override
     public int previousIndex() {
-        return this.index - getStartIndex() - 1;
+        return index - getStartIndex() - 1;
     }
 
     /**
