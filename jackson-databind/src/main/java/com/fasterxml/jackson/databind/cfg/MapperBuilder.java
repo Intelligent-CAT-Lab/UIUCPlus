@@ -743,10 +743,10 @@ public abstract class MapperBuilder<M extends ObjectMapper,
      *
      * @return This builder instance to allow call chaining
      */
-        public B addMixIn(Class<?> target, Class<?> mixinSource)
-        {
-            _mapper.addMixIn(target, mixinSource);
-    return _this();    }
+    public B addMixIn(Class<?> target, Class<?> mixinSource) {
+        _mapper.addMixIn(target, mixinSource);
+        return _this();
+    }
 
     /**
      * Method that allows making sure that specified {@code target} class
