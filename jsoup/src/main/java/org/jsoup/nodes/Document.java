@@ -651,12 +651,12 @@ public class Document extends Element {
      * @param outputSettings new output settings.
      * @return this document, for chaining.
      */
-        public Document outputSettings(OutputSettings outputSettings) {
-             //ttings);
-            this.outputSettings = outputSettings;
-            return this;
-        }
-    
+    public Document outputSettings(OutputSettings outputSettings) {
+        //ttings);
+        this.outputSettings = outputSettings;
+        return this;
+    }
+   
 
     public enum QuirksMode {
         noQuirks, quirks, limitedQuirks
