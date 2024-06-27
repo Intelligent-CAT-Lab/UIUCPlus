@@ -193,8 +193,9 @@ public class NullPropertyPointer extends PropertyPointer {
     }
 
     @Override
-        public boolean isCollection() {
-    return true;    }
+    public boolean isCollection() {
+        return true;
+    }
 
     @Override
     public int getPropertyCount() {
