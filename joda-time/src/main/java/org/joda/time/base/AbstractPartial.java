@@ -128,14 +128,13 @@ public abstract class AbstractPartial
      *
      * @return the current values of each field in an array that may be altered, largest to smallest
      */
-        public int[] getValues() {
-    int[] result = new int[size()];
-            for (int i = 0; i < result.length; i++) {
-    
-    result[i] = (int)getValue(i);
-            }
-            return result;
+    public int[] getValues() {
+        int[] result = new int[size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = (int)getValue(i);
         }
+        return result;
+    }
 
     //-----------------------------------------------------------------------
     /**
