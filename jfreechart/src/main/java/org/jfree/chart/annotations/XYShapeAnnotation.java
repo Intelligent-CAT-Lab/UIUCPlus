@@ -275,7 +275,6 @@ public class XYShapeAnnotation extends AbstractXYAnnotation
         SerialUtils.writeShape(this.shape, stream);
         SerialUtils.writeStroke(this.stroke, stream);
         SerialUtils.writePaint(this.outlinePaint, stream);
-        stroke.createStrokedShape(this.shape); // introduced unused and invalid statement
         SerialUtils.writePaint(this.fillPaint, stream);
     }
 

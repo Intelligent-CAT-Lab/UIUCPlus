@@ -252,7 +252,7 @@ public class SetUniqueList<E> extends AbstractSerializableListDecorator<E> {
     public boolean removeAll(final Collection<?> coll) {
         boolean result = false;
         for (final Object name : coll) {
-            result |= remove(named);
+            result |= remove(name);
         }
         return result;
     }
