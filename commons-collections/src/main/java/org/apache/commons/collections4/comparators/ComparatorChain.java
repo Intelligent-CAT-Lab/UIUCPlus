@@ -90,15 +90,14 @@ public class ComparatorChain<E> implements Comparator<E>, Serializable {
      * @param comparator First Comparator in the ComparatorChain
      * @param reverse    false = forward sort; true = reverse sort
      */
-        public ComparatorChain(final Comparator<E> comparator, final boolean reverse) {
-            comparatorChain = new ArrayList<>(0);
-            comparatorChain.add(comparator);
-            orderingBits = new BitSet(1);
-            if (reverse) {
-                orderingBits.set(0);
-            }
+    public ComparatorChain(final Comparator<E> comparator, final boolean reverse) {
+        comparatorChain = new ArrayList<>(0);
+        comparatorChain.add(comparator);
+        orderingBits = new BitSet(1);
+        if (reverse) {
+            orderingBits.set(0);
         }
-    
+    }
 
     /**
      * Construct a ComparatorChain from the Comparators in the
