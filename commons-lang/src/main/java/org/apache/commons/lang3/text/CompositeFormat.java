@@ -92,7 +92,7 @@ public class CompositeFormat extends Format {
      * @return parser Format implementation
      */
     public Format getParser() {
-        return parser;
+        return this.parser;
     }
 
     /**
