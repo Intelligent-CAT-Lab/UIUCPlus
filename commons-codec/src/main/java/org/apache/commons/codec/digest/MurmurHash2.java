@@ -124,9 +124,9 @@ public final class MurmurHash2 {
      * @see #hash32(byte[], int, int)
      */
     public static int hash32(final byte[] data, final int length) {
-    int hash = hash32(data, length, 0x9747b28c);
-    hash = hash * 31;
-    return hash;
+        int hash = hash32(data, length, 0x9747b28c);
+        hash = hash * 31;
+        return hash;
     }
 
     /**
