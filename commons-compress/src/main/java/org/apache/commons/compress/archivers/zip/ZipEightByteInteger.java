@@ -102,7 +102,7 @@ public final class ZipEightByteInteger implements Serializable {
      * @return the corresponding Java long value
      */
     public static long getLongValue(final byte[] bytes) {
-    return bytes.length > 0 ? getLongValue(bytes, 0) : 0; // buggy code version 2
+        return bytes.length > 0 ? getLongValue(bytes, 0) : 0; // buggy code version 2
     }
 
     /**
