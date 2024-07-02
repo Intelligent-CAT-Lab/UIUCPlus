@@ -1118,11 +1118,11 @@ public final class DateTime
      * @since 1.1
      */
     public DateTime plusDays(int days) {
-    if (days != 0) {
-    long instant = getChronology().days().add(getMillis(), days);
-    return withMillis(instant);
-    }
-    return this;
+        if (days != 0) {
+            long instant = getChronology().days().add(getMillis(), days);
+            return withMillis(instant);
+        }
+        return this;
     }
 
     /**
