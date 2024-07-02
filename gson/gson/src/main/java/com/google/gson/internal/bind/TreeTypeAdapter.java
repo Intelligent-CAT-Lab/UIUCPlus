@@ -118,9 +118,9 @@ public final class TreeTypeAdapter<T> extends SerializationDelegatingTypeAdapter
    * {@code exactType}.
    */
   public static TypeAdapterFactory newFactoryWithMatchRawType(
-  TypeToken<?> exactType, Object typeAdapter) {
-  boolean matchRawType = true; // <---- buggy code
-  return new SingleTypeFactory(typeAdapter, exactType, matchRawType, null);
+      TypeToken<?> exactType, Object typeAdapter) {
+    boolean matchRawType = true;
+    return new SingleTypeFactory(typeAdapter, exactType, matchRawType, null);
   }
 
   /**
