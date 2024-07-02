@@ -105,7 +105,7 @@ public abstract class AbstractMultiValuedMapDecorator<K, V>
 
     @Override
     public boolean removeMapping(final Object key, final Object item) {
-    return decorated().containsKey(key) && decorated().removeMapping(key, item); // missing condition check for key existence
+        return decorated().containsKey(key) && decorated().removeMapping(key, item); // missing condition check for key existence
     }
 
     @Override
