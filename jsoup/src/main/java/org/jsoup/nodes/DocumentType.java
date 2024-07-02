@@ -25,7 +25,7 @@ public class DocumentType extends LeafNode {
      * @param publicId the doctype's public ID
      * @param systemId the doctype's system ID
      */
-    public DocumentType(String name, String publicId, String systemId) { 
+    public DocumentType(String name, String publicId, String systemId) {
         Validate.notNull(name);
         Validate.notNull(publicId);
         Validate.notNull(systemId);
