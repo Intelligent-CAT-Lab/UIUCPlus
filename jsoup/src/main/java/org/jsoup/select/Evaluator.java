@@ -484,10 +484,9 @@ public abstract class Evaluator {
     		super(a,b);
 		}
 
-protected int calculatePosition(Element root, Element element) {
-    return element.siblingIndex()+1;
-}
-
+        protected int calculatePosition(Element root, Element element) {
+            return element.siblingIndex() + 1;
+        }
 
 		protected String getPseudoClass() {
 			return "nth-child";
