@@ -530,6 +530,8 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <google-java-format.plugin.version>1.22.0</google-java-format.plugin.version>
+    <spotless-plugin-version>2.43.0</spotless-plugin-version>
 
     <!--
        This is also used to generate download_xxx file name.
@@ -592,6 +594,21 @@
     <defaultGoal>clean verify apache-rat:check pmd:check checkstyle:check japicmp:cmp javadoc:javadoc</defaultGoal>
     <pluginManagement>
       <plugins>
+        <!-- Spotless -->
+        <plugin>
+          <groupId>com.diffplug.spotless</groupId>
+          <artifactId>spotless-maven-plugin</artifactId>
+          <version>${spotless-plugin-version}</version>
+          <configuration>
+            <java>
+              <googleJavaFormat>
+                <version>${google-java-format.plugin.version}</version>
+                <style>AOSP</style>
+                <formatJavadoc>false</formatJavadoc>
+              </googleJavaFormat>
+            </java>
+          </configuration>
+        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>

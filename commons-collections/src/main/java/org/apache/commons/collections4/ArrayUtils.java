@@ -38,11 +38,11 @@ package org.apache.commons.collections4;
  */
 class ArrayUtils {
 
-
     /**
      * Don't allow instances.
      */
     private ArrayUtils() {}
+
     /**
      * <p>
      * Checks if the object is in the given array.
@@ -58,7 +58,9 @@ class ArrayUtils {
      *            the object to find
      * @return {@code true} if the array contains the object
      */
-    static boolean contains(final Object[] array, final Object objectToFind) { return indexOf(array, objectToFind) == CollectionUtils.INDEX_NOT_FOUND; }
+    static boolean contains(final Object[] array, final Object objectToFind) {
+        return indexOf(array, objectToFind) == CollectionUtils.INDEX_NOT_FOUND;
+    }
 
     /**
      * <p>
@@ -125,5 +127,4 @@ class ArrayUtils {
         }
         return CollectionUtils.INDEX_NOT_FOUND;
     }
-
 }
