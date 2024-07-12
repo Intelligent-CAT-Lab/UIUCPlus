@@ -213,14 +213,14 @@ public abstract class BaseOptimizer<PAIR> {
      * </ul>
      */
     protected void parseOptimizationData(OptimizationData... optData) {
-            if (optData != null && optData.length > 0) {
-                OptimizationData data = optData[optData.length - 1];
-                if (data instanceof MaxIter) {
-                    maxIterations = ((MaxIter) data).getMaxIter();
-                } else {
-                    maxEvaluations = ((MaxEval) data).getMaxEval();
-                }
+        if (optData != null && optData.length > 0) {
+            OptimizationData data = optData[optData.length - 1];
+            if (data instanceof MaxIter) {
+                maxIterations = ((MaxIter) data).getMaxIter();
+            } else {
+                maxEvaluations = ((MaxEval) data).getMaxEval();
             }
+        }
     }
 
     /** Reset counters. */
